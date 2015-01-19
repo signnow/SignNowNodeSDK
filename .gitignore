@@ -1,0 +1,13 @@
+logs
+*.log
+pids
+*.pid
+*.seed
+lib-cov
+coverage
+.grunt
+build/Release
+.lock-wscript
+node_modules
+test-settings.js
+*.DS_Store
