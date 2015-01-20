@@ -1,6 +1,14 @@
 signnow
 ===========
-SignNow REST Service Wrapper.
+SignNow REST Service Wrapper
+
+#### About SignNow
+SignNow by Barracuda is an eSigning platform that offers a cloud version, a physical appliance and also a virtual appliance. Backed by Barracuda’s industry-leading security infrastructure, SignNow is fully compliant with eSigning laws and encrypts all data in transit. Users can share, manage and access their documents with confidence. It’s never been easier to get legally binding signatures from customers, partners, and employees - in seconds using any device.
+
+#### API Contact Information
+If you have questions about the SignNow API, please visit https://techlib.barracuda.com/SignNow/RestEndpointsAPI or email [api@signnow.com](mailto:api@signnow.com).
+
+See additional contact information at the bottom.
 
 Installation
 ==============
@@ -337,3 +345,34 @@ signnow.template.duplicate({
 	}
 });
 ```
+# Unit Tests
+To run the unit test you will need to install "Mocha" and "Chai". You also need to create a "test.settings.js" in the root of the SignNow module. The file will need to contain the following:
+```javascript
+(function(){
+  "use strict";
+  /**
+   * Test Settings
+   */
+
+  exports.settings = {
+    credentials: "[ENCODED CLIENT CREDENTIALS]",
+    token: "[ACCESS TOKEN]",
+    username: "[SIGNNOW USERNAME]",
+    password: "[SIGNNOW PASSWORD]",
+    documentid: "[EXISTING DOCUMENT ID]",
+    templateid: "[EXISTING TEMPLATE ID]",
+    email: "[FROM EMAIL FOR INVITE]",
+    testemail: "[TO EMAIL FOR INVITE]"
+  };
+
+})();
+```
+
+
+# Additional Contact Information
+
+##### SUPPORT
+To contact SignNow support, please email [support@signnow.com](mailto:support@signnow.com).
+
+##### SALES
+For pricing information, please call (800) 831-2050 or email [sales@signnow.com](mailto:sales@signnow.com).
