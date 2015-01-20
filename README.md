@@ -367,8 +367,6 @@ To run the unit test you will need to install "Mocha" and "Chai". You also need 
 
 })();
 ```
-
-
 # Additional Contact Information
 
 ##### SUPPORT
