@@ -78,7 +78,7 @@
       });
     });
 
-    describe.skip('.invite()', function(){
+    describe('.invite()', function(){
       it('should send an invite to sign a document', function(done){
         signnow.document.invite({
             "token": settings.token,
