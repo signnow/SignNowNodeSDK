@@ -192,8 +192,10 @@ signnow.document.update({
 signnow.document.invite({
 	token: "your login token",
 	id: "document id",
-	from: "email address",
-	to: "email address"
+  data:{
+	   from: "email address",
+	    to: "email address"
+  }
 }, function(err, res){
 	if(!err){
 		console.log("RESULTS:" + res);
