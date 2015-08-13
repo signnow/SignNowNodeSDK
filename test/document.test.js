@@ -13,6 +13,7 @@
 
     describe('.list()', function(){
       it('should return a list of documents', function(done){
+        this.timeout(10000);
         signnow.document.list({
             "token": settings.token
         }, function(err, res){
@@ -78,7 +79,7 @@
       });
     });
 
-    describe('.invite()', function(){
+    describe.skip('.invite()', function(){
       it('should send an invite to sign a document', function(done){
         signnow.document.invite({
             "token": settings.token,

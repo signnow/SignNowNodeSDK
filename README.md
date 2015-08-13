@@ -347,6 +347,91 @@ signnow.template.duplicate({
 	}
 });
 ```
+# Folder
+
+## Returns a list of folders
+```javascript
+signnow.folder.list({
+    "token": "your login token"
+}, function(err, res){
+  if(!err){
+    console.log("RESULTS:" + res);
+  }else{
+    console.log("ERROR:" + err);
+  }
+});
+```
+
+## Returns a list of documents inside a folder
+
+Filters  | Values
+------------- | -------------
+```signing-status```  | ```waiting-for-me```, ```waiting-for-others```, ```signed```, ```pending```
+```document-updated```  | ```new Date()```
+```document-created```  | ```new Date()```
+
+Sort  | Values
+------------- | -------------
+```document-name```  | ```asc```/```desc```
+```updated```  | ```asc```/```desc```
+```created```  | ```asc```/```desc```
+
+```javascript
+signnow.folder.documents({
+    "token": "your login token",
+    "id": "folder id",
+    "filter": [
+      {"signing-status": "pending"}
+    ],
+    "sort": {"document-name":"asc"}
+}, function(err, res){
+  if(!err){
+    console.log("RESULTS:" + res);
+  }else{
+    console.log("ERROR:" + err);
+  }
+});
+```
+
+# Webhook
+
+## Returns a list of Webhooks
+```javascript
+signnow.webhook.list({
+    "token": "your login token"
+}, function(err, res){
+  if(!err){
+    console.log("RESULTS:" + res);
+  }else{
+    console.log("ERROR:" + err);
+  }
+});
+```
+
+## Create a Webhook
+
+Events  | Description
+------------- | -------------
+```document.create```  | Webhook is triggered when a document is uploaded to users account in SignNow
+```document.update```  | Webhook is triggered when a document is updated (fields added, text added, signature added, etc.)
+```document.delete```  | Webhook is triggered when a document is deleted from
+```invite.create```  | Webhook is triggered when an invitation to a SignNow document is created.
+```invite.update```  | Webhook is triggered when an invite to Signnow document is updated. Ex. A signer has signed the document.
+
+```javascript
+signnow.webhook.create({
+    "token": "your login token",
+    "event": "document.create",
+    "callback_url": "http://www.domain.com/path"
+}, function(err, res){
+  if(!err){
+    console.log("RESULTS:" + res);
+  }else{
+    console.log("ERROR:" + err);
+  }
+});
+```
+
 # Unit Tests
 To run the unit test you will need to install "Mocha" and "Chai". You also need to create a "test.settings.js" in the root of the SignNow module. The file will need to contain the following:
 ```javascript
@@ -363,6 +448,7 @@ To run the unit test you will need to install "Mocha" and "Chai". You also need 
     password: "[SIGNNOW PASSWORD]",
     documentid: "[EXISTING DOCUMENT ID]",
     templateid: "[EXISTING TEMPLATE ID]",
+    folderid: "[EXISTING FOLDER ID]",
     email: "[FROM EMAIL FOR INVITE]",
     testemail: "[TO EMAIL FOR INVITE]"
   };
