@@ -1,7 +1,7 @@
 {
   "name": "signnow",
   "description": "SignNow REST Service Wrapper",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": {
     "name": "Michael Fitchett",
     "email": "mfitchett@barracuda.com"
