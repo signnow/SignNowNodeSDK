@@ -1,12 +1,13 @@
 {
-  "name": "signnow",
-  "description": "SignNow REST Service Wrapper",
-  "version": "0.0.9",
+  "name": "cudasign",
+  "description": "CudaSign REST Service Wrapper",
+  "version": "0.1.0",
   "author": {
     "name": "Michael Fitchett",
     "email": "mfitchett@barracuda.com"
   },
   "keywords": [
+    "cudasign",
     "signnow",
     "document",
     "sign",
