@@ -2,7 +2,7 @@
   "use strict";
 
   var settings = require('../test-settings').settings;
-  var signnow = require('../lib/signnow')({
+  var cudasign = require('../lib/cudasign')({
         credentials: settings.credentials,
         production: false //(false by defult)
       }),
@@ -14,7 +14,7 @@
     describe('.list()', function(){
       it('should return a list of documents', function(done){
         this.timeout(10000);
-        signnow.document.list({
+        cudasign.document.list({
             "token": settings.token
         }, function(err, res){
             if (err) throw err[0].message;
@@ -27,7 +27,7 @@
 
     describe('.view()', function(){
       it('should return a document resource', function(done){
-        signnow.document.view({
+        cudasign.document.view({
             "token": settings.token,
             "id": settings.documentid
         }, function(err, res){
@@ -40,7 +40,7 @@
 
     describe('.download()', function(){
       it('should download a collapsed document', function(done){
-        signnow.document.download({
+        cudasign.document.download({
             "token": settings.token,
             "id": settings.documentid
         }, function(err, res){
@@ -67,7 +67,7 @@
            ]
         };
 
-        signnow.document.update({
+        cudasign.document.update({
             "token": settings.token,
             "id": settings.documentid,
             "fields": fields
@@ -81,7 +81,7 @@
 
     describe.skip('.invite()', function(){
       it('should send an invite to sign a document', function(done){
-        signnow.document.invite({
+        cudasign.document.invite({
             "token": settings.token,
             "id": settings.documentid,
             "from": settings.email,
@@ -96,7 +96,7 @@
 
     describe('.cancelInvite()', function(){
       it('should cancel all invites to a document', function(done){
-        signnow.document.cancelInvite({
+        cudasign.document.cancelInvite({
             "token": settings.token,
             "id": settings.documentid
         }, function(err, res){
@@ -109,7 +109,7 @@
 
     describe('.share()', function(){
       it('should return a link to download the document', function(done){
-        signnow.document.share({
+        cudasign.document.share({
             "token": settings.token,
             "id": settings.documentid
         }, function(err, res){
@@ -122,7 +122,7 @@
 
     describe.skip('.merge()', function(){
       it('should merge two documents and return the new document name', function(done){
-        signnow.document.merge({
+        cudasign.document.merge({
             "token": settings.token,
             "name": "Mocha Unit Test",
             "document_ids": [
@@ -141,7 +141,7 @@
     describe.skip('.create()', function(){
       this.timeout(20000);
       it('should upload a file and create a new document', function(done){
-        signnow.document.create({
+        cudasign.document.create({
             "token": settings.token,
             "filepath": __dirname + "/test.doc"
         }, function(err, res){
@@ -154,8 +154,8 @@
 
     describe.skip('.extractfields()', function(){
       this.timeout(20000);
-      it('should upload a file containing SignNow field tags', function(done){
-        signnow.document.extractfields({
+      it('should upload a file containing CudaSign field tags', function(done){
+        cudasign.document.extractfields({
             "token": settings.token,
             "filepath": __dirname + "/test.doc"
         }, function(err, res){
@@ -168,7 +168,7 @@
 
     describe.skip('.history()', function(){
       it('should return the history of a document', function(done){
-        signnow.document.history({
+        cudasign.document.history({
             "token": settings.token,
             "id": settings.documentid
         }, function(err, res){

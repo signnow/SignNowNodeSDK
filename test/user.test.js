@@ -2,7 +2,7 @@
   "use strict";
 
   var settings = require('../test-settings').settings;
-  var signnow = require('../lib/signnow')({
+  var cudasign = require('../lib/cudasign')({
         credentials: settings.credentials,
         production: false //(false by defult)
       }),
@@ -29,7 +29,7 @@
             "password": "MacBookPr0"
         };
         //console.log(userObj);
-        signnow.user.create(userObj, function(err, res){
+        cudasign.user.create(userObj, function(err, res){
             if (err) throw err[0].message;
             res.should.have.property("id");
             done();
@@ -39,7 +39,7 @@
 
     describe('.retrieve()', function(){
       it('should retrieve user resource', function(done){
-        signnow.user.retrieve({
+        cudasign.user.retrieve({
             "token": settings.token
         }, function(err, res){
             if (err) throw err[0].message;

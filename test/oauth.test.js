@@ -2,7 +2,7 @@
   "use strict";
 
   var settings = require('../test-settings').settings;
-  var signnow = require('../lib/signnow')({
+  var cudasign = require('../lib/cudasign')({
         credentials: settings.credentials,
         production: false //(false by defult)
       }),
@@ -13,7 +13,7 @@
 
     describe('.requestToken()', function(){
       it('should return an access token', function(done){
-        signnow.oauth2.requestToken({
+        cudasign.oauth2.requestToken({
             "username": settings.username,
             "password": settings.password
         }, function(err, res){
@@ -26,7 +26,7 @@
 
     describe('.verify()', function(){
       it('should return a verified access token', function(done){
-        signnow.oauth2.verify({
+        cudasign.oauth2.verify({
             "token": settings.token
         }, function(err, res){
             if (err) throw err[0].message;

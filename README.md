@@ -1,31 +1,31 @@
-signnow
+CudaSign
 ===========
-SignNow REST Service Wrapper
+CudaSign REST Service Wrapper
 
-#### About SignNow
-SignNow by Barracuda is an eSigning platform that offers a cloud version, a physical appliance and also a virtual appliance. Backed by Barracuda’s industry-leading security infrastructure, SignNow is fully compliant with eSigning laws and encrypts all data in transit. Users can share, manage and access their documents with confidence. It’s never been easier to get legally binding signatures from customers, partners, and employees - in seconds using any device.
+#### About CudaSign
+CudaSign by Barracuda is an eSigning platform that offers a cloud version, a physical appliance and also a virtual appliance. Backed by Barracuda’s industry-leading security infrastructure, CudaSign is fully compliant with eSigning laws and encrypts all data in transit. Users can share, manage and access their documents with confidence. It’s never been easier to get legally binding signatures from customers, partners, and employees - in seconds using any device.
 
 #### API Contact Information
-If you have questions about the SignNow API, please visit https://techlib.barracuda.com/SignNow/RestEndpointsAPI or email [api@signnow.com](mailto:api@signnow.com).
+If you have questions about the CudaSign API, please visit https://techlib.barracuda.com/CudaSign/RestEndpointsAPI or email [api@cudasign.com](mailto:api@cudasign.com).
 
 See additional contact information at the bottom.
 
 Installation
 ==============
 
-    $ npm install signnow
+    $ npm install cudasign
 
 
 Examples
 ==========
 
-To run the examples you will need an API key. You can get one here [https://signnow.com/l/api/request_information](https://signnow.com/l/api/request_information). For a full list of accepted parameters, refer to the SignNow REST Endpoints API guide: [https://techlib.barracuda.com/SignNow/RestEndpointsAPI](https://techlib.barracuda.com/SignNow/RestEndpointsAPI).
+To run the examples you will need an API key. You can get one here [https://cudasign.com/l/api/request_information](https://cudasign.com/l/api/request_information). For a full list of accepted parameters, refer to the CudaSign REST Endpoints API guide: [https://techlib.barracuda.com/CudaSign/RestEndpointsAPI](https://techlib.barracuda.com/CudaSign/RestEndpointsAPI).
 
-Every resouce is accessed via your signnow instance:
+Every resource is accessed via your CudaSign instance:
 
 ```javascript
-var signnow = require("signnow")({
-	credentials: " your signnow API key ",
+var cudasign = require("cudasign")({
+	credentials: " your cudasign API key ",
 	production: true //(false by defult)
 });
 ```
@@ -35,7 +35,7 @@ Every resource returns two parameters. The first param contains any errors and t
 
 ## Create a User
 ```javascript
-signnow.user.create({
+cudasign.user.create({
 	"first_name": "John",
 	"last_name": "Wayne",
 	"email":"john@domain.com",
@@ -51,7 +51,7 @@ signnow.user.create({
 
 ## Retrieve User Information
 ```javascript
-signnow.user.retrieve({token:"your auth token"}, function(err, res){
+cudasign.user.retrieve({token:"your auth token"}, function(err, res){
 	if(!err){
 		console.log("RESULTS:" + res);
 	}else{
@@ -64,7 +64,7 @@ signnow.user.retrieve({token:"your auth token"}, function(err, res){
 
 ## Request Access Token
 ```javascript
-signnow.oauth2.requestToken({
+cudasign.oauth2.requestToken({
 	"username": "account username",
 	"password": "account password"
 }, function(err, res){
@@ -78,7 +78,7 @@ signnow.oauth2.requestToken({
 
 ## Verify an Access Token
 ```javascript
-signnow.oauth2.verify({
+cudasign.oauth2.verify({
 	token: "your auth token"
 }, function(err, res){
 	if(!err){
@@ -93,7 +93,7 @@ signnow.oauth2.verify({
 
 ## Retrieve a List of the User’s Documents
 ```javascript
-signnow.document.list({token:"your auth token"}, function(err, res){
+cudasign.document.list({token:"your auth token"}, function(err, res){
 	if(!err){
 		console.log("RESULTS:" + res);
 	}else{
@@ -104,7 +104,7 @@ signnow.document.list({token:"your auth token"}, function(err, res){
 
 ## Retrieve a Document Resource
 ```javascript
-signnow.document.view({
+cudasign.document.view({
 	token: "your auth token",
 	id: "document id"
 }, function(err, res){
@@ -118,7 +118,7 @@ signnow.document.view({
 
 ## Download a Collapsed Document
 ```javascript
-signnow.document.download({
+cudasign.document.download({
 	token: "your auth token",
 	id: "document id"
 }, function(err, res){
@@ -132,7 +132,7 @@ signnow.document.download({
 
 ## Upload Document
 ```javascript
-signnow.document.create({
+cudasign.document.create({
 	token: "your auth token",
 	filepath: ""
 }, function(err, res){
@@ -146,7 +146,7 @@ signnow.document.create({
 
 ## Upload File & Extract Fields
 ```javascript
-signnow.document.fieldextract({
+cudasign.document.fieldextract({
 	token: "your auth token",
 	filepath: ""
 }, function(err, res){
@@ -174,7 +174,7 @@ var fieldsObj = {
 	]
 }
 
-signnow.document.update({
+cudasign.document.update({
 	token: "your auth token",
   id: "document id",
 	fields: fieldsObj
@@ -189,7 +189,7 @@ signnow.document.update({
 
 ## Create Invite to Sign a Document
 ```javascript
-signnow.document.invite({
+cudasign.document.invite({
 	token: "your login token",
 	id: "document id",
   data:{
@@ -207,7 +207,7 @@ signnow.document.invite({
 
 ## Cancel an Invite to a Document
 ```javascript
-signnow.document.cancelInvite({
+cudasign.document.cancelInvite({
 	token: "your login token",
 	id: "document id"
 }, function(err, res){
@@ -221,7 +221,7 @@ signnow.document.cancelInvite({
 
 ## Create a One-time Use Download URL
 ```javascript
-signnow.document.share({
+cudasign.document.share({
 	token: "your login token",
 	id: "document id"
 }, function(err, res){
@@ -235,7 +235,7 @@ signnow.document.share({
 
 ## Merges Existing Documents
 ```javascript
-signnow.document.merge({
+cudasign.document.merge({
 	token: "your login token",
 	name: "the merged doc",
   document_ids: [
@@ -253,7 +253,7 @@ signnow.document.merge({
 
 ## Get Document History
 ```javascript
-signnow.document.history({
+cudasign.document.history({
 	token: "your login token",
 	id: "document id"
 }, function(err, res){
@@ -269,7 +269,7 @@ signnow.document.history({
 
 ## Add Enumeration Field to a Document
 ```javascript
-signnow.enumerations.addField({
+cudasign.enumerations.addField({
 	token: "your login token",
 	document_id: "document id",
 	"x": 150,
@@ -291,7 +291,7 @@ signnow.enumerations.addField({
 
 ## Add Enumeration Options to the Field
 ```javascript
-signnow.enumerations.addOptions({
+cudasign.enumerations.addOptions({
 	token: "your login token",
   "enumeration_options": [
     {
@@ -320,7 +320,7 @@ signnow.enumerations.addOptions({
 
 ## Create a Template
 ```javascript
-signnow.template.create({
+cudasign.template.create({
 	token: "your login token",
 	document_id: "document id",
 	document_name: "my template"
@@ -335,7 +335,7 @@ signnow.template.create({
 
 ## Duplicate a Template
 ```javascript
-signnow.template.duplicate({
+cudasign.template.duplicate({
 	token: "your login token",
 	id: "document id",
 	name: "my template"
@@ -351,7 +351,7 @@ signnow.template.duplicate({
 
 ## Returns a list of folders
 ```javascript
-signnow.folder.list({
+cudasign.folder.list({
     "token": "your login token"
 }, function(err, res){
   if(!err){
@@ -377,7 +377,7 @@ Sort  | Values
 ```created```  | ```asc```/```desc```
 
 ```javascript
-signnow.folder.documents({
+cudasign.folder.documents({
     "token": "your login token",
     "id": "folder id",
     "filter": [
@@ -397,7 +397,7 @@ signnow.folder.documents({
 
 ## Returns a list of Webhooks
 ```javascript
-signnow.webhook.list({
+cudasign.webhook.list({
     "token": "your login token"
 }, function(err, res){
   if(!err){
@@ -412,14 +412,14 @@ signnow.webhook.list({
 
 Events  | Description
 ------------- | -------------
-```document.create```  | Webhook is triggered when a document is uploaded to users account in SignNow
+```document.create```  | Webhook is triggered when a document is uploaded to users account in CudaSign
 ```document.update```  | Webhook is triggered when a document is updated (fields added, text added, signature added, etc.)
 ```document.delete```  | Webhook is triggered when a document is deleted from
-```invite.create```  | Webhook is triggered when an invitation to a SignNow document is created.
-```invite.update```  | Webhook is triggered when an invite to Signnow document is updated. Ex. A signer has signed the document.
+```invite.create```  | Webhook is triggered when an invitation to a CudaSign document is created.
+```invite.update```  | Webhook is triggered when an invite to CudaSign document is updated. Ex. A signer has signed the document.
 
 ```javascript
-signnow.webhook.create({
+cudasign.webhook.create({
     "token": "your login token",
     "event": "document.create",
     "callback_url": "http://www.domain.com/path"
@@ -433,7 +433,7 @@ signnow.webhook.create({
 ```
 
 # Unit Tests
-To run the unit test you will need to install "Mocha" and "Chai". You also need to create a "test.settings.js" in the root of the SignNow module. The file will need to contain the following:
+To run the unit test you will need to install "Mocha" and "Chai". You also need to create a "test.settings.js" in the root of the CudaSign module. The file will need to contain the following:
 ```javascript
 (function(){
   "use strict";
@@ -444,8 +444,8 @@ To run the unit test you will need to install "Mocha" and "Chai". You also need 
   exports.settings = {
     credentials: "[ENCODED CLIENT CREDENTIALS]",
     token: "[ACCESS TOKEN]",
-    username: "[SIGNNOW USERNAME]",
-    password: "[SIGNNOW PASSWORD]",
+    username: "[CUDASIGN USERNAME]",
+    password: "[CUDASIGN PASSWORD]",
     documentid: "[EXISTING DOCUMENT ID]",
     templateid: "[EXISTING TEMPLATE ID]",
     folderid: "[EXISTING FOLDER ID]",
@@ -458,7 +458,7 @@ To run the unit test you will need to install "Mocha" and "Chai". You also need 
 # Additional Contact Information
 
 ##### SUPPORT
-To contact SignNow support, please email [support@signnow.com](mailto:support@signnow.com).
+To contact CudaSign support, please email [support@cudasign.com](mailto:support@cudasign.com).
 
 ##### SALES
-For pricing information, please call (800) 831-2050 or email [sales@signnow.com](mailto:sales@signnow.com).
+For pricing information, please call (800) 831-2050 or email [sales@cudasign.com](mailto:sales@cudasign.com).

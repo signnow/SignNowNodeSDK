@@ -2,7 +2,7 @@
   "use strict";
 
   var settings = require('../test-settings').settings;
-  var signnow = require('../lib/signnow')({
+  var cudasign = require('../lib/cudasign')({
         credentials: settings.credentials,
         production: false //(false by defult)
       }),
@@ -13,7 +13,7 @@
 
     describe('.addField()', function(){
       it('should add an enumeration field(drop down) to a document and return the document id', function(done){
-        signnow.enumerations.addField({
+        cudasign.enumerations.addField({
             "token": settings.token,
             "document_id": settings.documentid,
             "x":150,
@@ -35,7 +35,7 @@
     describe('.addOptions()', function(){
       var fieldId = "";
       before(function(done){
-        signnow.enumerations.addField({
+        cudasign.enumerations.addField({
             "token": settings.token,
             "document_id": settings.documentid,
             "x":150,
@@ -53,7 +53,7 @@
         });
       });
       it('should add enumeration options to the field we just created and return an array', function(done){
-        signnow.enumerations.addOptions({
+        cudasign.enumerations.addOptions({
           "token": settings.token,
           "enumeration_options":[
              {

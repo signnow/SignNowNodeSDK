@@ -1,7 +1,7 @@
 {
   "name": "cudasign",
-  "description": "CudaSign REST Service Wrapper",
-  "version": "0.1.0",
+  "description": "CudaSign (formely SignNow) REST Service Wrapper",
+  "version": "0.1.1",
   "author": {
     "name": "Michael Fitchett",
     "email": "mfitchett@barracuda.com"
@@ -19,7 +19,7 @@
     "type": "git",
     "url": "https://github.com/signnow/SignNowNodeSDK"
   },
-  "main": "lib/signnow.js",
+  "main": "lib/cudasign.js",
   "devDependencies": {
     "chai": "*",
     "mocha": "*"

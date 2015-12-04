@@ -2,7 +2,7 @@
   "use strict";
 
   var settings = require('../test-settings').settings;
-  var signnow = require('../lib/signnow')({
+  var cudasign = require('../lib/cudasign')({
         credentials: settings.credentials,
         production: false //(false by defult)
       }),
@@ -13,7 +13,7 @@
 
     describe('.list()', function(){
       it('should return a list of folders', function(done){
-        signnow.folder.list({
+        cudasign.folder.list({
             "token": settings.token
         }, function(err, res){
             if (err) throw err[0].message;
@@ -26,7 +26,7 @@
 
     describe('.documents()', function(){
       it('should return all documents inside a folder', function(done){
-        signnow.folder.documents({
+        cudasign.folder.documents({
             "token": settings.token,
             "id": settings.folderid,
             "filter": [
