@@ -2,6 +2,10 @@ CudaSign
 ===========
 CudaSign REST Service Wrapper
 
+#### Updates
+
+12/3/2015 - The eval server has been changed to api-eval.cudasign.com. You will need to create a new account for api-eval.cudasign.com. [https://eval.cudasign.com](https://eval.cudasign.com).
+
 #### About CudaSign
 CudaSign by Barracuda is an eSigning platform that offers a cloud version, a physical appliance and also a virtual appliance. Backed by Barracuda’s industry-leading security infrastructure, CudaSign is fully compliant with eSigning laws and encrypts all data in transit. Users can share, manage and access their documents with confidence. It’s never been easier to get legally binding signatures from customers, partners, and employees - in seconds using any device.
 
