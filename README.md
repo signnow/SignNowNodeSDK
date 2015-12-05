@@ -29,8 +29,8 @@ Every resource is accessed via your CudaSign instance:
 
 ```javascript
 var cudasign = require("cudasign")({
-	credentials: " your cudasign API key ",
-	production: true //(false by defult)
+	credentials: "ENCODED_CLIENT_CREDENTIALS",
+	production: false //(false uses eval server)
 });
 ```
 Every resource returns two parameters. The first param contains any errors and the second contains the results.
