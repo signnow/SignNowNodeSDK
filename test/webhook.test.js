@@ -4,7 +4,7 @@
   var settings = require('../test-settings').settings;
   var cudasign = require('../lib/cudasign')({
         credentials: settings.credentials,
-        production: false //(false by defult)
+        production: settings.production //(false by defult)
       }),
       should = require('chai').should();
 
