@@ -23,5 +23,8 @@
   "devDependencies": {
     "chai": "*",
     "mocha": "*"
+  },
+  "dependencies": {
+    "bluebird": "latest"
   }
 }
