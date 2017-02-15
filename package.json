@@ -1,27 +1,27 @@
 {
-  "name": "cudasign",
-  "description": "CudaSign (formely SignNow) REST Service Wrapper",
-  "version": "1.1.2",
-  "author": {
-    "name": "Michael Fitchett",
-    "email": "mfitchett@barracuda.com"
-  },
-  "keywords": [
-    "cudasign",
-    "signnow",
-    "document",
-    "sign",
-    "online",
-    "electronic",
-    "api"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/signnow/SignNowNodeSDK"
-  },
-  "main": "lib/cudasign.js",
-  "devDependencies": {
-    "chai": "*",
-    "mocha": "*"
-  }
+    "name": "signnow",
+    "description": "SignNow REST Service Wrapper",
+    "version": "1.1.3",
+    "author": {
+        "name": "Michael Fitchett",
+        "email": "mfitchett@barracuda.com"
+    },
+    "keywords": [
+        "cudasign",
+        "signnow",
+        "document",
+        "sign",
+        "online",
+        "electronic",
+        "api"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/signnow/SignNowNodeSDK"
+    },
+    "main": "lib/signnow.js",
+    "devDependencies": {
+        "chai": "*",
+        "mocha": "*"
+    }
 }
