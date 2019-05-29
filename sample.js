@@ -3,6 +3,7 @@ const snApi = require('./lib/signnow')({
 	production: false, //(false uses eval server)
 });
 
+// 1. get access token (authentication)
 snApi.oauth2.requestToken({
 	username: 'tereshchenko.ruslan@pdffiller.team',
 	password: '475509502',
@@ -14,10 +15,12 @@ snApi.oauth2.requestToken({
             '--------------------------------------------\n1. snApi.oauth2.requestToken:\n--------------------------------------------\n',
             res, '\n'
         );
+
+        const { access_token: token } = res;
     
-    
+        // 2. verify access token
         snApi.oauth2.verify({
-            token: res.access_token,
+            token,
         }, (err2, res2) => {
             if (err2) {
                 console.error(err2);
@@ -25,6 +28,20 @@ snApi.oauth2.requestToken({
                 console.log(
                     '--------------------------------------------\n2. snApi.oauth2.verify:\n--------------------------------------------\n',
                     res2, '\n'
+                );
+            }
+        });
+
+        // 3. get user data
+        snApi.user.retrieve({
+            token,
+        }, (err3, res3) => {
+            if (err3) {
+                console.error(err3);
+            } else {
+                console.log(
+                    '--------------------------------------------\n3. snApi.user.retrieve:\n--------------------------------------------\n',
+                    res3, '\n'
                 );
             }
         });
