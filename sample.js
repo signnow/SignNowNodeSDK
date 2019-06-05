@@ -511,6 +511,51 @@ snApi.oauth2.requestToken({
                                             }
                                         });
 
+                                        // 15. Create a Template
+                                        snApi.template.create({
+                                            document_id: id,
+                                            document_name: 'sdk template',
+                                            token,
+                                        }, (err15, res15) => {
+                                            console.log(`
+--------------------------
+15. snApi.template.create:
+--------------------------
+                                            `);
+                                            if (err15) {
+                                                console.error(err15);
+                                                console.log('\n');
+                                            } else {
+                                                console.log(res15);
+                                                console.log('\n');
+
+                                                const { id } = res15;
+
+                                                // 16. Duplicate a Template
+                                                snApi.template.duplicate({
+                                                    name: 'sdk template duplicated',
+                                                    id,
+                                                    token,
+                                                }, (err16, res16) => {
+                                                    console.log(`
+------------------------------
+16. snApi.template.duplicate:
+------------------------------
+                                                    `);
+                                                    if (err16) {
+                                                        console.error(err16);
+                                                        console.log('\n');
+                                                    } else {
+                                                        console.log(res16);
+                                                        console.log('\n');
+                                                    }
+
+                                                });
+
+
+                                            }
+                                        });
+
 
                                     });
 
