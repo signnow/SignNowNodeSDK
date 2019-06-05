@@ -58,6 +58,55 @@ snApi.oauth2.requestToken({
             }
         });
 
+        // 17. Get a list of folders
+        snApi.folder.list({
+            token
+        }, (err17, res17) => {
+            console.log(`
+-----------------------
+17. snApi.folder.list:
+-----------------------
+            `);
+            if (err17) {
+                console.error(err17);
+                console.log('\n');
+            } else {
+                console.log(res17);
+                console.log('\n');
+
+                const { id } = res17.folders[6];
+
+                // 18. Get a list of documents inside a folder
+                id && snApi.folder.documents({
+                    filter: [
+                        {
+                            'signing-status': 'signed',
+                        },
+                    ],
+                    sort: {
+                        'updated': 'desc',
+                    },
+                    id,
+                    token,
+                }, (err18, res18) => {
+                    console.log(`
+----------------------------
+18. snApi.folder.documents:
+----------------------------
+                    `);
+                    if (err18) {
+                        console.error(err18);
+                        console.log('\n');
+                    } else {
+                        console.log(res18);
+                        console.log('\n');
+                    }
+                });
+
+            }
+
+        });
+
         // 4. get documnet list
         snApi.document.list({
             token,
