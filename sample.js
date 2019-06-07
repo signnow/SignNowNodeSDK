@@ -597,6 +597,28 @@ snApi.oauth2.requestToken({
                                                     } else {
                                                         console.log(res16);
                                                         console.log('\n');
+
+                                                        const { id } = res16;
+
+                                                        // 19. create signing link
+                                                        snApi.link.create({
+                                                            document_id: id,
+                                                            token,
+                                                        }, (err19, res19) => {
+                                                            console.log(`
+-----------------------
+19. snApi.link.create:
+-----------------------
+                                                            `);
+                                                            if (err19) {
+                                                                console.error(err19);
+                                                                console.log('\n');
+                                                            } else {
+                                                                console.log(res19);
+                                                                console.log('\n');
+                                                            }
+                                                        });
+                                                        
                                                     }
 
                                                 });
