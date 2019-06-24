@@ -1,12 +1,14 @@
+const [ clientId, clientSecret, username, password ] = process.argv.slice(2);
+
 const snApi = require('../lib/signnow')({
-  credentials: 'ZmNkMzE4MzU3ZmUxNmQxMTM2NzVhZjNlZjE5ZjZmYzU6OTIxYWNlYzI2NjY1ZWRjMTc1ODljOWM5ODY5NzI4ZTc=',
+  credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false, //(false uses eval server)
 });
 
 // 1. get access token (authentication)
 snApi.oauth2.requestToken({
-  username: 'tereshchenko.ruslan@pdffiller.team',
-  password: '475509502',
+  username,
+  password,
 }, (err, res) => {
   console.log('-------------------------------');
   console.log(' 1. snApi.oauth2.requestToken: ');
@@ -185,7 +187,7 @@ snApi.oauth2.requestToken({
 
     // 7. upload document
     snApi.document.create({
-      filepath: '/Users/ruslantereshchenko/Downloads/pdf-sample.pdf',
+      filepath: 'samples/files/pdf-sample.pdf',
       token,
     }, (err7, res7) => {
       console.log('---------------------------');
@@ -205,7 +207,7 @@ snApi.oauth2.requestToken({
         // 10. Create Invite to Sign a Document (without fields)
         id && snApi.document.invite({
           data: {
-            from: 'tereshchenko.ruslan@pdffiller.team',
+            from: username,
             to: 'russellswift11@yopmail.com',
           },
           id,
@@ -247,7 +249,7 @@ snApi.oauth2.requestToken({
 
     // 7. upload document
     snApi.document.create({
-      filepath: '/Users/ruslantereshchenko/Downloads/pdf-sample.pdf',
+      filepath: 'samples/files/pdf-sample.pdf',
       token,
     }, (err7, res7) => {
       console.log('---------------------------');
@@ -461,7 +463,7 @@ snApi.oauth2.requestToken({
                     "subject": "Auth",
                     "message": "AUTH message \"AUTH\""
                   }],
-                  "from": "tereshchenko.ruslan@pdffiller.team",
+                  "from": username,
                   "cc": [
                     "russellswift3@yopmail.com",
                     "russellswift4@yopmail.com"
@@ -614,7 +616,7 @@ snApi.oauth2.requestToken({
 
     // 8. Upload File & Extract Fields
     // snApi.document.fieldextract({
-    //   filepath: '/Users/ruslantereshchenko/Downloads/pdf-sample.pdf',
+    //   filepath: 'samples/files/pdf-sample.pdf',
     //   token,
     // }, (err8, res8) => {
     //   if (err8) {
