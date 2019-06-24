@@ -266,7 +266,8 @@ snApi.oauth2.requestToken({
 
         const fields = {
           "client_timestamp": 1527859375,
-          "fields": [{
+          "fields": [
+            {
               "page_number": 0,
               "type": "signature",
               "name": "FieldName",
@@ -403,7 +404,7 @@ snApi.oauth2.requestToken({
               "width": 33,
               "x": 300,
               "y": 443
-            }
+            },
           ]
         };
 
@@ -426,8 +427,6 @@ snApi.oauth2.requestToken({
             const {
               id
             } = res9;
-
-
 
             // 5. get document data
             id && snApi.document.view({
