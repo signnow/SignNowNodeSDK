@@ -33,6 +33,7 @@
     "no-console": "off",
     "no-empty-function": "error",
     "no-shadow": "error",
+    "no-var": "error",
     "quotes": [
       "error",
       "single"
