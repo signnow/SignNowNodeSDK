@@ -17,6 +17,12 @@
       "error",
       "as-needed"
     ],
+    "curly": "error",
+    "default-case": "error",
+    "dot-location": [
+      "error",
+      "property"
+    ],
     "dot-notation": "error",
     "eol-last": [
       "error",
@@ -26,6 +32,8 @@
       "error",
       "always"
     ],
+    "global-require": "error",
+    "guard-for-in": "error",
     "indent": [
       "error",
       2
@@ -36,7 +44,17 @@
     ],
     "no-console": "off",
     "no-empty-function": "error",
+    "no-eval": "error",
+    "no-param-reassign": "error",
     "no-shadow": "error",
+    "no-template-curly-in-string": "error",
+    "no-unused-expressions": "error",
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false
+      }
+    ],
     "no-var": "error",
     "prefer-arrow-callback": [
       "error",
