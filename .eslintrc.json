@@ -68,6 +68,15 @@
       "error",
       "unix"
     ],
+    "lines-around-comment": [
+      "error",
+      {
+        "beforeBlockComment": true,
+        "afterBlockComment": true,
+        "beforeLineComment": true,
+        "afterLineComment": false
+      }
+    ],
     "no-buffer-constructor": "error",
     "no-console": "off",
     "no-empty-function": "error",
