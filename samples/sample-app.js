@@ -1,3 +1,6 @@
+// to run sample app from the project root folder type in your console:
+//> node samples/sample-app <cliend_id> <client_secret> <user_name> <user_password>
+
 const [ clientId, clientSecret, username, password ] = process.argv.slice(2);
 
 const snApi = require('../lib/signnow')({
@@ -480,9 +483,7 @@ snApi.oauth2.requestToken({
 
                 // 10. Create Invite to Sign a Document (with fields)
                 id && snApi.document.invite({
-                  data: {
-                    ...fieldinvite,
-                  },
+                  data: Object.assign({}, fieldinvite),
                   id,
                   token,
                 }, (err10, res10) => {
