@@ -17,6 +17,11 @@
       "error",
       "as-needed"
     ],
+    "callback-return": "error",
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
     "curly": "error",
     "default-case": "error",
     "dot-location": [
@@ -34,6 +39,10 @@
     ],
     "global-require": "error",
     "guard-for-in": "error",
+    "handle-callback-err": [
+      "error",
+      "^(err|error)$"
+    ],
     "indent": [
       "error",
       2
@@ -42,6 +51,7 @@
       "error",
       "unix"
     ],
+    "no-buffer-constructor": "error",
     "no-console": "off",
     "no-empty-function": "error",
     "no-eval": "error",
