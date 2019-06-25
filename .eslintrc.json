@@ -88,7 +88,12 @@
     "no-param-reassign": "error",
     "no-shadow": "error",
     "no-template-curly-in-string": "error",
-    "no-unused-expressions": "error",
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true
+      }
+    ],
     "no-use-before-define": [
       "error",
       {
