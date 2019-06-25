@@ -22,6 +22,7 @@
     "main": "lib/signnow.js",
     "devDependencies": {
         "chai": "*",
+        "eslint": "6.0.1",
         "mocha": "*"
     }
 }
