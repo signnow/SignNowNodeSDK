@@ -75,7 +75,7 @@
       "error",
       {
         "beforeBlockComment": true,
-        "afterBlockComment": true,
+        "afterBlockComment": false,
         "beforeLineComment": true,
         "afterLineComment": false
       }

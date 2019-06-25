@@ -1,6 +1,8 @@
+'use strict';
+
 const signnow = require('signnow')({
-	credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
-	production: true, // if false then uses eval server
+  credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
+  production: true, // if false then uses eval server
 });
 const sendFreeformInvite = signnow.document.invite;
 

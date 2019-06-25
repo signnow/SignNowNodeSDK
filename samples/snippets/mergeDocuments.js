@@ -1,6 +1,8 @@
+'use strict';
+
 const signnow = require('signnow')({
-	credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
-	production: true, // if false then uses eval server
+  credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
+  production: true, // if false then uses eval server
 });
 const mergeDocuments = signnow.document.merge;
 
@@ -9,6 +11,7 @@ const token = 'YOUR_ACCESS_TOKEN';
 const document_ids = [
   'DOCUMENT_1_ID',
   'DOCUMENT_2_ID',
+
   // ...
 ];
 
