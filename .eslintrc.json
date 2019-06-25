@@ -37,6 +37,10 @@
       "error",
       "always"
     ],
+    "func-call-spacing": [
+      "error",
+      "never"
+    ],
     "global-require": "error",
     "guard-for-in": "error",
     "handle-callback-err": [
@@ -46,6 +50,19 @@
     "indent": [
       "error",
       2
+    ],
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+    "keyword-spacing": [
+      "error", {
+        "before": true,
+        "after": true
+      }
     ],
     "linebreak-style": [
       "error",
