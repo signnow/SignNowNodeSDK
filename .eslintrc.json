@@ -13,7 +13,12 @@
     "ecmaVersion": 2018
   },
   "rules": {
+    "dot-notation": "error",
     "eol-last": [
+      "error",
+      "always"
+    ],
+    "eqeqeq": [
       "error",
       "always"
     ],
@@ -26,6 +31,8 @@
       "unix"
     ],
     "no-console": "off",
+    "no-empty-function": "error",
+    "no-shadow": "error",
     "quotes": [
       "error",
       "single"
@@ -33,6 +40,7 @@
     "semi": [
       "error",
       "always"
-    ]
+    ],
+    "strict": "error"
   }
 }
