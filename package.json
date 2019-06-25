@@ -1,29 +1,27 @@
 {
   "name": "signnow",
   "description": "SignNow REST Service Wrapper",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "author": {
-    "name": "Michael Fitchett",
-    "email": "mfitchett@barracuda.com"
+    "name": "SignNow Team",
+    "email": "support@signnow.com"
   },
   "keywords": [
-    "cudasign",
     "signnow",
     "document",
     "sign",
     "online",
     "electronic",
-    "api"
+    "signature",
+    "api",
+    "client"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/signnow/SignNowNodeSDK"
-  },
+  "main": "lib/signnow.js",
+  "repository": "github:signnow/SignNowNodeSDK",
   "scripts": {
     "lint": "./node_modules/.bin/eslint **/*.js",
     "lint:fix": "./node_modules/.bin/eslint **/*.js --fix"
   },
-  "main": "lib/signnow.js",
   "devDependencies": {
     "chai": "*",
     "eslint": "6.0.1",
