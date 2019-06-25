@@ -20,7 +20,8 @@
   "repository": "github:signnow/SignNowNodeSDK",
   "scripts": {
     "lint": "./node_modules/.bin/eslint **/*.js",
-    "lint:fix": "./node_modules/.bin/eslint **/*.js --fix"
+    "lint:fix": "./node_modules/.bin/eslint **/*.js --fix",
+    "prepublish": "npm run lint"
   },
   "devDependencies": {
     "chai": "*",
