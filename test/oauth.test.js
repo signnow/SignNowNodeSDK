@@ -12,8 +12,8 @@ const signnow = require('../lib/signnow')({
     describe('.requestToken()', () => {
       it('should return an access token', done => {
         signnow.oauth2.requestToken({
-          'username': settings.username,
-          'password': settings.password,
+          username: settings.username,
+          password: settings.password,
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.have.property('access_token');
@@ -25,7 +25,7 @@ const signnow = require('../lib/signnow')({
     describe('.verify()', () => {
       it('should return a verified access token', done => {
         signnow.oauth2.verify({
-          'token': settings.token,
+          token: settings.token,
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.have.property('access_token');

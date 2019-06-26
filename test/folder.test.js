@@ -12,7 +12,7 @@ const signnow = require('../lib/signnow')({
     describe('.list()', () => {
       it('should return a list of folders', done => {
         signnow.folder.list({
-          'token': settings.token,
+          token: settings.token,
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.be.a('object');
@@ -25,13 +25,13 @@ const signnow = require('../lib/signnow')({
     describe('.documents()', () => {
       it('should return all documents inside a folder', done => {
         signnow.folder.documents({
-          'token': settings.token,
-          'id': settings.folderid,
-          'filter': [
+          token: settings.token,
+          id: settings.folderid,
+          filter: [
             { 'signing-status': 'pending' },
             { 'signing-status': 'waiting-for-me' },
           ],
-          'sort': { 'document-name': 'asc' },
+          sort: { 'document-name': 'asc' },
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.be.a('object');

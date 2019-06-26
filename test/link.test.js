@@ -12,7 +12,7 @@ const signnow = require('../lib/signnow')({
     describe('.create()', () => {
       it('should create a new signing link and return two urls', done => {
         signnow.webhook.create({
-          'document_id': settings.documentid,
+          document_id: settings.documentid,
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.be.a('object');

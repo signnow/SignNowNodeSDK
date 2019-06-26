@@ -12,7 +12,7 @@ const signnow = require('../lib/signnow')({
     describe('.list()', () => {
       it('should return a list of webhooks', done => {
         signnow.webhook.list({
-          'token': settings.token,
+          token: settings.token,
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.be.a('object');
@@ -25,9 +25,9 @@ const signnow = require('../lib/signnow')({
     describe('.create()', () => {
       it('should create a new webhook and return an id', done => {
         signnow.webhook.create({
-          'token': settings.token,
-          'event': 'document.create',
-          'callback_url': 'http://requestb.in/qwmphiqw',
+          token: settings.token,
+          event: 'document.create',
+          callback_url: 'http://requestb.in/qwmphiqw',
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.be.a('object');

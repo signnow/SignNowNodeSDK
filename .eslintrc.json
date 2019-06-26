@@ -107,6 +107,10 @@
       }
     ],
     "prefer-const": "error",
+    "quote-props": [
+      "error",
+      "as-needed"
+    ],
     "quotes": [
       "error",
       "single"

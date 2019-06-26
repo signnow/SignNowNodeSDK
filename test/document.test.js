@@ -13,7 +13,7 @@ const signnow = require('../lib/signnow')({
     describe('.list()', () => {
       it('should return a list of documents', done => {
         signnow.document.list({
-          'token': settings.token,
+          token: settings.token,
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.be.a('array');
@@ -26,8 +26,8 @@ const signnow = require('../lib/signnow')({
     describe('.view()', () => {
       it('should return a document resource', done => {
         signnow.document.view({
-          'token': settings.token,
-          'id': settings.documentid,
+          token: settings.token,
+          id: settings.documentid,
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.have.property('document_name');
@@ -39,8 +39,8 @@ const signnow = require('../lib/signnow')({
     describe('.download()', () => {
       it('should download a collapsed document', done => {
         signnow.document.download({
-          'token': settings.token,
-          'id': settings.documentid,
+          token: settings.token,
+          id: settings.documentid,
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.exist();
@@ -52,20 +52,20 @@ const signnow = require('../lib/signnow')({
     describe('.update()', () => {
       it('should update a document and return the document id', done => {
         const fields = {
-          'texts': [{
-            'size': 8,
-            'x': 61,
-            'y': 72,
-            'page_number': 0,
-            'font': 'Arial',
-            'data': 'sample text',
-            'line_height': 9.075,
+          texts: [{
+            size: 8,
+            x: 61,
+            y: 72,
+            page_number: 0,
+            font: 'Arial',
+            data: 'sample text',
+            line_height: 9.075,
           }],
         };
 
         signnow.document.update({
-          'token': settings.token,
-          'id': settings.documentid,
+          token: settings.token,
+          id: settings.documentid,
           fields,
         }, (err, res) => {
           if (err) {throw err[0].message;}
@@ -78,10 +78,10 @@ const signnow = require('../lib/signnow')({
     describe.skip('.invite()', () => {
       it('should send an invite to sign a document', done => {
         signnow.document.invite({
-          'token': settings.token,
-          'id': settings.documentid,
-          'from': settings.email,
-          'to': settings.testemail,
+          token: settings.token,
+          id: settings.documentid,
+          from: settings.email,
+          to: settings.testemail,
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.have.property('result', 'success');
@@ -93,8 +93,8 @@ const signnow = require('../lib/signnow')({
     describe('.cancelInvite()', () => {
       it('should cancel all invites to a document', done => {
         signnow.document.cancelInvite({
-          'token': settings.token,
-          'id': settings.documentid,
+          token: settings.token,
+          id: settings.documentid,
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.have.property('status', 'success');
@@ -106,8 +106,8 @@ const signnow = require('../lib/signnow')({
     describe('.share()', () => {
       it('should return a link to download the document', done => {
         signnow.document.share({
-          'token': settings.token,
-          'id': settings.documentid,
+          token: settings.token,
+          id: settings.documentid,
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.have.property('link');
@@ -119,9 +119,9 @@ const signnow = require('../lib/signnow')({
     describe.skip('.merge()', () => {
       it('should merge two documents and return the new document name', done => {
         signnow.document.merge({
-          'token': settings.token,
-          'name': 'Mocha Unit Test',
-          'document_ids': [
+          token: settings.token,
+          name: 'Mocha Unit Test',
+          document_ids: [
             'xxx',
             'xxx',
           ],
@@ -137,8 +137,8 @@ const signnow = require('../lib/signnow')({
     describe.skip('.create()', () => {
       it('should upload a file and create a new document', done => {
         signnow.document.create({
-          'token': settings.token,
-          'filepath': __dirname + '/test.doc',
+          token: settings.token,
+          filepath: __dirname + '/test.doc',
         }, (err, res) => {
           if (err) {return done(err[0].message);}
           res.should.have.property('id');
@@ -150,8 +150,8 @@ const signnow = require('../lib/signnow')({
     describe.skip('.extractfields()', () => {
       it('should upload a file containing SignNow field tags', done => {
         signnow.document.extractfields({
-          'token': settings.token,
-          'filepath': __dirname + '/test.doc',
+          token: settings.token,
+          filepath: __dirname + '/test.doc',
         }, (err, res) => {
           if (err) {return done(err[0].message);}
           res.should.have.property('id');
@@ -163,8 +163,8 @@ const signnow = require('../lib/signnow')({
     describe.skip('.history()', () => {
       it('should return the history of a document', done => {
         signnow.document.history({
-          'token': settings.token,
-          'id': settings.documentid,
+          token: settings.token,
+          id: settings.documentid,
         }, (err, res) => {
           if (err) {return done(err[0].message);}
           res.should.be.a('array');
