@@ -125,25 +125,24 @@ snApi.oauth2.requestToken({
         console.log(docList);
         console.log('\n');
 
-        /*
-         * 6. download document
-         * snApi.document.download({
-         *     id: docList[0],
-         *     token,
-         * }, (err6, res6) => {
-         *     console.log('-----------------------------');
-         *     console.log(' 6. snApi.document.download: ');
-         *     console.log('-----------------------------');
-         *     if (err6) {
-         *         console.error(err6);
-         *         console.log('\n');
-         *     } else {
-         *         console.log(res6);
-         *         console.log('\n');
-         *     }
-         * });
-         */
-
+        
+        // 6. download document
+        snApi.document.download({
+          id: docList[0],
+          token,
+        }, (err6, res6) => {
+          console.log('-----------------------------');
+          console.log(' 6. snApi.document.download: ');
+          console.log('-----------------------------');
+          if (err6) {
+            console.error(err6);
+            console.log('\n');
+          } else {
+            console.log(res6);
+            console.log('\n');
+          }
+        });
+    
 
         // 13. Merges Existing Documents
         snApi.document.merge({
@@ -624,21 +623,24 @@ snApi.oauth2.requestToken({
       }
     });
 
-    /*
-     * 8. Upload File & Extract Fields
-     * snApi.document.fieldextract({
-     *   filepath: 'samples/files/pdf-sample.pdf',
-     *   token,
-     * }, (err8, res8) => {
-     *   if (err8) {
-     *     console.error(err8);
-     *   } else {
-     *     console.log('---------------------------------');
-     *     console.log(' 8. snApi.document.fieldextract: ');
-     *     console.log('---------------------------------');
-     *   }
-     * });
-     */
+    
+    // 8. Upload File & Extract Fields
+    snApi.document.fieldextract({
+      filepath: 'samples/files/pdf-sample.pdf',
+      token,
+    }, (err8, res8) => {
+      console.log('---------------------------------');
+      console.log(' 8. snApi.document.fieldextract: ');
+      console.log('---------------------------------');
+      if (err8) {
+        console.error(err8);
+        console.log('\n');
+      } else {
+        console.log(res8);
+        console.log('\n');
+      }
+    });
+     
 
   }
 });
