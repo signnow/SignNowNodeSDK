@@ -1,4 +1,5 @@
 'use strict';
+
 const settings = require('../test-settings').settings;
 const signnow = require('../lib/signnow')({
   credentials: settings.credentials,
@@ -65,7 +66,7 @@ const signnow = require('../lib/signnow')({
         signnow.document.update({
           'token': settings.token,
           'id': settings.documentid,
-          'fields': fields,
+          fields,
         }, (err, res) => {
           if (err) {throw err[0].message;}
           res.should.have.property('id');

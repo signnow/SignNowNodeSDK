@@ -8,7 +8,7 @@ const signnow = require('../lib/signnow')({
 (function() {
 
   // generate random string
-  function randString(x) {
+  function randString (x) {
     let s = '';
     while (s.length < x && x > 0) {
       const r = Math.random();

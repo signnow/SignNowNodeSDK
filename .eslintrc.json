@@ -95,6 +95,10 @@
       }
     ],
     "no-var": "error",
+    "object-shorthand": [
+      "error",
+      "always"
+    ],
     "prefer-arrow-callback": [
       "error",
       {
@@ -110,6 +114,14 @@
     "semi": [
       "error",
       "always"
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "always",
+        "asyncArrow": "always"
+      }
     ],
     "spaced-comment": "error",
     "strict": "error"
