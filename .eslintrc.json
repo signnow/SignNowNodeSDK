@@ -74,7 +74,6 @@
         "afterLineComment": false
       }
     ],
-    "multiline-comment-style": "error",
     "no-buffer-constructor": "error",
     "no-console": "off",
     "no-empty-function": "error",

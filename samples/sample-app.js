@@ -126,24 +126,25 @@ snApi.oauth2.requestToken({
         console.log('\n');
 
         
-        /*
-         * 6. download document
-         * snApi.document.download({
-         *   id: docList[0],
-         *   token,
-         * }, (err6, res6) => {
-         *   console.log('-----------------------------');
-         *   console.log(' 6. snApi.document.download: ');
-         *   console.log('-----------------------------');
-         *   if (err6) {
-         *     console.error(err6);
-         *     console.log('\n');
-         *   } else {
-         *     console.log(res6);
-         *     console.log('\n');
-         *   }
-         * });
-         */
+        // 6. download document
+        snApi.document.download({
+          id: docList[0],
+          token,
+        }, err6 => {
+          console.log('-----------------------------');
+          console.log(' 6. snApi.document.download: ');
+          console.log('-----------------------------');
+          if (err6) {
+            console.error(err6);
+            console.log('\n');
+          } else {
+
+            // TODO: write file onto disk
+            // console.log(res6);
+            console.log('file has been downloaded');
+            console.log('\n');
+          }
+        });
     
 
         // 13. Merges Existing Documents
