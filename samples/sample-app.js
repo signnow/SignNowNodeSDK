@@ -80,7 +80,7 @@ snApi.oauth2.requestToken({
 
         const {
           id,
-        } = res17.folders[6];
+        } = res17.folders.find(folder => folder.name === 'Documents');
 
         // 18. Get a list of documents inside a folder
         id && snApi.folder.documents({
@@ -126,22 +126,24 @@ snApi.oauth2.requestToken({
         console.log('\n');
 
         
-        // 6. download document
-        snApi.document.download({
-          id: docList[0],
-          token,
-        }, (err6, res6) => {
-          console.log('-----------------------------');
-          console.log(' 6. snApi.document.download: ');
-          console.log('-----------------------------');
-          if (err6) {
-            console.error(err6);
-            console.log('\n');
-          } else {
-            console.log(res6);
-            console.log('\n');
-          }
-        });
+        /*
+         * 6. download document
+         * snApi.document.download({
+         *   id: docList[0],
+         *   token,
+         * }, (err6, res6) => {
+         *   console.log('-----------------------------');
+         *   console.log(' 6. snApi.document.download: ');
+         *   console.log('-----------------------------');
+         *   if (err6) {
+         *     console.error(err6);
+         *     console.log('\n');
+         *   } else {
+         *     console.log(res6);
+         *     console.log('\n');
+         *   }
+         * });
+         */
     
 
         // 13. Merges Existing Documents
