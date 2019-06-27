@@ -12,10 +12,8 @@ const signnow = require('../lib/signnow')({
 
     describe('.list()', () => {
       it('should return a list of documents', done => {
-        signnow.document.list({
-          token: settings.token,
-        }, (err, res) => {
-          if (err) {throw err[0].message;}
+        signnow.document.list({ token: settings.token }, (err, res) => {
+          if (err) { throw err[0].message; }
           res.should.be.a('array');
           res[0].should.have.property('document_name');
           done();
@@ -29,7 +27,7 @@ const signnow = require('../lib/signnow')({
           token: settings.token,
           id: settings.documentid,
         }, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           res.should.have.property('document_name');
           done();
         });
@@ -42,7 +40,7 @@ const signnow = require('../lib/signnow')({
           token: settings.token,
           id: settings.documentid,
         }, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           res.should.exist();
           done();
         });
@@ -52,15 +50,17 @@ const signnow = require('../lib/signnow')({
     describe('.update()', () => {
       it('should update a document and return the document id', done => {
         const fields = {
-          texts: [{
-            size: 8,
-            x: 61,
-            y: 72,
-            page_number: 0,
-            font: 'Arial',
-            data: 'sample text',
-            line_height: 9.075,
-          }],
+          texts: [
+            {
+              size: 8,
+              x: 61,
+              y: 72,
+              page_number: 0,
+              font: 'Arial',
+              data: 'sample text',
+              line_height: 9.075,
+            },
+          ],
         };
 
         signnow.document.update({
@@ -68,7 +68,7 @@ const signnow = require('../lib/signnow')({
           id: settings.documentid,
           fields,
         }, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           res.should.have.property('id');
           done();
         });
@@ -83,7 +83,7 @@ const signnow = require('../lib/signnow')({
           from: settings.email,
           to: settings.testemail,
         }, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           res.should.have.property('result', 'success');
           done();
         });
@@ -96,7 +96,7 @@ const signnow = require('../lib/signnow')({
           token: settings.token,
           id: settings.documentid,
         }, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           res.should.have.property('status', 'success');
           done();
         });
@@ -109,7 +109,7 @@ const signnow = require('../lib/signnow')({
           token: settings.token,
           id: settings.documentid,
         }, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           res.should.have.property('link');
           done();
         });
@@ -126,7 +126,7 @@ const signnow = require('../lib/signnow')({
             'xxx',
           ],
         }, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           res.should.have.property('name');
           res.should.have.property('document_ids');
           done();
@@ -138,9 +138,9 @@ const signnow = require('../lib/signnow')({
       it('should upload a file and create a new document', done => {
         signnow.document.create({
           token: settings.token,
-          filepath: __dirname + '/test.doc',
+          filepath: `${__dirname}/test.doc`,
         }, (err, res) => {
-          if (err) {return done(err[0].message);}
+          if (err) { return done(err[0].message); }
           res.should.have.property('id');
           done();
         });
@@ -151,9 +151,9 @@ const signnow = require('../lib/signnow')({
       it('should upload a file containing SignNow field tags', done => {
         signnow.document.extractfields({
           token: settings.token,
-          filepath: __dirname + '/test.doc',
+          filepath: `${__dirname}/test.doc`,
         }, (err, res) => {
-          if (err) {return done(err[0].message);}
+          if (err) { return done(err[0].message); }
           res.should.have.property('id');
           done();
         });
@@ -166,7 +166,7 @@ const signnow = require('../lib/signnow')({
           token: settings.token,
           id: settings.documentid,
         }, (err, res) => {
-          if (err) {return done(err[0].message);}
+          if (err) { return done(err[0].message); }
           res.should.be.a('array');
           res[0].should.have.property('event');
           done();

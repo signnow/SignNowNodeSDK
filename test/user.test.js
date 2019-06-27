@@ -22,15 +22,15 @@ const signnow = require('../lib/signnow')({
     describe('.create()', () => {
       it('should create a new user account', done => {
         const userObj = {
-          first_name: 'Unit' + randString(4),
-          last_name: 'Test' + randString(4),
-          email: 'unit.test' + randString(4) + '@domain.com',
+          first_name: `Unit${randString(4)}`,
+          last_name: `Test${randString(4)}`,
+          email: `unit.test${randString(4)}@domain.com`,
           password: 'MacBookPr0',
         };
 
         // console.log(userObj);
         signnow.user.create(userObj, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           res.should.have.property('id');
           done();
         });
@@ -39,10 +39,8 @@ const signnow = require('../lib/signnow')({
 
     describe('.retrieve()', () => {
       it('should retrieve user resource', done => {
-        signnow.user.retrieve({
-          token: settings.token,
-        }, (err, res) => {
-          if (err) {throw err[0].message;}
+        signnow.user.retrieve({ token: settings.token }, (err, res) => {
+          if (err) { throw err[0].message; }
           res.should.have.property('first_name');
           done();
         });

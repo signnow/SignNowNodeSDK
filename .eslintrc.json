@@ -10,15 +10,40 @@
     "ecmaVersion": 2018
   },
   "rules": {
+    "array-bracket-newline": [
+      "error",
+      {
+        "multiline": true,
+        "minItems": 2
+      }
+    ],
+    "array-bracket-spacing": [
+      "error",
+      "always",
+      {
+        "objectsInArrays": true,
+        "arraysInArrays": true,
+        "singleValue": false
+      }
+    ],
+    "array-element-newline": [
+      "error",
+      {
+        "multiline": true,
+        "minItems": 2
+      }
+    ],
     "arrow-parens": [
       "error",
       "as-needed"
     ],
+    "block-spacing": "error",
     "callback-return": "error",
     "comma-dangle": [
       "error",
       "always-multiline"
     ],
+    "computed-property-spacing": "error",
     "curly": "error",
     "default-case": "error",
     "dot-location": [
@@ -76,11 +101,19 @@
     ],
     "no-buffer-constructor": "error",
     "no-console": "off",
+    "no-duplicate-imports": [
+      "error",
+      {
+        "includeExports": true
+      }
+    ],
     "no-empty-function": "error",
     "no-eval": "error",
+    "no-multi-spaces": "error",
     "no-param-reassign": "error",
     "no-shadow": "error",
     "no-template-curly-in-string": "error",
+    "no-trailing-spaces": "error",
     "no-unused-expressions": [
       "error",
       {
@@ -93,7 +126,42 @@
         "functions": false
       }
     ],
+    "no-useless-concat": "error",
     "no-var": "error",
+    "no-whitespace-before-property": "error",
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": {
+          "multiline": true,
+          "minProperties": 2
+        },
+        "ObjectPattern": {
+          "multiline": true,
+          "minProperties": 2
+        },
+        "ImportDeclaration": {
+          "multiline": true,
+          "minProperties": 2
+        },
+        "ExportDeclaration": "never"
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always",
+      {
+        "arraysInObjects": true,
+        "objectsInObjects": true
+      }
+    ],
+    "object-property-newline": [
+      "error",
+      {
+        "allowMultiplePropertiesPerLine": false,
+        "allowAllPropertiesOnSameLine": false
+      }
+    ],
     "object-shorthand": [
       "error",
       "always"
@@ -106,6 +174,7 @@
       }
     ],
     "prefer-const": "error",
+    "prefer-template": "error",
     "quote-props": [
       "error",
       "as-needed"
@@ -118,6 +187,16 @@
       "error",
       "always"
     ],
+    "semi-spacing": "error",
+    "sort-imports": "error",
+    "space-before-blocks": [
+      "error",
+      {
+        "functions": "always",
+        "keywords": "always",
+        "classes": "always"
+      }
+    ],
     "space-before-function-paren": [
       "error",
       {
@@ -127,6 +206,8 @@
       }
     ],
     "spaced-comment": "error",
-    "strict": "error"
+    "space-in-parens": "error",
+    "strict": "error",
+    "template-curly-spacing": "error"
   }
 }

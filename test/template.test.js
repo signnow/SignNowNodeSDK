@@ -16,7 +16,7 @@ const signnow = require('../lib/signnow')({
           document_id: settings.documentid,
           document_name: 'Mocha Unit Test Template',
         }, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           res.should.have.property('id');
           done();
         });
@@ -30,7 +30,7 @@ const signnow = require('../lib/signnow')({
           document_id: settings.templateid,
           document_name: 'Mocha Unit Test Duplicate Template',
         }, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           res.should.have.property('id');
           done();
         });

@@ -6,7 +6,12 @@
 'use strict';
 const { promisify } = require('util');
 
-const [ clientId, clientSecret, username, password ] = process.argv.slice(2);
+const [
+  clientId,
+  clientSecret,
+  username,
+  password,
+] = process.argv.slice(2);
 
 const snApi = require('../lib/signnow')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
@@ -28,14 +33,10 @@ snApi.oauth2.requestToken({
     console.log(res);
     console.log('\n');
 
-    const {
-      access_token: token,
-    } = res;
+    const { access_token: token } = res;
 
     // 2. verify access token
-    snApi.oauth2.verify({
-      token,
-    }, (err2, res2) => {
+    snApi.oauth2.verify({ token }, (err2, res2) => {
       console.log('-------------------------');
       console.log(' 2. snApi.oauth2.verify: ');
       console.log('-------------------------');
@@ -49,9 +50,7 @@ snApi.oauth2.requestToken({
     });
 
     // 3. get user data
-    snApi.user.retrieve({
-      token,
-    }, (err3, res3) => {
+    snApi.user.retrieve({ token }, (err3, res3) => {
       console.log('-------------------------');
       console.log(' 3. snApi.user.retrieve: ');
       console.log('-------------------------');
@@ -65,9 +64,7 @@ snApi.oauth2.requestToken({
     });
 
     // 17. Get a list of folders
-    snApi.folder.list({
-      token,
-    }, (err17, res17) => {
+    snApi.folder.list({ token }, (err17, res17) => {
       console.log('------------------------');
       console.log(' 17. snApi.folder.list: ');
       console.log('------------------------');
@@ -78,18 +75,12 @@ snApi.oauth2.requestToken({
         console.log(res17);
         console.log('\n');
 
-        const {
-          id,
-        } = res17.folders.find(folder => folder.name === 'Documents');
+        const { id } = res17.folders.find(folder => folder.name === 'Documents');
 
         // 18. Get a list of documents inside a folder
         id && snApi.folder.documents({
-          filter: [{
-            'signing-status': 'signed',
-          } ],
-          sort: {
-            updated: 'desc',
-          },
+          filter: [{ 'signing-status': 'signed' }],
+          sort: { updated: 'desc' },
           id,
           token,
         }, (err18, res18) => {
@@ -110,9 +101,7 @@ snApi.oauth2.requestToken({
     });
 
     // 4. get documnet list
-    snApi.document.list({
-      token,
-    }, (err4, res4) => {
+    snApi.document.list({ token }, (err4, res4) => {
       console.log('-------------------------');
       console.log(' 4. snApi.document.list: ');
       console.log('-------------------------');
@@ -125,7 +114,7 @@ snApi.oauth2.requestToken({
         console.log(docList);
         console.log('\n');
 
-        
+
         // 6. download document
         snApi.document.download({
           id: docList[0],
@@ -145,7 +134,7 @@ snApi.oauth2.requestToken({
             console.log('\n');
           }
         });
-    
+
 
         // 13. Merges Existing Documents
         snApi.document.merge({
@@ -167,9 +156,7 @@ snApi.oauth2.requestToken({
             console.log('\n');
           }
 
-          const {
-            document_id: id,
-          } = res13;
+          const { document_id: id } = res13;
 
           // 14. Get Document History
           id && snApi.document.history({
@@ -212,9 +199,7 @@ snApi.oauth2.requestToken({
         console.log(res7);
         console.log('\n');
 
-        const {
-          id,
-        } = res7;
+        const { id } = res7;
 
         // 10. Create Invite to Sign a Document (without fields)
         id && snApi.document.invite({
@@ -276,9 +261,7 @@ snApi.oauth2.requestToken({
         console.log(res7);
         console.log('\n');
 
-        const {
-          id,
-        } = res7;
+        const { id } = res7;
 
         const fields = {
           client_timestamp: 1527859375,
@@ -335,26 +318,27 @@ snApi.oauth2.requestToken({
               prefilled_text: 'RadioButtonValue2',
               label: 'RadiobuttonLabel',
               required: true,
-              radio: [{
-                value: 'RadioButtonValue1',
-                checked: '0',
-                created: 1527859375,
-                height: 30,
-                width: 30,
-                x: 551,
-                y: 203,
-                page_number: 0,
-              },
-              {
-                value: 'RadioButtonValue2',
-                checked: '0',
-                created: 1527859375,
-                height: 30,
-                width: 30,
-                x: 551,
-                y: 241,
-                page_number: 0,
-              },
+              radio: [
+                {
+                  value: 'RadioButtonValue1',
+                  checked: '0',
+                  created: 1527859375,
+                  height: 30,
+                  width: 30,
+                  x: 551,
+                  y: 203,
+                  page_number: 0,
+                },
+                {
+                  value: 'RadioButtonValue2',
+                  checked: '0',
+                  created: 1527859375,
+                  height: 30,
+                  width: 30,
+                  x: 551,
+                  y: 241,
+                  page_number: 0,
+                },
               ],
               height: 34,
               width: 34,
@@ -396,12 +380,8 @@ snApi.oauth2.requestToken({
               required: true,
               calculation_formula: {
                 operator: 'add',
-                left: {
-                  term: 'TextName',
-                },
-                right: {
-                  term: 'EnumerationName',
-                },
+                left: { term: 'TextName' },
+                right: { term: 'EnumerationName' },
               },
               calculation_precision: 2,
               height: 40,
@@ -440,9 +420,7 @@ snApi.oauth2.requestToken({
             console.log(res9);
             console.log('\n');
 
-            const {
-              id9,
-            } = res9;
+            const { id9 } = res9;
 
             // 5. get document data
             id9 && snApi.document.view({
@@ -463,30 +441,34 @@ snApi.oauth2.requestToken({
 
                 const fieldinvite = {
                   document_id: id9,
-                  to: [{
-                    email: 'russellswift11@yopmail.com',
-                    role_id: roleId,
-                    role: 'Signer 1',
-                    order: 1,
-                    reassign: '0',
-                    decline_by_signature: '0',
-                    reminder: 0,
-                    expiration_days: 30,
-                    authentication_type: 'password',
-                    password: '123456',
-                    subject: 'Auth',
-                    message: 'AUTH message "AUTH"',
-                  }],
+                  to: [
+                    {
+                      email: 'russellswift11@yopmail.com',
+                      role_id: roleId,
+                      role: 'Signer 1',
+                      order: 1,
+                      reassign: '0',
+                      decline_by_signature: '0',
+                      reminder: 0,
+                      expiration_days: 30,
+                      authentication_type: 'password',
+                      password: '123456',
+                      subject: 'Auth',
+                      message: 'AUTH message "AUTH"',
+                    },
+                  ],
                   from: username,
                   cc: [
                     'russellswift3@yopmail.com',
                     'russellswift4@yopmail.com',
                   ],
-                  cc_step: [{
-                    name: 'CC 1',
-                    email: 'russellswift3@yopmail.com',
-                    step: 1,
-                  }],
+                  cc_step: [
+                    {
+                      name: 'CC 1',
+                      email: 'russellswift3@yopmail.com',
+                      step: 1,
+                    },
+                  ],
                   subject: 'test@signnow.com Needs Your Signature',
                   message: 'test@signnow.com invited you to sign "2 signers document"',
                 };
@@ -558,9 +540,7 @@ snApi.oauth2.requestToken({
                         console.log(res15);
                         console.log('\n');
 
-                        const {
-                          id15,
-                        } = res15;
+                        const { id15 } = res15;
 
                         // 16. Duplicate a Template
                         snApi.template.duplicate({
@@ -578,9 +558,7 @@ snApi.oauth2.requestToken({
                             console.log(res16);
                             console.log('\n');
 
-                            const {
-                              id16,
-                            } = res16;
+                            const { id16 } = res16;
 
                             // 19. create signing link
                             snApi.link.create({
@@ -626,7 +604,7 @@ snApi.oauth2.requestToken({
       }
     });
 
-    
+
     // 8. Upload File & Extract Fields
     snApi.document.fieldextract({
       filepath: 'samples/files/pdf-sample.pdf',
@@ -643,7 +621,7 @@ snApi.oauth2.requestToken({
         console.log('\n');
       }
     });
-     
+
 
   }
 });

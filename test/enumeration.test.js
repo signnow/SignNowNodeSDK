@@ -23,7 +23,7 @@ const signnow = require('../lib/signnow')({
           required: true,
           label: 'Clothing Brand',
         }, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           res.should.have.property('id');
           done();
         });
@@ -45,7 +45,7 @@ const signnow = require('../lib/signnow')({
           required: true,
           label: 'Clothing Brand',
         }, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           fieldId = res.id;
           done();
         });
@@ -53,21 +53,22 @@ const signnow = require('../lib/signnow')({
       it('should add enumeration options to the field we just created and return an array', done => {
         signnow.enumerations.addOptions({
           token: settings.token,
-          enumeration_options: [{
-            enumeration_id: fieldId,
-            data: 'Active',
-          },
-          {
-            enumeration_id: fieldId,
-            data: 'Old Navy',
-          },
-          {
-            enumeration_id: fieldId,
-            data: 'Volcom',
-          },
+          enumeration_options: [
+            {
+              enumeration_id: fieldId,
+              data: 'Active',
+            },
+            {
+              enumeration_id: fieldId,
+              data: 'Old Navy',
+            },
+            {
+              enumeration_id: fieldId,
+              data: 'Volcom',
+            },
           ],
         }, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           res.should.be.a('array');
           done();
         });

@@ -11,10 +11,8 @@ const signnow = require('../lib/signnow')({
 
     describe('.list()', () => {
       it('should return a list of folders', done => {
-        signnow.folder.list({
-          token: settings.token,
-        }, (err, res) => {
-          if (err) {throw err[0].message;}
+        signnow.folder.list({ token: settings.token }, (err, res) => {
+          if (err) { throw err[0].message; }
           res.should.be.a('object');
           res.should.have.property('folders');
           done();
@@ -33,7 +31,7 @@ const signnow = require('../lib/signnow')({
           ],
           sort: { 'document-name': 'asc' },
         }, (err, res) => {
-          if (err) {throw err[0].message;}
+          if (err) { throw err[0].message; }
           res.should.be.a('object');
           res.should.have.property('documents');
           done();

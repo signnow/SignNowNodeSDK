@@ -1,5 +1,5 @@
 {
-  "name": "signnow",
+  "name": "@signnow/api-client",
   "description": "SignNow REST Service Wrapper",
   "version": "1.2.0",
   "author": {
