@@ -1,6 +1,8 @@
+'use strict';
+
 const signnow = require('signnow')({
-	credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
-	production: true, // if false then uses eval server
+  credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
+  production: true, // if false then uses eval server
 });
 const sendInvite = signnow.document.invite;
 
@@ -33,7 +35,7 @@ const token = 'YOUR_ACCESS_TOKEN';
  */
 const fieldInvite = {
   document_id: 'DOCUMENT_ID_GOES_HERE',
-  to:[
+  to: [
     {
       email: 'EMAIL_OF_SIGNER_1',
       role: 'Signer 1',

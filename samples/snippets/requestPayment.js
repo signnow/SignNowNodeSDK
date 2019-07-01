@@ -1,6 +1,8 @@
+'use strict';
+
 const signnow = require('signnow')({
-	credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
-	production: true, // if false then uses eval server
+  credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
+  production: true, // if false then uses eval server
 });
 const sendInviteWithPaymentRequest = signnow.document.invite;
 
@@ -30,7 +32,6 @@ const token = 'YOUR_ACCESS_TOKEN';
  * @property {?PaymentRequest} payment_request - payment request settings
  */
 
-
 /**
  * @type {Object}
  * @property {string} document_id
@@ -43,7 +44,7 @@ const token = 'YOUR_ACCESS_TOKEN';
  */
 const fieldInviteWithPaymentRequest = {
   document_id: 'DOCUMENT_ID_GOES_HERE',
-  to:[
+  to: [
     {
       email: 'EMAIL_OF_SIGNER',
       role: 'Signer 1',

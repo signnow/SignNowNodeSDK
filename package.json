@@ -1,27 +1,31 @@
 {
-    "name": "signnow",
-    "description": "SignNow REST Service Wrapper",
-    "version": "1.1.4",
-    "author": {
-        "name": "Michael Fitchett",
-        "email": "mfitchett@barracuda.com"
-    },
-    "keywords": [
-        "cudasign",
-        "signnow",
-        "document",
-        "sign",
-        "online",
-        "electronic",
-        "api"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/signnow/SignNowNodeSDK"
-    },
-    "main": "lib/signnow.js",
-    "devDependencies": {
-        "chai": "*",
-        "mocha": "*"
-    }
+  "name": "@signnow/api-client",
+  "description": "SignNow REST Service Wrapper",
+  "version": "1.2.0",
+  "author": {
+    "name": "SignNow Team",
+    "email": "support@signnow.com"
+  },
+  "keywords": [
+    "signnow",
+    "document",
+    "sign",
+    "online",
+    "electronic",
+    "signature",
+    "api",
+    "client"
+  ],
+  "main": "lib/signnow.js",
+  "repository": "github:signnow/SignNowNodeSDK",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint **/*.js",
+    "lint:fix": "./node_modules/.bin/eslint **/*.js --fix",
+    "prepublish": "npm run lint"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "eslint": "6.0.1",
+    "mocha": "*"
+  }
 }

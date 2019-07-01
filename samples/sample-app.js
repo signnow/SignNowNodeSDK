@@ -1,11 +1,21 @@
-// to run sample app from the project root folder type in your console:
-//> node samples/sample-app <cliend_id> <client_secret> <user_name> <user_password>
+/*
+ * to run sample app from the project root folder type in your console:
+ * > node samples/sample-app <cliend_id> <client_secret> <user_name> <user_password>
+ */
 
-const [ clientId, clientSecret, username, password ] = process.argv.slice(2);
+'use strict';
+const { promisify } = require('util');
+
+const [
+  clientId,
+  clientSecret,
+  username,
+  password,
+] = process.argv.slice(2);
 
 const snApi = require('../lib/signnow')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
-  production: false, //(false uses eval server)
+  production: false, // (false uses eval server)
 });
 
 // 1. get access token (authentication)
@@ -23,14 +33,10 @@ snApi.oauth2.requestToken({
     console.log(res);
     console.log('\n');
 
-    const {
-      access_token: token
-    } = res;
+    const { access_token: token } = res;
 
     // 2. verify access token
-    snApi.oauth2.verify({
-      token,
-    }, (err2, res2) => {
+    snApi.oauth2.verify({ token }, (err2, res2) => {
       console.log('-------------------------');
       console.log(' 2. snApi.oauth2.verify: ');
       console.log('-------------------------');
@@ -44,9 +50,7 @@ snApi.oauth2.requestToken({
     });
 
     // 3. get user data
-    snApi.user.retrieve({
-      token,
-    }, (err3, res3) => {
+    snApi.user.retrieve({ token }, (err3, res3) => {
       console.log('-------------------------');
       console.log(' 3. snApi.user.retrieve: ');
       console.log('-------------------------');
@@ -60,9 +64,7 @@ snApi.oauth2.requestToken({
     });
 
     // 17. Get a list of folders
-    snApi.folder.list({
-      token
-    }, (err17, res17) => {
+    snApi.folder.list({ token }, (err17, res17) => {
       console.log('------------------------');
       console.log(' 17. snApi.folder.list: ');
       console.log('------------------------');
@@ -73,18 +75,12 @@ snApi.oauth2.requestToken({
         console.log(res17);
         console.log('\n');
 
-        const {
-          id
-        } = res17.folders[6];
+        const { id } = res17.folders.find(folder => folder.name === 'Documents');
 
         // 18. Get a list of documents inside a folder
         id && snApi.folder.documents({
-          filter: [{
-            'signing-status': 'signed',
-          }, ],
-          sort: {
-            'updated': 'desc',
-          },
+          filter: [{ 'signing-status': 'signed' }],
+          sort: { updated: 'desc' },
           id,
           token,
         }, (err18, res18) => {
@@ -105,9 +101,7 @@ snApi.oauth2.requestToken({
     });
 
     // 4. get documnet list
-    snApi.document.list({
-      token,
-    }, (err4, res4) => {
+    snApi.document.list({ token }, (err4, res4) => {
       console.log('-------------------------');
       console.log(' 4. snApi.document.list: ');
       console.log('-------------------------');
@@ -115,37 +109,41 @@ snApi.oauth2.requestToken({
         console.error(err4);
         console.log('\n');
       } else {
-        const docList = Array.isArray(res4) && res4.map(doc => doc.id)
+        const docList = Array.isArray(res4) && res4.map(doc => doc.id);
 
         console.log(docList);
         console.log('\n');
 
+
         // 6. download document
-        // snApi.document.download({
-        //     id: docList[0],
-        //     token,
-        // }, (err6, res6) => {
-        //     console.log('-----------------------------');
-        //     console.log(' 6. snApi.document.download: ');
-        //     console.log('-----------------------------');
-        //     if (err6) {
-        //         console.error(err6);
-        //         console.log('\n');
-        //     } else {
-        //         console.log(res6);
-        //         console.log('\n');
-        //     }
-        // });
+        snApi.document.download({
+          id: docList[0],
+          token,
+        }, err6 => {
+          console.log('-----------------------------');
+          console.log(' 6. snApi.document.download: ');
+          console.log('-----------------------------');
+          if (err6) {
+            console.error(err6);
+            console.log('\n');
+          } else {
+
+            // TODO: write file onto disk
+            // console.log(res6);
+            console.log('file has been downloaded');
+            console.log('\n');
+          }
+        });
 
 
         // 13. Merges Existing Documents
         snApi.document.merge({
           token,
-          name: "the merged doc",
+          name: 'the merged doc',
           document_ids: [
             docList[2],
             docList[3],
-          ]
+          ],
         }, (err13, res13) => {
           console.log('---------------------------');
           console.log(' 13. snApi.document.merge: ');
@@ -158,9 +156,7 @@ snApi.oauth2.requestToken({
             console.log('\n');
           }
 
-          const {
-            document_id: id
-          } = res13;
+          const { document_id: id } = res13;
 
           // 14. Get Document History
           id && snApi.document.history({
@@ -203,9 +199,7 @@ snApi.oauth2.requestToken({
         console.log(res7);
         console.log('\n');
 
-        const {
-          id
-        } = res7;
+        const { id } = res7;
 
         // 10. Create Invite to Sign a Document (without fields)
         id && snApi.document.invite({
@@ -227,22 +221,24 @@ snApi.oauth2.requestToken({
             console.log('\n');
           }
 
-          // 11. Cancel an Invite to a Document (without fields)
-          // snApi.document.cancelInvite({
-          //     id,
-          //     token,
-          // }, (err11, res11) => {
-          //     console.log('---------------------------------------------------');
-          //     console.log(' 11. snApi.document.cancelInvite (without fields): ');
-          //     console.log('---------------------------------------------------');
-          //     if (err11) {
-          //         console.error(err11);
-          //         console.log('\n');
-          //     } else {
-          //         console.log(res11);
-          //         console.log('\n');
-          //     }
-          // });
+          /*
+           * 11. Cancel an Invite to a Document (without fields)
+           * snApi.document.cancelInvite({
+           *     id,
+           *     token,
+           * }, (err11, res11) => {
+           *     console.log('---------------------------------------------------');
+           *     console.log(' 11. snApi.document.cancelInvite (without fields): ');
+           *     console.log('---------------------------------------------------');
+           *     if (err11) {
+           *         console.error(err11);
+           *         console.log('\n');
+           *     } else {
+           *         console.log(res11);
+           *         console.log('\n');
+           *     }
+           * });
+           */
 
         });
       }
@@ -265,155 +261,150 @@ snApi.oauth2.requestToken({
         console.log(res7);
         console.log('\n');
 
-        const {
-          id
-        } = res7;
+        const { id } = res7;
 
         const fields = {
-          "client_timestamp": 1527859375,
-          "fields": [
+          client_timestamp: 1527859375,
+          fields: [
             {
-              "page_number": 0,
-              "type": "signature",
-              "name": "FieldName",
-              "role": "Singer 1",
-              "required": true,
-              "height": 40,
-              "width": 50,
-              "x": 217,
-              "y": 32
+              page_number: 0,
+              type: 'signature',
+              name: 'FieldName',
+              role: 'Singer 1',
+              required: true,
+              height: 40,
+              width: 50,
+              x: 217,
+              y: 32,
             },
             {
-              "page_number": 0,
-              "type": "enumeration",
-              "name": "EnumerationName",
-              "role": "Singer 1",
-              "prefilled_text": 123,
-              "label": "EnumerationLabel",
-              "required": true,
-              "custom_defined_option": false,
-              "enumeration_options": [
+              page_number: 0,
+              type: 'enumeration',
+              name: 'EnumerationName',
+              role: 'Singer 1',
+              prefilled_text: 123,
+              label: 'EnumerationLabel',
+              required: true,
+              custom_defined_option: false,
+              enumeration_options: [
                 123,
                 1234,
-                12345
+                12345,
               ],
-              "height": 40,
-              "width": 50,
-              "x": 100,
-              "y": 32
+              height: 40,
+              width: 50,
+              x: 100,
+              y: 32,
             },
             {
-              "page_number": 0,
-              "type": "text",
-              "name": "TextName",
-              "role": "Singer 1",
-              "prefilled_text": 123,
-              "validator_id": "1f9486ae822d30ba3df2cb8e65303ebfb8c803e8",
-              "label": "TextLabel",
-              "required": true,
-              "height": 40,
-              "width": 50,
-              "x": 217,
-              "y": 120
+              page_number: 0,
+              type: 'text',
+              name: 'TextName',
+              role: 'Singer 1',
+              prefilled_text: 123,
+              validator_id: '1f9486ae822d30ba3df2cb8e65303ebfb8c803e8',
+              label: 'TextLabel',
+              required: true,
+              height: 40,
+              width: 50,
+              x: 217,
+              y: 120,
             },
             {
-              "page_number": 0,
-              "type": "radiobutton",
-              "name": "RadiobuttonName",
-              "role": "Singer 1",
-              "prefilled_text": "RadioButtonValue2",
-              "label": "RadiobuttonLabel",
-              "required": true,
-              "radio": [{
-                  "value": "RadioButtonValue1",
-                  "checked": "0",
-                  "created": 1527859375,
-                  "height": 30,
-                  "width": 30,
-                  "x": 551,
-                  "y": 203,
-                  "page_number": 0
+              page_number: 0,
+              type: 'radiobutton',
+              name: 'RadiobuttonName',
+              role: 'Singer 1',
+              prefilled_text: 'RadioButtonValue2',
+              label: 'RadiobuttonLabel',
+              required: true,
+              radio: [
+                {
+                  value: 'RadioButtonValue1',
+                  checked: '0',
+                  created: 1527859375,
+                  height: 30,
+                  width: 30,
+                  x: 551,
+                  y: 203,
+                  page_number: 0,
                 },
                 {
-                  "value": "RadioButtonValue2",
-                  "checked": "0",
-                  "created": 1527859375,
-                  "height": 30,
-                  "width": 30,
-                  "x": 551,
-                  "y": 241,
-                  "page_number": 0
-                }
-              ],
-              "height": 34,
-              "width": 34,
-              "x": 228,
-              "y": 167
-            },
-            {
-              "page_number": 0,
-              "type": "checkbox",
-              "name": "CheckboxName",
-              "role": "Singer 1",
-              "prefilled_text": true,
-              "label": "checkboxLabel",
-              "required": true,
-              "height": 15,
-              "width": 11,
-              "x": 70,
-              "y": 270
-            },
-            {
-              "page_number": 0,
-              "type": "attachment",
-              "name": "AttachmentName",
-              "role": "Singer 1",
-              "label": "AttachmentLabel",
-              "required": true,
-              "height": 40,
-              "width": 35,
-              "x": 70,
-              "y": 350
-            },
-            {
-              "page_number": 0,
-              "type": "text",
-              "name": "CalculatedName",
-              "role": "Singer 1",
-              "formula": "TextName+EnumerationName",
-              "custom_defined_option": false,
-              "required": true,
-              "calculation_formula": {
-                "operator": "add",
-                "left": {
-                  "term": "TextName"
+                  value: 'RadioButtonValue2',
+                  checked: '0',
+                  created: 1527859375,
+                  height: 30,
+                  width: 30,
+                  x: 551,
+                  y: 241,
+                  page_number: 0,
                 },
-                "right": {
-                  "term": "EnumerationName"
-                }
-              },
-              "calculation_precision": 2,
-              "height": 40,
-              "width": 50,
-              "x": 350,
-              "y": 55
+              ],
+              height: 34,
+              width: 34,
+              x: 228,
+              y: 167,
             },
             {
-              "page_number": 0,
-              "type": "initials",
-              "name": "InitialsName",
-              "role": "Singer 1",
-              "label": "InitialsLabel",
-              "required": true,
-              "height": 52,
-              "width": 33,
-              "x": 300,
-              "y": 443
+              page_number: 0,
+              type: 'checkbox',
+              name: 'CheckboxName',
+              role: 'Singer 1',
+              prefilled_text: true,
+              label: 'checkboxLabel',
+              required: true,
+              height: 15,
+              width: 11,
+              x: 70,
+              y: 270,
             },
-          ]
+            {
+              page_number: 0,
+              type: 'attachment',
+              name: 'AttachmentName',
+              role: 'Singer 1',
+              label: 'AttachmentLabel',
+              required: true,
+              height: 40,
+              width: 35,
+              x: 70,
+              y: 350,
+            },
+            {
+              page_number: 0,
+              type: 'text',
+              name: 'CalculatedName',
+              role: 'Singer 1',
+              formula: 'TextName+EnumerationName',
+              custom_defined_option: false,
+              required: true,
+              calculation_formula: {
+                operator: 'add',
+                left: { term: 'TextName' },
+                right: { term: 'EnumerationName' },
+              },
+              calculation_precision: 2,
+              height: 40,
+              width: 50,
+              x: 350,
+              y: 55,
+            },
+            {
+              page_number: 0,
+              type: 'initials',
+              name: 'InitialsName',
+              role: 'Singer 1',
+              label: 'InitialsLabel',
+              required: true,
+              height: 52,
+              width: 33,
+              x: 300,
+              y: 443,
+            },
+          ],
         };
 
-        //9. Update Document (add fields)
+        // 9. Update Document (add fields)
         id && snApi.document.update({
           id,
           fields,
@@ -429,13 +420,11 @@ snApi.oauth2.requestToken({
             console.log(res9);
             console.log('\n');
 
-            const {
-              id
-            } = res9;
+            const { id9 } = res9;
 
             // 5. get document data
-            id && snApi.document.view({
-              id,
+            id9 && snApi.document.view({
+              id: id9,
               token,
             }, (err5, res5) => {
               console.log('-------------------------');
@@ -451,40 +440,44 @@ snApi.oauth2.requestToken({
                 const roleId = res5.roles[0].unique_id;
 
                 const fieldinvite = {
-                  "document_id": id,
-                  "to": [{
-                    "email": "russellswift11@yopmail.com",
-                    "role_id": roleId,
-                    "role": "Signer 1",
-                    "order": 1,
-                    "reassign": "0",
-                    "decline_by_signature": "0",
-                    "reminder": 0,
-                    "expiration_days": 30,
-                    "authentication_type": "password",
-                    "password": "123456",
-                    "subject": "Auth",
-                    "message": "AUTH message \"AUTH\""
-                  }],
-                  "from": username,
-                  "cc": [
-                    "russellswift3@yopmail.com",
-                    "russellswift4@yopmail.com"
+                  document_id: id9,
+                  to: [
+                    {
+                      email: 'russellswift11@yopmail.com',
+                      role_id: roleId,
+                      role: 'Signer 1',
+                      order: 1,
+                      reassign: '0',
+                      decline_by_signature: '0',
+                      reminder: 0,
+                      expiration_days: 30,
+                      authentication_type: 'password',
+                      password: '123456',
+                      subject: 'Auth',
+                      message: 'AUTH message "AUTH"',
+                    },
                   ],
-                  "cc_step": [{
-                    "name": "CC 1",
-                    "email": "russellswift3@yopmail.com",
-                    "step": 1
-                  }],
-                  "subject": "test@signnow.com Needs Your Signature",
-                  "message": "test@signnow.com invited you to sign \"2 signers document\""
+                  from: username,
+                  cc: [
+                    'russellswift3@yopmail.com',
+                    'russellswift4@yopmail.com',
+                  ],
+                  cc_step: [
+                    {
+                      name: 'CC 1',
+                      email: 'russellswift3@yopmail.com',
+                      step: 1,
+                    },
+                  ],
+                  subject: 'test@signnow.com Needs Your Signature',
+                  message: 'test@signnow.com invited you to sign "2 signers document"',
                 };
 
 
                 // 10. Create Invite to Sign a Document (with fields)
-                id && snApi.document.invite({
+                id9 && snApi.document.invite({
                   data: Object.assign({}, fieldinvite),
-                  id,
+                  id: id9,
                   token,
                 }, (err10, res10) => {
                   console.log('------------------------------------------');
@@ -500,7 +493,7 @@ snApi.oauth2.requestToken({
 
                   // 11. Cancel an Invite to a Document (with fields)
                   snApi.document.cancelInvite({
-                    id,
+                    id: id9,
                     token,
                   }, (err11, res11) => {
                     console.log('------------------------------------------------');
@@ -518,7 +511,7 @@ snApi.oauth2.requestToken({
                     // 12. Create a One-time Use Download URL
                     snApi.document.share({
                       token,
-                      id,
+                      id: id9,
                     }, (err12, res12) => {
                       console.log('---------------------------');
                       console.log(' 12. snApi.document.share: ');
@@ -533,12 +526,12 @@ snApi.oauth2.requestToken({
                     });
 
                     // 15. Create a Template
-                    const createTemplate = require('util').promisify(snApi.template.create);
+                    const createTemplate = promisify(snApi.template.create);
                     createTemplate({
-                        document_id: id,
-                        document_name: 'sdk template',
-                        token,
-                      })
+                      document_id: id9,
+                      document_name: 'sdk template',
+                      token,
+                    })
                       .then(res15 => {
                         console.log('----------------------------');
                         console.log(' 15. snApi.template.create: ');
@@ -547,14 +540,12 @@ snApi.oauth2.requestToken({
                         console.log(res15);
                         console.log('\n');
 
-                        const {
-                          id
-                        } = res15;
+                        const { id15 } = res15;
 
                         // 16. Duplicate a Template
                         snApi.template.duplicate({
                           name: 'sdk template duplicated',
-                          id,
+                          id: id15,
                           token,
                         }, (err16, res16) => {
                           console.log('-------------------------------');
@@ -567,13 +558,11 @@ snApi.oauth2.requestToken({
                             console.log(res16);
                             console.log('\n');
 
-                            const {
-                              id
-                            } = res16;
+                            const { id16 } = res16;
 
                             // 19. create signing link
                             snApi.link.create({
-                              document_id: id,
+                              document_id: id16,
                               token,
                             }, (err19, res19) => {
                               console.log('------------------------');
@@ -615,19 +604,24 @@ snApi.oauth2.requestToken({
       }
     });
 
+
     // 8. Upload File & Extract Fields
-    // snApi.document.fieldextract({
-    //   filepath: 'samples/files/pdf-sample.pdf',
-    //   token,
-    // }, (err8, res8) => {
-    //   if (err8) {
-    //     console.error(err8);
-    //   } else {
-    //     console.log('---------------------------------');
-    //     console.log(' 8. snApi.document.fieldextract: ');
-    //     console.log('---------------------------------');
-    //   }
-    // });
+    snApi.document.fieldextract({
+      filepath: 'samples/files/pdf-sample.pdf',
+      token,
+    }, (err8, res8) => {
+      console.log('---------------------------------');
+      console.log(' 8. snApi.document.fieldextract: ');
+      console.log('---------------------------------');
+      if (err8) {
+        console.error(err8);
+        console.log('\n');
+      } else {
+        console.log(res8);
+        console.log('\n');
+      }
+    });
+
 
   }
 });
