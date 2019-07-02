@@ -1,8 +1,8 @@
 {
   "source": "./lib",
-  "excludes": [
-    "signnow.js",
-    "common.js"
+  "includes": [
+    "index.js",
+    "user.js"
   ],
   "destination": "./docs",
   "plugins": [
@@ -46,6 +46,9 @@
           "./docs/css/logo.css"
         ]
       }
+    },
+    {
+      "name": "esdoc-node"
     }
   ]
 }

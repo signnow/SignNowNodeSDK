@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">test/folder.test.js | SignNow API client</title>
+  <title data-ice="title">lib/index.js | SignNow API client</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -43,52 +43,76 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">test/folder.test.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">lib/index.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
-const { settings } = require(&apos;./test.settings&apos;);
-const signnow = require(&apos;../lib&apos;)({
-  credentials: settings.credentials,
-  production: settings.production, // (false by defult)
-});
+const user = require(&apos;./user&apos;);
+const document = require(&apos;./document&apos;);
+const folder = require(&apos;./folder&apos;);
+const webhook = require(&apos;./webhook&apos;);
+const oauth2 = require(&apos;./oauth2&apos;);
+const enumerations = require(&apos;./enumerations&apos;);
+const template = require(&apos;./template&apos;);
+const link = require(&apos;./link&apos;);
+const {
+  setProductionApiHost, setCredentials,
+} = require(&apos;./common&apos;);
 
-(function() {
+/**
+ * Api client initialization params
+ * @typedef {Object} InitParams
+ * @property {string} credentials - base64 encoded basic API credentials
+ * @property {boolean} [production=true] - production/eval API flag. If false uses eval
+ */
 
-  describe(&apos;folder&apos;, () =&gt; {
+/**
+ * Api client features
+ * @typedef {Object} Features
+ * @property {User} user - user related methods
+ */
 
-    describe(&apos;.list()&apos;, () =&gt; {
-      it(&apos;should return a list of folders&apos;, done =&gt; {
-        signnow.folder.list({ token: settings.token }, (err, res) =&gt; {
-          if (err) { throw err[0].message; }
-          res.should.be.a(&apos;object&apos;);
-          res.should.have.property(&apos;folders&apos;);
-          done();
-        });
-      });
-    });
+/**
+ * SignNow API client initialization
+ * @param {InitParams} params - API client initialization params
+ * @return {Features}
+ */
+module.exports = function init ({
+  credentials,
+  production = true,
+}) {
 
-    describe(&apos;.documents()&apos;, () =&gt; {
-      it(&apos;should return all documents inside a folder&apos;, done =&gt; {
-        signnow.folder.documents({
-          token: settings.token,
-          id: settings.folderid,
-          filter: [
-            { &apos;signing-status&apos;: &apos;pending&apos; },
-            { &apos;signing-status&apos;: &apos;waiting-for-me&apos; },
-          ],
-          sort: { &apos;document-name&apos;: &apos;asc&apos; },
-        }, (err, res) =&gt; {
-          if (err) { throw err[0].message; }
-          res.should.be.a(&apos;object&apos;);
-          res.should.have.property(&apos;documents&apos;);
-          done();
-        });
-      });
-    });
+  if (credentials) {
+    setCredentials(credentials);
+  }
 
+  // toggle production
+  if (production) {
+    setProductionApiHost();
+  }
 
-  });
+  return {
+    user,
+    oauth2,
+    document,
+    webhook,
+    folder,
+    enumerations,
+    template,
+    link,
+  };
+};
 
-})();
+/**
+ * Api error object
+ * @typedef {Object} ApiError
+ * @property {number} code - error code
+ * @property {string} message - error message
+ */
+
+/**
+ * Api error response
+ * @typedef {Object} ApiErrorResponse
+ * @property {ApiError[]} errors - collection of error objects
+ */
 </code></pre>
 
 </div>

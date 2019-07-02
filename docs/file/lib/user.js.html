@@ -29,7 +29,17 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  </ul>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/user.js~User.html">User</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-init">init</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ApiError">ApiError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Features">Features</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-InitParams">InitParams</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-UserCreateParams">UserCreateParams</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-UserCreateResponse">UserCreateResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-UserGetParams">UserGetParams</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-UserGetResponse">UserGetResponse</a></span></span></li>
+</ul>
 </div>
 </nav>
 
@@ -40,44 +50,81 @@ const {
   responseHandler, errorHandler, buildRequestOptions,
 } = require(&apos;./common&apos;);
 
-
 /**
  * User Methods
  */
+class User {
 
-// create new user account
-exports.create = function(obj, callback) {
-  const JSONData = JSON.stringify(obj);
+  /**
+   * Create user payload
+   * @typedef {Object} UserCreateParams
+   * @property {string} email - email of new user
+   * @property {string} password - password for new user
+   * @property {string} [first_name] - first name of new user
+   * @property {string} [last_name] - last name of new user
+   */
 
-  const req = https.request(buildRequestOptions({
-    method: &apos;POST&apos;,
-    path: &apos;/user&apos;,
-    authorization: { type: &apos;Basic&apos; },
-    headers: {
-      &apos;Content-Type&apos;: &apos;application/json&apos;,
-      &apos;Content-Length&apos;: Buffer.byteLength(JSONData),
-    },
-  }), responseHandler(callback));
+  /**
+   * Create user response data
+   * @typedef {Object} UserCreateResponse
+   */
 
-  req.on(&apos;error&apos;, errorHandler(callback));
-  req.write(JSONData);
-  req.end();
-};
+  /**
+   * Create new user account
+   * @param {UserCreateParams} data - create user payload
+   * @param {function(err: ApiErrorResponse, res: UserCreateResponse)} [callback] - error first node.js callback
+   */
+  static create (data, callback) {
+    const JSONData = JSON.stringify(data);
 
-// retrieve user account details
-exports.retrieve = function(obj, callback) {
-  const req = https.request(buildRequestOptions({
-    method: &apos;GET&apos;,
-    path: &apos;/user&apos;,
-    authorization: {
-      type: &apos;Bearer&apos;,
-      token: obj.token,
-    },
-  }), responseHandler(callback));
+    const req = https.request(buildRequestOptions({
+      method: &apos;POST&apos;,
+      path: &apos;/user&apos;,
+      authorization: { type: &apos;Basic&apos; },
+      headers: {
+        &apos;Content-Type&apos;: &apos;application/json&apos;,
+        &apos;Content-Length&apos;: Buffer.byteLength(JSONData),
+      },
+    }), responseHandler(callback));
 
-  req.on(&apos;error&apos;, errorHandler(callback));
-  req.end();
-};
+    req.on(&apos;error&apos;, errorHandler(callback));
+    req.write(JSONData);
+    req.end();
+  }
+
+  /**
+   * Get user payload
+   * @typedef {Object} UserGetParams
+   * @property {string} token - your auth token
+   */
+
+  /**
+   * Retrieve user response data
+   * @typedef {Object} UserGetResponse
+   */
+
+  /**
+   * Retrieve user account details
+   * @param {UserGetParams} data - get user payload
+   * @param {function(err: ApiErrorResponse, res: UserGetResponse)} [callback] - error first node.js callback
+   */
+  static retrieve ({ token }, callback) {
+    const req = https.request(buildRequestOptions({
+      method: &apos;GET&apos;,
+      path: &apos;/user&apos;,
+      authorization: {
+        type: &apos;Bearer&apos;,
+        token,
+      },
+    }), responseHandler(callback));
+
+    req.on(&apos;error&apos;, errorHandler(callback));
+    req.end();
+  }
+
+}
+
+module.exports = User;
 </code></pre>
 
 </div>
