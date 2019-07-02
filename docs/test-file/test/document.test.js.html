@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">test/document.test.js | SignNow API client</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-logo.css"><meta name="description" content="SignNow REST Service Wrapper"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="SignNow API client"><meta property="twitter:description" content="SignNow REST Service Wrapper"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.svg" style="width:34px;"></a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/signnow/SignNowNodeSDK"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  </ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">test/document.test.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
+
+const { settings } = require(&apos;./test.settings&apos;);
+const signnow = require(&apos;../lib/signnow&apos;)({
+  credentials: settings.credentials,
+  production: settings.production, // (false by defult)
+});
+
+(function() {
+
+  describe(&apos;document&apos;, () =&gt; {
+
+    describe(&apos;.list()&apos;, () =&gt; {
+      it(&apos;should return a list of documents&apos;, done =&gt; {
+        signnow.document.list({ token: settings.token }, (err, res) =&gt; {
+          if (err) { throw err[0].message; }
+          res.should.be.a(&apos;array&apos;);
+          res[0].should.have.property(&apos;document_name&apos;);
+          done();
+        });
+      }).timeout(10000);
+    });
+
+    describe(&apos;.view()&apos;, () =&gt; {
+      it(&apos;should return a document resource&apos;, done =&gt; {
+        signnow.document.view({
+          token: settings.token,
+          id: settings.documentid,
+        }, (err, res) =&gt; {
+          if (err) { throw err[0].message; }
+          res.should.have.property(&apos;document_name&apos;);
+          done();
+        });
+      });
+    });
+
+    describe(&apos;.download()&apos;, () =&gt; {
+      it(&apos;should download a collapsed document&apos;, done =&gt; {
+        signnow.document.download({
+          token: settings.token,
+          id: settings.documentid,
+        }, (err, res) =&gt; {
+          if (err) { throw err[0].message; }
+          res.should.exist();
+          done();
+        });
+      });
+    });
+
+    describe(&apos;.update()&apos;, () =&gt; {
+      it(&apos;should update a document and return the document id&apos;, done =&gt; {
+        const fields = {
+          texts: [
+            {
+              size: 8,
+              x: 61,
+              y: 72,
+              page_number: 0,
+              font: &apos;Arial&apos;,
+              data: &apos;sample text&apos;,
+              line_height: 9.075,
+            },
+          ],
+        };
+
+        signnow.document.update({
+          token: settings.token,
+          id: settings.documentid,
+          fields,
+        }, (err, res) =&gt; {
+          if (err) { throw err[0].message; }
+          res.should.have.property(&apos;id&apos;);
+          done();
+        });
+      });
+    });
+
+    describe.skip(&apos;.invite()&apos;, () =&gt; {
+      it(&apos;should send an invite to sign a document&apos;, done =&gt; {
+        signnow.document.invite({
+          token: settings.token,
+          id: settings.documentid,
+          from: settings.email,
+          to: settings.testemail,
+        }, (err, res) =&gt; {
+          if (err) { throw err[0].message; }
+          res.should.have.property(&apos;result&apos;, &apos;success&apos;);
+          done();
+        });
+      });
+    });
+
+    describe(&apos;.cancelInvite()&apos;, () =&gt; {
+      it(&apos;should cancel all invites to a document&apos;, done =&gt; {
+        signnow.document.cancelInvite({
+          token: settings.token,
+          id: settings.documentid,
+        }, (err, res) =&gt; {
+          if (err) { throw err[0].message; }
+          res.should.have.property(&apos;status&apos;, &apos;success&apos;);
+          done();
+        });
+      });
+    });
+
+    describe(&apos;.share()&apos;, () =&gt; {
+      it(&apos;should return a link to download the document&apos;, done =&gt; {
+        signnow.document.share({
+          token: settings.token,
+          id: settings.documentid,
+        }, (err, res) =&gt; {
+          if (err) { throw err[0].message; }
+          res.should.have.property(&apos;link&apos;);
+          done();
+        });
+      });
+    });
+
+    describe.skip(&apos;.merge()&apos;, () =&gt; {
+      it(&apos;should merge two documents and return the new document name&apos;, done =&gt; {
+        signnow.document.merge({
+          token: settings.token,
+          name: &apos;Mocha Unit Test&apos;,
+          document_ids: [
+            &apos;xxx&apos;,
+            &apos;xxx&apos;,
+          ],
+        }, (err, res) =&gt; {
+          if (err) { throw err[0].message; }
+          res.should.have.property(&apos;name&apos;);
+          res.should.have.property(&apos;document_ids&apos;);
+          done();
+        });
+      });
+    });
+
+    describe.skip(&apos;.create()&apos;, () =&gt; {
+      it(&apos;should upload a file and create a new document&apos;, done =&gt; {
+        signnow.document.create({
+          token: settings.token,
+          filepath: `${__dirname}/test.doc`,
+        }, (err, res) =&gt; {
+          if (err) { return done(err[0].message); }
+          res.should.have.property(&apos;id&apos;);
+          done();
+        });
+      }).timeout(20000);
+    });
+
+    describe.skip(&apos;.extractfields()&apos;, () =&gt; {
+      it(&apos;should upload a file containing SignNow field tags&apos;, done =&gt; {
+        signnow.document.extractfields({
+          token: settings.token,
+          filepath: `${__dirname}/test.doc`,
+        }, (err, res) =&gt; {
+          if (err) { return done(err[0].message); }
+          res.should.have.property(&apos;id&apos;);
+          done();
+        });
+      }).timeout(20000);
+    });
+
+    describe.skip(&apos;.history()&apos;, () =&gt; {
+      it(&apos;should return the history of a document&apos;, done =&gt; {
+        signnow.document.history({
+          token: settings.token,
+          id: settings.documentid,
+        }, (err, res) =&gt; {
+          if (err) { return done(err[0].message); }
+          res.should.be.a(&apos;array&apos;);
+          res[0].should.have.property(&apos;event&apos;);
+          done();
+        });
+      });
+    });
+
+  });
+
+})();
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

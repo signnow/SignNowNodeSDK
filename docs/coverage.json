@@ -1,19 +1,8 @@
 {
-  "coverage": "16.12%",
-  "expectCount": 62,
-  "actualCount": 10,
+  "coverage": "17.39%",
+  "expectCount": 46,
+  "actualCount": 8,
   "files": {
-    "lib/common.js": {
-      "expectCount": 6,
-      "actualCount": 1,
-      "undocumentLines": [
-        14,
-        43,
-        49,
-        69,
-        73
-      ]
-    },
     "lib/document.js": {
       "expectCount": 18,
       "actualCount": 1,
@@ -71,21 +60,6 @@
         3,
         4,
         33
-      ]
-    },
-    "lib/signnow.js": {
-      "expectCount": 10,
-      "actualCount": 1,
-      "undocumentLines": [
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
       ]
     },
     "lib/template.js": {

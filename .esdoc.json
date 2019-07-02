@@ -1,9 +1,51 @@
 {
   "source": "./lib",
+  "excludes": [
+    "signnow.js",
+    "common.js"
+  ],
   "destination": "./docs",
   "plugins": [
     {
-      "name": "esdoc-standard-plugin"
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "lint": {
+          "enable": true
+        },
+        "coverage": {
+          "enable": true
+        },
+        "typeInference": {
+          "enable": true
+        },
+        "brand": {
+          "logo": "./docs/image/logo.svg",
+          "title": "SignNow API client",
+          "description": "SignNow REST Service Wrapper",
+          "repository": "https://github.com/signnow/SignNowNodeSDK",
+          "site": "https://www.signnow.com/",
+          "author": "SignNow Team"
+        },
+        "test": {
+          "source": "./test/",
+          "interfaces": [
+            "describe",
+            "it"
+          ],
+          "includes": [
+            "test\\.js$"
+          ]
+        }
+      }
+    },
+    {
+      "name": "esdoc-inject-style-plugin",
+      "option": {
+        "enable": true,
+        "styles": [
+          "./docs/css/logo.css"
+        ]
+      }
     }
   ]
 }

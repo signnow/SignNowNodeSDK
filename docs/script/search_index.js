@@ -1,5 +1,155 @@
 window.esdocSearchIndex = [
   [
+    "",
+    "test-file/test/document.test.js.html#lineNumber11",
+    "document",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber93",
+    "document .cancelInvite()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber94",
+    "document .cancelInvite() should cancel all invites to a document",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber37",
+    "document .download()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber38",
+    "document .download() should download a collapsed document",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber13",
+    "document .list()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber106",
+    "document .share()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber107",
+    "document .share() should return a link to download the document",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber50",
+    "document .update()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber51",
+    "document .update() should update a document and return the document id",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber24",
+    "document .view()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber25",
+    "document .view() should return a document resource",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber120",
+    "document should merge two documents and return the new document name",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber164",
+    "document should return the history of a document",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/document.test.js.html#lineNumber79",
+    "document should send an invite to sign a document",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/enumeration.test.js.html#lineNumber10",
+    "enumerations",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/enumeration.test.js.html#lineNumber12",
+    "enumerations .addField()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/enumeration.test.js.html#lineNumber13",
+    "enumerations .addField() should add an enumeration field(drop down) to a document and return the document id",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/enumeration.test.js.html#lineNumber33",
+    "enumerations .addOptions()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/enumeration.test.js.html#lineNumber53",
+    "enumerations .addOptions() should add enumeration options to the field we just created and return an array",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/folder.test.js.html#lineNumber10",
+    "folder",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/folder.test.js.html#lineNumber23",
+    "folder .documents()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/folder.test.js.html#lineNumber24",
+    "folder .documents() should return all documents inside a folder",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/folder.test.js.html#lineNumber12",
+    "folder .list()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/folder.test.js.html#lineNumber13",
+    "folder .list() should return a list of folders",
+    "test"
+  ],
+  [
     "lib/.external-ecmascript.js~array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
     "lib/.external-ecmascript.js~Array",
@@ -282,12 +432,6 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "lib/common.js",
-    "file/lib/common.js.html",
-    "lib/common.js",
-    "file"
-  ],
-  [
     "lib/document.js",
     "file/lib/document.js.html",
     "lib/document.js",
@@ -318,12 +462,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "lib/signnow.js",
-    "file/lib/signnow.js.html",
-    "lib/signnow.js",
-    "file"
-  ],
-  [
     "lib/template.js",
     "file/lib/template.js.html",
     "lib/template.js",
@@ -340,5 +478,179 @@ window.esdocSearchIndex = [
     "file/lib/webhook.js.html",
     "lib/webhook.js",
     "file"
+  ],
+  [
+    "",
+    "test-file/test/link.test.js.html#lineNumber10",
+    "link",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/link.test.js.html#lineNumber12",
+    "link .create()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/link.test.js.html#lineNumber13",
+    "link .create() should create a new signing link and return two urls",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/oauth.test.js.html#lineNumber10",
+    "oauth2",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/oauth.test.js.html#lineNumber12",
+    "oauth2 .requestToken()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/oauth.test.js.html#lineNumber13",
+    "oauth2 .requestToken() should return an access token",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/oauth.test.js.html#lineNumber25",
+    "oauth2 .verify()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/oauth.test.js.html#lineNumber26",
+    "oauth2 .verify() should return a verified access token",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/template.test.js.html#lineNumber10",
+    "template",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/template.test.js.html#lineNumber13",
+    "template should create a template by flattening an existing document and return the template id",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/template.test.js.html#lineNumber27",
+    "template should create a template by flattening an existing document and return the template id",
+    "test"
+  ],
+  [
+    "test/document.test.js",
+    "test-file/test/document.test.js.html",
+    "test/document.test.js",
+    "testFile"
+  ],
+  [
+    "test/enumeration.test.js",
+    "test-file/test/enumeration.test.js.html",
+    "test/enumeration.test.js",
+    "testFile"
+  ],
+  [
+    "test/folder.test.js",
+    "test-file/test/folder.test.js.html",
+    "test/folder.test.js",
+    "testFile"
+  ],
+  [
+    "test/link.test.js",
+    "test-file/test/link.test.js.html",
+    "test/link.test.js",
+    "testFile"
+  ],
+  [
+    "test/oauth.test.js",
+    "test-file/test/oauth.test.js.html",
+    "test/oauth.test.js",
+    "testFile"
+  ],
+  [
+    "test/template.test.js",
+    "test-file/test/template.test.js.html",
+    "test/template.test.js",
+    "testFile"
+  ],
+  [
+    "test/user.test.js",
+    "test-file/test/user.test.js.html",
+    "test/user.test.js",
+    "testFile"
+  ],
+  [
+    "test/webhook.test.js",
+    "test-file/test/webhook.test.js.html",
+    "test/webhook.test.js",
+    "testFile"
+  ],
+  [
+    "",
+    "test-file/test/user.test.js.html#lineNumber20",
+    "user",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/user.test.js.html#lineNumber22",
+    "user .create()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/user.test.js.html#lineNumber23",
+    "user .create() should create a new user account",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/user.test.js.html#lineNumber40",
+    "user .retrieve()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/user.test.js.html#lineNumber41",
+    "user .retrieve() should retrieve user resource",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/webhook.test.js.html#lineNumber10",
+    "webhook",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/webhook.test.js.html#lineNumber23",
+    "webhook .create()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/webhook.test.js.html#lineNumber24",
+    "webhook .create() should create a new webhook and return an id",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/webhook.test.js.html#lineNumber12",
+    "webhook .list()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/webhook.test.js.html#lineNumber13",
+    "webhook .list() should return a list of webhooks",
+    "test"
   ]
 ]

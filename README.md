@@ -4,7 +4,11 @@ SignNow REST Service Wrapper
 
 ### Updates
 
-12/3/2015 - The eval server has been changed to **api-eval.signnow.com**. You will need to create a new account for **api-eval.signnow.com**. [https://eval.signnow.com](https://eval.signnow.com), [https://app-eval.signnow.com](https://app-eval.signnow.com)
+12/3/2015 - The eval server has been changed to **api-eval.signnow.com**. You will need to create a new account for **api-eval.signnow.com**.
+
+Demo environment entry page: [https://eval.signnow.com](https://eval.signnow.com).
+
+Demo application: [https://app-eval.signnow.com](https://app-eval.signnow.com).
 
 ### About SignNow
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">lib/template.js | SignNow API client</title>
+  <title data-ice="title">test/folder.test.js | SignNow API client</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -33,71 +33,52 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">lib/template.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">test/folder.test.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
-const https = require(&apos;https&apos;);
-const {
-  responseHandler, errorHandler, buildRequestOptions,
-} = require(&apos;./common&apos;);
+const { settings } = require(&apos;./test.settings&apos;);
+const signnow = require(&apos;../lib/signnow&apos;)({
+  credentials: settings.credentials,
+  production: settings.production, // (false by defult)
+});
+
+(function() {
+
+  describe(&apos;folder&apos;, () =&gt; {
+
+    describe(&apos;.list()&apos;, () =&gt; {
+      it(&apos;should return a list of folders&apos;, done =&gt; {
+        signnow.folder.list({ token: settings.token }, (err, res) =&gt; {
+          if (err) { throw err[0].message; }
+          res.should.be.a(&apos;object&apos;);
+          res.should.have.property(&apos;folders&apos;);
+          done();
+        });
+      });
+    });
+
+    describe(&apos;.documents()&apos;, () =&gt; {
+      it(&apos;should return all documents inside a folder&apos;, done =&gt; {
+        signnow.folder.documents({
+          token: settings.token,
+          id: settings.folderid,
+          filter: [
+            { &apos;signing-status&apos;: &apos;pending&apos; },
+            { &apos;signing-status&apos;: &apos;waiting-for-me&apos; },
+          ],
+          sort: { &apos;document-name&apos;: &apos;asc&apos; },
+        }, (err, res) =&gt; {
+          if (err) { throw err[0].message; }
+          res.should.be.a(&apos;object&apos;);
+          res.should.have.property(&apos;documents&apos;);
+          done();
+        });
+      });
+    });
 
 
-/**
- * Template Methods
- */
-
-// create a template by flattening an existing document.
-exports.create = function(obj, callback) {
-  const JSONData = JSON.stringify({
-    document_id: obj.document_id,
-    document_name: obj.document_name,
   });
 
-  const req = https.request(buildRequestOptions({
-    method: &apos;POST&apos;,
-    path: &apos;/template&apos;,
-    authorization: {
-      type: &apos;Bearer&apos;,
-      token: obj.token,
-    },
-    headers: {
-      &apos;Content-Type&apos;: &apos;application/json&apos;,
-      &apos;Content-Length&apos;: Buffer.byteLength(JSONData),
-    },
-  }), responseHandler(callback));
-
-  req.on(&apos;error&apos;, errorHandler(callback));
-  req.write(JSONData);
-  req.end();
-};
-
-/*
- * create a new document by copying a flattened document. If a name is not supplied
- * than it will default to the original document&apos;s name.
- */
-
-exports.duplicate = function(obj, callback) {
-  const JSONData = JSON.stringify({
-    template_id: obj.id,
-    document_name: obj.name,
-  });
-
-  const req = https.request(buildRequestOptions({
-    method: &apos;POST&apos;,
-    path: `/template/${obj.id}/copy`,
-    authorization: {
-      type: &apos;Bearer&apos;,
-      token: obj.token,
-    },
-    headers: {
-      &apos;Content-Type&apos;: &apos;application/json&apos;,
-      &apos;Content-Length&apos;: Buffer.byteLength(JSONData),
-    },
-  }), responseHandler(callback));
-
-  req.on(&apos;error&apos;, errorHandler(callback));
-  req.write(JSONData);
-  req.end();
-};
+})();
 </code></pre>
 
 </div>
