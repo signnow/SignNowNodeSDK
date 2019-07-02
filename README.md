@@ -12,7 +12,7 @@ Demo application: [https://app-eval.signnow.com](https://app-eval.signnow.com).
 
 ### About SignNow
 
-SignNow by airSlate Inc. is an eSigning platform that offers a cloud version, a physical appliance and also a virtual appliance.
+SignNow is a powerful web-based e-signature solution that streamlines the signing process and overall document flow for businesses of any size. SignNow offers SaaS as well as public and private cloud deployment options using the same underlying API. With SignNow you can easily sign, share and manage documents in compliance with international data laws and industry-specific regulations. SignNow enables you to collect signatures from partners, employees and customers from any device within minutes.
 
 ### API Contact Information
 
@@ -25,6 +25,10 @@ See additional contact information at the bottom.
 ```bash
 npm install @signnow/api-client
 ```
+
+## Documentation
+
+See api reference in our [Documentation](https://signnow.github.io/SignNowNodeSDK/).
 
 ## Examples
 
