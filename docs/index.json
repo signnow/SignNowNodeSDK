@@ -3,7 +3,7 @@
     "__docId__": 0,
     "kind": "file",
     "name": "lib/index.js",
-    "content": "'use strict';\nconst user = require('./user');\nconst document = require('./document');\nconst folder = require('./folder');\nconst webhook = require('./webhook');\nconst oauth2 = require('./oauth2');\nconst enumerations = require('./enumerations');\nconst template = require('./template');\nconst link = require('./link');\nconst {\n  setProductionApiHost, setCredentials,\n} = require('./common');\n\n/**\n * Api client initialization params\n * @typedef {Object} InitParams\n * @property {string} credentials - base64 encoded basic API credentials\n * @property {boolean} [production=true] - production/eval API flag. If false uses eval\n */\n\n/**\n * Api client features\n * @typedef {Object} Features\n * @property {User} user - user related methods\n */\n\n/**\n * SignNow API client initialization\n * @param {InitParams} params - API client initialization params\n * @return {Features}\n */\nmodule.exports = function init ({\n  credentials,\n  production = true,\n}) {\n\n  if (credentials) {\n    setCredentials(credentials);\n  }\n\n  // toggle production\n  if (production) {\n    setProductionApiHost();\n  }\n\n  return {\n    user,\n    oauth2,\n    document,\n    webhook,\n    folder,\n    enumerations,\n    template,\n    link,\n  };\n};\n\n/**\n * Api error object\n * @typedef {Object} ApiError\n * @property {number} code - error code\n * @property {string} message - error message\n */\n\n/**\n * Api error response\n * @typedef {Object} ApiErrorResponse\n * @property {ApiError[]} errors - collection of error objects\n */\n",
+    "content": "'use strict';\nconst user = require('./user');\nconst document = require('./document');\nconst folder = require('./folder');\nconst webhook = require('./webhook');\nconst oauth2 = require('./oauth2');\nconst enumerations = require('./enumerations');\nconst template = require('./template');\nconst link = require('./link');\nconst {\n  setProductionApiHost, setCredentials,\n} = require('./common');\n\n/**\n * Api client initialization params\n * @typedef {Object} InitParams\n * @property {string} credentials - base64 encoded basic API credentials\n * @property {boolean} [production=true] - production/eval API flag. If false uses eval\n */\n\n/**\n * Api client features\n * @typedef {Object} Features\n * @property {User} user - user related methods\n */\n\n/**\n * SignNow API client initialization\n * @param {InitParams} params - API client initialization params\n * @return {Features}\n */\nmodule.exports = function init ({\n  credentials,\n  production = true,\n}) {\n\n  if (credentials) {\n    setCredentials(credentials);\n  }\n\n  // toggle production\n  if (production) {\n    setProductionApiHost();\n  }\n\n  return {\n    user,\n    oauth2,\n    document,\n    webhook,\n    folder,\n    enumerations,\n    template,\n    link,\n  };\n};\n\n/**\n * Api error object\n * @typedef {Object} ApiError\n * @property {number} code - error code\n * @property {string} message - error message\n */\n\n/**\n * Api error response\n * @typedef {?(ApiError[]|ApiError|Error|string)} ApiErrorResponse\n */\n",
     "static": true,
     "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/index.js",
     "access": "public",
@@ -164,21 +164,12 @@
     "longname": "lib/index.js~ApiErrorResponse",
     "access": "public",
     "description": "Api error response",
-    "properties": [
-      {
-        "nullable": null,
-        "types": [
-          "ApiError[]"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "errors",
-        "description": "collection of error objects"
-      }
-    ],
     "type": {
       "types": [
-        "Object"
+        "ApiError[]",
+        "ApiError",
+        "Error",
+        "string"
       ],
       "optional": false,
       "name": "ApiErrorResponse"
@@ -188,7 +179,7 @@
     "__docId__": 6,
     "kind": "file",
     "name": "lib/user.js",
-    "content": "'use strict';\nconst https = require('https');\nconst {\n  responseHandler, errorHandler, buildRequestOptions,\n} = require('./common');\n\n/**\n * User Methods\n */\nclass User {\n\n  /**\n   * Create user payload\n   * @typedef {Object} UserCreateParams\n   * @property {string} email - email of new user\n   * @property {string} password - password for new user\n   * @property {string} [first_name] - first name of new user\n   * @property {string} [last_name] - last name of new user\n   */\n\n  /**\n   * Create user response data\n   * @typedef {Object} UserCreateResponse\n   */\n\n  /**\n   * Create new user account\n   * @param {UserCreateParams} data - create user payload\n   * @param {function(err: ApiErrorResponse, res: UserCreateResponse)} [callback] - error first node.js callback\n   */\n  static create (data, callback) {\n    const JSONData = JSON.stringify(data);\n\n    const req = https.request(buildRequestOptions({\n      method: 'POST',\n      path: '/user',\n      authorization: { type: 'Basic' },\n      headers: {\n        'Content-Type': 'application/json',\n        'Content-Length': Buffer.byteLength(JSONData),\n      },\n    }), responseHandler(callback));\n\n    req.on('error', errorHandler(callback));\n    req.write(JSONData);\n    req.end();\n  }\n\n  /**\n   * Get user payload\n   * @typedef {Object} UserGetParams\n   * @property {string} token - your auth token\n   */\n\n  /**\n   * Retrieve user response data\n   * @typedef {Object} UserGetResponse\n   */\n\n  /**\n   * Retrieve user account details\n   * @param {UserGetParams} data - get user payload\n   * @param {function(err: ApiErrorResponse, res: UserGetResponse)} [callback] - error first node.js callback\n   */\n  static retrieve ({ token }, callback) {\n    const req = https.request(buildRequestOptions({\n      method: 'GET',\n      path: '/user',\n      authorization: {\n        type: 'Bearer',\n        token,\n      },\n    }), responseHandler(callback));\n\n    req.on('error', errorHandler(callback));\n    req.end();\n  }\n\n}\n\nmodule.exports = User;\n",
+    "content": "'use strict';\nconst https = require('https');\nconst {\n  responseHandler, errorHandler, buildRequestOptions,\n} = require('./common');\n\n/**\n * User methods\n */\nclass User {\n\n  /**\n   * Create user payload\n   * @typedef {Object} UserCreateParams\n   * @property {string} email - email of new user\n   * @property {string} password - password for new user\n   * @property {string} [first_name] - first name of new user\n   * @property {string} [last_name] - last name of new user\n   */\n\n  /**\n   * Create user response data\n   * @typedef {Object} UserCreateResponse\n   */\n\n  /**\n   * Create new user account\n   * @param {UserCreateParams} data - create user payload\n   * @param {function(err: ApiErrorResponse, res: UserCreateResponse)} [callback] - error first node.js callback\n   */\n  static create (data, callback) {\n    const JSONData = JSON.stringify(data);\n\n    https\n      .request(buildRequestOptions({\n        method: 'POST',\n        path: '/user',\n        authorization: { type: 'Basic' },\n        headers: {\n          'Content-Type': 'application/json',\n          'Content-Length': Buffer.byteLength(JSONData),\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback))\n      .write(JSONData)\n      .end();\n  }\n\n  /**\n   * Get user payload\n   * @typedef {Object} UserGetParams\n   * @property {string} token - your auth token\n   */\n\n  /**\n   * Retrieve user response data\n   * @typedef {Object} UserGetResponse\n   */\n\n  /**\n   * Retrieve user account details\n   * @param {UserGetParams} data - get user payload\n   * @param {function(err: ApiErrorResponse, res: UserGetResponse)} [callback] - error first node.js callback\n   */\n  static retrieve ({ token }, callback) {\n    https\n      .request(buildRequestOptions({\n        method: 'GET',\n        path: '/user',\n        authorization: {\n          type: 'Bearer',\n          token,\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback))\n      .end();\n  }\n\n}\n\nmodule.exports = User;\n",
     "static": true,
     "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/user.js",
     "access": "public",
@@ -206,7 +197,7 @@
     "export": true,
     "importPath": "@signnow/api-client/lib/user.js",
     "importStyle": "User",
-    "description": "User Methods",
+    "description": "User methods",
     "lineNumber": 10,
     "interface": false
   },

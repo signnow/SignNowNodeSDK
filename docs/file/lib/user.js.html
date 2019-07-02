@@ -51,7 +51,7 @@ const {
 } = require(&apos;./common&apos;);
 
 /**
- * User Methods
+ * User methods
  */
 class User {
 
@@ -77,19 +77,19 @@ class User {
   static create (data, callback) {
     const JSONData = JSON.stringify(data);
 
-    const req = https.request(buildRequestOptions({
-      method: &apos;POST&apos;,
-      path: &apos;/user&apos;,
-      authorization: { type: &apos;Basic&apos; },
-      headers: {
-        &apos;Content-Type&apos;: &apos;application/json&apos;,
-        &apos;Content-Length&apos;: Buffer.byteLength(JSONData),
-      },
-    }), responseHandler(callback));
-
-    req.on(&apos;error&apos;, errorHandler(callback));
-    req.write(JSONData);
-    req.end();
+    https
+      .request(buildRequestOptions({
+        method: &apos;POST&apos;,
+        path: &apos;/user&apos;,
+        authorization: { type: &apos;Basic&apos; },
+        headers: {
+          &apos;Content-Type&apos;: &apos;application/json&apos;,
+          &apos;Content-Length&apos;: Buffer.byteLength(JSONData),
+        },
+      }), responseHandler(callback))
+      .on(&apos;error&apos;, errorHandler(callback))
+      .write(JSONData)
+      .end();
   }
 
   /**
@@ -109,17 +109,17 @@ class User {
    * @param {function(err: ApiErrorResponse, res: UserGetResponse)} [callback] - error first node.js callback
    */
   static retrieve ({ token }, callback) {
-    const req = https.request(buildRequestOptions({
-      method: &apos;GET&apos;,
-      path: &apos;/user&apos;,
-      authorization: {
-        type: &apos;Bearer&apos;,
-        token,
-      },
-    }), responseHandler(callback));
-
-    req.on(&apos;error&apos;, errorHandler(callback));
-    req.end();
+    https
+      .request(buildRequestOptions({
+        method: &apos;GET&apos;,
+        path: &apos;/user&apos;,
+        authorization: {
+          type: &apos;Bearer&apos;,
+          token,
+        },
+      }), responseHandler(callback))
+      .on(&apos;error&apos;, errorHandler(callback))
+      .end();
   }
 
 }

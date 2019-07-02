@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 1433,
+  "end": 1399,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 70,
+      "line": 69,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 1433,
+    "end": 1399,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 70,
+        "line": 69,
         "column": 0
       }
     },
@@ -1855,16 +1855,16 @@
           },
           {
             "type": "CommentBlock",
-            "value": "*\n * Api error response\n * @typedef {Object} ApiErrorResponse\n * @property {ApiError[]} errors - collection of error objects\n ",
+            "value": "*\n * Api error response\n * @typedef {?(ApiError[]|ApiError|Error|string)} ApiErrorResponse\n ",
             "start": 1302,
-            "end": 1432,
+            "end": 1398,
             "loc": {
               "start": {
                 "line": 65,
                 "column": 0
               },
               "end": {
-                "line": 69,
+                "line": 68,
                 "column": 3
               }
             }
@@ -1993,16 +1993,16 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Api error response\n * @typedef {Object} ApiErrorResponse\n * @property {ApiError[]} errors - collection of error objects\n ",
+      "value": "*\n * Api error response\n * @typedef {?(ApiError[]|ApiError|Error|string)} ApiErrorResponse\n ",
       "start": 1302,
-      "end": 1432,
+      "end": 1398,
       "loc": {
         "start": {
           "line": 65,
           "column": 0
         },
         "end": {
-          "line": 69,
+          "line": 68,
           "column": 3
         }
       }
@@ -4971,16 +4971,16 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Api error response\n * @typedef {Object} ApiErrorResponse\n * @property {ApiError[]} errors - collection of error objects\n ",
+      "value": "*\n * Api error response\n * @typedef {?(ApiError[]|ApiError|Error|string)} ApiErrorResponse\n ",
       "start": 1302,
-      "end": 1432,
+      "end": 1398,
       "loc": {
         "start": {
           "line": 65,
           "column": 0
         },
         "end": {
-          "line": 69,
+          "line": 68,
           "column": 3
         }
       }
@@ -4998,15 +4998,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1433,
-      "end": 1433,
+      "start": 1399,
+      "end": 1399,
       "loc": {
         "start": {
-          "line": 70,
+          "line": 69,
           "column": 0
         },
         "end": {
-          "line": 70,
+          "line": 69,
           "column": 0
         }
       }
