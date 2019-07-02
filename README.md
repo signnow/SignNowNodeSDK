@@ -1,372 +1,320 @@
-SignNow
-===========
+# SignNow API client v1.2.0
+
 SignNow REST Service Wrapper
 
-#### Updates
+### Updates
 
-12/3/2015 - The eval server has been changed to api-eval.signnow.com. You will need to create a new account for api-eval.signnow.com. [https://eval.signnow.com](https://eval.signnow.com).
+12/3/2015 - The eval server has been changed to **api-eval.signnow.com**. You will need to create a new account for **api-eval.signnow.com**. [https://eval.signnow.com](https://eval.signnow.com), [https://app-eval.signnow.com](https://app-eval.signnow.com)
 
-#### About SignNow
-SignNow by Barracuda is an eSigning platform that offers a cloud version, a physical appliance and also a virtual appliance. Backed by Barracuda’s industry-leading security infrastructure, SignNow is fully compliant with eSigning laws and encrypts all data in transit. Users can share, manage and access their documents with confidence. It’s never been easier to get legally binding signatures from customers, partners, and employees - in seconds using any device.
+### About SignNow
 
-#### API Contact Information
+SignNow by airSlate Inc. is an eSigning platform that offers a cloud version, a physical appliance and also a virtual appliance.
+
+### API Contact Information
+
 If you have questions about the SignNow API, please visit [https://help.signnow.com/docs](https://help.signnow.com/docs) or email [api@signnow.com](mailto:api@signnow.com).
 
 See additional contact information at the bottom.
 
-Installation
-==============
+## Installation
 
-    $ npm install signnow
+```bash
+npm install @signnow/api-client
+```
 
-
-Examples
-==========
+## Examples
 
 To run the examples you will need an API key. You can get one here [https://www.signnow.com/api](https://www.signnow.com/api). For a full list of accepted parameters, refer to the SignNow REST Endpoints API guide: [https://help.signnow.com/docs](https://help.signnow.com/docs).
 
-Every resource is accessed via your SignNow instance:
+Every resource is accessed via your api client instance:
 
 ```javascript
-var signnow = require("signnow")({
-	credentials: "ENCODED_CLIENT_CREDENTIALS",
-	production: false //(false uses eval server)
+const api = require('@signnow/api-client')({
+  credentials: 'ENCODED_CLIENT_CREDENTIALS',
+  production: false, // if false uses eval server
 });
 ```
+
 Every resource returns two parameters. The first param contains any errors and the second contains the results.
 
-# User
+### User
 
-## Create a User
+#### Create a User
+
 ```javascript
-signnow.user.create({
-	"first_name": "John",
-	"last_name": "Wayne",
-	"email":"john@domain.com",
-	"password":"yourpwd"
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.user.create({
+  first_name: 'John',
+  last_name: 'Wayne',
+  email: 'john@domain.com',
+  password: 'yourpwd',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Retrieve User Information
+#### Retrieve User Information
+
 ```javascript
-signnow.user.retrieve({token:"your auth token"}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.user.retrieve({
+  token: 'your auth token',
+}, (err, res) => {
+  // handle error or process response data
 }
 });
 ```
-# OAuth 2.0
 
-## Request Access Token
+### OAuth 2.0
+
+#### Request Access Token
+
 ```javascript
-signnow.oauth2.requestToken({
-	"username": "account username",
-	"password": "account password"
+api.oauth2.requestToken({
+  username: 'username',
+  password: 'password',
 }, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+  // handle error or process response data
 });
 ```
 
-## Verify an Access Token
+#### Verify an Access Token
+
 ```javascript
-signnow.oauth2.verify({
-	token: "your auth token"
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.oauth2.verify({
+  token: 'your auth token',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-# Document
+### Document
 
-## Retrieve a List of the User’s Documents
+#### Retrieve a List of the User’s Documents
+
 ```javascript
-signnow.document.list({token:"your auth token"}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.document.list({
+  token: 'your auth token',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Retrieve a Document Resource
+#### Retrieve a Document Resource
+
 ```javascript
-signnow.document.view({
-	token: "your auth token",
-	id: "document id"
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.document.view({
+  token: 'your auth token',
+  id: 'document id',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Download a Collapsed Document
+#### Download a Collapsed Document
+
 ```javascript
-signnow.document.download({
-	token: "your auth token",
-	id: "document id"
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.document.download({
+  token: 'your auth token',
+  id: 'document id',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Upload Document
+#### Upload Document
+
 ```javascript
-signnow.document.create({
-	token: "your auth token",
-	filepath: ""
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.document.create({
+  token: 'your auth token',
+  filepath: 'path to file',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Upload File & Extract Fields
+#### Upload File & Extract Fields
+
 ```javascript
-signnow.document.fieldextract({
-	token: "your auth token",
-	filepath: ""
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.document.fieldextract({
+  token: 'your auth token',
+  filepath: 'path to file',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Update Document (add fields)
+#### Update Document (add fields)
+
 ```javascript
-var fieldsObj = {
-	"texts":[
-		{
-			"size":8,
-			"x":61,
-			"y":72,
-			"page_number":0,
-			"font":"Arial",
-			"data":"sample text",
-			"line_height":9.075
-		}
-	]
+const fields = {
+  texts: [
+    {
+      size: 8,
+      x: 61,
+      y: 72,
+      page_number: 0,
+      font: 'Arial',
+      data: 'sample text',
+      line_height: 9.075,
+    },
+  ],
 }
 
-signnow.document.update({
-	token: "your auth token",
-  id: "document id",
-	fields: fieldsObj
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.document.update({
+  token: 'your auth token',
+  id: 'document id',
+  fields,
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Create Invite to Sign a Document
+#### Create Invite to Sign a Document
+
 ```javascript
-signnow.document.invite({
-	token: "your login token",
-	id: "document id",
-  data:{
-	   from: "email address",
-	    to: "email address"
-  }
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.document.invite({
+  token: 'your auth token',
+  id: 'document id',
+  data: {
+    from: 'email address',
+    to: 'email address',
+  },
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Cancel an Invite to a Document
+#### Cancel an Invite to a Document
+
 ```javascript
-signnow.document.cancelInvite({
-	token: "your login token",
-	id: "document id"
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.document.cancelInvite({
+  token: 'your auth token',
+  id: 'document id',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Create a One-time Use Download URL
+#### Create a One-time Use Download URL
+
 ```javascript
-signnow.document.share({
-	token: "your login token",
-	id: "document id"
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.document.share({
+  token: 'your auth token',
+  id: 'document id',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Merges Existing Documents
+#### Merge Existing Documents
+
 ```javascript
-signnow.document.merge({
-	token: "your login token",
-	name: "the merged doc",
+api.document.merge({
+  token: 'your auth token',
+  name: 'the merged doc',
   document_ids: [
-    "84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa",
-    "a71d963c49f33176e90c5827069c422616b1500c"
-  ]
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+    '84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa',
+    'a71d963c49f33176e90c5827069c422616b1500c',
+  ],
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Get Document History
+#### Get Document History
+
 ```javascript
-signnow.document.history({
-	token: "your login token",
-	id: "document id"
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.document.history({
+  token: 'your auth token',
+  id: 'document id',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-# Enumerations
+### Enumerations
 
-## Add Enumeration Field to a Document
+#### Add Enumeration Field to a Document
+
 ```javascript
-signnow.enumerations.addField({
-	token: "your login token",
-	document_id: "document id",
-	"x": 150,
-  "y": 200,
-  "width": 200,
-  "height": 50,
-  "page_number": 0,
-  "role": "buyer",
-  "required": true,
-  "label": "Clothing Brand"
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.enumerations.addField({
+  token: 'your auth token',
+  document_id: 'document id',
+  x: 150,
+  y: 200,
+  width: 200,
+  height: 50,
+  page_number: 0,
+  role: 'buyer',
+  required: true,
+  label: 'Clothing Brand',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Add Enumeration Options to the Field
+#### Add Enumeration Options to the Field
+
 ```javascript
-signnow.enumerations.addOptions({
-	token: "your login token",
-  "enumeration_options": [
+api.enumerations.addOptions({
+  token: 'your auth token',
+  enumeration_options: [
     {
-      "enumeration_id":"8a3501896160b12d4ef7507a81b2f0998b8137b1",
-      "data":"Active"
+      enumeration_id: '8a3501896160b12d4ef7507a81b2f0998b8137b1',
+      data: 'Active',
     },
     {
-      "enumeration_id":"8a3501896160b12d4ef7507a81b2f0998b8137b1",
-      "data":"Old Navy"
+      enumeration_id: '8a3501896160b12d4ef7507a81b2f0998b8137b1',
+      data: 'Old Navy',
     },
     {
-      "enumeration_id":"8a3501896160b12d4ef7507a81b2f0998b8137b1",
-      "data":"Volcom"
-    }
-  ]
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+      enumeration_id: '8a3501896160b12d4ef7507a81b2f0998b8137b1',
+      data: 'Volcom',
+    },
+  ],
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-# Template
+### Template
 
-## Create a Template
+#### Create a Template
+
 ```javascript
-signnow.template.create({
-	token: "your login token",
-	document_id: "document id",
-	document_name: "my template"
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.template.create({
+  token: 'your auth token',
+  document_id: 'document id',
+  document_name: 'my template',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Duplicate a Template
+#### Duplicate a Template
+
 ```javascript
-signnow.template.duplicate({
-	token: "your login token",
-	id: "document id",
-	name: "my template"
-}, function(err, res){
-	if(!err){
-		console.log("RESULTS:" + res);
-	}else{
-		console.log("ERROR:" + err);
-	}
+api.template.duplicate({
+  token: 'your auth token',
+  id: 'document id',
+  name: 'my template',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
-# Folder
 
-## Returns a list of folders
+### Folder
+
+#### Returns a list of folders
+
 ```javascript
-signnow.folder.list({
-    "token": "your login token"
-}, function(err, res){
-  if(!err){
-    console.log("RESULTS:" + res);
-  }else{
-    console.log("ERROR:" + err);
-  }
+api.folder.list({
+  token: 'your auth token',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Returns a list of documents inside a folder
+#### Returns a list of documents inside a folder
 
 Filters  | Values
 ------------- | -------------
@@ -381,38 +329,35 @@ Sort  | Values
 ```created```  | ```asc```/```desc```
 
 ```javascript
-signnow.folder.documents({
-    "token": "your login token",
-    "id": "folder id",
-    "filter": [
-      {"signing-status": "pending"}
-    ],
-    "sort": {"document-name":"asc"}
-}, function(err, res){
-  if(!err){
-    console.log("RESULTS:" + res);
-  }else{
-    console.log("ERROR:" + err);
-  }
+api.folder.documents({
+  token: 'your auth token',
+  id: 'folder id',
+  filter: [
+    {
+      'signing-status': 'pending',
+    },
+  ],
+  sort: {
+    'document-name': 'asc',
+  },
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-# Webhook
+### Webhook
 
-## Returns a list of Webhooks
+#### Returns a list of Webhooks
+
 ```javascript
 signnow.webhook.list({
-    "token": "your login token"
-}, function(err, res){
-  if(!err){
-    console.log("RESULTS:" + res);
-  }else{
-    console.log("ERROR:" + err);
-  }
+  token: 'your auth token',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-## Create a Webhook
+#### Create a Webhook
 
 Events  | Description
 ------------- | -------------
@@ -423,46 +368,39 @@ Events  | Description
 ```invite.update```  | Webhook is triggered when an invite to SignNow document is updated. Ex. A signer has signed the document.
 
 ```javascript
-signnow.webhook.create({
-    "token": "your login token",
-    "event": "document.create",
-    "callback_url": "http://www.domain.com/path"
-}, function(err, res){
-  if(!err){
-    console.log("RESULTS:" + res);
-  }else{
-    console.log("ERROR:" + err);
-  }
+api.webhook.create({
+  token: 'your auth token',
+  event: 'document.create',
+  callback_url: 'http://www.domain.com/path',
+}, (err, res) => {
+  // handle error or process response data
 });
 ```
 
-# Unit Tests
-To run the unit test you will need to install "Mocha" and "Chai". You also need to create a "test.settings.js" in the root of the SignNow module. The file will need to contain the following:
+## Unit Tests
+
+To run the unit test you will need to install "Mocha" and "Chai". You also need to edit a [test.settings.js](https://github.com/signnow/SignNowNodeSDK/blob/master/test/test.settings.js) in the [test](https://github.com/signnow/SignNowNodeSDK/tree/master/test) folder of the api client module. The file will need to contain the following:
+
 ```javascript
-(function(){
-  "use strict";
-  /**
-   * Test Settings
-   */
-
-  exports.settings = {
-    credentials: "[ENCODED CLIENT CREDENTIALS]",
-    token: "[ACCESS TOKEN]",
-    username: "[SIGNNOW USERNAME]",
-    password: "[SIGNNOW PASSWORD]",
-    documentid: "[EXISTING DOCUMENT ID]",
-    templateid: "[EXISTING TEMPLATE ID]",
-    folderid: "[EXISTING FOLDER ID]",
-    email: "[FROM EMAIL FOR INVITE]",
-    testemail: "[TO EMAIL FOR INVITE]"
-  };
-
-})();
+exports.settings = {
+  credentials: "[ENCODED CLIENT CREDENTIALS]",
+  token: "[ACCESS TOKEN]",
+  username: "[SIGNNOW USERNAME]",
+  password: "[SIGNNOW PASSWORD]",
+  documentid: "[EXISTING DOCUMENT ID]",
+  templateid: "[EXISTING TEMPLATE ID]",
+  folderid: "[EXISTING FOLDER ID]",
+  email: "[FROM EMAIL FOR INVITE]",
+  testemail: "[TO EMAIL FOR INVITE]",
+};
 ```
-# Additional Contact Information
 
-##### SUPPORT
+## Additional Contact Information
+
+### Support
+
 To contact SignNow support, please email [support@signnow.com](mailto:support@signnow.com).
 
-##### SALES
+### Sales
+
 For pricing information, please call (800) 831-2050 or email [sales@signnow.com](mailto:sales@signnow.com).

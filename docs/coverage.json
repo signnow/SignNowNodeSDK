@@ -1,0 +1,119 @@
+{
+  "coverage": "16.12%",
+  "expectCount": 62,
+  "actualCount": 10,
+  "files": {
+    "lib/common.js": {
+      "expectCount": 6,
+      "actualCount": 1,
+      "undocumentLines": [
+        14,
+        43,
+        49,
+        69,
+        73
+      ]
+    },
+    "lib/document.js": {
+      "expectCount": 18,
+      "actualCount": 1,
+      "undocumentLines": [
+        2,
+        3,
+        4,
+        24,
+        36,
+        45,
+        55,
+        103,
+        146,
+        161,
+        176,
+        198,
+        213,
+        232,
+        261,
+        276,
+        302
+      ]
+    },
+    "lib/enumerations.js": {
+      "expectCount": 4,
+      "actualCount": 1,
+      "undocumentLines": [
+        2,
+        3,
+        37
+      ]
+    },
+    "lib/folder.js": {
+      "expectCount": 4,
+      "actualCount": 1,
+      "undocumentLines": [
+        2,
+        3,
+        28
+      ]
+    },
+    "lib/link.js": {
+      "expectCount": 3,
+      "actualCount": 1,
+      "undocumentLines": [
+        2,
+        3
+      ]
+    },
+    "lib/oauth2.js": {
+      "expectCount": 5,
+      "actualCount": 1,
+      "undocumentLines": [
+        2,
+        3,
+        4,
+        33
+      ]
+    },
+    "lib/signnow.js": {
+      "expectCount": 10,
+      "actualCount": 1,
+      "undocumentLines": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    "lib/template.js": {
+      "expectCount": 4,
+      "actualCount": 1,
+      "undocumentLines": [
+        2,
+        3,
+        42
+      ]
+    },
+    "lib/user.js": {
+      "expectCount": 4,
+      "actualCount": 1,
+      "undocumentLines": [
+        2,
+        3,
+        32
+      ]
+    },
+    "lib/webhook.js": {
+      "expectCount": 4,
+      "actualCount": 1,
+      "undocumentLines": [
+        2,
+        3,
+        28
+      ]
+    }
+  }
+}

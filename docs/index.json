@@ -1,0 +1,2394 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "lib/common.js",
+    "content": "'use strict';\n\n/**\n * Common request setting object\n */\nconst settings = {\n  api: {\n    host: 'api-dev1.signnow.com', // TODO: chage back to eval\n    port: 443,\n    credentials: '',\n  },\n};\n\nconst responseHandler = (callback, { parse = true } = {}) => res => {\n  let rawData = '';\n\n  res.setEncoding('utf8');\n\n  res.on('data', chunk => {\n    rawData += chunk;\n  });\n\n  res.on('end', () => {\n    let parsedData = '';\n    let errors = '';\n\n    try {\n      if (parse) {\n        parsedData = JSON.parse(rawData);\n        errors = parsedData.errors || parsedData.error || parsedData.message || null;\n      }\n    } catch (e) {\n      errors = e;\n      parsedData = null;\n    }\n\n    if (callback) {\n      return callback(errors, parse ? parsedData : rawData);\n    }\n  });\n};\n\nconst errorHandler = callback => err => {\n  if (typeof callback === 'function') {\n    return callback(err.message);\n  }\n};\n\nconst buildRequestOptions = ({\n  method = 'GET',\n  path = '/',\n  authorization: {\n    type = 'Basic',\n    token = settings.api.credentials,\n  } = {},\n  headers = {},\n}) => {\n  const options = {\n    host: settings.api.host,\n    port: settings.api.port,\n    method,\n    path,\n    headers,\n  };\n  options.headers.Authorization = `${type} ${token}`;\n  return options;\n};\n\nconst setProductionApiHost = () => {\n  settings.api.host = 'api.signnow.com';\n};\n\nconst setCredentials = credentials => {\n  settings.api.credentials = credentials;\n};\n\nmodule.exports = {\n  responseHandler,\n  errorHandler,\n  buildRequestOptions,\n  setProductionApiHost,\n  setCredentials,\n};\n",
+    "static": true,
+    "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/common.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "settings",
+    "memberof": "lib/common.js",
+    "static": true,
+    "longname": "lib/common.js~settings",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/common.js",
+    "importStyle": null,
+    "description": "Common request setting object",
+    "lineNumber": 6,
+    "type": {
+      "types": [
+        "{\"api\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "function",
+    "name": "responseHandler",
+    "memberof": "lib/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/common.js~responseHandler",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "params": [
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "objectPattern1",
+        "optional": true,
+        "types": [
+          "{\"parse\": *}"
+        ],
+        "defaultRaw": {},
+        "defaultValue": "{}"
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "function",
+    "name": "errorHandler",
+    "memberof": "lib/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/common.js~errorHandler",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 43,
+    "undocument": true,
+    "params": [
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "function",
+    "name": "buildRequestOptions",
+    "memberof": "lib/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/common.js~buildRequestOptions",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 49,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"method\": *, \"path\": *, \"authorization\": *, \"headers\": *}"
+        ],
+        "defaultRaw": {
+          "method": null,
+          "path": null,
+          "authorization": null,
+          "headers": null
+        },
+        "defaultValue": "{\"method\":null,\"path\":null,\"authorization\":null,\"headers\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "function",
+    "name": "setProductionApiHost",
+    "memberof": "lib/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/common.js~setProductionApiHost",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 69,
+    "undocument": true,
+    "params": [],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "function",
+    "name": "setCredentials",
+    "memberof": "lib/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/common.js~setCredentials",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 73,
+    "undocument": true,
+    "params": [
+      {
+        "name": "credentials",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "file",
+    "name": "lib/document.js",
+    "content": "'use strict';\nconst https = require('https');\nconst fs = require('fs');\nconst {\n  responseHandler, errorHandler, buildRequestOptions,\n} = require('./common');\n\n\n/**\n * Document Methods\n */\n\n// build file multipart/form-data request\nfunction buildFileRequest (boundaryKey, mimeType, filename) {\n  let req = `------FormBoundary${boundaryKey}\\r\\n`;\n  req += `Content-Disposition: form-data; name=\"file\"; filename=\"${filename}\"\\r\\n`;\n  req += `Content-Type: ${mimeType}\\r\\n\\r\\n`;\n\n  // req += 'Content-Transfer-Encoding: binary\\r\\n\\r\\n';\n  return req;\n}\n\n// get file mime type\nfunction getMimeType (path) {\n  const extTypes = {\n    doc: 'application/msword',\n    docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',\n    pdf: 'application/pdf',\n    png: 'image/png',\n  };\n  const pathExtension = path.substr(path.lastIndexOf('.')).replace('.', '');\n  return extTypes[pathExtension.toLowerCase()] || null;\n}\n\n// get filename from path\nfunction getFileName (path) {\n  if (path.lastIndexOf('/') !== -1) {\n    return path.substr(path.lastIndexOf('/')).replace('/', '');\n  } else {\n    return path;\n  }\n}\n\n// generate randon string\nfunction randString (x) {\n  let s = '';\n  while (s.length < x && x > 0) {\n    const r = Math.random();\n    s += (r < 0.1 ? Math.floor(r * 100) : String.fromCharCode(Math.floor(r * 26) + (r > 0.5 ? 97 : 65)));\n  }\n  return s;\n}\n\n// uploads a file and creates a document. This endpoint accepts .doc, .docx, .pdf, and .png file types\nexports.create = function(obj, callback) {\n  const boundaryKey = randString(30);\n  const filename = getFileName(obj.filepath);\n\n  // check mimetype\n  let mimeType = '';\n  if (getMimeType(obj.filepath)) {\n    mimeType = getMimeType(obj.filepath);\n  } else {\n    return callback('File type isn\\'t supported.');\n  }\n\n  const file = buildFileRequest(boundaryKey, mimeType, filename);\n  const stat = fs.statSync(obj.filepath);\n  const reader = fs.createReadStream(obj.filepath, { bufferSize: 64 * 1024 });\n  const closingLine = `\\r\\n------FormBoundary${boundaryKey}--`;\n\n  const req = https.request(buildRequestOptions({\n    method: 'POST',\n    path: '/document',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n    headers: {\n      'Content-Type': `multipart/form-data; boundary=----FormBoundary${boundaryKey}`,\n      'Content-Length': stat.size + file.toString().length + closingLine.length,\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.write(file);\n\n  reader.on('end', () => {\n    reader.unpipe(req);\n    req.end(closingLine);\n  });\n\n  // pipe the file and append a closing line\n  reader.pipe(req, { end: false });\n\n};\n\n/*\n * uploads a file that contains signnow Document Field Tags. This endpoint\n * only accepts .pdf (You may convert the document from .doc or .docx to .pdf)\n */\n\nexports.fieldextract = function(obj, callback) {\n  const boundaryKey = randString(30);\n  const filename = getFileName(obj.filepath);\n\n  // check mimetype\n  let mimeType = '';\n  if (getMimeType(obj.filepath)) {\n    mimeType = getMimeType(obj.filepath);\n  } else {\n    return callback('File type isn\\'t supported.');\n  }\n\n  const file = buildFileRequest(boundaryKey, mimeType, filename);\n  const stat = fs.statSync(obj.filepath);\n  const reader = fs.createReadStream(obj.filepath, { bufferSize: 64 * 1024 });\n  const closingLine = `\\r\\n------FormBoundary${boundaryKey}--`;\n\n  const req = https.request(buildRequestOptions({\n    method: 'POST',\n    path: '/document/fieldextract',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n    headers: {\n      'Content-Type': `multipart/form-data; boundary=----FormBoundary${boundaryKey}`,\n      'Content-Length': stat.size + file.toString().length + closingLine.length,\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.write(file);\n\n  // pipe the file and append a closing line\n  reader.pipe(req, { end: false });\n\n  reader.on('end', () => {\n    reader.unpipe(req);\n    req.end(closingLine);\n  });\n};\n\n// list all documents for user\nexports.list = function(obj, callback) {\n  const req = https.request(buildRequestOptions({\n    method: 'GET',\n    path: '/user/documentsv2',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.end();\n};\n\n// retrieve a document resource\nexports.view = function(obj, callback) {\n  const req = https.request(buildRequestOptions({\n    method: 'GET',\n    path: `/document/${obj.id}`,\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.end();\n};\n\n// update an existing document. Add fields [signature | text | initials | checkbox ], elements [signature | text | check]\nexports.update = function(obj, callback) {\n  const JSONData = JSON.stringify(obj.fields);\n\n  const req = https.request(buildRequestOptions({\n    method: 'PUT',\n    path: `/document/${obj.id}`,\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n    headers: {\n      'Content-Type': 'application/json',\n      'Content-Length': Buffer.byteLength(JSONData),\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.write(JSONData);\n  req.end();\n};\n\n// download a collapsed document\nexports.download = function(obj, callback) {\n  const req = https.request(buildRequestOptions({\n    method: 'GET',\n    path: `/document/${obj.id}/download?type=collapsed`,\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n  }), responseHandler(callback, { parse: false }));\n\n  req.on('error', errorHandler(callback));\n  req.end();\n};\n\n// creates a one-time use URL for anyone to download the document as a PDF.\nexports.share = function(obj, callback) {\n  const req = https.request(buildRequestOptions({\n    method: 'POST',\n    path: `/document/${obj.id}/download/link`,\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.end();\n};\n\n/*\n * TODO: Invite stuck open breaking other request\n * create an invite to sign a document. You can create a simple free form invite or a role-based invite.\n */\n\nexports.invite = function(obj, callback) {\n  const JSONData = JSON.stringify(obj.data);\n  let path = '';\n\n  if (obj && obj.options !== undefined && (obj.options.email !== undefined && obj.options.email === 'disable')) {\n    path = `/document/${obj.id}/invite?email=disable`;\n  } else {\n    path = `/document/${obj.id}/invite`;\n  }\n\n  const req = https.request(buildRequestOptions({\n    method: 'POST',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n    headers: {\n      'Content-Type': 'application/json',\n      'Content-Length': Buffer.byteLength(JSONData),\n    },\n    path,\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.write(JSONData);\n  req.end();\n};\n\n// cancel an invite to a document.\nexports.cancelInvite = function(obj, callback) {\n  const req = https.request(buildRequestOptions({\n    method: 'PUT',\n    path: `/document/${obj.id}/fieldinvitecancel`,\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.end();\n};\n\n// merges existing documents into one.\nexports.merge = function(obj, callback) {\n  const JSONData = JSON.stringify({\n    name: obj.name,\n    document_ids: obj.document_ids,\n    upload_document: true,\n  });\n\n  const req = https.request(buildRequestOptions({\n    method: 'POST',\n    path: '/document/merge',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n    headers: {\n      'Content-Type': 'application/json',\n      'Content-Length': Buffer.byteLength(JSONData),\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.write(JSONData);\n  req.end();\n};\n\n// get the history of a document\nexports.history = function(obj, callback) {\n  const req = https.request(buildRequestOptions({\n    method: 'GET',\n    path: `/document/${obj.id}/history`,\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.end();\n};\n",
+    "static": true,
+    "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/document.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 56,
+    "kind": "variable",
+    "name": "https",
+    "memberof": "lib/document.js",
+    "static": true,
+    "longname": "lib/document.js~https",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 57,
+    "kind": "variable",
+    "name": "fs",
+    "memberof": "lib/document.js",
+    "static": true,
+    "longname": "lib/document.js~fs",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 58,
+    "kind": "variable",
+    "name": "responseHandler",
+    "memberof": "lib/document.js",
+    "static": true,
+    "longname": "lib/document.js~responseHandler",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 59,
+    "kind": "function",
+    "name": "buildFileRequest",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~buildFileRequest",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": "Document Methods",
+    "lineNumber": 14,
+    "params": [
+      {
+        "name": "boundaryKey",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "mimeType",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "filename",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 60,
+    "kind": "function",
+    "name": "getMimeType",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~getMimeType",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "params": [
+      {
+        "name": "path",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 61,
+    "kind": "function",
+    "name": "getFileName",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~getFileName",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 36,
+    "undocument": true,
+    "params": [
+      {
+        "name": "path",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "function",
+    "name": "randString",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~randString",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 45,
+    "undocument": true,
+    "params": [
+      {
+        "name": "x",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 63,
+    "kind": "function",
+    "name": "create",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~create",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 55,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 64,
+    "kind": "function",
+    "name": "fieldextract",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~fieldextract",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 103,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 65,
+    "kind": "function",
+    "name": "list",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~list",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 146,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 66,
+    "kind": "function",
+    "name": "view",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~view",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 161,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 67,
+    "kind": "function",
+    "name": "update",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~update",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 176,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 68,
+    "kind": "function",
+    "name": "download",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~download",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 198,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 69,
+    "kind": "function",
+    "name": "share",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~share",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 213,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 70,
+    "kind": "function",
+    "name": "invite",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~invite",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 232,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 71,
+    "kind": "function",
+    "name": "cancelInvite",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~cancelInvite",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 261,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 72,
+    "kind": "function",
+    "name": "merge",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~merge",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 276,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 73,
+    "kind": "function",
+    "name": "history",
+    "memberof": "lib/document.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/document.js~history",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/document.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 302,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "file",
+    "name": "lib/enumerations.js",
+    "content": "'use strict';\nconst https = require('https');\nconst {\n  responseHandler, errorHandler, buildRequestOptions,\n} = require('./common');\n\n\n/**\n * Enumeration Methods\n */\n\n/*\n * add an enumeration field(drop down) to a document.\n * NOTE: must be used with POST /enumeration_options () or the API will not recognize it\n */\n\nexports.addField = function(obj, callback) {\n  const req = https.request(buildRequestOptions({\n    method: 'POST',\n    path: '/enumeration_field',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.write(JSON.stringify(obj));\n  req.end();\n};\n\n/*\n * add enumeration options to the field that was created using the REST call above.\n * NOTE: must be used with POST /enumeration_field () or the API will not recognize the field\n */\n\nexports.addOptions = function(obj, callback) {\n  const req = https.request(buildRequestOptions({\n    method: 'POST',\n    path: '/enumeration_options',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.write(JSON.stringify(obj));\n  req.end();\n};\n",
+    "static": true,
+    "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/enumerations.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 75,
+    "kind": "variable",
+    "name": "https",
+    "memberof": "lib/enumerations.js",
+    "static": true,
+    "longname": "lib/enumerations.js~https",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/enumerations.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 76,
+    "kind": "variable",
+    "name": "responseHandler",
+    "memberof": "lib/enumerations.js",
+    "static": true,
+    "longname": "lib/enumerations.js~responseHandler",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/enumerations.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 77,
+    "kind": "function",
+    "name": "addField",
+    "memberof": "lib/enumerations.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/enumerations.js~addField",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/enumerations.js",
+    "importStyle": null,
+    "description": "Enumeration Methods",
+    "lineNumber": 17,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 78,
+    "kind": "function",
+    "name": "addOptions",
+    "memberof": "lib/enumerations.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/enumerations.js~addOptions",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/enumerations.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 37,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 79,
+    "kind": "file",
+    "name": "lib/folder.js",
+    "content": "'use strict';\nconst https = require('https');\nconst {\n  responseHandler, errorHandler, buildRequestOptions,\n} = require('./common');\n\n\n/**\n * Folder Methods\n */\n\n// list folders\nexports.list = function(obj, callback) {\n  const req = https.request(buildRequestOptions({\n    method: 'GET',\n    path: '/folder',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.end();\n};\n\n// get documents in a folder\nexports.documents = function(obj, callback) {\n  let path = `/folder/${obj.id}`;\n  let URLParams = '';\n\n  // build filters if supplied\n  if (obj.filter && obj.filter.length > 0) {\n    for (let i=0; i < obj.filter.length; i++) {\n      if (i === 0) {\n        URLParams += `?filters=${Object.keys(obj.filter[i])}&filter-values=${obj.filter[i][Object.keys(obj.filter[i])]}`;\n      } else {\n        URLParams += `&filters=${Object.keys(obj.filter[i])}&filter-values=${obj.filter[i][Object.keys(obj.filter[i])]}`;\n      }\n    }\n  }\n\n  // build sort if supplied\n  if (obj.sort) {\n    if (URLParams.length > 0) {\n      URLParams += '&';\n    } else {\n      URLParams += '?';\n    }\n    URLParams += `sortby=${Object.keys(obj.sort)}&order=${obj.sort[Object.keys(obj.sort)]}`;\n  }\n\n  path = path + URLParams;\n\n  const req = https.request(buildRequestOptions({\n    method: 'GET',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n    path,\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.end();\n};\n",
+    "static": true,
+    "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/folder.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 80,
+    "kind": "variable",
+    "name": "https",
+    "memberof": "lib/folder.js",
+    "static": true,
+    "longname": "lib/folder.js~https",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/folder.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 81,
+    "kind": "variable",
+    "name": "responseHandler",
+    "memberof": "lib/folder.js",
+    "static": true,
+    "longname": "lib/folder.js~responseHandler",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/folder.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 82,
+    "kind": "function",
+    "name": "list",
+    "memberof": "lib/folder.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/folder.js~list",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/folder.js",
+    "importStyle": null,
+    "description": "Folder Methods",
+    "lineNumber": 13,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 83,
+    "kind": "function",
+    "name": "documents",
+    "memberof": "lib/folder.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/folder.js~documents",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/folder.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 84,
+    "kind": "file",
+    "name": "lib/link.js",
+    "content": "'use strict';\nconst https = require('https');\nconst {\n  responseHandler, errorHandler, buildRequestOptions,\n} = require('./common');\n\n\n/**\n * Link Methods\n */\n\n// create webhook\nexports.create = function(obj, callback) {\n  const JSONData = JSON.stringify({ document_id: obj.document_id });\n\n  const req = https.request(buildRequestOptions({\n    method: 'POST',\n    path: '/link',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n    headers: {\n      'Content-Type': 'application/json',\n      'Content-Length': Buffer.byteLength(JSONData),\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.write(JSONData);\n  req.end();\n};\n",
+    "static": true,
+    "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/link.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 85,
+    "kind": "variable",
+    "name": "https",
+    "memberof": "lib/link.js",
+    "static": true,
+    "longname": "lib/link.js~https",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/link.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 86,
+    "kind": "variable",
+    "name": "responseHandler",
+    "memberof": "lib/link.js",
+    "static": true,
+    "longname": "lib/link.js~responseHandler",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/link.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 87,
+    "kind": "function",
+    "name": "create",
+    "memberof": "lib/link.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/link.js~create",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/link.js",
+    "importStyle": null,
+    "description": "Link Methods",
+    "lineNumber": 13,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 88,
+    "kind": "file",
+    "name": "lib/oauth2.js",
+    "content": "'use strict';\nconst https = require('https');\nconst querystring = require('querystring');\nconst {\n  responseHandler, errorHandler, buildRequestOptions,\n} = require('./common');\n\n/**\n * OAuth2 Methods\n */\n\n// request an access token for a user\nexports.requestToken = function(obj, callback) {\n  obj.grant_type = 'password';\n  const data = querystring.stringify(obj).replace('%40', '@');\n\n  const req = https.request(buildRequestOptions({\n    method: 'POST',\n    path: '/oauth2/token',\n    authorization: { type: 'Basic' },\n    headers: {\n      'Content-Type': 'application/x-www-form-urlencoded',\n      'Content-Length': Buffer.byteLength(data),\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.write(data);\n  req.end();\n};\n\n// verify an access token for a user\nexports.verify = function(obj, callback) {\n  const req = https.request(buildRequestOptions({\n    method: 'GET',\n    path: '/oauth2/token',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.end();\n};\n",
+    "static": true,
+    "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/oauth2.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 89,
+    "kind": "variable",
+    "name": "https",
+    "memberof": "lib/oauth2.js",
+    "static": true,
+    "longname": "lib/oauth2.js~https",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/oauth2.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 90,
+    "kind": "variable",
+    "name": "querystring",
+    "memberof": "lib/oauth2.js",
+    "static": true,
+    "longname": "lib/oauth2.js~querystring",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/oauth2.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 91,
+    "kind": "variable",
+    "name": "responseHandler",
+    "memberof": "lib/oauth2.js",
+    "static": true,
+    "longname": "lib/oauth2.js~responseHandler",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/oauth2.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 92,
+    "kind": "function",
+    "name": "requestToken",
+    "memberof": "lib/oauth2.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/oauth2.js~requestToken",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/oauth2.js",
+    "importStyle": null,
+    "description": "OAuth2 Methods",
+    "lineNumber": 13,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 93,
+    "kind": "function",
+    "name": "verify",
+    "memberof": "lib/oauth2.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/oauth2.js~verify",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/oauth2.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 33,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 94,
+    "kind": "file",
+    "name": "lib/signnow.js",
+    "content": "'use strict';\nconst user = require('./user');\nconst document = require('./document');\nconst folder = require('./folder');\nconst webhook = require('./webhook');\nconst oauth2 = require('./oauth2');\nconst enumerations = require('./enumerations');\nconst template = require('./template');\nconst link = require('./link');\nconst {\n  setProductionApiHost, setCredentials,\n} = require('./common');\n\n\n/**\n * SignNow API Wrapper\n */\n\nmodule.exports = function({\n  credentials, production,\n}) {\n\n  if (credentials) {\n    setCredentials(credentials);\n  }\n\n  // toggle production\n  if (production) {\n    setProductionApiHost();\n  }\n\n  return {\n    user,\n    oauth2,\n    document,\n    webhook,\n    folder,\n    enumerations,\n    template,\n    link,\n  };\n};\n",
+    "static": true,
+    "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/signnow.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 95,
+    "kind": "variable",
+    "name": "user",
+    "memberof": "lib/signnow.js",
+    "static": true,
+    "longname": "lib/signnow.js~user",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 96,
+    "kind": "variable",
+    "name": "document",
+    "memberof": "lib/signnow.js",
+    "static": true,
+    "longname": "lib/signnow.js~document",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 97,
+    "kind": "variable",
+    "name": "folder",
+    "memberof": "lib/signnow.js",
+    "static": true,
+    "longname": "lib/signnow.js~folder",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 98,
+    "kind": "variable",
+    "name": "webhook",
+    "memberof": "lib/signnow.js",
+    "static": true,
+    "longname": "lib/signnow.js~webhook",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 99,
+    "kind": "variable",
+    "name": "oauth2",
+    "memberof": "lib/signnow.js",
+    "static": true,
+    "longname": "lib/signnow.js~oauth2",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 100,
+    "kind": "variable",
+    "name": "enumerations",
+    "memberof": "lib/signnow.js",
+    "static": true,
+    "longname": "lib/signnow.js~enumerations",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 101,
+    "kind": "variable",
+    "name": "template",
+    "memberof": "lib/signnow.js",
+    "static": true,
+    "longname": "lib/signnow.js~template",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 102,
+    "kind": "variable",
+    "name": "link",
+    "memberof": "lib/signnow.js",
+    "static": true,
+    "longname": "lib/signnow.js~link",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 103,
+    "kind": "variable",
+    "name": "setProductionApiHost",
+    "memberof": "lib/signnow.js",
+    "static": true,
+    "longname": "lib/signnow.js~setProductionApiHost",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 104,
+    "kind": "function",
+    "name": "exports",
+    "memberof": "lib/signnow.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/signnow.js~exports",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client",
+    "importStyle": null,
+    "description": "SignNow API Wrapper",
+    "lineNumber": 19,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"credentials\": *, \"production\": *}"
+        ],
+        "defaultRaw": {
+          "credentials": null,
+          "production": null
+        },
+        "defaultValue": "{\"credentials\":null,\"production\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"user\": *, \"oauth2\": *, \"document\": *, \"webhook\": *, \"folder\": *, \"enumerations\": *, \"template\": *, \"link\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 105,
+    "kind": "file",
+    "name": "lib/template.js",
+    "content": "'use strict';\nconst https = require('https');\nconst {\n  responseHandler, errorHandler, buildRequestOptions,\n} = require('./common');\n\n\n/**\n * Template Methods\n */\n\n// create a template by flattening an existing document.\nexports.create = function(obj, callback) {\n  const JSONData = JSON.stringify({\n    document_id: obj.document_id,\n    document_name: obj.document_name,\n  });\n\n  const req = https.request(buildRequestOptions({\n    method: 'POST',\n    path: '/template',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n    headers: {\n      'Content-Type': 'application/json',\n      'Content-Length': Buffer.byteLength(JSONData),\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.write(JSONData);\n  req.end();\n};\n\n/*\n * create a new document by copying a flattened document. If a name is not supplied\n * than it will default to the original document's name.\n */\n\nexports.duplicate = function(obj, callback) {\n  const JSONData = JSON.stringify({\n    template_id: obj.id,\n    document_name: obj.name,\n  });\n\n  const req = https.request(buildRequestOptions({\n    method: 'POST',\n    path: `/template/${obj.id}/copy`,\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n    headers: {\n      'Content-Type': 'application/json',\n      'Content-Length': Buffer.byteLength(JSONData),\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.write(JSONData);\n  req.end();\n};\n",
+    "static": true,
+    "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/template.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 106,
+    "kind": "variable",
+    "name": "https",
+    "memberof": "lib/template.js",
+    "static": true,
+    "longname": "lib/template.js~https",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/template.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 107,
+    "kind": "variable",
+    "name": "responseHandler",
+    "memberof": "lib/template.js",
+    "static": true,
+    "longname": "lib/template.js~responseHandler",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/template.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 108,
+    "kind": "function",
+    "name": "create",
+    "memberof": "lib/template.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/template.js~create",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/template.js",
+    "importStyle": null,
+    "description": "Template Methods",
+    "lineNumber": 13,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 109,
+    "kind": "function",
+    "name": "duplicate",
+    "memberof": "lib/template.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/template.js~duplicate",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/template.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 42,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 110,
+    "kind": "file",
+    "name": "lib/user.js",
+    "content": "'use strict';\nconst https = require('https');\nconst {\n  responseHandler, errorHandler, buildRequestOptions,\n} = require('./common');\n\n\n/**\n * User Methods\n */\n\n// create new user account\nexports.create = function(obj, callback) {\n  const JSONData = JSON.stringify(obj);\n\n  const req = https.request(buildRequestOptions({\n    method: 'POST',\n    path: '/user',\n    authorization: { type: 'Basic' },\n    headers: {\n      'Content-Type': 'application/json',\n      'Content-Length': Buffer.byteLength(JSONData),\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.write(JSONData);\n  req.end();\n};\n\n// retrieve user account details\nexports.retrieve = function(obj, callback) {\n  const req = https.request(buildRequestOptions({\n    method: 'GET',\n    path: '/user',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.end();\n};\n",
+    "static": true,
+    "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/user.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 111,
+    "kind": "variable",
+    "name": "https",
+    "memberof": "lib/user.js",
+    "static": true,
+    "longname": "lib/user.js~https",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/user.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 112,
+    "kind": "variable",
+    "name": "responseHandler",
+    "memberof": "lib/user.js",
+    "static": true,
+    "longname": "lib/user.js~responseHandler",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/user.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 113,
+    "kind": "function",
+    "name": "create",
+    "memberof": "lib/user.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/user.js~create",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/user.js",
+    "importStyle": null,
+    "description": "User Methods",
+    "lineNumber": 13,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 114,
+    "kind": "function",
+    "name": "retrieve",
+    "memberof": "lib/user.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/user.js~retrieve",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/user.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 32,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 115,
+    "kind": "file",
+    "name": "lib/webhook.js",
+    "content": "'use strict';\nconst https = require('https');\nconst {\n  responseHandler, errorHandler, buildRequestOptions,\n} = require('./common');\n\n\n/**\n * Webook Methods\n */\n\n// list webhooks\nexports.list = function(obj, callback) {\n  const req = https.request(buildRequestOptions({\n    method: 'GET',\n    path: '/event_subscription',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.end();\n};\n\n// create webhook\nexports.create = function(obj, callback) {\n  const JSONData = JSON.stringify({\n    event: obj.event,\n    callback_url: obj.callback_url,\n  });\n\n  const req = https.request(buildRequestOptions({\n    method: 'POST',\n    path: '/event_subscription',\n    authorization: {\n      type: 'Bearer',\n      token: obj.token,\n    },\n    headers: {\n      'Content-Type': 'application/json',\n      'Content-Length': Buffer.byteLength(JSONData),\n    },\n  }), responseHandler(callback));\n\n  req.on('error', errorHandler(callback));\n  req.write(JSONData);\n  req.end();\n};\n",
+    "static": true,
+    "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/webhook.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 116,
+    "kind": "variable",
+    "name": "https",
+    "memberof": "lib/webhook.js",
+    "static": true,
+    "longname": "lib/webhook.js~https",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/webhook.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 117,
+    "kind": "variable",
+    "name": "responseHandler",
+    "memberof": "lib/webhook.js",
+    "static": true,
+    "longname": "lib/webhook.js~responseHandler",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/webhook.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 118,
+    "kind": "function",
+    "name": "list",
+    "memberof": "lib/webhook.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/webhook.js~list",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/webhook.js",
+    "importStyle": null,
+    "description": "Webook Methods",
+    "lineNumber": 13,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 119,
+    "kind": "function",
+    "name": "create",
+    "memberof": "lib/webhook.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/webhook.js~create",
+    "access": "public",
+    "export": false,
+    "importPath": "@signnow/api-client/lib/webhook.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "params": [
+      {
+        "name": "obj",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "kind": "index",
+    "content": "# SignNow API client v1.2.0\n\nSignNow REST Service Wrapper\n\n### Updates\n\n12/3/2015 - The eval server has been changed to **api-eval.signnow.com**. You will need to create a new account for **api-eval.signnow.com**. [https://eval.signnow.com](https://eval.signnow.com), [https://app-eval.signnow.com](https://app-eval.signnow.com)\n\n### About SignNow\n\nSignNow by airSlate Inc. is an eSigning platform that offers a cloud version, a physical appliance and also a virtual appliance.\n\n### API Contact Information\n\nIf you have questions about the SignNow API, please visit [https://help.signnow.com/docs](https://help.signnow.com/docs) or email [api@signnow.com](mailto:api@signnow.com).\n\nSee additional contact information at the bottom.\n\n## Installation\n\n```bash\nnpm install @signnow/api-client\n```\n\n## Examples\n\nTo run the examples you will need an API key. You can get one here [https://www.signnow.com/api](https://www.signnow.com/api). For a full list of accepted parameters, refer to the SignNow REST Endpoints API guide: [https://help.signnow.com/docs](https://help.signnow.com/docs).\n\nEvery resource is accessed via your api client instance:\n\n```javascript\nconst api = require('@signnow/api-client')({\n  credentials: 'ENCODED_CLIENT_CREDENTIALS',\n  production: false, // if false uses eval server\n});\n```\n\nEvery resource returns two parameters. The first param contains any errors and the second contains the results.\n\n### User\n\n#### Create a User\n\n```javascript\napi.user.create({\n  first_name: 'John',\n  last_name: 'Wayne',\n  email: 'john@domain.com',\n  password: 'yourpwd',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Retrieve User Information\n\n```javascript\napi.user.retrieve({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n}\n});\n```\n\n### OAuth 2.0\n\n#### Request Access Token\n\n```javascript\napi.oauth2.requestToken({\n  username: 'username',\n  password: 'password',\n}, function(err, res){\n  // handle error or process response data\n});\n```\n\n#### Verify an Access Token\n\n```javascript\napi.oauth2.verify({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Document\n\n#### Retrieve a List of the User’s Documents\n\n```javascript\napi.document.list({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Retrieve a Document Resource\n\n```javascript\napi.document.view({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Download a Collapsed Document\n\n```javascript\napi.document.download({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Upload Document\n\n```javascript\napi.document.create({\n  token: 'your auth token',\n  filepath: 'path to file',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Upload File & Extract Fields\n\n```javascript\napi.document.fieldextract({\n  token: 'your auth token',\n  filepath: 'path to file',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Update Document (add fields)\n\n```javascript\nconst fields = {\n  texts: [\n    {\n      size: 8,\n      x: 61,\n      y: 72,\n      page_number: 0,\n      font: 'Arial',\n      data: 'sample text',\n      line_height: 9.075,\n    },\n  ],\n}\n\napi.document.update({\n  token: 'your auth token',\n  id: 'document id',\n  fields,\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Create Invite to Sign a Document\n\n```javascript\napi.document.invite({\n  token: 'your auth token',\n  id: 'document id',\n  data: {\n    from: 'email address',\n    to: 'email address',\n  },\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Cancel an Invite to a Document\n\n```javascript\napi.document.cancelInvite({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Create a One-time Use Download URL\n\n```javascript\napi.document.share({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Merge Existing Documents\n\n```javascript\napi.document.merge({\n  token: 'your auth token',\n  name: 'the merged doc',\n  document_ids: [\n    '84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa',\n    'a71d963c49f33176e90c5827069c422616b1500c',\n  ],\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Get Document History\n\n```javascript\napi.document.history({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Enumerations\n\n#### Add Enumeration Field to a Document\n\n```javascript\napi.enumerations.addField({\n  token: 'your auth token',\n  document_id: 'document id',\n  x: 150,\n  y: 200,\n  width: 200,\n  height: 50,\n  page_number: 0,\n  role: 'buyer',\n  required: true,\n  label: 'Clothing Brand',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Add Enumeration Options to the Field\n\n```javascript\napi.enumerations.addOptions({\n  token: 'your auth token',\n  enumeration_options: [\n    {\n      enumeration_id: '8a3501896160b12d4ef7507a81b2f0998b8137b1',\n      data: 'Active',\n    },\n    {\n      enumeration_id: '8a3501896160b12d4ef7507a81b2f0998b8137b1',\n      data: 'Old Navy',\n    },\n    {\n      enumeration_id: '8a3501896160b12d4ef7507a81b2f0998b8137b1',\n      data: 'Volcom',\n    },\n  ],\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Template\n\n#### Create a Template\n\n```javascript\napi.template.create({\n  token: 'your auth token',\n  document_id: 'document id',\n  document_name: 'my template',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Duplicate a Template\n\n```javascript\napi.template.duplicate({\n  token: 'your auth token',\n  id: 'document id',\n  name: 'my template',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Folder\n\n#### Returns a list of folders\n\n```javascript\napi.folder.list({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Returns a list of documents inside a folder\n\nFilters  | Values\n------------- | -------------\n```signing-status```  | ```waiting-for-me```, ```waiting-for-others```, ```signed```, ```pending```\n```document-updated```  | ```new Date()```\n```document-created```  | ```new Date()```\n\nSort  | Values\n------------- | -------------\n```document-name```  | ```asc```/```desc```\n```updated```  | ```asc```/```desc```\n```created```  | ```asc```/```desc```\n\n```javascript\napi.folder.documents({\n  token: 'your auth token',\n  id: 'folder id',\n  filter: [\n    {\n      'signing-status': 'pending',\n    },\n  ],\n  sort: {\n    'document-name': 'asc',\n  },\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Webhook\n\n#### Returns a list of Webhooks\n\n```javascript\nsignnow.webhook.list({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Create a Webhook\n\nEvents  | Description\n------------- | -------------\n```document.create```  | Webhook is triggered when a document is uploaded to users account in SignNow\n```document.update```  | Webhook is triggered when a document is updated (fields added, text added, signature added, etc.)\n```document.delete```  | Webhook is triggered when a document is deleted from\n```invite.create```  | Webhook is triggered when an invitation to a SignNow document is created.\n```invite.update```  | Webhook is triggered when an invite to SignNow document is updated. Ex. A signer has signed the document.\n\n```javascript\napi.webhook.create({\n  token: 'your auth token',\n  event: 'document.create',\n  callback_url: 'http://www.domain.com/path',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n## Unit Tests\n\nTo run the unit test you will need to install \"Mocha\" and \"Chai\". You also need to edit a [test.settings.js](https://github.com/signnow/SignNowNodeSDK/blob/master/test/test.settings.js) in the [test](https://github.com/signnow/SignNowNodeSDK/tree/master/test) folder of the api client module. The file will need to contain the following:\n\n```javascript\nexports.settings = {\n  credentials: \"[ENCODED CLIENT CREDENTIALS]\",\n  token: \"[ACCESS TOKEN]\",\n  username: \"[SIGNNOW USERNAME]\",\n  password: \"[SIGNNOW PASSWORD]\",\n  documentid: \"[EXISTING DOCUMENT ID]\",\n  templateid: \"[EXISTING TEMPLATE ID]\",\n  folderid: \"[EXISTING FOLDER ID]\",\n  email: \"[FROM EMAIL FOR INVITE]\",\n  testemail: \"[TO EMAIL FOR INVITE]\",\n};\n```\n\n## Additional Contact Information\n\n### Support\n\nTo contact SignNow support, please email [support@signnow.com](mailto:support@signnow.com).\n\n### Sales\n\nFor pricing information, please call (800) 831-2050 or email [sales@signnow.com](mailto:sales@signnow.com).\n",
+    "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"@signnow/api-client\",\n  \"description\": \"SignNow REST Service Wrapper\",\n  \"version\": \"1.2.0\",\n  \"author\": {\n    \"name\": \"SignNow Team\",\n    \"email\": \"support@signnow.com\"\n  },\n  \"keywords\": [\n    \"signnow\",\n    \"document\",\n    \"sign\",\n    \"online\",\n    \"electronic\",\n    \"signature\",\n    \"api\",\n    \"client\"\n  ],\n  \"main\": \"lib/signnow.js\",\n  \"repository\": \"github:signnow/SignNowNodeSDK\",\n  \"scripts\": {\n    \"lint\": \"./node_modules/.bin/eslint **/*.js\",\n    \"lint:fix\": \"./node_modules/.bin/eslint **/*.js --fix\",\n    \"docs\": \"./node_modules/.bin/esdoc\",\n    \"prepublish\": \"npm run lint\"\n  },\n  \"devDependencies\": {\n    \"chai\": \"*\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"eslint\": \"6.0.1\",\n    \"mocha\": \"*\"\n  }\n}\n",
+    "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]
