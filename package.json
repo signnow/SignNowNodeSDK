@@ -30,5 +30,8 @@
     "esdoc-standard-plugin": "1.0.0",
     "eslint": "6.0.1",
     "mocha": "*"
+  },
+  "engines" : {
+    "node" : ">=6.4.0"
   }
 }
