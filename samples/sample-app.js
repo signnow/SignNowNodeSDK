@@ -13,7 +13,7 @@ const [
   password,
 ] = process.argv.slice(2);
 
-const snApi = require('../lib/signnow')({
+const snApi = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false, // (false uses eval server)
 });

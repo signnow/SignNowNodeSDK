@@ -1,6 +1,6 @@
 'use strict';
-const { settings } = require('../test-settings');
-const signnow = require('../lib/signnow')({
+const { settings } = require('./test.settings');
+const signnow = require('../lib')({
   credentials: settings.credentials,
   production: settings.production, // (false by defult)
 });
