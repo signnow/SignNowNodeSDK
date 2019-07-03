@@ -179,7 +179,7 @@
     "__docId__": 6,
     "kind": "file",
     "name": "lib/user.js",
-    "content": "'use strict';\nconst https = require('https');\nconst {\n  responseHandler, errorHandler, buildRequestOptions,\n} = require('./common');\n\n/**\n * User methods\n */\nclass User {\n\n  /**\n   * Create user payload\n   * @typedef {Object} UserCreateParams\n   * @property {string} email - email of new user\n   * @property {string} password - password for new user\n   * @property {string} [first_name] - first name of new user\n   * @property {string} [last_name] - last name of new user\n   */\n\n  /**\n   * Create user response data\n   * @typedef {Object} UserCreateResponse\n   */\n\n  /**\n   * Create new user account\n   * @param {UserCreateParams} data - create user payload\n   * @param {function(err: ApiErrorResponse, res: UserCreateResponse)} [callback] - error first node.js callback\n   */\n  static create (data, callback) {\n    const JSONData = JSON.stringify(data);\n\n    https\n      .request(buildRequestOptions({\n        method: 'POST',\n        path: '/user',\n        authorization: { type: 'Basic' },\n        headers: {\n          'Content-Type': 'application/json',\n          'Content-Length': Buffer.byteLength(JSONData),\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback))\n      .write(JSONData)\n      .end();\n  }\n\n  /**\n   * Get user payload\n   * @typedef {Object} UserGetParams\n   * @property {string} token - your auth token\n   */\n\n  /**\n   * Retrieve user response data\n   * @typedef {Object} UserGetResponse\n   */\n\n  /**\n   * Retrieve user account details\n   * @param {UserGetParams} data - get user payload\n   * @param {function(err: ApiErrorResponse, res: UserGetResponse)} [callback] - error first node.js callback\n   */\n  static retrieve ({ token }, callback) {\n    https\n      .request(buildRequestOptions({\n        method: 'GET',\n        path: '/user',\n        authorization: {\n          type: 'Bearer',\n          token,\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback))\n      .end();\n  }\n\n}\n\nmodule.exports = User;\n",
+    "content": "'use strict';\nconst https = require('https');\nconst {\n  responseHandler, errorHandler, buildRequestOptions,\n} = require('./common');\n\n/**\n * User methods\n */\nclass User {\n\n  /**\n   * Create user payload\n   * @typedef {Object} UserCreateParams\n   * @property {string} email - email of new user\n   * @property {string} password - password for new user\n   * @property {string} [first_name] - first name of new user\n   * @property {string} [last_name] - last name of new user\n   */\n\n  /**\n   * Create user response data\n   * @typedef {Object} UserCreateResponse\n   * @property {string} id - user unique id\n   * @property {number} verified - user is verified or not\n   * @property {string} email - user email\n   */\n\n  /**\n   * Create new user account\n   * @param {UserCreateParams} data - create user payload\n   * @param {function(err: ApiErrorResponse, res: UserCreateResponse)} [callback] - error first node.js callback\n   */\n  static create (data, callback) {\n    const JSONData = JSON.stringify(data);\n\n    https\n      .request(buildRequestOptions({\n        method: 'POST',\n        path: '/user',\n        authorization: { type: 'Basic' },\n        headers: {\n          'Content-Type': 'application/json',\n          'Content-Length': Buffer.byteLength(JSONData),\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback))\n      .write(JSONData)\n      .end();\n  }\n\n  /**\n   * Get user payload\n   * @typedef {Object} UserGetParams\n   * @property {string} token - your auth token\n   */\n\n  /**\n   * Retrieve user response data\n   * @typedef {Object} UserGetResponse\n   * @property {string} id - user unique id\n   * @property {string} first_name - first name\n   * @property {string} last_name - last name\n   * @property {number} active - user is active or not\n   * @property {string} created - user creation timestamp\n   * @property {string[]} emails - user emails\n   * @property {string} primary_email - user primary email\n   * @property {Object[]} subscriptions - user subscriptions data\n   * @property {?Object} cloud_export_account_details - cloud export account details data\n   * @property {boolean} is_logged_in - user is logged in or not\n   * @property {{start_date: string, end_date: string, start_timestamp: number, end_timestamp: number}} billing_period - user billing period data\n   * @property {Object[]} companies - companies where user is a member of\n   * @property {?string} registration_source - resource where user was registered\n   * @property {Object[]} teams - teams where user is a member of\n   * @property {Object} settings - user specific settings\n   * @property {Object[]} organization_settings - organization specific settings where user is a member of\n   * @property {Object[]} merchant_accounts - merchant accounts data\n   */\n\n  /**\n   * Retrieve user account details\n   * @param {UserGetParams} data - get user payload\n   * @param {function(err: ApiErrorResponse, res: UserGetResponse)} [callback] - error first node.js callback\n   */\n  static retrieve ({ token }, callback) {\n    https\n      .request(buildRequestOptions({\n        method: 'GET',\n        path: '/user',\n        authorization: {\n          type: 'Bearer',\n          token,\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback))\n      .end();\n  }\n\n}\n\nmodule.exports = User;\n",
     "static": true,
     "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/user.js",
     "access": "public",
@@ -269,6 +269,38 @@
     "longname": "lib/user.js~User.UserCreateResponse",
     "access": "public",
     "description": "Create user response data",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "user unique id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "verified",
+        "description": "user is verified or not"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "email",
+        "description": "user email"
+      }
+    ],
     "type": {
       "types": [
         "Object"
@@ -288,7 +320,7 @@
     "longname": "lib/user.js~User.create",
     "access": "public",
     "description": "Create new user account",
-    "lineNumber": 31,
+    "lineNumber": 34,
     "params": [
       {
         "nullable": null,
@@ -351,6 +383,178 @@
     "longname": "lib/user.js~User.UserGetResponse",
     "access": "public",
     "description": "Retrieve user response data",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "user unique id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "first_name",
+        "description": "first name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "last_name",
+        "description": "last name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "active",
+        "description": "user is active or not"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "created",
+        "description": "user creation timestamp"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "emails",
+        "description": "user emails"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "primary_email",
+        "description": "user primary email"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "subscriptions",
+        "description": "user subscriptions data"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cloud_export_account_details",
+        "description": "cloud export account details data"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "is_logged_in",
+        "description": "user is logged in or not"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "{start_date: string, end_date: string, start_timestamp: number, end_timestamp: number}"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "billing_period",
+        "description": "user billing period data"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "companies",
+        "description": "companies where user is a member of"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "registration_source",
+        "description": "resource where user was registered"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "teams",
+        "description": "teams where user is a member of"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "settings",
+        "description": "user specific settings"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "organization_settings",
+        "description": "organization specific settings where user is a member of"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "merchant_accounts",
+        "description": "merchant accounts data"
+      }
+    ],
     "type": {
       "types": [
         "Object"
@@ -370,7 +574,7 @@
     "longname": "lib/user.js~User.retrieve",
     "access": "public",
     "description": "Retrieve user account details",
-    "lineNumber": 65,
+    "lineNumber": 85,
     "params": [
       {
         "nullable": null,
@@ -397,7 +601,7 @@
   },
   {
     "kind": "index",
-    "content": "# SignNow API client v1.2.0\n\nSignNow REST Service Wrapper\n\nSandbox API: **api-eval.signnow.com**.\n\nDemo environment entry page: [https://eval.signnow.com](https://eval.signnow.com).\n\nDemo application: [https://app-eval.signnow.com](https://app-eval.signnow.com).\n\n### About SignNow\n\nSignNow is a powerful web-based e-signature solution that streamlines the signing process and overall document flow for businesses of any size. SignNow offers SaaS as well as public and private cloud deployment options using the same underlying API. With SignNow you can easily sign, share and manage documents in compliance with international data laws and industry-specific regulations. SignNow enables you to collect signatures from partners, employees and customers from any device within minutes.\n\n### API Contact Information\n\nIf you have questions about the SignNow API, please visit [https://help.signnow.com/docs](https://help.signnow.com/docs) or email [api@signnow.com](mailto:api@signnow.com).\n\nSee additional contact information at the bottom.\n\n## Installation\n\n```bash\nnpm install @signnow/api-client\n```\n\n## Documentation\n\nSee api reference in our [Documentation](https://signnow.github.io/SignNowNodeSDK/).\n\n## Examples\n\nTo run the examples you will need an API key. You can get one here [https://www.signnow.com/api](https://www.signnow.com/api). For a full list of accepted parameters, refer to the SignNow REST Endpoints API guide: [https://help.signnow.com/docs](https://help.signnow.com/docs).\n\nEvery resource is accessed via your api client instance:\n\n```javascript\nconst api = require('@signnow/api-client')({\n  credentials: 'ENCODED_CLIENT_CREDENTIALS',\n  production: false, // if false uses eval server\n});\n```\n\nEvery resource returns two parameters. The first param contains any errors and the second contains the results.\n\n### User\n\n#### Create a User\n\n```javascript\napi.user.create({\n  first_name: 'John',\n  last_name: 'Wayne',\n  email: 'john@domain.com',\n  password: 'yourpwd',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Retrieve User Information\n\n```javascript\napi.user.retrieve({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n}\n});\n```\n\n### OAuth 2.0\n\n#### Request Access Token\n\n```javascript\napi.oauth2.requestToken({\n  username: 'username',\n  password: 'password',\n}, function(err, res){\n  // handle error or process response data\n});\n```\n\n#### Verify an Access Token\n\n```javascript\napi.oauth2.verify({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Document\n\n#### Retrieve a List of the User’s Documents\n\n```javascript\napi.document.list({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Retrieve a Document Resource\n\n```javascript\napi.document.view({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Download a Collapsed Document\n\n```javascript\napi.document.download({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Upload Document\n\n```javascript\napi.document.create({\n  token: 'your auth token',\n  filepath: 'path to file',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Upload File & Extract Fields\n\n```javascript\napi.document.fieldextract({\n  token: 'your auth token',\n  filepath: 'path to file',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Update Document (add fields)\n\n```javascript\nconst fields = {\n  texts: [\n    {\n      size: 8,\n      x: 61,\n      y: 72,\n      page_number: 0,\n      font: 'Arial',\n      data: 'sample text',\n      line_height: 9.075,\n    },\n  ],\n}\n\napi.document.update({\n  token: 'your auth token',\n  id: 'document id',\n  fields,\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Create Invite to Sign a Document\n\n```javascript\napi.document.invite({\n  token: 'your auth token',\n  id: 'document id',\n  data: {\n    from: 'email address',\n    to: 'email address',\n  },\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Cancel an Invite to a Document\n\n```javascript\napi.document.cancelInvite({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Create a One-time Use Download URL\n\n```javascript\napi.document.share({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Merge Existing Documents\n\n```javascript\napi.document.merge({\n  token: 'your auth token',\n  name: 'the merged doc',\n  document_ids: [\n    '84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa',\n    'a71d963c49f33176e90c5827069c422616b1500c',\n  ],\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Get Document History\n\n```javascript\napi.document.history({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Enumerations\n\n#### Add Enumeration Field to a Document\n\n```javascript\napi.enumerations.addField({\n  token: 'your auth token',\n  document_id: 'document id',\n  x: 150,\n  y: 200,\n  width: 200,\n  height: 50,\n  page_number: 0,\n  role: 'buyer',\n  required: true,\n  label: 'Clothing Brand',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Add Enumeration Options to the Field\n\n```javascript\napi.enumerations.addOptions({\n  token: 'your auth token',\n  enumeration_options: [\n    {\n      enumeration_id: '8a3501896160b12d4ef7507a81b2f0998b8137b1',\n      data: 'Active',\n    },\n    {\n      enumeration_id: '8a3501896160b12d4ef7507a81b2f0998b8137b1',\n      data: 'Old Navy',\n    },\n    {\n      enumeration_id: '8a3501896160b12d4ef7507a81b2f0998b8137b1',\n      data: 'Volcom',\n    },\n  ],\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Template\n\n#### Create a Template\n\n```javascript\napi.template.create({\n  token: 'your auth token',\n  document_id: 'document id',\n  document_name: 'my template',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Duplicate a Template\n\n```javascript\napi.template.duplicate({\n  token: 'your auth token',\n  id: 'document id',\n  name: 'my template',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Folder\n\n#### Returns a list of folders\n\n```javascript\napi.folder.list({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Returns a list of documents inside a folder\n\nFilters  | Values\n------------- | -------------\n```signing-status```  | ```waiting-for-me```, ```waiting-for-others```, ```signed```, ```pending```\n```document-updated```  | ```new Date()```\n```document-created```  | ```new Date()```\n\nSort  | Values\n------------- | -------------\n```document-name```  | ```asc```/```desc```\n```updated```  | ```asc```/```desc```\n```created```  | ```asc```/```desc```\n\n```javascript\napi.folder.documents({\n  token: 'your auth token',\n  id: 'folder id',\n  filter: [\n    {\n      'signing-status': 'pending',\n    },\n  ],\n  sort: {\n    'document-name': 'asc',\n  },\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Webhook\n\n#### Returns a list of Webhooks\n\n```javascript\nsignnow.webhook.list({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Create a Webhook\n\nEvents  | Description\n------------- | -------------\n```document.create```  | Webhook is triggered when a document is uploaded to users account in SignNow\n```document.update```  | Webhook is triggered when a document is updated (fields added, text added, signature added, etc.)\n```document.delete```  | Webhook is triggered when a document is deleted from\n```invite.create```  | Webhook is triggered when an invitation to a SignNow document is created.\n```invite.update```  | Webhook is triggered when an invite to SignNow document is updated. Ex. A signer has signed the document.\n\n```javascript\napi.webhook.create({\n  token: 'your auth token',\n  event: 'document.create',\n  callback_url: 'http://www.domain.com/path',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n## Unit Tests\n\nTo run the unit test you will need to install \"Mocha\" and \"Chai\". You also need to edit a [test.settings.js](https://github.com/signnow/SignNowNodeSDK/blob/master/test/test.settings.js) in the [test](https://github.com/signnow/SignNowNodeSDK/tree/master/test) folder of the api client module. The file will need to contain the following:\n\n```javascript\nexports.settings = {\n  credentials: '[ENCODED CLIENT CREDENTIALS]',\n  token: '[ACCESS TOKEN]',\n  username: '[SIGNNOW USERNAME]',\n  password: '[SIGNNOW PASSWORD]',\n  documentid: '[EXISTING DOCUMENT ID]',\n  templateid: '[EXISTING TEMPLATE ID]',\n  folderid: '[EXISTING FOLDER ID]',\n  email: '[FROM EMAIL FOR INVITE]',\n  testemail: '[TO EMAIL FOR INVITE]',\n};\n```\n\n## Additional Contact Information\n\n### Support\n\nTo contact SignNow support, please email [support@signnow.com](mailto:support@signnow.com).\n\n### Sales\n\nFor pricing information, please call (800) 831-2050 or email [sales@signnow.com](mailto:sales@signnow.com).\n",
+    "content": "# SignNow API client v1.2.0\n\nSignNow REST Service Wrapper\n\nSandbox API: **api-eval.signnow.com**.\n\nDemo environment entry page: [https://eval.signnow.com](https://eval.signnow.com).\n\nDemo application: [https://app-eval.signnow.com](https://app-eval.signnow.com).\n\n### About SignNow\n\nSignNow is a powerful web-based e-signature solution that streamlines the signing process and overall document flow for businesses of any size. SignNow offers SaaS as well as public and private cloud deployment options using the same underlying API. With SignNow you can easily sign, share and manage documents in compliance with international data laws and industry-specific regulations. SignNow enables you to collect signatures from partners, employees and customers from any device within minutes.\n\n### API Contact Information\n\nIf you have questions about the SignNow API, please visit [https://help.signnow.com/docs](https://help.signnow.com/docs) or email [api@signnow.com](mailto:api@signnow.com).\n\nSee additional contact information at the bottom.\n\n## Installation\n\n```bash\nnpm install @signnow/api-client\n```\n\n## Documentation\n\nSee api reference in our [Documentation](https://signnow.github.io/SignNowNodeSDK/).\n\n## Examples\n\nTo run the examples you will need an API key. You can get one here [https://www.signnow.com/api](https://www.signnow.com/api). For a full list of accepted parameters, refer to the SignNow REST Endpoints API guide: [https://help.signnow.com/docs](https://help.signnow.com/docs).\n\nEvery resource is accessed via your api client instance:\n\n```javascript\nconst api = require('@signnow/api-client')({\n  credentials: 'ENCODED_CLIENT_CREDENTIALS',\n  production: false, // if false uses eval server\n});\n```\n\nEvery resource returns two parameters. The first param contains any errors and the second contains the results.\n\n### User\n\n#### Create a User\n\n```javascript\napi.user.create({\n  first_name: 'John',\n  last_name: 'Wayne',\n  email: 'john@domain.com',\n  password: 'yourpwd',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Retrieve User Information\n\n```javascript\napi.user.retrieve({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n}\n});\n```\n\n### OAuth 2.0\n\n#### Request Access Token\n\n```javascript\napi.oauth2.requestToken({\n  username: 'username',\n  password: 'password',\n}, function(err, res){\n  // handle error or process response data\n});\n```\n\n#### Verify an Access Token\n\n```javascript\napi.oauth2.verify({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Document\n\n#### Retrieve a List of the User’s Documents\n\n```javascript\napi.document.list({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Retrieve a Document Resource\n\n```javascript\napi.document.view({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Download a Collapsed Document\n\n```javascript\napi.document.download({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Upload Document\n\n```javascript\napi.document.create({\n  token: 'your auth token',\n  filepath: 'path to file',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Upload File & Extract Fields\n\n```javascript\napi.document.fieldextract({\n  token: 'your auth token',\n  filepath: 'path to file',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Update Document (add fields)\n\n```javascript\nconst fields = {\n  texts: [\n    {\n      size: 8,\n      x: 61,\n      y: 72,\n      page_number: 0,\n      font: 'Arial',\n      data: 'sample text',\n      line_height: 9.075,\n    },\n  ],\n}\n\napi.document.update({\n  token: 'your auth token',\n  id: 'document id',\n  fields,\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Create Invite to Sign a Document\n\n```javascript\napi.document.invite({\n  token: 'your auth token',\n  id: 'document id',\n  data: {\n    from: 'email address',\n    to: 'email address',\n  },\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Cancel an Invite to a Document\n\n```javascript\napi.document.cancelInvite({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Create a One-time Use Download URL\n\n```javascript\napi.document.share({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Merge Existing Documents\n\n```javascript\napi.document.merge({\n  token: 'your auth token',\n  name: 'the merged doc',\n  document_ids: [\n    '84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa',\n    'a71d963c49f33176e90c5827069c422616b1500c',\n  ],\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Get Document History\n\n```javascript\napi.document.history({\n  token: 'your auth token',\n  id: 'document id',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Enumerations\n\n#### Add Enumeration Field to a Document\n\n```javascript\napi.enumerations.addField({\n  token: 'your auth token',\n  document_id: 'document id',\n  x: 150,\n  y: 200,\n  width: 200,\n  height: 50,\n  page_number: 0,\n  role: 'buyer',\n  required: true,\n  label: 'Clothing Brand',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Add Enumeration Options to the Field\n\n```javascript\napi.enumerations.addOptions({\n  token: 'your auth token',\n  enumeration_options: [\n    {\n      enumeration_id: '8a3501896160b12d4ef7507a81b2f0998b8137b1',\n      data: 'Active',\n    },\n    {\n      enumeration_id: '8a3501896160b12d4ef7507a81b2f0998b8137b1',\n      data: 'Old Navy',\n    },\n    {\n      enumeration_id: '8a3501896160b12d4ef7507a81b2f0998b8137b1',\n      data: 'Volcom',\n    },\n  ],\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Template\n\n#### Create a Template\n\n```javascript\napi.template.create({\n  token: 'your auth token',\n  document_id: 'document id',\n  document_name: 'my template',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Duplicate a Template\n\n```javascript\napi.template.duplicate({\n  token: 'your auth token',\n  id: 'document id',\n  name: 'my template',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Folder\n\n#### Returns a list of folders\n\n```javascript\napi.folder.list({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Returns a list of documents inside a folder\n\nFilters  | Values\n------------- | -------------\n```signing-status```  | ```waiting-for-me```, ```waiting-for-others```, ```signed```, ```pending```\n```document-updated```  | ```new Date()```\n```document-created```  | ```new Date()```\n\nSort  | Values\n------------- | -------------\n```document-name```  | ```asc```/```desc```\n```updated```  | ```asc```/```desc```\n```created```  | ```asc```/```desc```\n\n```javascript\napi.folder.documents({\n  token: 'your auth token',\n  id: 'folder id',\n  filter: [\n    {\n      'signing-status': 'pending',\n    },\n  ],\n  sort: {\n    'document-name': 'asc',\n  },\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n### Webhook\n\n#### Returns a list of Webhooks\n\n```javascript\nsignnow.webhook.list({\n  token: 'your auth token',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n#### Create a Webhook\n\nEvents  | Description\n------------- | -------------\n```document.create```  | Webhook is triggered when a document is uploaded to users account in SignNow\n```document.update```  | Webhook is triggered when a document is updated (fields added, text added, signature added, etc.)\n```document.delete```  | Webhook is triggered when a document is deleted from\n```invite.create```  | Webhook is triggered when an invitation to a SignNow document is created.\n```invite.update```  | Webhook is triggered when an invite to SignNow document is updated. Ex. A signer has signed the document.\n\n```javascript\napi.webhook.create({\n  token: 'your auth token',\n  event: 'document.create',\n  callback_url: 'http://www.domain.com/path',\n}, (err, res) => {\n  // handle error or process response data\n});\n```\n\n## Unit Tests\n\nTo run the unit test you will need to install \"Mocha\" and \"Chai\". You also need to edit a [test.settings.js](https://github.com/signnow/SignNowNodeSDK/blob/master/test/test.settings.js) in the [test](https://github.com/signnow/SignNowNodeSDK/tree/master/test) folder of the api client module. The file need to contain the following:\n\n```javascript\nexports.settings = {\n  credentials: '[ENCODED CLIENT CREDENTIALS]',\n  token: '[ACCESS TOKEN]',\n  username: '[SIGNNOW USERNAME]',\n  password: '[SIGNNOW PASSWORD]',\n  documentid: '[EXISTING DOCUMENT ID]',\n  templateid: '[EXISTING TEMPLATE ID]',\n  folderid: '[EXISTING FOLDER ID]',\n  email: '[FROM EMAIL FOR INVITE]',\n  testemail: '[TO EMAIL FOR INVITE]',\n};\n```\n\n## Additional Contact Information\n\n### Support\n\nTo contact SignNow support, please email [support@signnow.com](mailto:support@signnow.com).\n\n### Sales\n\nFor pricing information, please call (800) 831-2050 or email [sales@signnow.com](mailto:sales@signnow.com).\n",
     "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/README.md",
     "name": "./README.md",
     "static": true,

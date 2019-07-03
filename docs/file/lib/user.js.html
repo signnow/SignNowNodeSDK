@@ -67,6 +67,9 @@ class User {
   /**
    * Create user response data
    * @typedef {Object} UserCreateResponse
+   * @property {string} id - user unique id
+   * @property {number} verified - user is verified or not
+   * @property {string} email - user email
    */
 
   /**
@@ -101,6 +104,23 @@ class User {
   /**
    * Retrieve user response data
    * @typedef {Object} UserGetResponse
+   * @property {string} id - user unique id
+   * @property {string} first_name - first name
+   * @property {string} last_name - last name
+   * @property {number} active - user is active or not
+   * @property {string} created - user creation timestamp
+   * @property {string[]} emails - user emails
+   * @property {string} primary_email - user primary email
+   * @property {Object[]} subscriptions - user subscriptions data
+   * @property {?Object} cloud_export_account_details - cloud export account details data
+   * @property {boolean} is_logged_in - user is logged in or not
+   * @property {{start_date: string, end_date: string, start_timestamp: number, end_timestamp: number}} billing_period - user billing period data
+   * @property {Object[]} companies - companies where user is a member of
+   * @property {?string} registration_source - resource where user was registered
+   * @property {Object[]} teams - teams where user is a member of
+   * @property {Object} settings - user specific settings
+   * @property {Object[]} organization_settings - organization specific settings where user is a member of
+   * @property {Object[]} merchant_accounts - merchant accounts data
    */
 
   /**
