@@ -2,12 +2,6 @@
 
 SignNow REST Service Wrapper
 
-Sandbox API: **api-eval.signnow.com**.
-
-Demo environment entry page: [https://eval.signnow.com](https://eval.signnow.com).
-
-Demo application: [https://app-eval.signnow.com](https://app-eval.signnow.com).
-
 ### About SignNow
 
 SignNow is a powerful web-based e-signature solution that streamlines the signing process and overall document flow for businesses of any size. SignNow offers SaaS as well as public and private cloud deployment options using the same underlying API. With SignNow you can easily sign, share and manage documents in compliance with international data laws and industry-specific regulations. SignNow enables you to collect signatures from partners, employees and customers from any device within minutes.
@@ -17,6 +11,14 @@ SignNow is a powerful web-based e-signature solution that streamlines the signin
 If you have questions about the SignNow API, please visit [https://help.signnow.com/docs](https://help.signnow.com/docs) or email [api@signnow.com](mailto:api@signnow.com).
 
 See additional contact information at the bottom.
+
+### API and Application
+
+Resources | Sandbox | Production
+------------- | ------------- | -------------
+API: | **api-eval.signnow.com** | **api.signnow.com**
+Application: | [https://app-eval.signnow.com](https://app-eval.signnow.com) | [https://app.signnow.com](https://app.signnow.com)
+Entry page: | [https://eval.signnow.com](https://eval.signnow.com) |
 
 ## Installation
 

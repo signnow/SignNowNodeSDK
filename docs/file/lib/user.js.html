@@ -47,7 +47,7 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
 const https = require(&apos;https&apos;);
 const {
-  responseHandler, errorHandler, buildRequestOptions,
+  responseHandler, errorHandler, buildRequestOptions, getUserAgent,
 } = require(&apos;./common&apos;);
 
 /**
@@ -79,8 +79,7 @@ class User {
    */
   static create (data, callback) {
     const JSONData = JSON.stringify(data);
-
-    https
+    const req = https
       .request(buildRequestOptions({
         method: &apos;POST&apos;,
         path: &apos;/user&apos;,
@@ -88,11 +87,13 @@ class User {
         headers: {
           &apos;Content-Type&apos;: &apos;application/json&apos;,
           &apos;Content-Length&apos;: Buffer.byteLength(JSONData),
+          &apos;User-Agent&apos;: getUserAgent(),
         },
       }), responseHandler(callback))
-      .on(&apos;error&apos;, errorHandler(callback))
-      .write(JSONData)
-      .end();
+      .on(&apos;error&apos;, errorHandler(callback));
+
+    req.write(JSONData);
+    req.end();
   }
 
   /**
