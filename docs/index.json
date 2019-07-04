@@ -3,7 +3,7 @@
     "__docId__": 0,
     "kind": "file",
     "name": "lib/index.js",
-    "content": "'use strict';\nconst user = require('./user');\nconst document = require('./document');\nconst folder = require('./folder');\nconst webhook = require('./webhook');\nconst oauth2 = require('./oauth2');\nconst enumerations = require('./enumerations');\nconst template = require('./template');\nconst link = require('./link');\nconst {\n  setProductionApiHost, setCredentials,\n} = require('./common');\n\n/**\n * Api client initialization params\n * @typedef {Object} InitParams\n * @property {string} credentials - base64 encoded basic API credentials\n * @property {boolean} [production=true] - production/eval API flag. If false uses eval\n */\n\n/**\n * Api client features\n * @typedef {Object} Features\n * @property {User} user - user related methods\n */\n\n/**\n * SignNow API client initialization\n * @param {InitParams} params - API client initialization params\n * @return {Features}\n */\nmodule.exports = function init ({\n  credentials,\n  production = true,\n}) {\n\n  if (credentials) {\n    setCredentials(credentials);\n  }\n\n  // toggle production\n  if (production) {\n    setProductionApiHost();\n  }\n\n  return {\n    user,\n    oauth2,\n    document,\n    webhook,\n    folder,\n    enumerations,\n    template,\n    link,\n  };\n};\n\n/**\n * Api error object\n * @typedef {Object} ApiError\n * @property {number} code - error code\n * @property {string} message - error message\n */\n\n/**\n * Api error response\n * @typedef {?(ApiError[]|ApiError|Error|string)} ApiErrorResponse\n */\n",
+    "content": "'use strict';\nconst user = require('./user');\nconst document = require('./document');\nconst folder = require('./folder');\nconst webhook = require('./webhook');\nconst oauth2 = require('./oauth2');\nconst enumerations = require('./enumerations');\nconst template = require('./template');\nconst link = require('./link');\nconst {\n  setProductionApiHost, setCredentials,\n} = require('./common');\n\n/**\n * Api client initialization params\n * @typedef {Object} InitParams\n * @property {string} credentials - base64 encoded basic API credentials\n * @property {boolean} [production=true] - production/eval API flag. If false uses eval\n */\n\n/**\n * Api client features\n * @typedef {Object} Features\n * @property {User} user - user related methods\n * @property {OAuth2} oauth2 - authentication related methods\n */\n\n/**\n * SignNow API client initialization\n * @param {InitParams} params - API client initialization params\n * @return {Features}\n */\nmodule.exports = function init ({\n  credentials,\n  production = true,\n}) {\n\n  if (credentials) {\n    setCredentials(credentials);\n  }\n\n  // toggle production\n  if (production) {\n    setProductionApiHost();\n  }\n\n  return {\n    user,\n    oauth2,\n    document,\n    webhook,\n    folder,\n    enumerations,\n    template,\n    link,\n  };\n};\n\n/**\n * Api error object\n * @typedef {Object} ApiError\n * @property {number} code - error code\n * @property {string} message - error message\n */\n\n/**\n * Api error response\n * @typedef {?(ApiError[]|ApiError|Error|string)} ApiErrorResponse\n */\n",
     "static": true,
     "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/index.js",
     "access": "public",
@@ -70,6 +70,16 @@
         "optional": false,
         "name": "user",
         "description": "user related methods"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "OAuth2"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "oauth2",
+        "description": "authentication related methods"
       }
     ],
     "type": {
@@ -94,7 +104,7 @@
     "importPath": "@signnow/api-client",
     "importStyle": "init",
     "description": "SignNow API client initialization",
-    "lineNumber": 32,
+    "lineNumber": 33,
     "params": [
       {
         "nullable": null,
@@ -178,6 +188,300 @@
   {
     "__docId__": 6,
     "kind": "file",
+    "name": "lib/oauth2.js",
+    "content": "'use strict';\nconst https = require('https');\nconst querystring = require('querystring');\nconst {\n  responseHandler, errorHandler, buildRequestOptions,\n} = require('./common');\n\n/**\n * OAuth2 methods\n */\nclass OAuth2 {\n\n  /**\n   * Request access token payload\n   * @typedef {Object} AccessTokenGetParams\n   * @property {string} username - email of a user\n   * @property {string} password - password of a user\n   */\n\n  /**\n   * Request access token response data\n   * @typedef {Object} AccessTokenGetResponse\n   * @property {number} res.expires_in - time in seconds for which the token was issued\n   * @property {string} res.token_type - type of access token (e.g. 'bearer')\n   * @property {string} res.access_token - access token\n   * @property {string} res.refresh_token - refresh token\n   * @property {string} res.scope - access scopes\n   */\n\n  /**\n   * Request access token for a user\n   * @param {AccessTokenGetParams} data - access token reques payload\n   * @param {function(err: ApiErrorResponse, res: AccessTokenGetResponse)} [callback] - error first node.js callback\n   */\n  static requestToken (data, callback) {\n    const dataCopy = Object.assign({}, data, { grant_type: 'password' });\n    const dataStringified = querystring.stringify(dataCopy).replace('%40', '@');\n    const req = https\n      .request(buildRequestOptions({\n        method: 'POST',\n        path: '/oauth2/token',\n        authorization: { type: 'Basic' },\n        headers: {\n          'Content-Type': 'application/x-www-form-urlencoded',\n          'Content-Length': Buffer.byteLength(dataStringified),\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback));\n\n    req.write(dataStringified);\n    req.end();\n  }\n\n  /**\n   * Verify access token payload\n   * @typedef {Object} AccessTokenVerifyParams\n   * @property {string} token - your auth token\n   */\n\n  /**\n   * Verify access token response data\n   * @typedef {Object} AccessTokenVerifyResponse\n   * @property {number} res.expires_in - time in seconds for which the token was issued\n   * @property {string} res.token_type - type of access token (e.g. 'bearer')\n   * @property {string} res.access_token - access token\n   * @property {string} res.scope - access scopes\n   */\n\n  /**\n   * Verify access token\n   * @param {AccessTokenVerifyParams} data - access token reques payload\n   * @param {function(err: ApiErrorResponse, res: AccessTokenVerifyResponse)} [callback] - error first node.js callback\n   */\n  static verify ({ token }, callback) {\n    https\n      .request(buildRequestOptions({\n        method: 'GET',\n        path: '/oauth2/token',\n        authorization: {\n          type: 'Bearer',\n          token,\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback))\n      .end();\n  }\n\n}\n\nmodule.exports = OAuth2;\n",
+    "static": true,
+    "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/oauth2.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 7,
+    "kind": "class",
+    "name": "OAuth2",
+    "memberof": "lib/oauth2.js",
+    "static": true,
+    "longname": "lib/oauth2.js~OAuth2",
+    "access": "public",
+    "export": true,
+    "importPath": "@signnow/api-client/lib/oauth2.js",
+    "importStyle": "OAuth2",
+    "description": "OAuth2 methods",
+    "lineNumber": 11,
+    "interface": false
+  },
+  {
+    "__docId__": 8,
+    "kind": "typedef",
+    "name": "AccessTokenGetParams",
+    "memberof": "lib/oauth2.js~OAuth2",
+    "static": true,
+    "longname": "lib/oauth2.js~OAuth2.AccessTokenGetParams",
+    "access": "public",
+    "description": "Request access token payload",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "username",
+        "description": "email of a user"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "password",
+        "description": "password of a user"
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "AccessTokenGetParams"
+    }
+  },
+  {
+    "__docId__": 9,
+    "kind": "typedef",
+    "name": "AccessTokenGetResponse",
+    "memberof": "lib/oauth2.js~OAuth2",
+    "static": true,
+    "longname": "lib/oauth2.js~OAuth2.AccessTokenGetResponse",
+    "access": "public",
+    "description": "Request access token response data",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "res.expires_in",
+        "description": "time in seconds for which the token was issued"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "res.token_type",
+        "description": "type of access token (e.g. 'bearer')"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "res.access_token",
+        "description": "access token"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "res.refresh_token",
+        "description": "refresh token"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "res.scope",
+        "description": "access scopes"
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "AccessTokenGetResponse"
+    }
+  },
+  {
+    "__docId__": 10,
+    "kind": "method",
+    "name": "requestToken",
+    "memberof": "lib/oauth2.js~OAuth2",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/oauth2.js~OAuth2.requestToken",
+    "access": "public",
+    "description": "Request access token for a user",
+    "lineNumber": 35,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "AccessTokenGetParams"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "access token reques payload"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(err: ApiErrorResponse, res: AccessTokenGetResponse)"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "callback",
+        "description": "error first node.js callback"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 11,
+    "kind": "typedef",
+    "name": "AccessTokenVerifyParams",
+    "memberof": "lib/oauth2.js~OAuth2",
+    "static": true,
+    "longname": "lib/oauth2.js~OAuth2.AccessTokenVerifyParams",
+    "access": "public",
+    "description": "Verify access token payload",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "token",
+        "description": "your auth token"
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "AccessTokenVerifyParams"
+    }
+  },
+  {
+    "__docId__": 12,
+    "kind": "typedef",
+    "name": "AccessTokenVerifyResponse",
+    "memberof": "lib/oauth2.js~OAuth2",
+    "static": true,
+    "longname": "lib/oauth2.js~OAuth2.AccessTokenVerifyResponse",
+    "access": "public",
+    "description": "Verify access token response data",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "res.expires_in",
+        "description": "time in seconds for which the token was issued"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "res.token_type",
+        "description": "type of access token (e.g. 'bearer')"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "res.access_token",
+        "description": "access token"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "res.scope",
+        "description": "access scopes"
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "AccessTokenVerifyResponse"
+    }
+  },
+  {
+    "__docId__": 13,
+    "kind": "method",
+    "name": "verify",
+    "memberof": "lib/oauth2.js~OAuth2",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/oauth2.js~OAuth2.verify",
+    "access": "public",
+    "description": "Verify access token",
+    "lineNumber": 74,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "AccessTokenVerifyParams"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "access token reques payload"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(err: ApiErrorResponse, res: AccessTokenVerifyResponse)"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "callback",
+        "description": "error first node.js callback"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 14,
+    "kind": "file",
     "name": "lib/user.js",
     "content": "'use strict';\nconst https = require('https');\nconst {\n  responseHandler, errorHandler, buildRequestOptions, getUserAgent,\n} = require('./common');\n\n/**\n * User methods\n */\nclass User {\n\n  /**\n   * Create user payload\n   * @typedef {Object} UserCreateParams\n   * @property {string} email - email of new user\n   * @property {string} password - password for new user\n   * @property {string} [first_name] - first name of new user\n   * @property {string} [last_name] - last name of new user\n   */\n\n  /**\n   * Create user response data\n   * @typedef {Object} UserCreateResponse\n   * @property {string} id - user unique id\n   * @property {number} verified - user is verified or not\n   * @property {string} email - user email\n   */\n\n  /**\n   * Create new user account\n   * @param {UserCreateParams} data - create user payload\n   * @param {function(err: ApiErrorResponse, res: UserCreateResponse)} [callback] - error first node.js callback\n   */\n  static create (data, callback) {\n    const JSONData = JSON.stringify(data);\n    const req = https\n      .request(buildRequestOptions({\n        method: 'POST',\n        path: '/user',\n        authorization: { type: 'Basic' },\n        headers: {\n          'Content-Type': 'application/json',\n          'Content-Length': Buffer.byteLength(JSONData),\n          'User-Agent': getUserAgent(),\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback));\n\n    req.write(JSONData);\n    req.end();\n  }\n\n  /**\n   * Get user payload\n   * @typedef {Object} UserGetParams\n   * @property {string} token - your auth token\n   */\n\n  /**\n   * Retrieve user response data\n   * @typedef {Object} UserGetResponse\n   * @property {string} id - user unique id\n   * @property {string} first_name - first name\n   * @property {string} last_name - last name\n   * @property {number} active - user is active or not\n   * @property {string} created - user creation timestamp\n   * @property {string[]} emails - user emails\n   * @property {string} primary_email - user primary email\n   * @property {Object[]} subscriptions - user subscriptions data\n   * @property {?Object} cloud_export_account_details - cloud export account details data\n   * @property {boolean} is_logged_in - user is logged in or not\n   * @property {{start_date: string, end_date: string, start_timestamp: number, end_timestamp: number}} billing_period - user billing period data\n   * @property {Object[]} companies - companies where user is a member of\n   * @property {?string} registration_source - resource where user was registered\n   * @property {Object[]} teams - teams where user is a member of\n   * @property {Object} settings - user specific settings\n   * @property {Object[]} organization_settings - organization specific settings where user is a member of\n   * @property {Object[]} merchant_accounts - merchant accounts data\n   */\n\n  /**\n   * Retrieve user account details\n   * @param {UserGetParams} data - get user payload\n   * @param {function(err: ApiErrorResponse, res: UserGetResponse)} [callback] - error first node.js callback\n   */\n  static retrieve ({ token }, callback) {\n    https\n      .request(buildRequestOptions({\n        method: 'GET',\n        path: '/user',\n        authorization: {\n          type: 'Bearer',\n          token,\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback))\n      .end();\n  }\n\n}\n\nmodule.exports = User;\n",
     "static": true,
@@ -187,7 +491,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 7,
+    "__docId__": 15,
     "kind": "class",
     "name": "User",
     "memberof": "lib/user.js",
@@ -202,7 +506,7 @@
     "interface": false
   },
   {
-    "__docId__": 8,
+    "__docId__": 16,
     "kind": "typedef",
     "name": "UserCreateParams",
     "memberof": "lib/user.js~User",
@@ -261,7 +565,7 @@
     }
   },
   {
-    "__docId__": 9,
+    "__docId__": 17,
     "kind": "typedef",
     "name": "UserCreateResponse",
     "memberof": "lib/user.js~User",
@@ -310,7 +614,7 @@
     }
   },
   {
-    "__docId__": 10,
+    "__docId__": 18,
     "kind": "method",
     "name": "create",
     "memberof": "lib/user.js~User",
@@ -346,7 +650,7 @@
     "return": null
   },
   {
-    "__docId__": 11,
+    "__docId__": 19,
     "kind": "typedef",
     "name": "UserGetParams",
     "memberof": "lib/user.js~User",
@@ -375,7 +679,7 @@
     }
   },
   {
-    "__docId__": 12,
+    "__docId__": 20,
     "kind": "typedef",
     "name": "UserGetResponse",
     "memberof": "lib/user.js~User",
@@ -564,7 +868,7 @@
     }
   },
   {
-    "__docId__": 13,
+    "__docId__": 21,
     "kind": "method",
     "name": "retrieve",
     "memberof": "lib/user.js~User",
@@ -608,7 +912,7 @@
     "access": "public"
   },
   {
-    "__docId__": 14,
+    "__docId__": 22,
     "kind": "testFile",
     "name": "test/document.test.js",
     "content": "'use strict';\n\nconst { settings } = require('./test.settings');\nconst signnow = require('../lib/signnow')({\n  credentials: settings.credentials,\n  production: settings.production, // (false by defult)\n});\n\n(function() {\n\n  describe('document', () => {\n\n    describe('.list()', () => {\n      it('should return a list of documents', done => {\n        signnow.document.list({ token: settings.token }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.be.a('array');\n          res[0].should.have.property('document_name');\n          done();\n        });\n      }).timeout(10000);\n    });\n\n    describe('.view()', () => {\n      it('should return a document resource', done => {\n        signnow.document.view({\n          token: settings.token,\n          id: settings.documentid,\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.have.property('document_name');\n          done();\n        });\n      });\n    });\n\n    describe('.download()', () => {\n      it('should download a collapsed document', done => {\n        signnow.document.download({\n          token: settings.token,\n          id: settings.documentid,\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.exist();\n          done();\n        });\n      });\n    });\n\n    describe('.update()', () => {\n      it('should update a document and return the document id', done => {\n        const fields = {\n          texts: [\n            {\n              size: 8,\n              x: 61,\n              y: 72,\n              page_number: 0,\n              font: 'Arial',\n              data: 'sample text',\n              line_height: 9.075,\n            },\n          ],\n        };\n\n        signnow.document.update({\n          token: settings.token,\n          id: settings.documentid,\n          fields,\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.have.property('id');\n          done();\n        });\n      });\n    });\n\n    describe.skip('.invite()', () => {\n      it('should send an invite to sign a document', done => {\n        signnow.document.invite({\n          token: settings.token,\n          id: settings.documentid,\n          from: settings.email,\n          to: settings.testemail,\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.have.property('result', 'success');\n          done();\n        });\n      });\n    });\n\n    describe('.cancelInvite()', () => {\n      it('should cancel all invites to a document', done => {\n        signnow.document.cancelInvite({\n          token: settings.token,\n          id: settings.documentid,\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.have.property('status', 'success');\n          done();\n        });\n      });\n    });\n\n    describe('.share()', () => {\n      it('should return a link to download the document', done => {\n        signnow.document.share({\n          token: settings.token,\n          id: settings.documentid,\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.have.property('link');\n          done();\n        });\n      });\n    });\n\n    describe.skip('.merge()', () => {\n      it('should merge two documents and return the new document name', done => {\n        signnow.document.merge({\n          token: settings.token,\n          name: 'Mocha Unit Test',\n          document_ids: [\n            'xxx',\n            'xxx',\n          ],\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.have.property('name');\n          res.should.have.property('document_ids');\n          done();\n        });\n      });\n    });\n\n    describe.skip('.create()', () => {\n      it('should upload a file and create a new document', done => {\n        signnow.document.create({\n          token: settings.token,\n          filepath: `${__dirname}/test.doc`,\n        }, (err, res) => {\n          if (err) { return done(err[0].message); }\n          res.should.have.property('id');\n          done();\n        });\n      }).timeout(20000);\n    });\n\n    describe.skip('.extractfields()', () => {\n      it('should upload a file containing SignNow field tags', done => {\n        signnow.document.extractfields({\n          token: settings.token,\n          filepath: `${__dirname}/test.doc`,\n        }, (err, res) => {\n          if (err) { return done(err[0].message); }\n          res.should.have.property('id');\n          done();\n        });\n      }).timeout(20000);\n    });\n\n    describe.skip('.history()', () => {\n      it('should return the history of a document', done => {\n        signnow.document.history({\n          token: settings.token,\n          id: settings.documentid,\n        }, (err, res) => {\n          if (err) { return done(err[0].message); }\n          res.should.be.a('array');\n          res[0].should.have.property('event');\n          done();\n        });\n      });\n    });\n\n  });\n\n})();\n",
@@ -619,7 +923,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 15,
+    "__docId__": 23,
     "kind": "test",
     "name": "describe0",
     "testId": 0,
@@ -632,7 +936,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 16,
+    "__docId__": 24,
     "kind": "test",
     "name": "describe1",
     "testId": 1,
@@ -645,7 +949,7 @@
     "lineNumber": 13
   },
   {
-    "__docId__": 17,
+    "__docId__": 25,
     "kind": "test",
     "name": "describe2",
     "testId": 2,
@@ -658,7 +962,7 @@
     "lineNumber": 24
   },
   {
-    "__docId__": 18,
+    "__docId__": 26,
     "kind": "test",
     "name": "it3",
     "testId": 3,
@@ -671,7 +975,7 @@
     "lineNumber": 25
   },
   {
-    "__docId__": 19,
+    "__docId__": 27,
     "kind": "test",
     "name": "describe4",
     "testId": 4,
@@ -684,7 +988,7 @@
     "lineNumber": 37
   },
   {
-    "__docId__": 20,
+    "__docId__": 28,
     "kind": "test",
     "name": "it5",
     "testId": 5,
@@ -697,7 +1001,7 @@
     "lineNumber": 38
   },
   {
-    "__docId__": 21,
+    "__docId__": 29,
     "kind": "test",
     "name": "describe6",
     "testId": 6,
@@ -710,7 +1014,7 @@
     "lineNumber": 50
   },
   {
-    "__docId__": 22,
+    "__docId__": 30,
     "kind": "test",
     "name": "it7",
     "testId": 7,
@@ -723,7 +1027,7 @@
     "lineNumber": 51
   },
   {
-    "__docId__": 23,
+    "__docId__": 31,
     "kind": "test",
     "name": "it8",
     "testId": 8,
@@ -736,7 +1040,7 @@
     "lineNumber": 79
   },
   {
-    "__docId__": 24,
+    "__docId__": 32,
     "kind": "test",
     "name": "describe9",
     "testId": 9,
@@ -749,7 +1053,7 @@
     "lineNumber": 93
   },
   {
-    "__docId__": 25,
+    "__docId__": 33,
     "kind": "test",
     "name": "it10",
     "testId": 10,
@@ -762,7 +1066,7 @@
     "lineNumber": 94
   },
   {
-    "__docId__": 26,
+    "__docId__": 34,
     "kind": "test",
     "name": "describe11",
     "testId": 11,
@@ -775,7 +1079,7 @@
     "lineNumber": 106
   },
   {
-    "__docId__": 27,
+    "__docId__": 35,
     "kind": "test",
     "name": "it12",
     "testId": 12,
@@ -788,7 +1092,7 @@
     "lineNumber": 107
   },
   {
-    "__docId__": 28,
+    "__docId__": 36,
     "kind": "test",
     "name": "it13",
     "testId": 13,
@@ -801,7 +1105,7 @@
     "lineNumber": 120
   },
   {
-    "__docId__": 29,
+    "__docId__": 37,
     "kind": "test",
     "name": "it14",
     "testId": 14,
@@ -814,7 +1118,7 @@
     "lineNumber": 164
   },
   {
-    "__docId__": 30,
+    "__docId__": 38,
     "kind": "testFile",
     "name": "test/enumeration.test.js",
     "content": "'use strict';\nconst { settings } = require('./test.settings');\nconst signnow = require('../lib')({\n  credentials: settings.credentials,\n  production: settings.production, // (false by defult)\n});\n\n(function() {\n\n  describe('enumerations', () => {\n\n    describe('.addField()', () => {\n      it('should add an enumeration field(drop down) to a document and return the document id', done => {\n        signnow.enumerations.addField({\n          token: settings.token,\n          document_id: settings.documentid,\n          x: 150,\n          y: 200,\n          width: 200,\n          height: 50,\n          page_number: 0,\n          role: 'buyer',\n          required: true,\n          label: 'Clothing Brand',\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.have.property('id');\n          done();\n        });\n      });\n    });\n\n    describe('.addOptions()', () => {\n      let fieldId = '';\n      before(done => {\n        signnow.enumerations.addField({\n          token: settings.token,\n          document_id: settings.documentid,\n          x: 150,\n          y: 200,\n          width: 200,\n          height: 50,\n          page_number: 0,\n          role: 'buyer',\n          required: true,\n          label: 'Clothing Brand',\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          fieldId = res.id;\n          done();\n        });\n      });\n      it('should add enumeration options to the field we just created and return an array', done => {\n        signnow.enumerations.addOptions({\n          token: settings.token,\n          enumeration_options: [\n            {\n              enumeration_id: fieldId,\n              data: 'Active',\n            },\n            {\n              enumeration_id: fieldId,\n              data: 'Old Navy',\n            },\n            {\n              enumeration_id: fieldId,\n              data: 'Volcom',\n            },\n          ],\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.be.a('array');\n          done();\n        });\n      });\n    });\n\n  });\n\n})();\n",
@@ -825,7 +1129,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 31,
+    "__docId__": 39,
     "kind": "test",
     "name": "describe15",
     "testId": 15,
@@ -838,7 +1142,7 @@
     "lineNumber": 10
   },
   {
-    "__docId__": 32,
+    "__docId__": 40,
     "kind": "test",
     "name": "describe16",
     "testId": 16,
@@ -851,7 +1155,7 @@
     "lineNumber": 12
   },
   {
-    "__docId__": 33,
+    "__docId__": 41,
     "kind": "test",
     "name": "it17",
     "testId": 17,
@@ -864,7 +1168,7 @@
     "lineNumber": 13
   },
   {
-    "__docId__": 34,
+    "__docId__": 42,
     "kind": "test",
     "name": "describe18",
     "testId": 18,
@@ -877,7 +1181,7 @@
     "lineNumber": 33
   },
   {
-    "__docId__": 35,
+    "__docId__": 43,
     "kind": "test",
     "name": "it19",
     "testId": 19,
@@ -890,7 +1194,7 @@
     "lineNumber": 53
   },
   {
-    "__docId__": 36,
+    "__docId__": 44,
     "kind": "testFile",
     "name": "test/folder.test.js",
     "content": "'use strict';\nconst { settings } = require('./test.settings');\nconst signnow = require('../lib')({\n  credentials: settings.credentials,\n  production: settings.production, // (false by defult)\n});\n\n(function() {\n\n  describe('folder', () => {\n\n    describe('.list()', () => {\n      it('should return a list of folders', done => {\n        signnow.folder.list({ token: settings.token }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.be.a('object');\n          res.should.have.property('folders');\n          done();\n        });\n      });\n    });\n\n    describe('.documents()', () => {\n      it('should return all documents inside a folder', done => {\n        signnow.folder.documents({\n          token: settings.token,\n          id: settings.folderid,\n          filter: [\n            { 'signing-status': 'pending' },\n            { 'signing-status': 'waiting-for-me' },\n          ],\n          sort: { 'document-name': 'asc' },\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.be.a('object');\n          res.should.have.property('documents');\n          done();\n        });\n      });\n    });\n\n\n  });\n\n})();\n",
@@ -901,7 +1205,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 37,
+    "__docId__": 45,
     "kind": "test",
     "name": "describe20",
     "testId": 20,
@@ -914,7 +1218,7 @@
     "lineNumber": 10
   },
   {
-    "__docId__": 38,
+    "__docId__": 46,
     "kind": "test",
     "name": "describe21",
     "testId": 21,
@@ -927,7 +1231,7 @@
     "lineNumber": 12
   },
   {
-    "__docId__": 39,
+    "__docId__": 47,
     "kind": "test",
     "name": "it22",
     "testId": 22,
@@ -940,7 +1244,7 @@
     "lineNumber": 13
   },
   {
-    "__docId__": 40,
+    "__docId__": 48,
     "kind": "test",
     "name": "describe23",
     "testId": 23,
@@ -953,7 +1257,7 @@
     "lineNumber": 23
   },
   {
-    "__docId__": 41,
+    "__docId__": 49,
     "kind": "test",
     "name": "it24",
     "testId": 24,
@@ -966,7 +1270,7 @@
     "lineNumber": 24
   },
   {
-    "__docId__": 42,
+    "__docId__": 50,
     "kind": "testFile",
     "name": "test/link.test.js",
     "content": "'use strict';\nconst { settings } = require('./test.settings');\nconst signnow = require('../lib')({\n  credentials: settings.credentials,\n  production: settings.production, // (false by defult)\n});\n\n(function() {\n\n  describe('link', () => {\n\n    describe('.create()', () => {\n      it('should create a new signing link and return two urls', done => {\n        signnow.webhook.create({ document_id: settings.documentid }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.be.a('object');\n          res.should.have.property('url');\n          done();\n        });\n      });\n    });\n\n\n  });\n\n})();\n",
@@ -977,7 +1281,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 43,
+    "__docId__": 51,
     "kind": "test",
     "name": "describe25",
     "testId": 25,
@@ -990,7 +1294,7 @@
     "lineNumber": 10
   },
   {
-    "__docId__": 44,
+    "__docId__": 52,
     "kind": "test",
     "name": "describe26",
     "testId": 26,
@@ -1003,7 +1307,7 @@
     "lineNumber": 12
   },
   {
-    "__docId__": 45,
+    "__docId__": 53,
     "kind": "test",
     "name": "it27",
     "testId": 27,
@@ -1016,7 +1320,7 @@
     "lineNumber": 13
   },
   {
-    "__docId__": 46,
+    "__docId__": 54,
     "kind": "testFile",
     "name": "test/oauth.test.js",
     "content": "'use strict';\nconst { settings } = require('./test.settings');\nconst signnow = require('../lib')({\n  credentials: settings.credentials,\n  production: settings.production, // (false by defult)\n});\n\n(function() {\n\n  describe('oauth2', () => {\n\n    describe('.requestToken()', () => {\n      it('should return an access token', done => {\n        signnow.oauth2.requestToken({\n          username: settings.username,\n          password: settings.password,\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.have.property('access_token');\n          done();\n        });\n      });\n    });\n\n    describe('.verify()', () => {\n      it('should return a verified access token', done => {\n        signnow.oauth2.verify({ token: settings.token }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.have.property('access_token');\n          done();\n        });\n      });\n    });\n\n  });\n\n})();\n",
@@ -1027,7 +1331,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 47,
+    "__docId__": 55,
     "kind": "test",
     "name": "describe28",
     "testId": 28,
@@ -1040,7 +1344,7 @@
     "lineNumber": 10
   },
   {
-    "__docId__": 48,
+    "__docId__": 56,
     "kind": "test",
     "name": "describe29",
     "testId": 29,
@@ -1053,7 +1357,7 @@
     "lineNumber": 12
   },
   {
-    "__docId__": 49,
+    "__docId__": 57,
     "kind": "test",
     "name": "it30",
     "testId": 30,
@@ -1066,7 +1370,7 @@
     "lineNumber": 13
   },
   {
-    "__docId__": 50,
+    "__docId__": 58,
     "kind": "test",
     "name": "describe31",
     "testId": 31,
@@ -1079,7 +1383,7 @@
     "lineNumber": 25
   },
   {
-    "__docId__": 51,
+    "__docId__": 59,
     "kind": "test",
     "name": "it32",
     "testId": 32,
@@ -1092,7 +1396,7 @@
     "lineNumber": 26
   },
   {
-    "__docId__": 52,
+    "__docId__": 60,
     "kind": "testFile",
     "name": "test/template.test.js",
     "content": "'use strict';\nconst { settings } = require('./test.settings');\nconst signnow = require('../lib')({\n  credentials: settings.credentials,\n  production: settings.production, // (false by defult)\n});\n\n(function() {\n\n  describe('template', () => {\n\n    describe.skip('.create()', () => {\n      it('should create a template by flattening an existing document and return the template id', done => {\n        signnow.template.create({\n          token: settings.token,\n          document_id: settings.documentid,\n          document_name: 'Mocha Unit Test Template',\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.have.property('id');\n          done();\n        });\n      });\n    });\n\n    describe.skip('.create()', () => {\n      it('should create a template by flattening an existing document and return the template id', done => {\n        signnow.template.create({\n          token: settings.token,\n          document_id: settings.templateid,\n          document_name: 'Mocha Unit Test Duplicate Template',\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.have.property('id');\n          done();\n        });\n      });\n    });\n\n  });\n\n})();\n",
@@ -1103,7 +1407,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 53,
+    "__docId__": 61,
     "kind": "test",
     "name": "describe33",
     "testId": 33,
@@ -1116,7 +1420,7 @@
     "lineNumber": 10
   },
   {
-    "__docId__": 54,
+    "__docId__": 62,
     "kind": "test",
     "name": "it34",
     "testId": 34,
@@ -1129,7 +1433,7 @@
     "lineNumber": 13
   },
   {
-    "__docId__": 55,
+    "__docId__": 63,
     "kind": "test",
     "name": "it35",
     "testId": 35,
@@ -1142,7 +1446,7 @@
     "lineNumber": 27
   },
   {
-    "__docId__": 56,
+    "__docId__": 64,
     "kind": "testFile",
     "name": "test/user.test.js",
     "content": "'use strict';\nconst { settings } = require('./test.settings');\nconst signnow = require('../lib/signnow')({\n  credentials: settings.credentials,\n  production: settings.production, // (false by defult)\n});\n\n(function() {\n\n  // generate random string\n  function randString (x) {\n    let s = '';\n    while (s.length < x && x > 0) {\n      const r = Math.random();\n      s += (r < 0.1 ? Math.floor(r * 100) : String.fromCharCode(Math.floor(r * 26) + (r > 0.5 ? 97 : 65)));\n    }\n    return s;\n  }\n\n  describe('user', () => {\n\n    describe('.create()', () => {\n      it('should create a new user account', done => {\n        const userObj = {\n          first_name: `Unit${randString(4)}`,\n          last_name: `Test${randString(4)}`,\n          email: `unit.test${randString(4)}@domain.com`,\n          password: 'MacBookPr0',\n        };\n\n        // console.log(userObj);\n        signnow.user.create(userObj, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.have.property('id');\n          done();\n        });\n      });\n    });\n\n    describe('.retrieve()', () => {\n      it('should retrieve user resource', done => {\n        signnow.user.retrieve({ token: settings.token }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.have.property('first_name');\n          done();\n        });\n      });\n    });\n\n  });\n\n})();\n",
@@ -1153,7 +1457,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 57,
+    "__docId__": 65,
     "kind": "test",
     "name": "describe36",
     "testId": 36,
@@ -1166,7 +1470,7 @@
     "lineNumber": 20
   },
   {
-    "__docId__": 58,
+    "__docId__": 66,
     "kind": "test",
     "name": "describe37",
     "testId": 37,
@@ -1179,7 +1483,7 @@
     "lineNumber": 22
   },
   {
-    "__docId__": 59,
+    "__docId__": 67,
     "kind": "test",
     "name": "it38",
     "testId": 38,
@@ -1192,7 +1496,7 @@
     "lineNumber": 23
   },
   {
-    "__docId__": 60,
+    "__docId__": 68,
     "kind": "test",
     "name": "describe39",
     "testId": 39,
@@ -1205,7 +1509,7 @@
     "lineNumber": 40
   },
   {
-    "__docId__": 61,
+    "__docId__": 69,
     "kind": "test",
     "name": "it40",
     "testId": 40,
@@ -1218,7 +1522,7 @@
     "lineNumber": 41
   },
   {
-    "__docId__": 62,
+    "__docId__": 70,
     "kind": "testFile",
     "name": "test/webhook.test.js",
     "content": "'use strict';\nconst { settings } = require('./test.settings');\nconst signnow = require('../lib')({\n  credentials: settings.credentials,\n  production: settings.production, // (false by defult)\n});\n\n(function() {\n\n  describe('webhook', () => {\n\n    describe('.list()', () => {\n      it('should return a list of webhooks', done => {\n        signnow.webhook.list({ token: settings.token }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.be.a('object');\n          res.should.have.property('subscriptions');\n          done();\n        });\n      });\n    });\n\n    describe('.create()', () => {\n      it('should create a new webhook and return an id', done => {\n        signnow.webhook.create({\n          token: settings.token,\n          event: 'document.create',\n          callback_url: 'http://requestb.in/qwmphiqw',\n        }, (err, res) => {\n          if (err) { throw err[0].message; }\n          res.should.be.a('object');\n          res.should.have.property('id');\n          done();\n        });\n      });\n    });\n\n\n  });\n\n})();\n",
@@ -1229,7 +1533,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 63,
+    "__docId__": 71,
     "kind": "test",
     "name": "describe41",
     "testId": 41,
@@ -1242,7 +1546,7 @@
     "lineNumber": 10
   },
   {
-    "__docId__": 64,
+    "__docId__": 72,
     "kind": "test",
     "name": "describe42",
     "testId": 42,
@@ -1255,7 +1559,7 @@
     "lineNumber": 12
   },
   {
-    "__docId__": 65,
+    "__docId__": 73,
     "kind": "test",
     "name": "it43",
     "testId": 43,
@@ -1268,7 +1572,7 @@
     "lineNumber": 13
   },
   {
-    "__docId__": 66,
+    "__docId__": 74,
     "kind": "test",
     "name": "describe44",
     "testId": 44,
@@ -1281,7 +1585,7 @@
     "lineNumber": 23
   },
   {
-    "__docId__": 67,
+    "__docId__": 75,
     "kind": "test",
     "name": "it45",
     "testId": 45,

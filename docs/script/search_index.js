@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "@signnow/api-client/lib/oauth2.js~oauth2",
+    "class/lib/oauth2.js~OAuth2.html",
+    "<span>OAuth2</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/oauth2.js</span>",
+    "class"
+  ],
+  [
     "@signnow/api-client/lib/user.js~user",
     "class/lib/user.js~User.html",
     "<span>User</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/user.js</span>",
@@ -190,6 +196,48 @@ window.esdocSearchIndex = [
     "typedef/index.html#static-typedef-InitParams",
     "lib/index.js~InitParams",
     "typedef"
+  ],
+  [
+    "lib/oauth2.js",
+    "file/lib/oauth2.js.html",
+    "lib/oauth2.js",
+    "file"
+  ],
+  [
+    "lib/oauth2.js~oauth2.accesstokengetparams",
+    "typedef/index.html#static-typedef-AccessTokenGetParams",
+    "lib/oauth2.js~OAuth2.AccessTokenGetParams",
+    "typedef"
+  ],
+  [
+    "lib/oauth2.js~oauth2.accesstokengetresponse",
+    "typedef/index.html#static-typedef-AccessTokenGetResponse",
+    "lib/oauth2.js~OAuth2.AccessTokenGetResponse",
+    "typedef"
+  ],
+  [
+    "lib/oauth2.js~oauth2.accesstokenverifyparams",
+    "typedef/index.html#static-typedef-AccessTokenVerifyParams",
+    "lib/oauth2.js~OAuth2.AccessTokenVerifyParams",
+    "typedef"
+  ],
+  [
+    "lib/oauth2.js~oauth2.accesstokenverifyresponse",
+    "typedef/index.html#static-typedef-AccessTokenVerifyResponse",
+    "lib/oauth2.js~OAuth2.AccessTokenVerifyResponse",
+    "typedef"
+  ],
+  [
+    "lib/oauth2.js~oauth2.requesttoken",
+    "class/lib/oauth2.js~OAuth2.html#static-method-requestToken",
+    "lib/oauth2.js~OAuth2.requestToken",
+    "method"
+  ],
+  [
+    "lib/oauth2.js~oauth2.verify",
+    "class/lib/oauth2.js~OAuth2.html#static-method-verify",
+    "lib/oauth2.js~OAuth2.verify",
+    "method"
   ],
   [
     "lib/user.js",

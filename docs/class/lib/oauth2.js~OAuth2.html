@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">User | SignNow API client</title>
+  <title data-ice="title">OAuth2 | SignNow API client</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -49,17 +49,17 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import User from &apos;<span><a href="file/lib/user.js.html#lineNumber10">@signnow/api-client/lib/user.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import OAuth2 from &apos;<span><a href="file/lib/oauth2.js.html#lineNumber11">@signnow/api-client/lib/oauth2.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/lib/user.js.html#lineNumber10">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/lib/oauth2.js.html#lineNumber11">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
-  <h1 data-ice="name">User</h1>
+  <h1 data-ice="name">OAuth2</h1>
 
   
 
@@ -75,7 +75,7 @@
 
   
   
-  <div class="description" data-ice="description"><p>User methods</p>
+  <div class="description" data-ice="description"><p>OAuth2 methods</p>
 </div>
   
 
@@ -107,13 +107,13 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/user.js~User.html#static-method-create">create</a></span></span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-UserCreateParams">UserCreateParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-UserCreateResponse">UserCreateResponse</a></span>)</span></span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/oauth2.js~OAuth2.html#static-method-requestToken">requestToken</a></span></span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-AccessTokenGetParams">AccessTokenGetParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-AccessTokenGetResponse">AccessTokenGetResponse</a></span>)</span></span>)</span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Create new user account</p>
+        <div data-ice="description"><p>Request access token for a user</p>
 </div>
       </div>
     </td>
@@ -136,13 +136,13 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/user.js~User.html#static-method-retrieve">retrieve</a></span></span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-UserGetParams">UserGetParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-UserGetResponse">UserGetResponse</a></span>)</span></span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/oauth2.js~OAuth2.html#static-method-verify">verify</a></span></span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-AccessTokenVerifyParams">AccessTokenVerifyParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-AccessTokenVerifyResponse">AccessTokenVerifyResponse</a></span>)</span></span>)</span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Retrieve user account details</p>
+        <div data-ice="description"><p>Verify access token</p>
 </div>
       </div>
     </td>
@@ -164,25 +164,25 @@
 <div data-ice="staticMethodDetails"><h2 data-ice="title">Static Public Methods</h2>
 
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-method-create">
+  <h3 data-ice="anchor" id="static-method-requestToken">
     <span class="access" data-ice="access">public</span>
     <span data-ice="static">static</span>
     
     
     
     
-    <span class="code" data-ice="name">create</span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-UserCreateParams">UserCreateParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-UserCreateResponse">UserCreateResponse</a></span>)</span></span>)</span>
+    <span class="code" data-ice="name">requestToken</span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-AccessTokenGetParams">AccessTokenGetParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-AccessTokenGetResponse">AccessTokenGetResponse</a></span>)</span></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/user.js.html#lineNumber34">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/oauth2.js.html#lineNumber35">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Create new user account</p>
+  <div data-ice="description"><p>Request access token for a user</p>
 </div>
 
   
@@ -197,14 +197,14 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">data</td>
-      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-UserCreateParams">UserCreateParams</a></span></td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-AccessTokenGetParams">AccessTokenGetParams</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>create user payload</p>
+      <td data-ice="description"><p>access token reques payload</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">callback</td>
-      <td data-ice="type" class="code"><span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-UserCreateResponse">UserCreateResponse</a></span>)</span></span></td>
+      <td data-ice="type" class="code"><span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-AccessTokenGetResponse">AccessTokenGetResponse</a></span>)</span></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
       <td data-ice="description"><p>error first node.js callback</p>
 </td>
@@ -232,25 +232,25 @@
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-method-retrieve">
+  <h3 data-ice="anchor" id="static-method-verify">
     <span class="access" data-ice="access">public</span>
     <span data-ice="static">static</span>
     
     
     
     
-    <span class="code" data-ice="name">retrieve</span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-UserGetParams">UserGetParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-UserGetResponse">UserGetResponse</a></span>)</span></span>)</span>
+    <span class="code" data-ice="name">verify</span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-AccessTokenVerifyParams">AccessTokenVerifyParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-AccessTokenVerifyResponse">AccessTokenVerifyResponse</a></span>)</span></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/user.js.html#lineNumber86">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/oauth2.js.html#lineNumber74">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Retrieve user account details</p>
+  <div data-ice="description"><p>Verify access token</p>
 </div>
 
   
@@ -265,14 +265,14 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">data</td>
-      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-UserGetParams">UserGetParams</a></span></td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-AccessTokenVerifyParams">AccessTokenVerifyParams</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>get user payload</p>
+      <td data-ice="description"><p>access token reques payload</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">callback</td>
-      <td data-ice="type" class="code"><span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-UserGetResponse">UserGetResponse</a></span>)</span></span></td>
+      <td data-ice="type" class="code"><span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-AccessTokenVerifyResponse">AccessTokenVerifyResponse</a></span>)</span></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
       <td data-ice="description"><p>error first node.js callback</p>
 </td>
