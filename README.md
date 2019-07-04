@@ -22,6 +22,10 @@ Entry page: | [https://eval.signnow.com](https://eval.signnow.com) |
 
 ## Installation
 
+`@signnow/api-client` supports node.js **v6.4.0** or later.
+
+To install the latest version of `@signnow/api-client` run:
+
 ```bash
 npm install @signnow/api-client
 ```
