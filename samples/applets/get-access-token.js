@@ -1,7 +1,7 @@
 /*
  * to run get access token applet from the project root folder type in your console:
- * > node samples/applets/get-access-token <cliend_id> <client_secret> <email> <password>
- *  <cliend_id>, <client_secret>, <email>, <password> - are required params
+ * > node samples/applets/get-access-token <cliend_id> <client_secret> <username> <password>
+ *  <cliend_id>, <client_secret>, <username>, <password> - are required params
  */
 
 'use strict';

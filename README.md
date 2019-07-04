@@ -407,6 +407,10 @@ exports.settings = {
 };
 ```
 
+## License
+
+This project is released under the MIT license, which can be found in [License](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md).
+
 ## Additional Contact Information
 
 ### Support
