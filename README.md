@@ -389,6 +389,30 @@ api.webhook.create({
 });
 ```
 
+### Promisify methods
+
+If you are using node.js version **8.0.0** or higher you can use built in [*promisify*](https://nodejs.org/api/util.html#util_util_promisify_original) utility:
+
+```javascript
+const { promisify } = require('util');
+const api = require('@signnow/api-client')({
+  credentials: 'ENCODED_CLIENT_CREDENTIALS',
+  production: false, // if false uses eval server
+});
+const requestToken = promisify(api.oauth2.requestToken);
+
+requestToken({
+  username: 'username',
+  password: 'password',
+})
+  .then(res => {
+    // process response data
+  })
+  .catch(err => {
+    // handle error
+  });
+```
+
 ## Unit Tests
 
 To run the unit test you will need to install "Mocha" and "Chai". You also need to edit a [test.settings.js](https://github.com/signnow/SignNowNodeSDK/blob/master/test/test.settings.js) in the [test](https://github.com/signnow/SignNowNodeSDK/tree/master/test) folder of the api client module. The file need to contain the following:

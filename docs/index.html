@@ -379,6 +379,25 @@ api.document.update({
   // handle error or process response data
 });</code>
 </code></pre>
+<h3 id="promisify-methods">Promisify methods</h3><p>If you are using node.js version <strong>8.0.0</strong> or higher you can use built in <a href="https://nodejs.org/api/util.html#util_util_promisify_original"><em>promisify</em></a> utility:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const { promisify } = require(&apos;util&apos;);
+const api = require(&apos;@signnow/api-client&apos;)({
+  credentials: &apos;ENCODED_CLIENT_CREDENTIALS&apos;,
+  production: false, // if false uses eval server
+});
+const requestToken = promisify(api.oauth2.requestToken);
+
+requestToken({
+  username: &apos;username&apos;,
+  password: &apos;password&apos;,
+})
+  .then(res =&gt; {
+    // process response data
+  })
+  .catch(err =&gt; {
+    // handle error
+  });</code>
+</code></pre>
 <h2 id="unit-tests">Unit Tests</h2><p>To run the unit test you will need to install &quot;Mocha&quot; and &quot;Chai&quot;. You also need to edit a <a href="https://github.com/signnow/SignNowNodeSDK/blob/master/test/test.settings.js">test.settings.js</a> in the <a href="https://github.com/signnow/SignNowNodeSDK/tree/master/test">test</a> folder of the api client module. The file need to contain the following:</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">exports.settings = {
   credentials: &apos;[ENCODED CLIENT CREDENTIALS]&apos;,
