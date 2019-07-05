@@ -138,11 +138,11 @@
         },
         "ObjectPattern": {
           "multiline": true,
-          "minProperties": 2
+          "minProperties": 3
         },
         "ImportDeclaration": {
           "multiline": true,
-          "minProperties": 2
+          "minProperties": 3
         },
         "ExportDeclaration": "never"
       }
