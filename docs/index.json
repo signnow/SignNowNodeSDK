@@ -682,7 +682,7 @@
     "__docId__": 21,
     "kind": "file",
     "name": "lib/index.js",
-    "content": "'use strict';\nconst user = require('./user');\nconst document = require('./document');\nconst folder = require('./folder');\nconst webhook = require('./webhook');\nconst oauth2 = require('./oauth2');\nconst enumerations = require('./enumerations');\nconst template = require('./template');\nconst link = require('./link');\nconst { setProductionApiHost, setCredentials } = require('./common');\n\n/**\n * Api client initialization params\n * @typedef {Object} InitParams\n * @property {string} credentials - base64 encoded basic API credentials\n * @property {boolean} [production=true] - production/eval API flag. If false uses eval\n */\n\n/**\n * Api client features\n * @typedef {Object} Features\n * @property {User} user - user related methods\n * @property {OAuth2} oauth2 - authentication related methods\n */\n\n/**\n * SignNow API client initialization\n * @param {InitParams} params - API client initialization params\n * @return {Features}\n */\nmodule.exports = function init ({\n  credentials,\n  production = true,\n}) {\n\n  if (credentials) {\n    setCredentials(credentials);\n  }\n\n  // toggle production\n  if (production) {\n    setProductionApiHost();\n  }\n\n  return {\n    user,\n    oauth2,\n    document,\n    webhook,\n    folder,\n    enumerations,\n    template,\n    link,\n  };\n};\n\n/**\n * Api error object\n * @typedef {Object} ApiError\n * @property {number} code - error code\n * @property {string} message - error message\n */\n\n/**\n * Api error response\n * @typedef {?(ApiError[]|ApiError|Error|string)} ApiErrorResponse\n */\n",
+    "content": "'use strict';\nconst user = require('./user');\nconst document = require('./document');\nconst folder = require('./folder');\nconst webhook = require('./webhook');\nconst oauth2 = require('./oauth2');\nconst enumerations = require('./enumerations');\nconst template = require('./template');\nconst link = require('./link');\nconst { setProductionApiHost, setCredentials } = require('./common');\n\n/**\n * Api client initialization params\n * @typedef {Object} InitParams\n * @property {string} credentials - base64 encoded basic API credentials\n * @property {boolean} [production=true] - production/eval API flag. If false uses eval\n */\n\n/**\n * Api client features\n * @typedef {Object} Features\n * @property {User} user - user related methods\n * @property {OAuth2} oauth2 - authentication related methods\n * @property {Document} document - document related methods\n */\n\n/**\n * SignNow API client initialization\n * @param {InitParams} params - API client initialization params\n * @return {Features}\n */\nmodule.exports = function init ({\n  credentials,\n  production = true,\n}) {\n\n  if (credentials) {\n    setCredentials(credentials);\n  }\n\n  // toggle production\n  if (production) {\n    setProductionApiHost();\n  }\n\n  return {\n    user,\n    oauth2,\n    document,\n    webhook,\n    folder,\n    enumerations,\n    template,\n    link,\n  };\n};\n\n/**\n * Api error object\n * @typedef {Object} ApiError\n * @property {number} code - error code\n * @property {string} message - error message\n */\n\n/**\n * Api error response\n * @typedef {?(ApiError[]|ApiError|Error|string)} ApiErrorResponse\n */\n",
     "static": true,
     "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/index.js",
     "access": "public",
@@ -759,6 +759,16 @@
         "optional": false,
         "name": "oauth2",
         "description": "authentication related methods"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Document"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "document",
+        "description": "document related methods"
       }
     ],
     "type": {
@@ -783,7 +793,7 @@
     "importPath": "@signnow/api-client",
     "importStyle": "init",
     "description": "SignNow API client initialization",
-    "lineNumber": 31,
+    "lineNumber": 32,
     "params": [
       {
         "nullable": null,
