@@ -204,6 +204,30 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/document.js~document.documentfields",
+    "typedef/index.html#static-typedef-DocumentFields",
+    "lib/document.js~Document.DocumentFields",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentupdateparams",
+    "typedef/index.html#static-typedef-DocumentUpdateParams",
+    "lib/document.js~Document.DocumentUpdateParams",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentupdateresponse",
+    "typedef/index.html#static-typedef-DocumentUpdateResponse",
+    "lib/document.js~Document.DocumentUpdateResponse",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.signaturefield",
+    "typedef/index.html#static-typedef-SignatureField",
+    "lib/document.js~Document.SignatureField",
+    "typedef"
+  ],
+  [
     "lib/document.js~document.cancelinvite",
     "class/lib/document.js~Document.html#static-method-cancelInvite",
     "lib/document.js~Document.cancelInvite",
