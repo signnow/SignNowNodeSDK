@@ -37,10 +37,17 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentCreateResponse">DocumentCreateResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFieldExtractParams">DocumentFieldExtractParams</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFieldExtractResponse">DocumentFieldExtractResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFieldInviteResponse">DocumentFieldInviteResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFields">DocumentFields</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFreeformInviteResponse">DocumentFreeformInviteResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentInviteOptions">DocumentInviteOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentInviteParams">DocumentInviteParams</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentInviteResponse">DocumentInviteResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentInviteSettings">DocumentInviteSettings</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentUpdateParams">DocumentUpdateParams</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentUpdateResponse">DocumentUpdateResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SignatureField">SignatureField</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SignerSettings">SignerSettings</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ApiError">ApiError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Features">Features</a></span></span></li>
@@ -311,7 +318,9 @@ class Document {
 
   /**
    * Updates an existing document.
-   * Adds fields (signature, text, initials, checkbox) and elements (signature, text, check)
+   * Adds fields (signature, text, initials, checkbox) and elements (signature, text, check).
+   * Every call of this method will add only specified fields into document.
+   * Old fields will be removed
    * @param {DocumentUpdateParams} data - update document request payload
    * @param {function(err: ApiErrorResponse, res: DocumentUpdateResponse)} [callback] - error first node.js callback
    */
@@ -370,9 +379,72 @@ class Document {
       .end();
   }
 
-  /*
-   * TODO: Invite stuck open breaking other request
-   * create an invite to sign a document. You can create a simple free form invite or a role-based invite.
+  /**
+   * Document invite signer settings
+   * @typedef {Object} SignerSettings
+   * @property {string} email - signer&apos;s email
+   * @property {string} role - ole name
+   * @property {string} role_id - role unique id (can be discovered in document details)
+   * @property {number} order - role signing order
+   * @property {string} reassign - allow reassign signer
+   * @property {string} decline_by_signature - signer can decline invite
+   * @property {number} reminder - remind via email in days
+   * @property {number} expiration_days - expiration of invite in days
+   * @property {string} [subject] - specify subject of email
+   * @property {string} [message] - specify body of email
+   */
+
+  /**
+   * Document invite settings
+   * @typedef {Object} DocumentInviteSettings
+   * @property {string} from - email of sender
+   * @property {SignerSettings[]|string} to - array of signers or email of single signer
+   * @property {string} [document_id] - an id of document
+   * @property {string[]} [cc] - array with emails
+   * @property {string} [subject] - specify subject of email
+   * @property {string} [message] - specify body of email
+   * @property {string} [on_complete] - on signing complete action
+   */
+
+  /**
+   * Document invite optional settings
+   * @typedef {Object} DocumentInviteOptions
+   * @property {string} [email] - ability to disable invitation by email. to disabale email assign value &apos;disable&apos;
+   */
+
+  /**
+   * Create document invite payload
+   * @typedef {Object} DocumentInviteParams
+   * @property {string} id - an id of document
+   * @property {DocumentInviteSettings} data - document invite settings
+   * @property {DocumentInviteOptions} [options] - document invite optional settings
+   * @property {string} token - your auth token
+   */
+
+  /**
+   * Create document field invite response data
+   * @typedef {Object} DocumentFieldInviteResponse
+   * @property {string} status - status of invitation, e.g. &apos;success&apos;
+   */
+
+  /**
+   * Create document free form invite response data
+   * @typedef {Object} DocumentFreeformInviteResponse
+   * @property {string} result - free form invitation result, e.g. &apos;success&apos;
+   * @property {string} id - unique id of invite
+   * @property {string} callback_url - url for front-end redirect or &apos;none&apos;
+   */
+
+  /**
+   * Create document invite response data
+   * @typedef {DocumentFieldInviteResponse|DocumentFreeformInviteResponse} DocumentInviteResponse
+   */
+
+  /**
+   * Creates an invite to sign a document.
+   * You can create a simple free form invite(s) or a role-based invite(s).
+   * @param {DocumentInviteParams} data - create document invite payload
+   * @param {function(err: ApiErrorResponse, res: DocumentInviteResponse)} [callback] - error first node.js callback
    */
   static invite ({
     id,
@@ -381,12 +453,10 @@ class Document {
     token,
   }, callback) {
     const JSONData = JSON.stringify(data);
-    let path = &apos;&apos;;
+    let path = `/document/${id}/invite`;
 
     if (email === &apos;disable&apos;) {
-      path = `/document/${id}/invite?email=disable`;
-    } else {
-      path = `/document/${id}/invite`;
+      path = `${path}?email=disable`;
     }
 
     const req = https
