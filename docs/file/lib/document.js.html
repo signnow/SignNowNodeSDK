@@ -383,7 +383,7 @@ class Document {
    * Document invite signer settings
    * @typedef {Object} SignerSettings
    * @property {string} email - signer&apos;s email
-   * @property {string} role - ole name
+   * @property {string} role - role name
    * @property {string} role_id - role unique id (can be discovered in document details)
    * @property {number} order - role signing order
    * @property {string} reassign - allow reassign signer
@@ -400,7 +400,7 @@ class Document {
    * @property {string} from - email of sender
    * @property {SignerSettings[]|string} to - array of signers or email of single signer
    * @property {string} [document_id] - an id of document
-   * @property {string[]} [cc] - array with emails
+   * @property {string[]} [cc] - array with emails of copy receivers
    * @property {string} [subject] - specify subject of email
    * @property {string} [message] - specify body of email
    * @property {string} [on_complete] - on signing complete action
