@@ -26,6 +26,8 @@ const {
   document: {
     create: uploadDocument,
     update: addFields,
+    view: getDocumentDetails,
+    invite: sendFieldInvite,
   },
 } = api;
 
@@ -63,11 +65,52 @@ getAccessToken({
           },
           id,
           token,
-        }, (updateErr, updateRes) => {
+        }, updateErr => {
           if (updateErr) {
             console.error(updateErr);
           } else {
-            console.log(updateRes);
+            getDocumentDetails({
+              id,
+              token,
+            }, (detailsErr, detailsRes) => {
+              if (detailsErr) {
+                console.error(detailsErr);
+              } else {
+                const { roles } = detailsRes;
+                let signers;
+
+                try {
+                  signers = JSON.parse(inviteStringivied);
+                } catch (err) {
+                  console.error(err);
+                  return;
+                }
+
+                for (const signer of signers) {
+                  try {
+                    signer.role_id = roles.find(role => role.name === signer.role).unique_id;
+                  } catch (err) {
+                    console.error(err);
+                    return;
+                  }
+                }
+
+                sendFieldInvite({
+                  data: {
+                    from: username,
+                    to: signers,
+                  },
+                  id,
+                  token,
+                }, (inviteErr, inviteRes) => {
+                  if (inviteErr) {
+                    console.error(inviteErr);
+                  } else {
+                    console.log(inviteRes);
+                  }
+                });
+              }
+            });
           }
         });
       }
