@@ -66,10 +66,89 @@
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="signnow-api-client-v1-2-0">SignNow API client v1.2.0</h1><p>SignNow REST Service Wrapper</p>
 <p><a href="https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"></a></p>
-<h3 id="about-signnow">About SignNow</h3><p>SignNow is a powerful web-based e-signature solution that streamlines the signing process and overall document flow for businesses of any size. SignNow offers SaaS as well as public and private cloud deployment options using the same underlying API. With SignNow you can easily sign, share and manage documents in compliance with international data laws and industry-specific regulations. SignNow enables you to collect signatures from partners, employees and customers from any device within minutes.</p>
-<h3 id="api-contact-information">API Contact Information</h3><p>If you have questions about the SignNow API, please visit <a href="https://help.signnow.com/docs">https://help.signnow.com/docs</a> or email <a href="mailto:api@signnow.com">api@signnow.com</a>.</p>
+<p><details>
+  <summary>Table of Contents</summary>
+
+  <ol>
+    <li><a href="#about-signnow">About SignNow</a></li>
+    <li><a href="#api-contact-info">API Contact Information</a></li>
+    <li><a href="#api-and-app">API and Application</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#documentation">Documentation</a></li>
+    <li><a href="#examples">Examples</a>
+      <ul>
+        <li><a href="#user">User</a>
+          <ul>
+            <li><a href="#create-user">Create a User</a></li>
+            <li><a href="#get-user">Retrieve User Information</a></li>
+          </ul>
+        </li>
+        <li><a href="#oauth2">OAuth 2.0</a>
+          <ul>
+            <li><a href="#get-token">Request Access Token</a></li>
+            <li><a href="#verify-token">Verify an Access Token</a></li>
+          </ul>
+        </li>
+        <li><a href="#document">Document</a>
+          <ul>
+            <li><a href="#list-documents">Retrieve a List of the User&#x2019;s Documents</a></li>
+            <li><a href="#get-document">Retrieve a Document Resource</a></li>
+            <li><a href="#download-document">Download a Collapsed Document</a></li>
+            <li><a href="#upload-document">Upload Document</a></li>
+            <li><a href="#extract-fields">Upload File &amp; Extract Fields</a></li>
+            <li><a href="#update-document">Update Document (add fields)</a></li>
+            <li><a href="#field-invite">Create Invite to Sign a Document</a></li>
+            <li><a href="#freeform-invite">Create Free Form Invite</a></li>
+            <li><a href="#cancel-invite">Cancel Field Invite to Sign a Document</a></li>
+            <li><a href="#share-document">Create a One-time Use Download URL</a></li>
+            <li><a href="#merge-documents">Merge Existing Documents</a></li>
+            <li><a href="#get-history">Get Document History</a></li>
+          </ul>
+        </li>
+        <li><a href="#enumerations">Enumerations</a>
+          <ul>
+            <li><a href="#add-enumeration">Add Enumeration Field to a Document</a></li>
+            <li><a href="#enumeration-options">Add Enumeration Options to the Field</a></li>
+          </ul>
+        </li>
+        <li><a href="#template">Template</a>
+          <ul>
+            <li><a href="#create-template">Create a Template</a></li>
+            <li><a href="#copy-template">Duplicate a Template</a></li>
+          </ul>
+        </li>
+        <li><a href="#folder">Folder</a>
+          <ul>
+            <li><a href="#list-folders">Returns a list of folders</a></li>
+            <li><a href="#list-documents-in-folder">Returns a list of documents inside a folder</a></li>
+          </ul>
+        </li>
+        <li><a href="#webhook">Webhook</a>
+          <ul>
+            <li><a href="#list-webhooks">Returns a list of Webhooks</a></li>
+            <li><a href="#create-webhook">Create a Webhook</a></li>
+          </ul>
+        </li>
+        <li><a href="#promisify">Promisify methods</a></li>
+      </ul>
+    </li>
+    <li><a href="#unit-tests">Unit Tests</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contacts">Additional Contact Information</a>
+      <ul>
+        <li><a href="#support">Support</a></li>
+        <li><a href="#sales">Sales</a></li>
+      </ul>
+    </li>
+  </ol>
+
+</details>
+
+</p>
+<h3 id="-a-name--about-signnow----a-about-signnow"><a name="about-signnow"></a>About SignNow</h3><p>SignNow is a powerful web-based e-signature solution that streamlines the signing process and overall document flow for businesses of any size. SignNow offers SaaS as well as public and private cloud deployment options using the same underlying API. With SignNow you can easily sign, share and manage documents in compliance with international data laws and industry-specific regulations. SignNow enables you to collect signatures from partners, employees and customers from any device within minutes.</p>
+<h3 id="-a-name--api-contact-info----a-api-contact-information"><a name="api-contact-info"></a>API Contact Information</h3><p>If you have questions about the SignNow API, please visit <a href="https://help.signnow.com/docs">https://help.signnow.com/docs</a> or email <a href="mailto:api@signnow.com">api@signnow.com</a>.</p>
 <p>See additional contact information at the bottom.</p>
-<h3 id="api-and-application">API and Application</h3><table>
+<h3 id="-a-name--api-and-app----a-api-and-application"><a name="api-and-app"></a>API and Application</h3><table>
 <thead>
 <tr>
 <th>Resources</th>
@@ -95,12 +174,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="installation">Installation</h2><p><code>@signnow/api-client</code> supports node.js <strong>v6.4.0</strong> or later.</p>
+<h2 id="-a-name--installation----a-installation"><a name="installation"></a>Installation</h2><p><code>@signnow/api-client</code> supports node.js <strong>v6.4.0</strong> or later.</p>
 <p>To install the latest version of <code>@signnow/api-client</code> run:</p>
 <pre><code class="lang-bash"><code class="source-code prettyprint">npm install @signnow/api-client</code>
 </code></pre>
-<h2 id="documentation">Documentation</h2><p>See api reference in our <a href="https://signnow.github.io/SignNowNodeSDK/">Documentation</a>.</p>
-<h2 id="examples">Examples</h2><p>To run the examples you will need an API key. You can get one here <a href="https://www.signnow.com/api">https://www.signnow.com/api</a>. For a full list of accepted parameters, refer to the SignNow REST Endpoints API guide: <a href="https://help.signnow.com/docs">https://help.signnow.com/docs</a>.</p>
+<h2 id="-a-name--documentation----a-documentation"><a name="documentation"></a>Documentation</h2><p>See api reference in our <a href="https://signnow.github.io/SignNowNodeSDK/">Documentation</a>.</p>
+<h2 id="-a-name--examples----a-examples"><a name="examples"></a>Examples</h2><p>To run the examples you will need an API key. You can get one here <a href="https://www.signnow.com/api">https://www.signnow.com/api</a>. For a full list of accepted parameters, refer to the SignNow REST Endpoints API guide: <a href="https://help.signnow.com/docs">https://help.signnow.com/docs</a>.</p>
 <p>Every resource is accessed via your api client instance:</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">const api = require(&apos;@signnow/api-client&apos;)({
   credentials: &apos;ENCODED_CLIENT_CREDENTIALS&apos;,
@@ -108,7 +187,7 @@
 });</code>
 </code></pre>
 <p>Every resource returns two parameters. The first param contains any errors and the second contains the results.</p>
-<h3 id="user">User</h3><h4 id="create-a-user">Create a User</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.user.create({
+<h3 id="-a-name--user----a-user"><a name="user"></a>User</h3><h4 id="-a-name--create-user--create-a-user"><a name="create-user">Create a User</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.user.create({
   first_name: &apos;John&apos;,
   last_name: &apos;Wayne&apos;,
   email: &apos;john@domain.com&apos;,
@@ -117,61 +196,61 @@
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="retrieve-user-information">Retrieve User Information</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.user.retrieve({
+<h4 id="-a-name--get-user--retrieve-user-information"><a name="get-user">Retrieve User Information</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.user.retrieve({
   token: &apos;your auth token&apos;,
 }, (err, res) =&gt; {
   // handle error or process response data
 }
 });</code>
 </code></pre>
-<h3 id="oauth-2-0">OAuth 2.0</h3><h4 id="request-access-token">Request Access Token</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.oauth2.requestToken({
+<h3 id="-a-name--oauth2--oauth-2-0"><a name="oauth2">OAuth 2.0</a></h3><h4 id="-a-name--get-token--request-access-token"><a name="get-token">Request Access Token</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.oauth2.requestToken({
   username: &apos;username&apos;,
   password: &apos;password&apos;,
 }, function(err, res){
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="verify-an-access-token">Verify an Access Token</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.oauth2.verify({
+<h4 id="-a-name--verify-token--verify-an-access-token"><a name="verify-token">Verify an Access Token</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.oauth2.verify({
   token: &apos;your auth token&apos;,
 }, (err, res) =&gt; {
   // handle error or process response data
 });</code>
 </code></pre>
-<h3 id="document">Document</h3><h4 id="retrieve-a-list-of-the-user&#x2019;s-documents">Retrieve a List of the User&#x2019;s Documents</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.list({
+<h3 id="-a-name--document--document"><a name="document">Document</a></h3><h4 id="-a-name--list-documents--retrieve-a-list-of-the-user&#x2019;s-documents"><a name="list-documents">Retrieve a List of the User&#x2019;s Documents</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.list({
   token: &apos;your auth token&apos;,
 }, (err, res) =&gt; {
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="retrieve-a-document-resource">Retrieve a Document Resource</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.view({
-  token: &apos;your auth token&apos;,
-  id: &apos;document id&apos;,
-}, (err, res) =&gt; {
-  // handle error or process response data
-});</code>
-</code></pre>
-<h4 id="download-a-collapsed-document">Download a Collapsed Document</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.download({
+<h4 id="-a-name--get-document--retrieve-a-document-resource"><a name="get-document">Retrieve a Document Resource</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.view({
   token: &apos;your auth token&apos;,
   id: &apos;document id&apos;,
 }, (err, res) =&gt; {
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="upload-document">Upload Document</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.create({
+<h4 id="-a-name--download-document--download-a-collapsed-document"><a name="download-document">Download a Collapsed Document</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.download({
+  token: &apos;your auth token&apos;,
+  id: &apos;document id&apos;,
+}, (err, res) =&gt; {
+  // handle error or process response data
+});</code>
+</code></pre>
+<h4 id="-a-name--upload-document--upload-document"><a name="upload-document">Upload Document</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.create({
   token: &apos;your auth token&apos;,
   filepath: &apos;path to file&apos;,
 }, (err, res) =&gt; {
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="upload-file--amp--extract-fields">Upload File &amp; Extract Fields</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.fieldextract({
+<h4 id="-a-name--extract-fields--upload-file--amp--extract-fields"><a name="extract-fields">Upload File &amp; Extract Fields</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.fieldextract({
   token: &apos;your auth token&apos;,
   filepath: &apos;path to file&apos;,
 }, (err, res) =&gt; {
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="update-document--add-fields-">Update Document (add fields)</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">const fields = {
+<h4 id="-a-name--update-document--update-document--add-fields-"><a name="update-document">Update Document (add fields)</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">const fields = {
   texts: [
     {
       size: 8,
@@ -193,7 +272,7 @@ api.document.update({
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="create-invite-to-sign-a-document">Create Invite to Sign a Document</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">const fieldInvite = {
+<h4 id="-a-name--field-invite--create-invite-to-sign-a-document"><a name="field-invite">Create Invite to Sign a Document</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">const fieldInvite = {
   document_id: &apos;DOCUMENT_ID_GOES_HERE&apos;,
   from: &apos;EMAIL_OF_SENDER&apos;,
   to: [
@@ -222,7 +301,7 @@ api.document.invite({
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="create-free-form-invite">Create Free Form Invite</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.invite({
+<h4 id="-a-name--freeform-invite--create-free-form-invite"><a name="freeform-invite">Create Free Form Invite</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.invite({
   token: &apos;your auth token&apos;,
   id: &apos;document id&apos;,
   data: {
@@ -233,21 +312,21 @@ api.document.invite({
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="cancel-an-invite-to-a-document">Cancel an Invite to a Document</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.cancelInvite({
+<h4 id="-a-name--cancel-invite--cancel-field-invite-to-sign-a-document"><a name="cancel-invite">Cancel Field Invite to Sign a Document</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.cancelInvite({
   token: &apos;your auth token&apos;,
   id: &apos;document id&apos;,
 }, (err, res) =&gt; {
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="create-a-one-time-use-download-url">Create a One-time Use Download URL</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.share({
+<h4 id="-a-name--share-document--create-a-one-time-use-download-url"><a name="share-document">Create a One-time Use Download URL</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.share({
   token: &apos;your auth token&apos;,
   id: &apos;document id&apos;,
 }, (err, res) =&gt; {
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="merge-existing-documents">Merge Existing Documents</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.merge({
+<h4 id="-a-name--merge-documents--merge-existing-documents"><a name="merge-documents">Merge Existing Documents</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.merge({
   token: &apos;your auth token&apos;,
   name: &apos;the merged doc&apos;,
   document_ids: [
@@ -258,14 +337,14 @@ api.document.invite({
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="get-document-history">Get Document History</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.history({
+<h4 id="-a-name--get-history--get-document-history"><a name="get-history">Get Document History</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.history({
   token: &apos;your auth token&apos;,
   id: &apos;document id&apos;,
 }, (err, res) =&gt; {
   // handle error or process response data
 });</code>
 </code></pre>
-<h3 id="enumerations">Enumerations</h3><h4 id="add-enumeration-field-to-a-document">Add Enumeration Field to a Document</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.enumerations.addField({
+<h3 id="-a-name--enumerations--enumerations"><a name="enumerations">Enumerations</a></h3><h4 id="-a-name--add-enumeration--add-enumeration-field-to-a-document"><a name="add-enumeration">Add Enumeration Field to a Document</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.enumerations.addField({
   token: &apos;your auth token&apos;,
   document_id: &apos;document id&apos;,
   x: 150,
@@ -280,7 +359,7 @@ api.document.invite({
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="add-enumeration-options-to-the-field">Add Enumeration Options to the Field</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.enumerations.addOptions({
+<h4 id="-a-name--enumeration-options--add-enumeration-options-to-the-field"><a name="enumeration-options">Add Enumeration Options to the Field</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.enumerations.addOptions({
   token: &apos;your auth token&apos;,
   enumeration_options: [
     {
@@ -300,7 +379,7 @@ api.document.invite({
   // handle error or process response data
 });</code>
 </code></pre>
-<h3 id="template">Template</h3><h4 id="create-a-template">Create a Template</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.template.create({
+<h3 id="-a-name--template--template"><a name="template">Template</a></h3><h4 id="-a-name--create-template--create-a-template"><a name="create-template">Create a Template</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.template.create({
   token: &apos;your auth token&apos;,
   document_id: &apos;document id&apos;,
   document_name: &apos;my template&apos;,
@@ -308,7 +387,7 @@ api.document.invite({
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="duplicate-a-template">Duplicate a Template</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.template.duplicate({
+<h4 id="-a-name--copy-template--duplicate-a-template"><a name="copy-template">Duplicate a Template</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.template.duplicate({
   token: &apos;your auth token&apos;,
   id: &apos;document id&apos;,
   name: &apos;my template&apos;,
@@ -316,13 +395,13 @@ api.document.invite({
   // handle error or process response data
 });</code>
 </code></pre>
-<h3 id="folder">Folder</h3><h4 id="returns-a-list-of-folders">Returns a list of folders</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.folder.list({
+<h3 id="-a-name--folder--folder"><a name="folder">Folder</a></h3><h4 id="-a-name--list-folders--returns-a-list-of-folders"><a name="list-folders">Returns a list of folders</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.folder.list({
   token: &apos;your auth token&apos;,
 }, (err, res) =&gt; {
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="returns-a-list-of-documents-inside-a-folder">Returns a list of documents inside a folder</h4><table>
+<h4 id="-a-name--list-documents-in-folder--returns-a-list-of-documents-inside-a-folder"><a name="list-documents-in-folder">Returns a list of documents inside a folder</a></h4><table>
 <thead>
 <tr>
 <th>Filters</th>
@@ -381,13 +460,13 @@ api.document.invite({
   // handle error or process response data
 });</code>
 </code></pre>
-<h3 id="webhook">Webhook</h3><h4 id="returns-a-list-of-webhooks">Returns a list of Webhooks</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">signnow.webhook.list({
+<h3 id="-a-name--webhook--webhook"><a name="webhook">Webhook</a></h3><h4 id="-a-name--list-webhooks--returns-a-list-of-webhooks"><a name="list-webhooks">Returns a list of Webhooks</a></h4><pre><code class="lang-javascript"><code class="source-code prettyprint">signnow.webhook.list({
   token: &apos;your auth token&apos;,
 }, (err, res) =&gt; {
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="create-a-webhook">Create a Webhook</h4><table>
+<h4 id="-a-name--create-webhook--create-a-webhook"><a name="create-webhook">Create a Webhook</a></h4><table>
 <thead>
 <tr>
 <th>Events</th>
@@ -425,7 +504,7 @@ api.document.invite({
   // handle error or process response data
 });</code>
 </code></pre>
-<h3 id="promisify-methods">Promisify methods</h3><p>If you are using node.js version <strong>8.0.0</strong> or higher you can use built in <a href="https://nodejs.org/api/util.html#util_util_promisify_original"><em>promisify</em></a> utility:</p>
+<h3 id="-a-name--promisify--promisify-methods"><a name="promisify">Promisify methods</a></h3><p>If you are using node.js version <strong>8.0.0</strong> or higher you can use built in <a href="https://nodejs.org/api/util.html#util_util_promisify_original"><em>promisify</em></a> utility:</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">const { promisify } = require(&apos;util&apos;);
 const api = require(&apos;@signnow/api-client&apos;)({
   credentials: &apos;ENCODED_CLIENT_CREDENTIALS&apos;,
@@ -444,7 +523,7 @@ requestToken({
     // handle error
   });</code>
 </code></pre>
-<h2 id="unit-tests">Unit Tests</h2><p>To run the unit test you will need to install &quot;Mocha&quot; and &quot;Chai&quot;. You also need to edit a <a href="https://github.com/signnow/SignNowNodeSDK/blob/master/test/test.settings.js">test.settings.js</a> in the <a href="https://github.com/signnow/SignNowNodeSDK/tree/master/test">test</a> folder of the api client module. The file need to contain the following:</p>
+<h2 id="-a-name--unit-tests--unit-tests"><a name="unit-tests">Unit Tests</a></h2><p>To run the unit test you will need to install &quot;Mocha&quot; and &quot;Chai&quot;. You also need to edit a <a href="https://github.com/signnow/SignNowNodeSDK/blob/master/test/test.settings.js">test.settings.js</a> in the <a href="https://github.com/signnow/SignNowNodeSDK/tree/master/test">test</a> folder of the api client module. The file need to contain the following:</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">exports.settings = {
   credentials: &apos;[ENCODED CLIENT CREDENTIALS]&apos;,
   token: &apos;[ACCESS TOKEN]&apos;,
@@ -457,9 +536,9 @@ requestToken({
   testemail: &apos;[TO EMAIL FOR INVITE]&apos;,
 };</code>
 </code></pre>
-<h2 id="license">License</h2><p>This project is released under the MIT <a href="https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md">License</a>.</p>
-<h2 id="additional-contact-information">Additional Contact Information</h2><h3 id="support">Support</h3><p>To contact SignNow support, please email <a href="mailto:support@signnow.com">support@signnow.com</a>.</p>
-<h3 id="sales">Sales</h3><p>For pricing information, please call <a href="tel:8008312050">(800) 831-2050</a> or email <a href="mailto:sales@signnow.com">sales@signnow.com</a>.</p>
+<h2 id="-a-name--license--license"><a name="license">License</a></h2><p>This project is released under the MIT <a href="https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md">License</a>.</p>
+<h2 id="-a-name--contacts--additional-contact-information"><a name="contacts">Additional Contact Information</a></h2><h3 id="-a-name--support--support"><a name="support">Support</a></h3><p>To contact SignNow support, please email <a href="mailto:support@signnow.com">support@signnow.com</a>.</p>
+<h3 id="-a-name--sales--sales"><a name="sales">Sales</a></h3><p>For pricing information, please call <a href="tel:8008312050">(800) 831-2050</a> or email <a href="mailto:sales@signnow.com">sales@signnow.com</a>.</p>
 </div>
 </div>
 
