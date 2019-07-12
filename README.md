@@ -4,83 +4,51 @@ SignNow REST Service Wrapper
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md)
 
-<details>
-  <summary>Table of Contents</summary>
+### <a name="table-of-contents"></a>Table of Contents
 
-  <ol>
-    <li>[About SignNow](#about-signnow)</li>
-    <li>[API Contact Information](#api-contact-info)</li>
-    <li>[API and Application](#api-and-app)</li>
-    <li>[Installation](#installation)</li>
-    <li>[Documentation](#documentation)</li>
-    <li>[Examples](#examples)
-      <ul>
-        <li>[User](#user)
-          <ul>
-            <li>[Create a User](#create-user)</li>
-            <li>[Retrieve User Information](#get-user)</li>
-          </ul>
-        </li>
-        <li>[OAuth 2.0](#oauth2)
-          <ul>
-            <li>[Request Access Token](#get-token)</li>
-            <li>[Verify an Access Token](#verify-token)</li>
-          </ul>
-        </li>
-        <li>[Document](#document)
-          <ul>
-            <li>[Retrieve a List of the User’s Documents](#list-documents)</li>
-            <li>[Retrieve a Document Resource](#get-document)</li>
-            <li>[Download a Collapsed Document](#download-document)</li>
-            <li>[Upload Document](#upload-document)</li>
-            <li>[Upload File & Extract Fields](#extract-fields)</li>
-            <li>[Update Document (add fields)](#update-document)</li>
-            <li>[Create Invite to Sign a Document](#field-invite)</li>
-            <li>[Create Free Form Invite](#freeform-invite)</li>
-            <li>[Cancel Field Invite to Sign a Document](#cancel-invite)</li>
-            <li>[Create a One-time Use Download URL](#share-document)</li>
-            <li>[Merge Existing Documents](#merge-documents)</li>
-            <li>[Get Document History](#get-history)</li>
-          </ul>
-        </li>
-        <li>[Enumerations](#enumerations)
-          <ul>
-            <li>[Add Enumeration Field to a Document](#add-enumeration)</li>
-            <li>[Add Enumeration Options to the Field](#enumeration-options)</li>
-          </ul>
-        </li>
-        <li>[Template](#template)
-          <ul>
-            <li>[Create a Template](#create-template)</li>
-            <li>[Duplicate a Template](#copy-template)</li>
-          </ul>
-        </li>
-        <li>[Folder](#folder)
-          <ul>
-            <li>[Returns a list of folders](#list-folders)</li>
-            <li>[Returns a list of documents inside a folder](#list-documents-in-folder)</li>
-          </ul>
-        </li>
-        <li>[Webhook](#webhook)
-          <ul>
-            <li>[Returns a list of Webhooks](#list-webhooks)</li>
-            <li>[Create a Webhook](#create-webhook)</li>
-          </ul>
-        </li>
-        <li>[Promisify methods](#promisify)</li>
-      </ul>
-    </li>
-    <li>[Unit Tests](#unit-tests)</li>
-    <li>[License](#license)</li>
-    <li>[Additional Contact Information](#contacts)
-      <ul>
-        <li>[Support](#support)</li>
-        <li>[Sales](#sales)</li>
-      </ul>
-    </li>
-  </ol>
-  
-</details>
+1. [About SignNow](#about-signnow)
+2. [API Contact Information](#api-contact-info)
+3. [API and Application](#api-and-app)
+4. [Installation](#installation)
+5. [Documentation](#documentation)
+6. [Examples](#examples)
+    * [User](#user)
+      * [Create a User](#create-user)
+      * [Retrieve User Information](#get-user)
+    * [OAuth 2.0](#oauth2)
+      * [Request Access Token](#get-token)
+      * [Verify an Access Token](#verify-token)
+    * [Document](#document)
+      * [Retrieve a List of the User’s Documents](#list-documents)
+      * [Retrieve a Document Resource](#get-document)
+      * [Download a Collapsed Document](#download-document)
+      * [Upload Document](#upload-document)
+      * [Upload File & Extract Fields](#extract-fields)
+      * [Update Document (add fields)](#update-document)
+      * [Create Invite to Sign a Document](#field-invite)
+      * [Create Free Form Invite](#freeform-invite)
+      * [Cancel Field Invite to Sign a Document](#cancel-invite)
+      * [Create a One-time Use Download URL](#share-document)
+      * [Merge Existing Documents](#merge-documents)
+      * [Get Document History](#get-history)
+    * [Enumerations](#enumerations)
+      * [Add Enumeration Field to a Document](#add-enumeration)
+      * [Add Enumeration Options to the Field](#enumeration-options)
+    * [Template](#template)
+      * [Create a Template](#create-template)
+      * [Duplicate a Template](#copy-template)
+    * [Folder](#folder)
+      * [Returns a list of folders](#list-folders)
+      * [Returns a list of documents inside a folder](#list-documents-in-folder)
+    * [Webhook](#webhook)
+      * [Returns a list of Webhooks](#list-webhooks)
+      * [Create a Webhook](#create-webhook)
+    * [Promisify methods](#promisify)
+7. [Unit Tests](#unit-tests)</li>
+8. [License](#license)</li>
+9. [Additional Contact Information](#contacts)
+    * [Support](#support)
+    * [Sales](#sales)
 
 ### <a name="about-signnow"></a>About SignNow
 
@@ -131,7 +99,7 @@ Every resource returns two parameters. The first param contains any errors and t
 
 ### <a name="user"></a>User
 
-#### <a name="create-user">Create a User
+#### <a name="create-user"></a>Create a User
 
 ```javascript
 api.user.create({
@@ -144,7 +112,7 @@ api.user.create({
 });
 ```
 
-#### <a name="get-user">Retrieve User Information
+#### <a name="get-user"></a>Retrieve User Information
 
 ```javascript
 api.user.retrieve({
@@ -155,9 +123,9 @@ api.user.retrieve({
 });
 ```
 
-### <a name="oauth2">OAuth 2.0
+### <a name="oauth2"></a>OAuth 2.0
 
-#### <a name="get-token">Request Access Token
+#### <a name="get-token"></a>Request Access Token
 
 ```javascript
 api.oauth2.requestToken({
@@ -168,7 +136,7 @@ api.oauth2.requestToken({
 });
 ```
 
-#### <a name="verify-token">Verify an Access Token
+#### <a name="verify-token"></a>Verify an Access Token
 
 ```javascript
 api.oauth2.verify({
@@ -178,9 +146,9 @@ api.oauth2.verify({
 });
 ```
 
-### <a name="document">Document
+### <a name="document"></a>Document
 
-#### <a name="list-documents">Retrieve a List of the User’s Documents
+#### <a name="list-documents"></a>Retrieve a List of the User’s Documents
 
 ```javascript
 api.document.list({
@@ -190,7 +158,7 @@ api.document.list({
 });
 ```
 
-#### <a name="get-document">Retrieve a Document Resource
+#### <a name="get-document"></a>Retrieve a Document Resource
 
 ```javascript
 api.document.view({
@@ -201,7 +169,7 @@ api.document.view({
 });
 ```
 
-#### <a name="download-document">Download a Collapsed Document
+#### <a name="download-document"></a>Download a Collapsed Document
 
 ```javascript
 api.document.download({
@@ -212,7 +180,7 @@ api.document.download({
 });
 ```
 
-#### <a name="upload-document">Upload Document
+#### <a name="upload-document"></a>Upload Document
 
 ```javascript
 api.document.create({
@@ -223,7 +191,7 @@ api.document.create({
 });
 ```
 
-#### <a name="extract-fields">Upload File & Extract Fields
+#### <a name="extract-fields"></a>Upload File & Extract Fields
 
 ```javascript
 api.document.fieldextract({
@@ -234,7 +202,7 @@ api.document.fieldextract({
 });
 ```
 
-#### <a name="update-document">Update Document (add fields)
+#### <a name="update-document"></a>Update Document (add fields)
 
 ```javascript
 const fields = {
@@ -260,7 +228,7 @@ api.document.update({
 });
 ```
 
-#### <a name="field-invite">Create Invite to Sign a Document
+#### <a name="field-invite"></a>Create Invite to Sign a Document
 
 ```javascript
 const fieldInvite = {
@@ -293,7 +261,7 @@ api.document.invite({
 });
 ```
 
-#### <a name="freeform-invite">Create Free Form Invite
+#### <a name="freeform-invite"></a>Create Free Form Invite
 
 ```javascript
 api.document.invite({
@@ -308,7 +276,7 @@ api.document.invite({
 });
 ```
 
-#### <a name="cancel-invite">Cancel Field Invite to Sign a Document
+#### <a name="cancel-invite"></a>Cancel Field Invite to Sign a Document
 
 ```javascript
 api.document.cancelInvite({
@@ -319,7 +287,7 @@ api.document.cancelInvite({
 });
 ```
 
-#### <a name="share-document">Create a One-time Use Download URL
+#### <a name="share-document"></a>Create a One-time Use Download URL
 
 ```javascript
 api.document.share({
@@ -330,7 +298,7 @@ api.document.share({
 });
 ```
 
-#### <a name="merge-documents">Merge Existing Documents
+#### <a name="merge-documents"></a>Merge Existing Documents
 
 ```javascript
 api.document.merge({
@@ -345,7 +313,7 @@ api.document.merge({
 });
 ```
 
-#### <a name="get-history">Get Document History
+#### <a name="get-history"></a>Get Document History
 
 ```javascript
 api.document.history({
@@ -356,9 +324,9 @@ api.document.history({
 });
 ```
 
-### <a name="enumerations">Enumerations
+### <a name="enumerations"></a>Enumerations
 
-#### <a name="add-enumeration">Add Enumeration Field to a Document
+#### <a name="add-enumeration"></a>Add Enumeration Field to a Document
 
 ```javascript
 api.enumerations.addField({
@@ -377,7 +345,7 @@ api.enumerations.addField({
 });
 ```
 
-#### <a name="enumeration-options">Add Enumeration Options to the Field
+#### <a name="enumeration-options"></a>Add Enumeration Options to the Field
 
 ```javascript
 api.enumerations.addOptions({
@@ -401,9 +369,9 @@ api.enumerations.addOptions({
 });
 ```
 
-### <a name="template">Template
+### <a name="template"></a>Template
 
-#### <a name="create-template">Create a Template
+#### <a name="create-template"></a>Create a Template
 
 ```javascript
 api.template.create({
@@ -415,7 +383,7 @@ api.template.create({
 });
 ```
 
-#### <a name="copy-template">Duplicate a Template
+#### <a name="copy-template"></a>Duplicate a Template
 
 ```javascript
 api.template.duplicate({
@@ -427,9 +395,9 @@ api.template.duplicate({
 });
 ```
 
-### <a name="folder">Folder
+### <a name="folder"></a>Folder
 
-#### <a name="list-folders">Returns a list of folders
+#### <a name="list-folders"></a>Returns a list of folders
 
 ```javascript
 api.folder.list({
@@ -439,7 +407,7 @@ api.folder.list({
 });
 ```
 
-#### <a name="list-documents-in-folder">Returns a list of documents inside a folder
+#### <a name="list-documents-in-folder"></a>Returns a list of documents inside a folder
 
 Filters  | Values
 ------------- | -------------
@@ -470,9 +438,9 @@ api.folder.documents({
 });
 ```
 
-### <a name="webhook">Webhook
+### <a name="webhook"></a>Webhook
 
-#### <a name="list-webhooks">Returns a list of Webhooks
+#### <a name="list-webhooks"></a>Returns a list of Webhooks
 
 ```javascript
 signnow.webhook.list({
@@ -482,7 +450,7 @@ signnow.webhook.list({
 });
 ```
 
-#### <a name="create-webhook">Create a Webhook
+#### <a name="create-webhook"></a>Create a Webhook
 
 Events  | Description
 ------------- | -------------
@@ -502,7 +470,7 @@ api.webhook.create({
 });
 ```
 
-### <a name="promisify">Promisify methods
+### <a name="promisify"></a>Promisify methods
 
 If you are using node.js version **8.0.0** or higher you can use built in [*promisify*](https://nodejs.org/api/util.html#util_util_promisify_original) utility:
 
@@ -526,7 +494,7 @@ requestToken({
   });
 ```
 
-## <a name="unit-tests">Unit Tests
+## <a name="unit-tests"></a>Unit Tests
 
 To run the unit test you will need to install "Mocha" and "Chai". You also need to edit a [test.settings.js](https://github.com/signnow/SignNowNodeSDK/blob/master/test/test.settings.js) in the [test](https://github.com/signnow/SignNowNodeSDK/tree/master/test) folder of the api client module. The file need to contain the following:
 
@@ -544,16 +512,16 @@ exports.settings = {
 };
 ```
 
-## <a name="license">License
+## <a name="license"></a>License
 
 This project is released under the MIT [License](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md).
 
-## <a name="contacts">Additional Contact Information
+## <a name="contacts"></a>Additional Contact Information
 
-### <a name="support">Support
+### <a name="support"></a>Support
 
 To contact SignNow support, please email [support@signnow.com](mailto:support@signnow.com).
 
-### <a name="sales">Sales
+### <a name="sales"></a>Sales
 
 For pricing information, please call [(800) 831-2050](tel:8008312050) or email [sales@signnow.com](mailto:sales@signnow.com).
