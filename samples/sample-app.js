@@ -161,7 +161,7 @@ snApi.oauth2.requestToken({
           // 14. Get Document History
           id && snApi.document.history({
             token,
-            id: '73a564814c9cb1719a027b1615c7aed5614b3160',
+            id,
           }, (err14, res14) => {
             console.log('-----------------------------');
             console.log(' 14. snApi.document.history: ');
@@ -420,7 +420,7 @@ snApi.oauth2.requestToken({
             console.log(res9);
             console.log('\n');
 
-            const { id9 } = res9;
+            const { id: id9 } = res9;
 
             // 5. get document data
             id9 && snApi.document.view({
@@ -540,7 +540,7 @@ snApi.oauth2.requestToken({
                         console.log(res15);
                         console.log('\n');
 
-                        const { id15 } = res15;
+                        const { id: id15 } = res15;
 
                         // 16. Duplicate a Template
                         snApi.template.duplicate({
@@ -558,7 +558,7 @@ snApi.oauth2.requestToken({
                             console.log(res16);
                             console.log('\n');
 
-                            const { id16 } = res16;
+                            const { id: id16 } = res16;
 
                             // 19. create signing link
                             snApi.link.create({
