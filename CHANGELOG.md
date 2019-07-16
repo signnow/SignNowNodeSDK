@@ -11,11 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Implemented *Remove Document* method
 - Added example how to utilize *Remove Document* method into [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#remove-document)
+- Documented [*template*](https://signnow.github.io/SignNowNodeSDK/class/lib/template.js~Template.html) methods
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/extract-fields.js) for testing *Upload Document with Field Extraction* method
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/view-document.js) for testing *View Document* method
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/download-document.js) for testing *Download Document* method
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/remove-document.js) for testing *Remove Document* method
-- Documented [*template*](https://signnow.github.io/SignNowNodeSDK/class/lib/template.js~Template.html) methods
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-template.js) for testing *Create Template* method
 
 ## [v1.2.0] - 2019-07-18
 
