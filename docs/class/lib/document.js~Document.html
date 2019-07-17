@@ -37,10 +37,17 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentCreateResponse">DocumentCreateResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFieldExtractParams">DocumentFieldExtractParams</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFieldExtractResponse">DocumentFieldExtractResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFieldInviteResponse">DocumentFieldInviteResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFields">DocumentFields</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFreeformInviteResponse">DocumentFreeformInviteResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentInviteOptions">DocumentInviteOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentInviteParams">DocumentInviteParams</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentInviteResponse">DocumentInviteResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentInviteSettings">DocumentInviteSettings</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentUpdateParams">DocumentUpdateParams</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentUpdateResponse">DocumentUpdateResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SignatureField">SignatureField</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SignerSettings">SignerSettings</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ApiError">ApiError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Features">Features</a></span></span></li>
@@ -258,13 +265,14 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/document.js~Document.html#static-method-invite">invite</a></span></span><span class="code" data-ice="signature">(objectPattern: {&quot;id&quot;: <span>*</span>, &quot;data&quot;: <span>*</span>, &quot;options&quot;: <span>*</span>, &quot;token&quot;: <span>*</span>}, callback: <span>*</span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/document.js~Document.html#static-method-invite">invite</a></span></span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-DocumentInviteParams">DocumentInviteParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-DocumentInviteResponse">DocumentInviteResponse</a></span>)</span></span>)</span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Creates an invite to sign a document.</p>
+</div>
       </div>
     </td>
     <td>
@@ -437,7 +445,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber352">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber415">source</a></span></span>
     </span>
   </h3>
 
@@ -571,7 +579,7 @@ This endpoint accepts .pdf, .doc, .docx, .odt, .rtf, .png, .jpg, .jpeg, .gif, .b
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber284">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber286">source</a></span></span>
     </span>
   </h3>
 
@@ -705,7 +713,7 @@ This endpoint only accepts .pdf (you may convert the document from .doc or .docx
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber398">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber461">source</a></span></span>
     </span>
   </h3>
 
@@ -766,18 +774,20 @@ This endpoint only accepts .pdf (you may convert the document from .doc or .docx
     
     
     
-    <span class="code" data-ice="name">invite</span><span class="code" data-ice="signature">(objectPattern: {&quot;id&quot;: <span>*</span>, &quot;data&quot;: <span>*</span>, &quot;options&quot;: <span>*</span>, &quot;token&quot;: <span>*</span>}, callback: <span>*</span>)</span>
+    <span class="code" data-ice="name">invite</span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-DocumentInviteParams">DocumentInviteParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-DocumentInviteResponse">DocumentInviteResponse</a></span>)</span></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber317">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber382">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Creates an invite to sign a document.
+You can create a simple free form invite(s) or a role-based invite(s).</p>
+</div>
 
   
 
@@ -790,16 +800,18 @@ This endpoint only accepts .pdf (you may convert the document from .doc or .docx
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">objectPattern</td>
-      <td data-ice="type" class="code">{&quot;id&quot;: <span>*</span>, &quot;data&quot;: <span>*</span>, &quot;options&quot;: <span>*</span>, &quot;token&quot;: <span>*</span>}</td>
-      <td data-ice="appendix"><ul><li>default: {&quot;id&quot;:null,&quot;data&quot;:null,&quot;options&quot;:null,&quot;token&quot;:null}</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="name" class="code" data-depth="0">data</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-DocumentInviteParams">DocumentInviteParams</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>create document invite payload</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">callback</td>
-      <td data-ice="type" class="code"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="type" class="code"><span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-DocumentInviteResponse">DocumentInviteResponse</a></span>)</span></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>error first node.js callback</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -900,7 +912,7 @@ This endpoint only accepts .pdf (you may convert the document from .doc or .docx
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber367">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber430">source</a></span></span>
     </span>
   </h3>
 
@@ -965,7 +977,7 @@ This endpoint only accepts .pdf (you may convert the document from .doc or .docx
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber299">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber301">source</a></span></span>
     </span>
   </h3>
 
@@ -1030,7 +1042,7 @@ This endpoint only accepts .pdf (you may convert the document from .doc or .docx
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber258">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/document.js.html#lineNumber260">source</a></span></span>
     </span>
   </h3>
 
@@ -1038,7 +1050,9 @@ This endpoint only accepts .pdf (you may convert the document from .doc or .docx
   
   
   <div data-ice="description"><p>Updates an existing document.
-Adds fields (signature, text, initials, checkbox) and elements (signature, text, check)</p>
+Adds fields (signature, text, initials, checkbox) and elements (signature, text, check).
+Every call of this method will add only specified fields into document.
+Old fields will be removed</p>
 </div>
 
   

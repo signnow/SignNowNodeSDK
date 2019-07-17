@@ -37,10 +37,17 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentCreateResponse">DocumentCreateResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFieldExtractParams">DocumentFieldExtractParams</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFieldExtractResponse">DocumentFieldExtractResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFieldInviteResponse">DocumentFieldInviteResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFields">DocumentFields</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentFreeformInviteResponse">DocumentFreeformInviteResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentInviteOptions">DocumentInviteOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentInviteParams">DocumentInviteParams</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentInviteResponse">DocumentInviteResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentInviteSettings">DocumentInviteSettings</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentUpdateParams">DocumentUpdateParams</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentUpdateResponse">DocumentUpdateResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SignatureField">SignatureField</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SignerSettings">SignerSettings</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ApiError">ApiError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Features">Features</a></span></span></li>
@@ -186,7 +193,36 @@ api.document.update({
   // handle error or process response data
 });</code>
 </code></pre>
-<h4 id="create-invite-to-sign-a-document">Create Invite to Sign a Document</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.invite({
+<h4 id="create-invite-to-sign-a-document">Create Invite to Sign a Document</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">const fieldInvite = {
+  document_id: &apos;DOCUMENT_ID_GOES_HERE&apos;,
+  from: &apos;EMAIL_OF_SENDER&apos;,
+  to: [
+    {
+      email: &apos;EMAIL_OF_SIGNER&apos;,
+      role: &apos;Signer 1&apos;,
+      role_id: &apos;ROLE_ID&apos;, // can be discovered in document details
+      order: 1,
+      reassign: &apos;0&apos;,
+      decline_by_signature: &apos;0&apos;,
+      reminder: 4,
+      expiration_days: 27,
+      subject: &apos;Field invite Signer1&apos;,
+      message: &apos;Message&apos;,
+    },
+  ],
+};
+
+api.document.invite({
+  data: {
+    ...fieldInvite,
+  },
+  id: &apos;DOCUMENT_ID_GOES_HERE&apos;,
+  token: &apos;YOUR_AUTH_TOKEN&apos;,
+}, (err, res) =&gt; {
+  // handle error or process response data
+});</code>
+</code></pre>
+<h4 id="create-free-form-invite">Create Free Form Invite</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">api.document.invite({
   token: &apos;your auth token&apos;,
   id: &apos;document id&apos;,
   data: {

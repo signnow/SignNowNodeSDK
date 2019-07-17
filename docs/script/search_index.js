@@ -204,9 +204,45 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/document.js~document.documentfieldinviteresponse",
+    "typedef/index.html#static-typedef-DocumentFieldInviteResponse",
+    "lib/document.js~Document.DocumentFieldInviteResponse",
+    "typedef"
+  ],
+  [
     "lib/document.js~document.documentfields",
     "typedef/index.html#static-typedef-DocumentFields",
     "lib/document.js~Document.DocumentFields",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentfreeforminviteresponse",
+    "typedef/index.html#static-typedef-DocumentFreeformInviteResponse",
+    "lib/document.js~Document.DocumentFreeformInviteResponse",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentinviteoptions",
+    "typedef/index.html#static-typedef-DocumentInviteOptions",
+    "lib/document.js~Document.DocumentInviteOptions",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentinviteparams",
+    "typedef/index.html#static-typedef-DocumentInviteParams",
+    "lib/document.js~Document.DocumentInviteParams",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentinviteresponse",
+    "typedef/index.html#static-typedef-DocumentInviteResponse",
+    "lib/document.js~Document.DocumentInviteResponse",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentinvitesettings",
+    "typedef/index.html#static-typedef-DocumentInviteSettings",
+    "lib/document.js~Document.DocumentInviteSettings",
     "typedef"
   ],
   [
@@ -225,6 +261,12 @@ window.esdocSearchIndex = [
     "lib/document.js~document.signaturefield",
     "typedef/index.html#static-typedef-SignatureField",
     "lib/document.js~Document.SignatureField",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.signersettings",
+    "typedef/index.html#static-typedef-SignerSettings",
+    "lib/document.js~Document.SignerSettings",
     "typedef"
   ],
   [
