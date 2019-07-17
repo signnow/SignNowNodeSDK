@@ -39,20 +39,20 @@ getAccessToken({
     uploadDocument({
       filepath,
       token,
-    }, (uploadErr, uploadRes) => {
-      if (uploadErr) {
-        console.error(uploadErr);
+    }, (viewErr, viewRes) => {
+      if (viewRes) {
+        console.error(viewErr);
       } else {
-        const { id } = uploadRes;
+        const { id } = viewRes;
 
         viewDocument({
           id,
           token,
-        }, (updateErr, updateRes) => {
-          if (updateErr) {
-            console.error(updateErr);
+        }, (viewErr, viewRes) => {
+          if (viewErr) {
+            console.error(viewErr);
           } else {
-            console.log(updateRes);
+            console.log(viewRes);
           }
         });
       }
