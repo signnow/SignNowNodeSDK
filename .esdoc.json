@@ -3,7 +3,8 @@
   "includes": [
     "index.js",
     "user.js",
-    "oauth2.js"
+    "oauth2.js",
+    "document.js"
   ],
   "destination": "./docs",
   "plugins": [

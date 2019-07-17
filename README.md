@@ -2,6 +2,8 @@
 
 SignNow REST Service Wrapper
 
+[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md)
+
 ### About SignNow
 
 SignNow is a powerful web-based e-signature solution that streamlines the signing process and overall document flow for businesses of any size. SignNow offers SaaS as well as public and private cloud deployment options using the same underlying API. With SignNow you can easily sign, share and manage documents in compliance with international data laws and industry-specific regulations. SignNow enables you to collect signatures from partners, employees and customers from any device within minutes.
@@ -16,7 +18,7 @@ See additional contact information at the bottom.
 
 Resources | Sandbox | Production
 ------------- | ------------- | -------------
-API: | **api-eval.signnow.com** | **api.signnow.com**
+API: | **api-eval.signnow.com:443** | **api.signnow.com:443**
 Application: | [https://app-eval.signnow.com](https://app-eval.signnow.com) | [https://app.signnow.com](https://app.signnow.com)
 Entry page: | [https://eval.signnow.com](https://eval.signnow.com) |
 
@@ -433,7 +435,7 @@ exports.settings = {
 
 ## License
 
-This project is released under the MIT license, which can be found in [License](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md).
+This project is released under the MIT [License](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md).
 
 ## Additional Contact Information
 
@@ -443,4 +445,4 @@ To contact SignNow support, please email [support@signnow.com](mailto:support@si
 
 ### Sales
 
-For pricing information, please call (800) 831-2050 or email [sales@signnow.com](mailto:sales@signnow.com).
+For pricing information, please call [(800) 831-2050](tel:8008312050) or email [sales@signnow.com](mailto:sales@signnow.com).

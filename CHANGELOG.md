@@ -12,9 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Integrated code linter ([ESLint](https://eslint.org/))
 - Integrated doc generator ([ESDoc](https://esdoc.org/))
 - Generated and deployed [API Reference](https://signnow.github.io/SignNowNodeSDK/) for API Client
-- Documented *user* and *oauth2* methods
+- Documented *user* methods
+- Documented *oauth2* methods
+- Partially documented *document* methods
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-user.js) for testing *Create User* method
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/get-access-token.js) for testing *Request Token* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document.js) for testing *Create Document* method
 - Added [Change Log](https://github.com/signnow/SignNowNodeSDK/blob/master/CHANGELOG.md)
 - Added [License](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md)
 
@@ -30,4 +33,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - made fix of feature bug related to `Content-Length` header in requests
 
 [Unreleased]: https://github.com/signnow/SignNowNodeSDK/compare/v1.1.4...HEAD
-[1.1.4]: https://github.com/signnow/SignNowNodeSDK/releases/tag/v1.1.4

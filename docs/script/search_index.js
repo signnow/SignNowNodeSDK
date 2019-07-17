@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "@signnow/api-client/lib/document.js~document",
+    "class/lib/document.js~Document.html",
+    "<span>Document</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/document.js</span>",
+    "class"
+  ],
+  [
     "@signnow/api-client/lib/oauth2.js~oauth2",
     "class/lib/oauth2.js~OAuth2.html",
     "<span>OAuth2</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/oauth2.js</span>",
@@ -166,6 +172,102 @@ window.esdocSearchIndex = [
     "test-file/test/folder.test.js.html#lineNumber13",
     "folder .list() should return a list of folders",
     "test"
+  ],
+  [
+    "lib/document.js",
+    "file/lib/document.js.html",
+    "lib/document.js",
+    "file"
+  ],
+  [
+    "lib/document.js~document.documentcreateparams",
+    "typedef/index.html#static-typedef-DocumentCreateParams",
+    "lib/document.js~Document.DocumentCreateParams",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentcreateresponse",
+    "typedef/index.html#static-typedef-DocumentCreateResponse",
+    "lib/document.js~Document.DocumentCreateResponse",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentfieldextractparams",
+    "typedef/index.html#static-typedef-DocumentFieldExtractParams",
+    "lib/document.js~Document.DocumentFieldExtractParams",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentfieldextractresponse",
+    "typedef/index.html#static-typedef-DocumentFieldExtractResponse",
+    "lib/document.js~Document.DocumentFieldExtractResponse",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.cancelinvite",
+    "class/lib/document.js~Document.html#static-method-cancelInvite",
+    "lib/document.js~Document.cancelInvite",
+    "method"
+  ],
+  [
+    "lib/document.js~document.create",
+    "class/lib/document.js~Document.html#static-method-create",
+    "lib/document.js~Document.create",
+    "method"
+  ],
+  [
+    "lib/document.js~document.download",
+    "class/lib/document.js~Document.html#static-method-download",
+    "lib/document.js~Document.download",
+    "method"
+  ],
+  [
+    "lib/document.js~document.fieldextract",
+    "class/lib/document.js~Document.html#static-method-fieldextract",
+    "lib/document.js~Document.fieldextract",
+    "method"
+  ],
+  [
+    "lib/document.js~document.history",
+    "class/lib/document.js~Document.html#static-method-history",
+    "lib/document.js~Document.history",
+    "method"
+  ],
+  [
+    "lib/document.js~document.invite",
+    "class/lib/document.js~Document.html#static-method-invite",
+    "lib/document.js~Document.invite",
+    "method"
+  ],
+  [
+    "lib/document.js~document.list",
+    "class/lib/document.js~Document.html#static-method-list",
+    "lib/document.js~Document.list",
+    "method"
+  ],
+  [
+    "lib/document.js~document.merge",
+    "class/lib/document.js~Document.html#static-method-merge",
+    "lib/document.js~Document.merge",
+    "method"
+  ],
+  [
+    "lib/document.js~document.share",
+    "class/lib/document.js~Document.html#static-method-share",
+    "lib/document.js~Document.share",
+    "method"
+  ],
+  [
+    "lib/document.js~document.update",
+    "class/lib/document.js~Document.html#static-method-update",
+    "lib/document.js~Document.update",
+    "method"
+  ],
+  [
+    "lib/document.js~document.view",
+    "class/lib/document.js~Document.html#static-method-view",
+    "lib/document.js~Document.view",
+    "method"
   ],
   [
     "lib/index.js",
@@ -337,13 +439,13 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber27",
+    "test-file/test/template.test.js.html#lineNumber13",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber13",
+    "test-file/test/template.test.js.html#lineNumber27",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],
