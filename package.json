@@ -1,27 +1,45 @@
 {
-    "name": "signnow",
-    "description": "SignNow REST Service Wrapper",
-    "version": "1.1.6",
-    "author": {
-        "name": "Michael Fitchett",
-        "email": "mfitchett@barracuda.com"
-    },
-    "keywords": [
-        "cudasign",
-        "signnow",
-        "document",
-        "sign",
-        "online",
-        "electronic",
-        "api"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/signnow/SignNowNodeSDK"
-    },
-    "main": "lib/signnow.js",
-    "devDependencies": {
-        "chai": "*",
-        "mocha": "*"
-    }
+  "name": "@signnow/api-client",
+  "description": "SignNow REST Service Wrapper",
+  "version": "1.2.0",
+  "author": {
+    "name": "SignNow Team",
+    "email": "support@signnow.com"
+  },
+  "keywords": [
+    "signnow",
+    "document",
+    "sign",
+    "online",
+    "electronic",
+    "signature",
+    "api",
+    "client"
+  ],
+  "main": "lib/index.js",
+  "repository": "github:signnow/SignNowNodeSDK",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint **/*.js",
+    "lint:fix": "./node_modules/.bin/eslint **/*.js --fix",
+    "docs": "./node_modules/.bin/esdoc",
+    "prepublish": "npm run lint"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "esdoc": "1.1.0",
+    "esdoc-external-nodejs-plugin": "1.0.0",
+    "esdoc-inject-style-plugin": "1.0.0",
+    "esdoc-node": "1.0.4",
+    "esdoc-standard-plugin": "1.0.0",
+    "eslint": "6.0.1",
+    "mocha": "*"
+  },
+  "engines": {
+    "node": ">=6.4.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "license": "MIT",
+  "man" : "https://signnow.github.io/SignNowNodeSDK/"
 }

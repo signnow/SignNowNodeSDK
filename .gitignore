@@ -11,3 +11,5 @@ build/Release
 node_modules
 test-settings.js
 *.DS_Store
+launch.json
+.vscode
