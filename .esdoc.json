@@ -2,7 +2,8 @@
   "source": "./lib",
   "includes": [
     "index.js",
-    "user.js"
+    "user.js",
+    "oauth2.js"
   ],
   "destination": "./docs",
   "plugins": [

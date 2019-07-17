@@ -1,11 +1,16 @@
 {
   "coverage": "100%",
-  "expectCount": 4,
-  "actualCount": 4,
+  "expectCount": 7,
+  "actualCount": 7,
   "files": {
     "lib/index.js": {
       "expectCount": 1,
       "actualCount": 1,
+      "undocumentLines": []
+    },
+    "lib/oauth2.js": {
+      "expectCount": 3,
+      "actualCount": 3,
       "undocumentLines": []
     },
     "lib/user.js": {
