@@ -4,8 +4,6 @@
  * <cliend_id>, <client_secret>, <username>, <password>, <path_to_file> - are required params
  */
 
-//node samples/applets/view-document 6fa29da4a3308e55c63724eaf30f1cdc ed811208b2594d9e0564df6313f423fe zolotov.artem@pdffiller.team 12345678 ./samples/files/pdf-sample.pdf
-
 'use strict';
 
 const [
