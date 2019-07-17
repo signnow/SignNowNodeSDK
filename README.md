@@ -37,6 +37,8 @@ SignNow REST Service Wrapper
     * [Template](#template)
       * [Create a Template](#create-template)
       * [Duplicate a Template](#copy-template)
+      * [Create Invite to Sign a Template](#template-field-invite)
+      * [Create Free Form Invite from Template](#template-freeform-invite)
     * [Folder](#folder)
       * [Returns a list of folders](#list-folders)
       * [Returns a list of documents inside a folder](#list-documents-in-folder)
@@ -390,6 +392,52 @@ api.template.duplicate({
   token: 'your auth token',
   id: 'document id',
   name: 'my template',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+#### <a name="template-field-invite"></a>Create Invite to Sign a Template
+
+```javascript
+const fieldInvite = {
+  from: 'EMAIL_OF_SENDER',
+  to: [
+    {
+      email: 'EMAIL_OF_SIGNER',
+      role: 'Signer 1',
+      order: 1,
+      reassign: '0',
+      decline_by_signature: '0',
+      reminder: 4,
+      expiration_days: 27,
+      subject: 'Field invite Signer1',
+      message: 'Message',
+    },
+  ],
+};
+
+api.template.invite({
+  data: {
+    ...fieldInvite,
+  },
+  id: 'TEMPLATE_ID_GOES_HERE',
+  token: 'YOUR_AUTH_TOKEN',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+#### <a name="template-freeform-invite"></a>Create Free Form Invite from Template
+
+```javascript
+api.template.invite({
+  token: 'YOUR_AUTH_TOKEN',
+  id: 'TEMPLATE_ID_GOES_HERE',
+  data: {
+    from: 'EMAIL_OF_SENDER',
+    to: 'EMAIL_OF_SIGNER',
+  },
 }, (err, res) => {
   // handle error or process response data
 });

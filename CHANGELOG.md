@@ -5,15 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased Phase 2]
+## [Unreleased] - Unreleased Phase 2
 
 ### Added
 
+- Implemented *Template Field Invite* method
+- Implemented *Template Freeform Invite* method
 - Documented [*template*](https://signnow.github.io/SignNowNodeSDK/class/lib/template.js~Template.html) methods
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/extract-fields.js) for testing *Upload Document with Field Extraction* method
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-template.js) for testing *Create Template* method
 
-## [Unreleased Phase 1]
+## [v1.2.0] - Unreleased Phase 1
 
 ### Added
 
@@ -45,5 +47,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - made fix of feature bug related to `Content-Length` header in requests
 
-[Unreleased Phase 2]: https://github.com/signnow/SignNowNodeSDK/compare/v1.1.4...HEAD
-[Unreleased Phase 1]: https://github.com/signnow/SignNowNodeSDK/compare/v1.1.4...HEAD
+[Unreleased]: https://github.com/signnow/SignNowNodeSDK/compare/v1.1.4...HEAD
+[v1.2.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.1.4...v1.2.0
