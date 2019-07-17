@@ -10,10 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Implemented *Template Invite* method with ability to send field and freeform invites
+- Added examples of *Template Field Invite* and *Template Freeform Invite* into [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#template-field-invite)
 - Documented [*template*](https://signnow.github.io/SignNowNodeSDK/class/lib/template.js~Template.html) methods
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/extract-fields.js) for testing *Upload Document with Field Extraction* method
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-template.js) for testing *Create Template* method
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/template-field-invite.js) for testing field invite with *Template Invite* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/template-freeform-invite.js) for testing freeform invite with *Template Invite* method
 
 ## [v1.2.0] - Unreleased Phase 1
 
@@ -47,5 +49,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - made fix of feature bug related to `Content-Length` header in requests
 
-[Unreleased]: https://github.com/signnow/SignNowNodeSDK/compare/v1.1.4...HEAD
+[Unreleased]: https://github.com/signnow/SignNowNodeSDK/compare/v1.2.0...HEAD
 [v1.2.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.1.4...v1.2.0
