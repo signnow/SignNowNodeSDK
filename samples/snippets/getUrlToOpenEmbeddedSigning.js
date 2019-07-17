@@ -1,6 +1,6 @@
 'use strict';
 
-const signnow = require('signnow')({
+const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
 });
