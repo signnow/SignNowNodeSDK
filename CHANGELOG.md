@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/extract-fields.js) for testing *Upload Document with Field Extraction* method
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/view-document.js) for testing *View Document* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/download-document.js) for testing *Download Document* method
 
 ## [Unreleased Phase 1]
 
