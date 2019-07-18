@@ -61,7 +61,6 @@ getAccessToken({
               console.log(`Document has been downloaded. Check your ${pathToSaveFile} directory`)
             } catch (err) {
               console.log(err);
-              console.log('Error loading file');
             }
           }
         });
