@@ -58,7 +58,7 @@ getAccessToken({
           } else {
             try {
               fs.writeFileSync(finalPath, downloadResponse, { encoding: 'binary' });
-              console.log('Document is downloaded.')
+              console.log(`Document has been downloaded. Check your ${pathToSaveFile} directory`)
             } catch (err) {
               console.log(err);
               console.log('Error loading file');
