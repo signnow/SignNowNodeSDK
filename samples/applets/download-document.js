@@ -1,10 +1,8 @@
 /*
  * to run download document applet from the project root folder type in your console:
- * > node samples/applets/download-document <cliend_id> <client_secret> <username> <password> <path_to_save>
- * <cliend_id>, <client_secret>, <username>, <password> <path_to_save> - are required params
+ * > node samples/applets/download-document <cliend_id> <client_secret> <username> <password> <document_id> <path_to_save>
+ * <cliend_id>, <client_secret>, <username>, <password> <document_id> <path_to_save> - are required params
  */
-
-//node samples/applets/download-document 6fa29da4a3308e55c63724eaf30f1cdc ed811208b2594d9e0564df6313f423fe zolotov.artem@pdffiller.team 12345678 ./files/
 
 'use strict';
 
@@ -15,6 +13,7 @@ const [
   clientSecret,
   username,
   password,
+  documentId,
   pathToSaveFile
 ] = process.argv.slice(2);
 
@@ -42,15 +41,14 @@ getAccessToken({
 
     documentList({
       token
-    }, (listErr, listRes) => {
+    }, listErr => {
       if (listErr) {
         console.log(listErr)
       } else {
-        const docListIds = Array.isArray(listRes) && listRes.map(doc => doc.id);
-        const finalPath = pathToSaveFile + docListIds[0] + '.pdf';
+        const finalPath = `${pathToSaveFile}${documentId}.pdf`;
 
         documentDownload({
-          id: docListIds[0],
+          id: documentId,
           token,
         }, (downloadError, downloadResponse) => {
           if (downloadError) {
