@@ -1,7 +1,7 @@
 /*
  * to run download document applet from the project root folder type in your console:
  * > node samples/applets/download-document <cliend_id> <client_secret> <username> <password> <document_id> <path_to_save>
- * <cliend_id>, <client_secret>, <username>, <password> <document_id> <path_to_save> - are required params
+ * <cliend_id>, <client_secret>, <username>, <password>, <document_id>, <path_to_save> - are required params
  */
 
 'use strict';
@@ -23,12 +23,7 @@ const api = require('../../lib')({
 });
 
 const { oauth2: { requestToken: getAccessToken } } = api;
-const {
-  document: {
-    list: documentList,
-    download: documentDownload,
-  },
-} = api;
+const { document: { download: documentDownload } } = api;
 
 getAccessToken({
   username,
@@ -39,30 +34,22 @@ getAccessToken({
   } else {
     const { access_token: token } = tokenRes;
 
-    documentList({
-      token
-    }, listErr => {
-      if (listErr) {
-        console.log(listErr)
-      } else {
-        const finalPath = `${pathToSaveFile}${documentId}.pdf`;
+    const finalPath = `${pathToSaveFile}${documentId}.pdf`;
 
-        documentDownload({
-          id: documentId,
-          token,
-        }, (downloadError, downloadResponse) => {
-          if (downloadError) {
-            console.log(downloadError)
-          } else {
-            try {
-              fs.writeFileSync(finalPath, downloadResponse, { encoding: 'binary' });
-              console.log(`Document has been downloaded. Check your ${pathToSaveFile} directory`)
-            } catch (err) {
-              console.log(err);
-            }
-          }
-        });
+    documentDownload({
+        id: documentId,
+        token,
+    }, (downloadError, downloadResponse) => {
+      if (downloadError) {
+        console.log(downloadError)
+      } else {
+        try {
+          fs.writeFileSync(finalPath, downloadResponse, { encoding: 'binary' });
+          console.log(`Document has been downloaded. Check your ${pathToSaveFile} directory`)
+        } catch (err) {
+          console.log(err);
+        }
       }
-    })
+    });
   }
 });
