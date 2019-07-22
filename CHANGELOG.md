@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-signing-link.js) for testing creation of url signing link with *Create Signing Link* method
 - Documented [*link*](https://signnow.github.io/SignNowNodeSDK/class/lib/link.js~Link.html) methods
+- Created [Applet](https://signnow.github.io/SignNowNodeSDK/class/lib/oauth2.js~OAuth2.html) for verifying access token with *Verify Access Token* method
 
 ## [v1.3.0] - 2019-08-01
 
