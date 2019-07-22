@@ -18,8 +18,12 @@ const api = require('../../lib')({
   production: false,
 });
 
-const { oauth2: { requestToken: getAccessToken } } = api;
-const { oauth2: { verify: verifyAccessToken } } = api;
+const {
+  oauth2: {
+    requestToken: getAccessToken,
+    verify: verifyAccessToken
+  }
+} = api;
 
 getAccessToken({
   username,
