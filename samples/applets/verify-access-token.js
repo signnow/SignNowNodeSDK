@@ -21,8 +21,8 @@ const api = require('../../lib')({
 const {
   oauth2: {
     requestToken: getAccessToken,
-    verify: verifyAccessToken
-  }
+    verify: verifyAccessToken,
+  },
 } = api;
 
 getAccessToken({
