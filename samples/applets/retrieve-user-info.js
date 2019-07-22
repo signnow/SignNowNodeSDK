@@ -1,8 +1,7 @@
 /*
  * to run retrieve-user-info applet from the project root folder type in your console:
- * > node samples/applets/retrieve-user-info <cliend_id> <client_secret> <email> <password> <first_name> <last_name>
- * <email> <password> - are required params
- * <first_name> <last_name> - are optional
+ * > node samples/applets/retrieve-user-info <cliend_id> <client_secret> <email> <password>
+ * <cliend_id>, <client_secret>, <email>, <password> - are required params
  */
 
 'use strict';
