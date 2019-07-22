@@ -10,7 +10,7 @@ const [
   clientId,
   clientSecret,
   username,
-  password
+  password,
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -34,14 +34,12 @@ getAccessToken({
   } else {
     const { access_token: token } = tokenRes;
 
-    verifyAccessToken({
-      token
-    }, (verifyErr, verifyRes) => {
+    verifyAccessToken({ token }, (verifyErr, verifyRes) => {
       if (verifyErr) {
-        console.error(verifyErr)
+        console.error(verifyErr);
       } else {
-        console.log(verifyRes)
+        console.log(verifyRes);
       }
-    })
+    });
   }
 });
