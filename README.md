@@ -517,6 +517,22 @@ api.folder.documents({
   // handle error or process response data
 });
 ```
+### <a name="document-group"></a>Document Group
+
+#### <a name="create-document-group"></a>Create Document Group
+
+```javascript
+signnow.documentGroup.create({
+  token: 'your auth token',
+  document_ids: [
+      '84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa',
+      'a71d963c49f33176e90c5827069c422616b1500c',
+    ],
+  document_name: 'my document group',
+  }, (err, res) => {
+    // handle error or process response data
+  });
+```
 
 ### <a name="webhook"></a>Webhook
 
