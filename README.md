@@ -32,6 +32,8 @@ SignNow REST Service Wrapper
       * [Merge Existing Documents](#merge-documents)
       * [Get Document History](#get-history)
       * [Remove Document](#remove-document)
+    * [Links](#links)
+      * [Create signing link](#create-signing-link)
     * [Enumerations](#enumerations)
       * [Add Enumeration Field to a Document](#add-enumeration)
       * [Add Enumeration Options to the Field](#enumeration-options)
@@ -333,6 +335,19 @@ api.document.history({
 api.document.remove({
   token: 'your auth token',
   id: 'document id',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+### <a name="links"></a>Links
+
+#### <a name="create-signing-link"></a>Create Signing Link
+
+```javascript
+api.link.create({
+  token: 'your auth token',
+  document_id: 'document id',
 }, (err, res) => {
   // handle error or process response data
 });
