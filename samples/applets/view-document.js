@@ -2,7 +2,7 @@
  * to run view document applet from the project root folder type in your console:
  * > node samples/applets/view-document <cliend_id> <client_secret> <username> <password> <path_to_file> <fields_stringified>
  * <cliend_id>, <client_secret>, <username>, <password>, <path_to_file> - are required params
- * <path_to_file> - is optional param. If empty goes for './samples/files/pdf-sample.pdf'
+ * <path_to_file> - is optional param. If empty, goes for './samples/files/pdf-sample.pdf'
  * '<fields_stringified>' - is optional param. If empty, will download document without fields.
  */
 
