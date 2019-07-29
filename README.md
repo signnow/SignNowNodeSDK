@@ -31,6 +31,7 @@ SignNow REST Service Wrapper
       * [Create a One-time Use Download URL](#share-document)
       * [Merge Existing Documents](#merge-documents)
       * [Get Document History](#get-history)
+      * [Remove Document](#remove-document)
     * [Enumerations](#enumerations)
       * [Add Enumeration Field to a Document](#add-enumeration)
       * [Add Enumeration Options to the Field](#enumeration-options)
@@ -317,6 +318,17 @@ api.document.merge({
 
 ```javascript
 api.document.history({
+  token: 'your auth token',
+  id: 'document id',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+#### <a name="remove-document"></a>Remove Document
+
+```javascript
+api.document.remove({
   token: 'your auth token',
   id: 'document id',
 }, (err, res) => {
