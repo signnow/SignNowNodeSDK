@@ -1,7 +1,8 @@
 /*
  * to run create document group applet from the project root folder type in your console:
- * > node samples/applets/create-document-group <cliend_id> <client_secret> <username> <password> <group_name>
- * <cliend_id>, <client_secret>, <username>, <password>, <group_name> - are required params
+ * > node samples/applets/create-document-group <cliend_id> <client_secret> <username> <password> <group_name> <signature_stringified> <filepath>
+ * <cliend_id>, <client_secret>, <username>, <password>, <group_name>, <signature_stringified> - are required params
+ * <filepath> - is optional param. If empty, default will be './samples/files/pdf-sample.pdf'
  */
 
 'use strict';
@@ -11,7 +12,9 @@ const [
   clientSecret,
   username,
   password,
-  group_name
+  group_name,
+  fieldsStringifed,
+  filepath = './samples/files/pdf-sample.pdf',
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -20,19 +23,13 @@ const api = require('../../lib')({
 });
 
 const {
-  documentGroup: {
-    create: createDocumentGroup
-  },
-  oauth2: {
-    requestToken: getAccessToken
-  },
-  folder: {
-    documents: documentList,
-    list: foldersList,
+  documentGroup: { create: createDocumentGroup },
+  oauth2: { requestToken: getAccessToken },
+  document: {
+    create: createDocument,
+    update: addFields,
   }
 } = api;
-
-const randomId = (min, max = 10) => Math.round(Math.random() * (max - min) * min);
 
 getAccessToken({
   username,
@@ -43,44 +40,62 @@ getAccessToken({
   } else {
     const { access_token: token } = tokenRes;
 
-    foldersList({
+    createDocument({
+      filepath,
       token
-    }, (listErr, listRes) => {
-      if (listErr) {
-        console.error(listErr);
+    }, (createError, createResponse) => {
+      if (createError) {
+        console.error(createError);
       } else {
-        const id = listRes.folders[1].id;
+        const { id } = createResponse;
+        const client_timestamp = Math.floor(Date.now() / 1000);
 
-        documentList({
+        let fields;
+
+        try {
+          fields = JSON.parse(fieldsStringifed)
+        } catch (err) {
+          console.error(err);
+          return;
+        }
+
+        addFields({
+          fields: {
+            client_timestamp,
+            fields,
+          },
           id,
-          token
-        }, (docListErr, docListRes) => {
-            if (docListErr) {
-              console.error(docListErr);
-            } else {
-              const documents = docListRes.documents || [];
-              const validDocuments = documents.filter(doc => {
-                return !doc.field_invites.length
-                  && doc.roles.length
-                  && doc.fields.length
-              });
+          token,
+        }, (addFieldsErr, addFieldsRes) => {
+          if (addFieldsErr) {
+            console.error(addFieldsErr);
+          } else {
+             const { id: signedId } = addFieldsRes;
 
-              const idWithInviteFields = validDocuments[randomId(1, validDocuments.length)].id;
-              const documentId = documents.filter(doc => !doc.field_invites.length)[randomId(1)].id;
+            createDocument({
+              filepath,
+              token
+            }, (createError, createResponse) => {
+              if (createError) {
+                console.error(createError);
+              } else {
+                const { id } = createResponse;
 
-              createDocumentGroup({
+                createDocumentGroup({
                   token,
-                  document_ids: [idWithInviteFields, documentId],
+                  document_ids: [signedId, id],
                   group_name
-                }, (createDocErr, createDocRes) => {
-                  if (createDocErr) {
-                    console.error(createDocErr, 'createDocError');
+                }, (createDocGroupErr, createDocGroupRes) => {
+                  if (createDocGroupErr) {
+                    console.error(createDocGroupErr);
                   } else {
-                    console.log(createDocRes);
+                    console.log(createDocGroupRes);
                   }
                 })
-            }
-        });
+              }
+            })
+          }
+        })
       }
     })
   }
