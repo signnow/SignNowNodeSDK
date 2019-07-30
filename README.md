@@ -385,11 +385,16 @@ api.enumerations.addOptions({
 
 #### <a name="create-template"></a>Create a Template
 
+By default original document is not removed after template creation. To remove original document set `removeOriginalDocument` option to `true`.
+
 ```javascript
 api.template.create({
   token: 'your auth token',
   document_id: 'document id',
   document_name: 'my template',
+  options: {
+    removeOriginalDocument: true, // false by default
+  },
 }, (err, res) => {
   // handle error or process response data
 });

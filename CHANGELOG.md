@@ -18,6 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/remove-document.js) for testing *Remove Document* method
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-template.js) for testing *Create Template* method
 
+### Changed
+
+- Added optional ability to remove original document after template creation in *Create Template* method
+
 ## [Unreleased Phase 1]
 
 ### Added
