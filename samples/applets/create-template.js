@@ -1,6 +1,6 @@
 /*
  * to run update document applet from the project root folder type in your console:
- * > node samples/applets/update-document <cliend_id> <client_secret> <username> <password> <path_to_file> <fields_stringified> <template_name> <delete_original>
+ * > node samples/applets/create-template <cliend_id> <client_secret> <username> <password> <path_to_file> <fields_stringified> <template_name> <delete_original>
  * <cliend_id>, <client_secret>, <username>, <password>, <path_to_file>, <fields_stringified>, <template_name> - are required params
  * <delete_original> - optional param. If ommited defaults to false
  */
