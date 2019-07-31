@@ -26,6 +26,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added optional ability to remove original document after template creation in *Create Template* method
 
+### Fixed
+
+- Made fix of download document bug related to encoding of binary data
+
 ## [v1.2.0] - 2019-07-18
 
 ### Added
