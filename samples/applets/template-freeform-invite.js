@@ -1,7 +1,8 @@
 /*
  * to run template free form invite applet from the project root folder type in your console:
- * > node samples/applets/template-freeform-invite <client_id> <client_secret> <username> <password> <path_to_file> '<template_name>' <signer_email>
+ * > node samples/applets/template-freeform-invite <client_id> <client_secret> <username> <password> <path_to_file> '<template_name>' <signer_email> <delete_original>
  * <client_id>, <client_secret>, <username> <password>, <path_to_file>, <template_name>, <signer_email> - are required params
+ * <delete_original> - optional param. If ommited defaults to false
  */
 
 'use strict';
@@ -14,6 +15,7 @@ const [
   filepath,
   templateName,
   signerEmail,
+  removeOriginalDocument,
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -51,6 +53,7 @@ getAccessToken({
         createTemplate({
           document_id: id,
           document_name: templateName,
+          options: { removeOriginalDocument: removeOriginalDocument === 'true' },
           token,
         }, (templateErr, templateRes) => {
           if (templateErr) {
