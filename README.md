@@ -4,17 +4,63 @@ SignNow REST Service Wrapper
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md)
 
-### About SignNow
+### <a name="table-of-contents"></a>Table of Contents
+
+1. [About SignNow](#about-signnow)
+2. [API Contact Information](#api-contact-info)
+3. [API and Application](#api-and-app)
+4. [Installation](#installation)
+5. [Documentation](#documentation)
+6. [Examples](#examples)
+    * [User](#user)
+      * [Create a User](#create-user)
+      * [Retrieve User Information](#get-user)
+    * [OAuth 2.0](#oauth2)
+      * [Request Access Token](#get-token)
+      * [Verify an Access Token](#verify-token)
+    * [Document](#document)
+      * [Retrieve a List of the User’s Documents](#list-documents)
+      * [Retrieve a Document Resource](#get-document)
+      * [Download a Collapsed Document](#download-document)
+      * [Upload Document](#upload-document)
+      * [Upload File & Extract Fields](#extract-fields)
+      * [Update Document (add fields)](#update-document)
+      * [Create Invite to Sign a Document](#field-invite)
+      * [Create Free Form Invite](#freeform-invite)
+      * [Cancel Field Invite to Sign a Document](#cancel-invite)
+      * [Create a One-time Use Download URL](#share-document)
+      * [Merge Existing Documents](#merge-documents)
+      * [Get Document History](#get-history)
+    * [Enumerations](#enumerations)
+      * [Add Enumeration Field to a Document](#add-enumeration)
+      * [Add Enumeration Options to the Field](#enumeration-options)
+    * [Template](#template)
+      * [Create a Template](#create-template)
+      * [Duplicate a Template](#copy-template)
+    * [Folder](#folder)
+      * [Returns a list of folders](#list-folders)
+      * [Returns a list of documents inside a folder](#list-documents-in-folder)
+    * [Webhook](#webhook)
+      * [Returns a list of Webhooks](#list-webhooks)
+      * [Create a Webhook](#create-webhook)
+    * [Promisify methods](#promisify)
+7. [Unit Tests](#unit-tests)</li>
+8. [License](#license)</li>
+9. [Additional Contact Information](#contacts)
+    * [Support](#support)
+    * [Sales](#sales)
+
+### <a name="about-signnow"></a>About SignNow
 
 SignNow is a powerful web-based e-signature solution that streamlines the signing process and overall document flow for businesses of any size. SignNow offers SaaS as well as public and private cloud deployment options using the same underlying API. With SignNow you can easily sign, share and manage documents in compliance with international data laws and industry-specific regulations. SignNow enables you to collect signatures from partners, employees and customers from any device within minutes.
 
-### API Contact Information
+### <a name="api-contact-info"></a>API Contact Information
 
 If you have questions about the SignNow API, please visit [https://help.signnow.com/docs](https://help.signnow.com/docs) or email [api@signnow.com](mailto:api@signnow.com).
 
 See additional contact information at the bottom.
 
-### API and Application
+### <a name="api-and-app"></a>API and Application
 
 Resources | Sandbox | Production
 ------------- | ------------- | -------------
@@ -22,7 +68,7 @@ API: | **api-eval.signnow.com:443** | **api.signnow.com:443**
 Application: | [https://app-eval.signnow.com](https://app-eval.signnow.com) | [https://app.signnow.com](https://app.signnow.com)
 Entry page: | [https://eval.signnow.com](https://eval.signnow.com) |
 
-## Installation
+## <a name="installation"></a>Installation
 
 `@signnow/api-client` supports node.js **v6.4.0** or later.
 
@@ -32,11 +78,11 @@ To install the latest version of `@signnow/api-client` run:
 npm install @signnow/api-client
 ```
 
-## Documentation
+## <a name="documentation"></a>Documentation
 
 See api reference in our [Documentation](https://signnow.github.io/SignNowNodeSDK/).
 
-## Examples
+## <a name="examples"></a>Examples
 
 To run the examples you will need an API key. You can get one here [https://www.signnow.com/api](https://www.signnow.com/api). For a full list of accepted parameters, refer to the SignNow REST Endpoints API guide: [https://help.signnow.com/docs](https://help.signnow.com/docs).
 
@@ -51,9 +97,9 @@ const api = require('@signnow/api-client')({
 
 Every resource returns two parameters. The first param contains any errors and the second contains the results.
 
-### User
+### <a name="user"></a>User
 
-#### Create a User
+#### <a name="create-user"></a>Create a User
 
 ```javascript
 api.user.create({
@@ -66,7 +112,7 @@ api.user.create({
 });
 ```
 
-#### Retrieve User Information
+#### <a name="get-user"></a>Retrieve User Information
 
 ```javascript
 api.user.retrieve({
@@ -77,9 +123,9 @@ api.user.retrieve({
 });
 ```
 
-### OAuth 2.0
+### <a name="oauth2"></a>OAuth 2.0
 
-#### Request Access Token
+#### <a name="get-token"></a>Request Access Token
 
 ```javascript
 api.oauth2.requestToken({
@@ -90,7 +136,7 @@ api.oauth2.requestToken({
 });
 ```
 
-#### Verify an Access Token
+#### <a name="verify-token"></a>Verify an Access Token
 
 ```javascript
 api.oauth2.verify({
@@ -100,9 +146,9 @@ api.oauth2.verify({
 });
 ```
 
-### Document
+### <a name="document"></a>Document
 
-#### Retrieve a List of the User’s Documents
+#### <a name="list-documents"></a>Retrieve a List of the User’s Documents
 
 ```javascript
 api.document.list({
@@ -112,7 +158,7 @@ api.document.list({
 });
 ```
 
-#### Retrieve a Document Resource
+#### <a name="get-document"></a>Retrieve a Document Resource
 
 ```javascript
 api.document.view({
@@ -123,7 +169,7 @@ api.document.view({
 });
 ```
 
-#### Download a Collapsed Document
+#### <a name="download-document"></a>Download a Collapsed Document
 
 ```javascript
 api.document.download({
@@ -134,7 +180,7 @@ api.document.download({
 });
 ```
 
-#### Upload Document
+#### <a name="upload-document"></a>Upload Document
 
 ```javascript
 api.document.create({
@@ -145,7 +191,7 @@ api.document.create({
 });
 ```
 
-#### Upload File & Extract Fields
+#### <a name="extract-fields"></a>Upload File & Extract Fields
 
 ```javascript
 api.document.fieldextract({
@@ -156,7 +202,7 @@ api.document.fieldextract({
 });
 ```
 
-#### Update Document (add fields)
+#### <a name="update-document"></a>Update Document (add fields)
 
 ```javascript
 const fields = {
@@ -182,7 +228,7 @@ api.document.update({
 });
 ```
 
-#### Create Invite to Sign a Document
+#### <a name="field-invite"></a>Create Invite to Sign a Document
 
 ```javascript
 const fieldInvite = {
@@ -215,7 +261,7 @@ api.document.invite({
 });
 ```
 
-#### Create Free Form Invite
+#### <a name="freeform-invite"></a>Create Free Form Invite
 
 ```javascript
 api.document.invite({
@@ -230,7 +276,7 @@ api.document.invite({
 });
 ```
 
-#### Cancel an Invite to a Document
+#### <a name="cancel-invite"></a>Cancel Field Invite to Sign a Document
 
 ```javascript
 api.document.cancelInvite({
@@ -241,7 +287,7 @@ api.document.cancelInvite({
 });
 ```
 
-#### Create a One-time Use Download URL
+#### <a name="share-document"></a>Create a One-time Use Download URL
 
 ```javascript
 api.document.share({
@@ -252,7 +298,7 @@ api.document.share({
 });
 ```
 
-#### Merge Existing Documents
+#### <a name="merge-documents"></a>Merge Existing Documents
 
 ```javascript
 api.document.merge({
@@ -267,7 +313,7 @@ api.document.merge({
 });
 ```
 
-#### Get Document History
+#### <a name="get-history"></a>Get Document History
 
 ```javascript
 api.document.history({
@@ -278,9 +324,9 @@ api.document.history({
 });
 ```
 
-### Enumerations
+### <a name="enumerations"></a>Enumerations
 
-#### Add Enumeration Field to a Document
+#### <a name="add-enumeration"></a>Add Enumeration Field to a Document
 
 ```javascript
 api.enumerations.addField({
@@ -299,7 +345,7 @@ api.enumerations.addField({
 });
 ```
 
-#### Add Enumeration Options to the Field
+#### <a name="enumeration-options"></a>Add Enumeration Options to the Field
 
 ```javascript
 api.enumerations.addOptions({
@@ -323,9 +369,9 @@ api.enumerations.addOptions({
 });
 ```
 
-### Template
+### <a name="template"></a>Template
 
-#### Create a Template
+#### <a name="create-template"></a>Create a Template
 
 ```javascript
 api.template.create({
@@ -337,7 +383,7 @@ api.template.create({
 });
 ```
 
-#### Duplicate a Template
+#### <a name="copy-template"></a>Duplicate a Template
 
 ```javascript
 api.template.duplicate({
@@ -349,9 +395,9 @@ api.template.duplicate({
 });
 ```
 
-### Folder
+### <a name="folder"></a>Folder
 
-#### Returns a list of folders
+#### <a name="list-folders"></a>Returns a list of folders
 
 ```javascript
 api.folder.list({
@@ -361,7 +407,7 @@ api.folder.list({
 });
 ```
 
-#### Returns a list of documents inside a folder
+#### <a name="list-documents-in-folder"></a>Returns a list of documents inside a folder
 
 Filters  | Values
 ------------- | -------------
@@ -392,9 +438,9 @@ api.folder.documents({
 });
 ```
 
-### Webhook
+### <a name="webhook"></a>Webhook
 
-#### Returns a list of Webhooks
+#### <a name="list-webhooks"></a>Returns a list of Webhooks
 
 ```javascript
 signnow.webhook.list({
@@ -404,7 +450,7 @@ signnow.webhook.list({
 });
 ```
 
-#### Create a Webhook
+#### <a name="create-webhook"></a>Create a Webhook
 
 Events  | Description
 ------------- | -------------
@@ -424,7 +470,7 @@ api.webhook.create({
 });
 ```
 
-### Promisify methods
+### <a name="promisify"></a>Promisify methods
 
 If you are using node.js version **8.0.0** or higher you can use built in [*promisify*](https://nodejs.org/api/util.html#util_util_promisify_original) utility:
 
@@ -448,7 +494,7 @@ requestToken({
   });
 ```
 
-## Unit Tests
+## <a name="unit-tests"></a>Unit Tests
 
 To run the unit test you will need to install "Mocha" and "Chai". You also need to edit a [test.settings.js](https://github.com/signnow/SignNowNodeSDK/blob/master/test/test.settings.js) in the [test](https://github.com/signnow/SignNowNodeSDK/tree/master/test) folder of the api client module. The file need to contain the following:
 
@@ -466,16 +512,16 @@ exports.settings = {
 };
 ```
 
-## License
+## <a name="license"></a>License
 
 This project is released under the MIT [License](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md).
 
-## Additional Contact Information
+## <a name="contacts"></a>Additional Contact Information
 
-### Support
+### <a name="support"></a>Support
 
 To contact SignNow support, please email [support@signnow.com](mailto:support@signnow.com).
 
-### Sales
+### <a name="sales"></a>Sales
 
 For pricing information, please call [(800) 831-2050](tel:8008312050) or email [sales@signnow.com](mailto:sales@signnow.com).
