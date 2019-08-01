@@ -4,7 +4,8 @@
     "index.js",
     "user.js",
     "oauth2.js",
-    "document.js"
+    "document.js",
+    "template.js"
   ],
   "destination": "./docs",
   "plugins": [
