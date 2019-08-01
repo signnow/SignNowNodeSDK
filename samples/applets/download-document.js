@@ -23,7 +23,7 @@ const api = require('../../lib')({
 });
 
 const { oauth2: { requestToken: getAccessToken } } = api;
-const { document: { download: documentDownload } } = api;
+const { document: { download: downloadDocument } } = api;
 
 getAccessToken({
   username,
@@ -35,16 +35,16 @@ getAccessToken({
     const { access_token: token } = tokenRes;
     const absolutePath = `${pathToSaveFile}/${documentId}.pdf`;
 
-    documentDownload({
+    downloadDocument({
       id: documentId,
       token,
-    }, (downloadError, downloadResponse) => {
-      if (downloadError) {
-        console.log(downloadError);
+    }, (downloadErr, downloadRes) => {
+      if (downloadErr) {
+        console.error(downloadErr);
       } else {
         try {
-          fs.writeFileSync(absolutePath, downloadResponse, { encoding: 'binary' });
-          console.log(`Document has been downloaded. Check your ${absolutePath} directory`);
+          fs.writeFileSync(absolutePath, downloadRes, { encoding: 'binary' });
+          console.log(`Document has been downloaded. Check your ${pathToSaveFile} directory`);
         } catch (err) {
           console.log(err);
         }
