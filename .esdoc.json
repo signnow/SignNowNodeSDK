@@ -52,6 +52,12 @@
     },
     {
       "name": "esdoc-node"
+    },
+    {
+      "name": "esdoc-ecmascript-proposal-plugin",
+      "option": {
+        "all": true
+      }
     }
   ]
 }

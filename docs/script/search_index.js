@@ -12,6 +12,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@signnow/api-client/lib/template.js~template",
+    "class/lib/template.js~Template.html",
+    "<span>Template</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/template.js</span>",
+    "class"
+  ],
+  [
     "@signnow/api-client/lib/user.js~user",
     "class/lib/user.js~User.html",
     "<span>User</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/user.js</span>",
@@ -516,6 +522,72 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/template.js",
+    "file/lib/template.js.html",
+    "lib/template.js",
+    "file"
+  ],
+  [
+    "lib/template.js~template.templatecreateoptions",
+    "typedef/index.html#static-typedef-TemplateCreateOptions",
+    "lib/template.js~Template.TemplateCreateOptions",
+    "typedef"
+  ],
+  [
+    "lib/template.js~template.templatecreateparams",
+    "typedef/index.html#static-typedef-TemplateCreateParams",
+    "lib/template.js~Template.TemplateCreateParams",
+    "typedef"
+  ],
+  [
+    "lib/template.js~template.templatecreateresponse",
+    "typedef/index.html#static-typedef-TemplateCreateResponse",
+    "lib/template.js~Template.TemplateCreateResponse",
+    "typedef"
+  ],
+  [
+    "lib/template.js~template.templateduplicateparams",
+    "typedef/index.html#static-typedef-TemplateDuplicateParams",
+    "lib/template.js~Template.TemplateDuplicateParams",
+    "typedef"
+  ],
+  [
+    "lib/template.js~template.templateduplicateresponse",
+    "typedef/index.html#static-typedef-TemplateDuplicateResponse",
+    "lib/template.js~Template.TemplateDuplicateResponse",
+    "typedef"
+  ],
+  [
+    "lib/template.js~template.templateinviteparams",
+    "typedef/index.html#static-typedef-TemplateInviteParams",
+    "lib/template.js~Template.TemplateInviteParams",
+    "typedef"
+  ],
+  [
+    "lib/template.js~template.templateinviteresponse",
+    "typedef/index.html#static-typedef-TemplateInviteResponse",
+    "lib/template.js~Template.TemplateInviteResponse",
+    "typedef"
+  ],
+  [
+    "lib/template.js~template.create",
+    "class/lib/template.js~Template.html#static-method-create",
+    "lib/template.js~Template.create",
+    "method"
+  ],
+  [
+    "lib/template.js~template.duplicate",
+    "class/lib/template.js~Template.html#static-method-duplicate",
+    "lib/template.js~Template.duplicate",
+    "method"
+  ],
+  [
+    "lib/template.js~template.invite",
+    "class/lib/template.js~Template.html#static-method-invite",
+    "lib/template.js~Template.invite",
+    "method"
+  ],
+  [
     "lib/user.js",
     "file/lib/user.js.html",
     "lib/user.js",
@@ -613,13 +685,13 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber13",
+    "test-file/test/template.test.js.html#lineNumber27",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber27",
+    "test-file/test/template.test.js.html#lineNumber13",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],

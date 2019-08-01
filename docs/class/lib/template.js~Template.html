@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">lib/oauth2.js | SignNow API client</title>
+  <title data-ice="title">Template | SignNow API client</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -89,98 +89,361 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">lib/oauth2.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
-const https = require(&apos;https&apos;);
-const querystring = require(&apos;querystring&apos;);
-const {
-  responseHandler, errorHandler, buildRequestOptions,
-} = require(&apos;./common&apos;);
+<div class="content" data-ice="content"><div class="header-notice">
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Template from &apos;<span><a href="file/lib/template.js.html#lineNumber20">@signnow/api-client/lib/template.js</a></span>&apos;</code></pre></div>
+  <span data-ice="access">public</span>
+  <span data-ice="kind">class</span>
+  
+  
+  
+  <span data-ice="source">| <span><a href="file/lib/template.js.html#lineNumber20">source</a></span></span>
+</div>
 
-/**
- * OAuth2 methods
- */
-class OAuth2 {
+<div class="self-detail detail">
+  <h1 data-ice="name">Template</h1>
 
-  /**
-   * Request access token payload
-   * @typedef {Object} AccessTokenGetParams
-   * @property {string} username - email of a user
-   * @property {string} password - password of a user
-   */
+  
 
-  /**
-   * Request access token response data
-   * @typedef {Object} AccessTokenGetResponse
-   * @property {number} res.expires_in - time in seconds for which the token was issued
-   * @property {string} res.token_type - type of access token (e.g. &apos;bearer&apos;)
-   * @property {string} res.access_token - access token
-   * @property {string} res.refresh_token - refresh token
-   * @property {string} res.scope - access scopes
-   */
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-  /**
-   * Request access token for a user
-   * @param {AccessTokenGetParams} data - access token reques payload
-   * @param {function(err: ApiErrorResponse, res: AccessTokenGetResponse)} [callback] - error first node.js callback
-   */
-  static requestToken (data, callback) {
-    const dataCopy = Object.assign({}, data, { grant_type: &apos;password&apos; });
-    const dataStringified = querystring.stringify(dataCopy).replace(&apos;%40&apos;, &apos;@&apos;);
-    const req = https
-      .request(buildRequestOptions({
-        method: &apos;POST&apos;,
-        path: &apos;/oauth2/token&apos;,
-        authorization: { type: &apos;Basic&apos; },
-        headers: {
-          &apos;Content-Type&apos;: &apos;application/x-www-form-urlencoded&apos;,
-          &apos;Content-Length&apos;: Buffer.byteLength(dataStringified),
-        },
-      }), responseHandler(callback))
-      .on(&apos;error&apos;, errorHandler(callback));
+  
+  
+  <div class="description" data-ice="description"><p>Template methods</p>
+</div>
+  
 
-    req.write(dataStringified);
-    req.end();
-  }
+  
 
-  /**
-   * Verify access token payload
-   * @typedef {Object} AccessTokenVerifyParams
-   * @property {string} token - your auth token
-   */
+  
 
-  /**
-   * Verify access token response data
-   * @typedef {Object} AccessTokenVerifyResponse
-   * @property {number} res.expires_in - time in seconds for which the token was issued
-   * @property {string} res.token_type - type of access token (e.g. &apos;bearer&apos;)
-   * @property {string} res.access_token - access token
-   * @property {string} res.scope - access scopes
-   */
+  
 
-  /**
-   * Verify access token
-   * @param {AccessTokenVerifyParams} data - access token request payload
-   * @param {function(err: ApiErrorResponse, res: AccessTokenVerifyResponse)} [callback] - error first node.js callback
-   */
-  static verify ({ token }, callback) {
-    https
-      .request(buildRequestOptions({
-        method: &apos;GET&apos;,
-        path: &apos;/oauth2/token&apos;,
-        authorization: {
-          type: &apos;Bearer&apos;,
-          token,
-        },
-      }), responseHandler(callback))
-      .on(&apos;error&apos;, errorHandler(callback))
-      .end();
-  }
+  
+</div>
 
-}
 
-module.exports = OAuth2;
-</code></pre>
+<div data-ice="staticMethodSummary"><h2>Static Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/lib/template.js~Template.html#static-method-create">create</a></span></span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-TemplateCreateParams">TemplateCreateParams</a></span>, originalCallback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-TemplateCreateResponse">TemplateCreateResponse</a></span>)</span></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Creates a template by copying an existing unfulfilled and not requested for sign document.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/lib/template.js~Template.html#static-method-duplicate">duplicate</a></span></span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-TemplateDuplicateParams">TemplateDuplicateParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-TemplateDuplicateResponse">TemplateDuplicateResponse</a></span>)</span></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Creates a new document by copying a template.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/lib/template.js~Template.html#static-method-invite">invite</a></span></span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-TemplateInviteParams">TemplateInviteParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-TemplateInviteResponse">TemplateInviteResponse</a></span>)</span></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Creates an invite to sign a template.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<div data-ice="staticMethodDetails"><h2 data-ice="title">Static Public Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-create">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">create</span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-TemplateCreateParams">TemplateCreateParams</a></span>, originalCallback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-TemplateCreateResponse">TemplateCreateResponse</a></span>)</span></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/lib/template.js.html#lineNumber49">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Creates a template by copying an existing unfulfilled and not requested for sign document.
+By default original document is not removed after template creation. To remove original document set <code>removeOriginalDocument</code> option to <code>true</code>.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">data</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-TemplateCreateParams">TemplateCreateParams</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>create template payload</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">originalCallback</td>
+      <td data-ice="type" class="code"><span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-TemplateCreateResponse">TemplateCreateResponse</a></span>)</span></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>error first node.js callback</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-duplicate">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">duplicate</span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-TemplateDuplicateParams">TemplateDuplicateParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-TemplateDuplicateResponse">TemplateDuplicateResponse</a></span>)</span></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/lib/template.js.html#lineNumber124">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Creates a new document by copying a template.
+If a name is not supplied then document name will be set to the original template&apos;s name by default.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">data</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-TemplateDuplicateParams">TemplateDuplicateParams</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>duplicate template payload</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">callback</td>
+      <td data-ice="type" class="code"><span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-TemplateDuplicateResponse">TemplateDuplicateResponse</a></span>)</span></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>error first node.js callback</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-invite">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">invite</span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-TemplateInviteParams">TemplateInviteParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-TemplateInviteResponse">TemplateInviteResponse</a></span>)</span></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/lib/template.js.html#lineNumber170">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Creates an invite to sign a template.
+You can create a simple free form invite(s) or a role-based invite(s).
+The method copies a template into document and creates an invite using created document.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">data</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-TemplateInviteParams">TemplateInviteParams</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>create template invite payload</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">callback</td>
+      <td data-ice="type" class="code"><span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-TemplateInviteResponse">TemplateInviteResponse</a></span>)</span></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>error first node.js callback</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+
+
 
 </div>
 

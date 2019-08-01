@@ -27,6 +27,7 @@
   "devDependencies": {
     "chai": "*",
     "esdoc": "1.1.0",
+    "esdoc-ecmascript-proposal-plugin": "1.0.0",
     "esdoc-external-nodejs-plugin": "1.0.0",
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-node": "1.0.4",
@@ -40,6 +41,5 @@
   "files": [
     "lib"
   ],
-  "license": "MIT",
-  "man" : "https://signnow.github.io/SignNowNodeSDK/"
+  "license": "MIT"
 }
