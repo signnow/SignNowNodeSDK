@@ -21,10 +21,10 @@ const api = require('../../lib')({
 });
 
 const { oauth2: { requestToken: getAccessToken } } = api;
-const { link: { create: documentLink } } = api;
+const { link: { create: createSigningLink } } = api;
 const {
   document: {
-    create: documentUpload,
+    create: uploadDocument,
     update: addFields,
   }
 } = api;
@@ -38,7 +38,7 @@ getAccessToken({
   } else {
     const { access_token: token } = tokenRes;
 
-    documentUpload({
+    uploadDocument({
       filepath,
       token,
     }, (uploadErr, uploadRes) => {
@@ -53,28 +53,28 @@ getAccessToken({
           fields = JSON.parse(fieldsStringified);
         } catch (err) {
           console.log(err);
-          return
+          return;
         }
 
         addFields({
           id,
           fields: {
             client_timestamp,
-            fields
+            fields,
           },
           token
         }, updateErr => {
           if (updateErr) {
             console.log(updateErr);
           } else {
-            documentLink({
+            createSigningLink({
               document_id: id,
-              token
+              token,
             }, (linkErr, linkRes) => {
               if (linkErr) {
-                console.log(linkErr)
+                console.log(linkErr);
               } else {
-                console.log(linkRes)
+                console.log(linkRes);
               }
             })
           }
