@@ -180,6 +180,24 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "lib/document.js~document.attachmentfield",
+    "typedef/index.html#static-typedef-AttachmentField",
+    "lib/document.js~Document.AttachmentField",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.calculatedfield",
+    "typedef/index.html#static-typedef-CalculatedField",
+    "lib/document.js~Document.CalculatedField",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.checkfield",
+    "typedef/index.html#static-typedef-CheckField",
+    "lib/document.js~Document.CheckField",
+    "typedef"
+  ],
+  [
     "lib/document.js~document.documentcreateparams",
     "typedef/index.html#static-typedef-DocumentCreateParams",
     "lib/document.js~Document.DocumentCreateParams",
@@ -189,6 +207,18 @@ window.esdocSearchIndex = [
     "lib/document.js~document.documentcreateresponse",
     "typedef/index.html#static-typedef-DocumentCreateResponse",
     "lib/document.js~Document.DocumentCreateResponse",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentdownloadparams",
+    "typedef/index.html#static-typedef-DocumentDownloadParams",
+    "lib/document.js~Document.DocumentDownloadParams",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentdownloadresponse",
+    "typedef/index.html#static-typedef-DocumentDownloadResponse",
+    "lib/document.js~Document.DocumentDownloadResponse",
     "typedef"
   ],
   [
@@ -246,6 +276,18 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/document.js~document.documentremoveparams",
+    "typedef/index.html#static-typedef-DocumentRemoveParams",
+    "lib/document.js~Document.DocumentRemoveParams",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentremoveresponse",
+    "typedef/index.html#static-typedef-DocumentRemoveResponse",
+    "lib/document.js~Document.DocumentRemoveResponse",
+    "typedef"
+  ],
+  [
     "lib/document.js~document.documentupdateparams",
     "typedef/index.html#static-typedef-DocumentUpdateParams",
     "lib/document.js~Document.DocumentUpdateParams",
@@ -258,6 +300,60 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/document.js~document.documentviewparams",
+    "typedef/index.html#static-typedef-DocumentViewParams",
+    "lib/document.js~Document.DocumentViewParams",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentviewresponse",
+    "typedef/index.html#static-typedef-DocumentViewResponse",
+    "lib/document.js~Document.DocumentViewResponse",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.enumerationfield",
+    "typedef/index.html#static-typedef-EnumerationField",
+    "lib/document.js~Document.EnumerationField",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.formulatree",
+    "typedef/index.html#static-typedef-FormulaTree",
+    "lib/document.js~Document.FormulaTree",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.formulatreebranch",
+    "typedef/index.html#static-typedef-FormulaTreeBranch",
+    "lib/document.js~Document.FormulaTreeBranch",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.formulatreebranchterminator",
+    "typedef/index.html#static-typedef-FormulaTreeBranchTerminator",
+    "lib/document.js~Document.FormulaTreeBranchTerminator",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.initialsfield",
+    "typedef/index.html#static-typedef-InitialsField",
+    "lib/document.js~Document.InitialsField",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.radiobutton",
+    "typedef/index.html#static-typedef-RadioButton",
+    "lib/document.js~Document.RadioButton",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.radiobuttonfield",
+    "typedef/index.html#static-typedef-RadioButtonField",
+    "lib/document.js~Document.RadioButtonField",
+    "typedef"
+  ],
+  [
     "lib/document.js~document.signaturefield",
     "typedef/index.html#static-typedef-SignatureField",
     "lib/document.js~Document.SignatureField",
@@ -267,6 +363,12 @@ window.esdocSearchIndex = [
     "lib/document.js~document.signersettings",
     "typedef/index.html#static-typedef-SignerSettings",
     "lib/document.js~Document.SignerSettings",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.textfield",
+    "typedef/index.html#static-typedef-TextField",
+    "lib/document.js~Document.TextField",
     "typedef"
   ],
   [
@@ -315,6 +417,12 @@ window.esdocSearchIndex = [
     "lib/document.js~document.merge",
     "class/lib/document.js~Document.html#static-method-merge",
     "lib/document.js~Document.merge",
+    "method"
+  ],
+  [
+    "lib/document.js~document.remove",
+    "class/lib/document.js~Document.html#static-method-remove",
+    "lib/document.js~Document.remove",
     "method"
   ],
   [
