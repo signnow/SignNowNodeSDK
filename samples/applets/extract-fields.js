@@ -2,7 +2,7 @@
  * to run create document applet from the project root folder type in your console:
  * > node samples/applets/create-document <cliend_id> <client_secret> <username> <password> <path_to_file>
  * <cliend_id>, <client_secret>, <username>, <password> - are required params
- * <path_to_file> - is optional param. If empty will be used default value './samples/files/pdf-sample.pdf'
+ * <path_to_file> - optional parameter. dafault value is './samples/files/text-tags-sample.pdf'
  */
 
 'use strict';
@@ -12,7 +12,7 @@ const [
   clientSecret,
   username,
   password,
-  filepath = './samples/files/pdf-sample.pdf',
+  filepath = './samples/files/text-tags-sample.pdf',
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -21,7 +21,7 @@ const api = require('../../lib')({
 });
 
 const { oauth2: { requestToken: getAccessToken } } = api;
-const { document: { create: uploadDocument } } = api;
+const { document: { fieldextract: uploadDocumentAndExtractFieldsFromTextTags } } = api;
 
 getAccessToken({
   username,
@@ -32,7 +32,7 @@ getAccessToken({
   } else {
     const { access_token: token } = tokenRes;
 
-    uploadDocument({
+    uploadDocumentAndExtractFieldsFromTextTags({
       filepath,
       token,
     }, (uploadErr, uploadRes) => {

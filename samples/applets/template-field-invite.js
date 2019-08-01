@@ -1,7 +1,8 @@
 /*
- * to run create field invite applet from the project root folder type in your console:
- * > node samples/applets/create-field-invite <client_id> <client_secret> <username> <password> <path_to_file> <fields_stringified> <invite_stringified>
- * <client_id>, <client_secret>, <username>, <password>, <path_to_file>, <fields_stringified>, <invite_stringified> - are required params
+ * to run template field invite applet from the project root folder type in your console:
+ * > node samples/applets/template-field-invite <cliend_id> <client_secret> <username> <password> <path_to_file> '<fields_stringified>' <template_name> '<invite_stringified>' <delete_original>
+ * <cliend_id>, <client_secret>, <username>, <password>, <path_to_file>, <fields_stringified>, <template_name>, <invite_stringified> - are required params
+ * <delete_original> - optional param. If ommited defaults to false
  */
 
 'use strict';
@@ -13,7 +14,9 @@ const [
   password,
   filepath,
   fieldsStringified,
+  templateName,
   inviteStringified,
+  removeOriginalDocument,
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -26,8 +29,10 @@ const {
   document: {
     create: uploadDocument,
     update: addFields,
-    view: getDocumentDetails,
-    invite: sendFieldInvite,
+  },
+  template: {
+    create: createTemplate,
+    invite: sendInvite,
   },
 } = api;
 
@@ -69,14 +74,17 @@ getAccessToken({
           if (updateErr) {
             console.error(updateErr);
           } else {
-            getDocumentDetails({
-              id,
+
+            createTemplate({
+              document_id: id,
+              document_name: templateName,
+              options: { removeOriginalDocument: removeOriginalDocument === 'true' },
               token,
-            }, (detailsErr, detailsRes) => {
-              if (detailsErr) {
-                console.error(detailsErr);
+            }, (templateErr, templateRes) => {
+              if (templateErr) {
+                console.error(templateErr);
               } else {
-                const { roles } = detailsRes;
+                const { id: templateId } = templateRes;
                 let signers;
 
                 try {
@@ -86,21 +94,12 @@ getAccessToken({
                   return;
                 }
 
-                for (const signer of signers) {
-                  try {
-                    signer.role_id = roles.find(role => role.name === signer.role).unique_id;
-                  } catch (err) {
-                    console.error(err);
-                    return;
-                  }
-                }
-
-                sendFieldInvite({
+                sendInvite({
                   data: {
                     from: username,
                     to: signers,
                   },
-                  id,
+                  id: templateId,
                   token,
                 }, (inviteErr, inviteRes) => {
                   if (inviteErr) {
@@ -111,6 +110,7 @@ getAccessToken({
                 });
               }
             });
+
           }
         });
       }

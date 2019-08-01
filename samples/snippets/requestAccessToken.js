@@ -1,10 +1,10 @@
 'use strict';
 
-const signnow = require('signnow')({
+const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
 });
-const requestToken = signnow.oauth2.requestToken;
+const { requestToken } = signnow.oauth2;
 
 const username = 'USER_EMAIL_GOES_HERE';
 const password = 'PASSWORD_GOES_HERE';

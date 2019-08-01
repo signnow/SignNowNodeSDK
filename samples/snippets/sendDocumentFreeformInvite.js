@@ -4,15 +4,18 @@ const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
 });
-const createTemplate = signnow.template.create;
+const sendFreeformInvite = signnow.document.invite;
 
-const document_id = 'DOCUMENT_ID_GOES_HERE';
-const document_name = 'NEW_TEMPLATE_NAME';
+const from = 'EMAIL_OF_SENDER_GOES_HERE';
+const to = 'EMAIL_OF_RECIPIENT_GOES_HERE';
+const id = 'DOCUMENT_ID_GOES_HERE';
 const token = 'YOUR_ACCESS_TOKEN';
 
 /**
  * @param {Object} res
- * @param {string} res.id - an id of created template
+ * @param {string} res.result - e.g. 'success'
+ * @param {string} res.id - invite unique id
+ * @param {string} res.callback_url - url for front end redirect or 'none'
  */
 const handleResponse = res => {
   console.log(res);
@@ -22,9 +25,12 @@ const handleError = err => {
   console.error(err);
 };
 
-createTemplate({
-  document_id,
-  document_name,
+sendFreeformInvite({
+  data: {
+    from,
+    to,
+  },
+  id,
   token,
 }, (err, res) => {
   if (err) {

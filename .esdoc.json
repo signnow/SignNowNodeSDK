@@ -4,7 +4,8 @@
     "index.js",
     "user.js",
     "oauth2.js",
-    "document.js"
+    "document.js",
+    "template.js"
   ],
   "destination": "./docs",
   "plugins": [
@@ -45,7 +46,7 @@
       "option": {
         "enable": true,
         "styles": [
-          "./docs/css/logo.css"
+          "./docs/css/custom.css"
         ]
       }
     },
