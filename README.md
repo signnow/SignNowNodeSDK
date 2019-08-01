@@ -31,6 +31,7 @@ SignNow REST Service Wrapper
       * [Create a One-time Use Download URL](#share-document)
       * [Merge Existing Documents](#merge-documents)
       * [Get Document History](#get-history)
+      * [Remove Document](#remove-document)
     * [Enumerations](#enumerations)
       * [Add Enumeration Field to a Document](#add-enumeration)
       * [Add Enumeration Options to the Field](#enumeration-options)
@@ -326,6 +327,17 @@ api.document.history({
 });
 ```
 
+#### <a name="remove-document"></a>Remove Document
+
+```javascript
+api.document.remove({
+  token: 'your auth token',
+  id: 'document id',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
 ### <a name="enumerations"></a>Enumerations
 
 #### <a name="add-enumeration"></a>Add Enumeration Field to a Document
@@ -375,11 +387,16 @@ api.enumerations.addOptions({
 
 #### <a name="create-template"></a>Create a Template
 
+By default original document is not removed after template creation. To remove original document set `removeOriginalDocument` option to `true`.
+
 ```javascript
 api.template.create({
   token: 'your auth token',
   document_id: 'document id',
   document_name: 'my template',
+  options: {
+    removeOriginalDocument: true, // false by default
+  },
 }, (err, res) => {
   // handle error or process response data
 });

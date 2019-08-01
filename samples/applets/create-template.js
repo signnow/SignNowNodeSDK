@@ -1,8 +1,8 @@
 /*
  * to run update document applet from the project root folder type in your console:
- * > node samples/applets/update-document <cliend_id> <client_secret> <username> <password> <path_to_file> <fields_stringified> <template_name>
- * <cliend_id>, <client_secret>, <username>, <password>, <path_to_file>, <fields_stringified> - are required params
- * <template_name> - optional param. If a name is not supplied then template name will be set to the original document's name by default.
+ * > node samples/applets/create-template <cliend_id> <client_secret> <username> <password> <path_to_file> <fields_stringified> <template_name> <delete_original>
+ * <cliend_id>, <client_secret>, <username>, <password>, <path_to_file>, <fields_stringified>, <template_name> - are required params
+ * <delete_original> - optional param. If ommited defaults to false
  */
 
 'use strict';
@@ -15,6 +15,7 @@ const [
   filepath,
   fieldsStringified,
   templateName,
+  removeOriginalDocument,
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -73,6 +74,7 @@ getAccessToken({
             createTemplate({
               document_id: id,
               document_name: templateName,
+              options: { removeOriginalDocument: removeOriginalDocument === 'true' },
               token,
             }, (templateErr, templateRes) => {
               if (templateErr) {
