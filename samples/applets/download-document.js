@@ -14,7 +14,7 @@ const [
   username,
   password,
   documentId,
-  pathToSaveFile
+  pathToSaveFile,
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -33,18 +33,18 @@ getAccessToken({
     console.error(tokenErr);
   } else {
     const { access_token: token } = tokenRes;
-    const absolutePath = `${pathToSaveFile}${documentId}.pdf`;
+    const absolutePath = `${pathToSaveFile}/${documentId}.pdf`;
 
     documentDownload({
-        id: documentId,
-        token,
+      id: documentId,
+      token,
     }, (downloadError, downloadResponse) => {
       if (downloadError) {
-        console.log(downloadError)
+        console.log(downloadError);
       } else {
         try {
           fs.writeFileSync(absolutePath, downloadResponse, { encoding: 'binary' });
-          console.log(`Document has been downloaded. Check your ${absolutePath} directory`)
+          console.log(`Document has been downloaded. Check your ${absolutePath} directory`);
         } catch (err) {
           console.log(err);
         }
