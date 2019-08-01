@@ -33,7 +33,7 @@ getAccessToken({
     console.error(tokenErr);
   } else {
     const { access_token: token } = tokenRes;
-    const absolutePath = `${pathToSaveFile}${documentId}.pdf`;
+    const absolutePath = `${pathToSaveFile}/${documentId}.pdf`;
 
     downloadDocument({
       id: documentId,
@@ -44,7 +44,7 @@ getAccessToken({
       } else {
         try {
           fs.writeFileSync(absolutePath, downloadRes, { encoding: 'binary' });
-          console.log(`Document has been downloaded. Check your ${absolutePath} directory`);
+          console.log(`Document has been downloaded. Check your ${pathToSaveFile} directory`);
         } catch (err) {
           console.log(err);
         }
