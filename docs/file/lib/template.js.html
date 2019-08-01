@@ -102,8 +102,26 @@ const {
   invite,
   view,
 } = require(&apos;./document&apos;);
+
+/**
+ * @type {function}
+ * @param {DocumentRemoveParams} data - remove document payload
+ * @param {function(err: ApiErrorResponse, res: DocumentRemoveResponse)} [callback] - error first node.js callback
+ */
 const removeDocument = remove;
+
+/**
+ * @type {function}
+ * @param {DocumentInviteParams} data - create document invite payload
+ * @param {function(err: ApiErrorResponse, res: DocumentInviteResponse)} [callback] - error first node.js callback
+ */
 const sendDocumentInvite = invite;
+
+/**
+ * @type {function}
+ * @param {DocumentViewParams} data - view document with field extract payload
+ * @param {function(err: ApiErrorResponse, res: DocumentViewResponse)} [callback] - error first node.js callback
+ */
 const getDocumentDetails = view;
 
 /**
