@@ -33,6 +33,7 @@
     "esdoc-node": "1.0.4",
     "esdoc-standard-plugin": "1.0.0",
     "eslint": "6.0.1",
+    "husky": "3.0.2",
     "mocha": "*"
   },
   "engines": {
