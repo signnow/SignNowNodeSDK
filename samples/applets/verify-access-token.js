@@ -1,7 +1,7 @@
 /*
  * to run verify access token applet from the project root folder type in your console:
- * > node samples/applets/verify-access-token <cliend_id> <client_secret> <username> <password>
- * <cliend_id>, <client_secret>, <username>, <password> - are required params
+ * > node samples/applets/verify-access-token <cliend_id> <client_secret>
+ * <cliend_id>, <client_secret>, <token> - are required params
  */
 
 'use strict';
@@ -9,8 +9,7 @@
 const [
   clientId,
   clientSecret,
-  username,
-  password,
+  token,
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -18,29 +17,13 @@ const api = require('../../lib')({
   production: false,
 });
 
-const {
-  oauth2: {
-    requestToken: getAccessToken,
-    verify: verifyAccessToken,
-  },
-} = api;
+const { oauth2: { verify: verifyAccessToken } } = api;
 
-getAccessToken({
-  username,
-  password,
-}, (tokenErr, tokenRes) => {
-  if (tokenErr) {
-    console.error(tokenErr);
-  } else {
-    const { access_token: token } = tokenRes;
-
-    verifyAccessToken({ token },
-      (verifyErr, verifyRes) => {
-        if (verifyErr) {
-          console.error(verifyErr);
-        } else {
-          console.log(verifyRes);
-        }
-      });
-  }
-});
+verifyAccessToken({ token },
+  (verifyErr, verifyRes) => {
+    if (verifyErr) {
+      console.error(verifyErr);
+    } else {
+      console.log(verifyRes);
+    }
+  });
