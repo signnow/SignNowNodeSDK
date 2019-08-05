@@ -10,7 +10,7 @@ const [
   clientId,
   clientSecret,
   username,
-  password
+  password,
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -19,31 +19,25 @@ const api = require('../../lib')({
 });
 
 const {
-  user: {
-    retrieve: getUserInfo
-  },
-  oauth2: {
-    requestToken: getAccessToken
-  }
+  user: { retrieve: getUserInfo },
+  oauth2: { requestToken: getAccessToken },
 } = api;
 
 getAccessToken({
   username,
-  password
+  password,
 }, (tokenErr, tokenRes) => {
   if (tokenErr) {
     console.error(tokenErr);
   } else {
     const { access_token: token } = tokenRes;
 
-    getUserInfo({
-      token
-    }, (getInfoErr, getInfoRes) => {
+    getUserInfo({ token }, (getInfoErr, getInfoRes) => {
       if (getInfoErr) {
         console.error(getInfoErr);
       } else {
-        console.log(getInfoRes)
+        console.log(getInfoRes);
       }
-    })
+    });
   }
 });
