@@ -40,6 +40,6 @@ getAccessToken({
       } else {
         console.log(createLinkRes);
       }
-    })
+    });
   }
 });

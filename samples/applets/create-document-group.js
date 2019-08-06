@@ -11,7 +11,7 @@ const [
   clientSecret,
   token,
   group_name,
-  ...document_ids,
+  ...document_ids
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
