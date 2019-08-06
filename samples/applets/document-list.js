@@ -32,11 +32,11 @@ getAccessToken({
   } else {
     const { access_token: token } = tokenRes;
 
-    getUserDocumentList({ token }, (getInfoErr, getInfoRes) => {
-      if (getInfoErr) {
-        console.error(getInfoErr);
+    getUserDocumentList({ token }, (listErr, listRes) => {
+      if (listErr) {
+        console.error(listErr);
       } else {
-        console.log(getInfoRes);
+        console.log(listRes);
       }
     });
   }
