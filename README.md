@@ -49,6 +49,8 @@ SignNow REST Service Wrapper
       * [Returns a list of Webhooks](#list-webhooks)
       * [Create a Webhook](#create-webhook)
     * [Promisify methods](#promisify)
+    * [Document Group](#document-group)
+      * [Create Document Group](#create-document-group)
 7. [Unit Tests](#unit-tests)</li>
 8. [License](#license)</li>
 9. [Additional Contact Information](#contacts)
@@ -516,6 +518,22 @@ api.folder.documents({
 }, (err, res) => {
   // handle error or process response data
 });
+```
+### <a name="document-group"></a>Document Group
+
+#### <a name="create-document-group"></a>Create Document Group
+
+```javascript
+api.documentGroup.create({
+  token: 'your auth token',
+  document_ids: [
+      '84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa',
+      'a71d963c49f33176e90c5827069c422616b1500c',
+    ],
+  group_name: 'my document group name',
+  }, (err, res) => {
+    // handle error or process response data
+  });
 ```
 
 ### <a name="webhook"></a>Webhook

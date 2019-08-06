@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/verify-access-token.js) for verifying access token with *Verify Access Token* method
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/user-info.js) for testing getting a detailed information about user with *Retrieve User Info* method
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/document-list.js) for testing getting a document list of specific user with *Retrieve User Document List* method
+- Implemented *Document Group Create* method with ability to create document group
+- Documented [*documentGroup*](https://signnow.github.io/SignNowNodeSDK/class/lib/documentGroup.js~DocumentGroup.html) methods
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document-group.js) for testing creating of document group with *Create Document Group* method
+- Added examples of *Create Document Group* into [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#create-document-group)
 
 ## [v1.3.0] - 2019-08-01
 
