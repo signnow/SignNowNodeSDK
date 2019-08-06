@@ -1,6 +1,6 @@
 /*
- * to run retrieve-user-document-list applet from the project root folder type in your console:
- * > node samples/applets/retrieve-user-document-list <cliend_id> <client_secret> <username> <password>
+ * to run document-list applet from the project root folder type in your console:
+ * > node samples/applets/document-list <cliend_id> <client_secret> <username> <password>
  * <cliend_id>, <client_secret>, <username>, <password> - are required params
  */
 
@@ -10,7 +10,7 @@ const [
   clientId,
   clientSecret,
   username,
-  password
+  password,
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -19,31 +19,25 @@ const api = require('../../lib')({
 });
 
 const {
-  document: {
-    list: getUserDocumentList
-  },
-  oauth2: {
-    requestToken: getAccessToken
-  }
+  document: { list: getUserDocumentList },
+  oauth2: { requestToken: getAccessToken },
 } = api;
 
 getAccessToken({
   username,
-  password
+  password,
 }, (tokenErr, tokenRes) => {
   if (tokenErr) {
     console.error(tokenErr);
   } else {
     const { access_token: token } = tokenRes;
 
-    getUserDocumentList({
-      token
-    }, (getInfoErr, getInfoRes) => {
-      if (getInfoErr) {
-        console.error(getInfoErr);
+    getUserDocumentList({ token }, (listErr, listRes) => {
+      if (listErr) {
+        console.error(listErr);
       } else {
-        console.log(getInfoRes)
+        console.log(listRes);
       }
-    })
+    });
   }
 });
