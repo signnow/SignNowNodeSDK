@@ -1,7 +1,7 @@
 /*
  * to run verify access token applet from the project root folder type in your console:
- * > node samples/applets/verify-access-token <cliend_id> <client_secret>
- * <cliend_id>, <client_secret>, <token> - are required params
+ * > node samples/applets/verify-access-token <cliend_id> <client_secret> <access_token>
+ * <cliend_id>, <client_secret>, <access_token> - are required params
  */
 
 'use strict';
