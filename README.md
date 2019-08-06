@@ -51,7 +51,6 @@ SignNow REST Service Wrapper
     * [Promisify methods](#promisify)
     * [Document Group](#document-group)
       * [Create Document Group](#create-document-group)
-        
 7. [Unit Tests](#unit-tests)</li>
 8. [License](#license)</li>
 9. [Additional Contact Information](#contacts)
