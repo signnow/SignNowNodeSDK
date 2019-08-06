@@ -20,6 +20,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/user-info.js) for testing getting a detailed information about user with *Retrieve User Info* method
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/document-list.js) for testing getting a document list of specific user with *Retrieve User Document List* method
 
+## [v1.3.1] - 2019-08-01
+
+### Changed
+
+- Updated [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md)
+
 ## [v1.3.0] - 2019-08-01
 
 ### Added
@@ -78,6 +84,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Made fix of feature bug related to `Content-Length` header in requests
 
-[v1.4.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.3.0...HEAD
+[v1.4.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.3.1...HEAD
+[v1.3.1]: https://github.com/signnow/SignNowNodeSDK/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.1.4...v1.2.0
