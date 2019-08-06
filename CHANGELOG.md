@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.4.0] - Unreleased Phase 3
+
+### Added
+
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-signing-link.js) for testing creation of url signing link with *Create Signing Link* method
+- Documented [*link*](https://signnow.github.io/SignNowNodeSDK/class/lib/link.js~Link.html) methods
+
 ## [v1.3.0] - 2019-08-01
 
 ### Added
@@ -63,5 +70,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Made fix of feature bug related to `Content-Length` header in requests
 
+[v1.4.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.3.0...HEAD
 [v1.3.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.1.4...v1.2.0

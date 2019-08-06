@@ -4,14 +4,15 @@ const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
 });
-const getEmbeddedSigningUrl = signnow.embed.getSigningUrl;
+const getEmbeddedSigningUrl = signnow.link.create;
 
-const id = 'DOCUMENT_ID_GOES_HERE';
+const document_id = 'DOCUMENT_OR_TEMPLATE_ID_GOES_HERE';
 const token = 'YOUR_ACCESS_TOKEN';
 
 /**
  * @param {Object} res
- * @param {string} res.url - url to open embedded signing
+ * @param {string} res.url - url for logged in user
+ * @param {string} res.url_no_signup - url for not logged in user
  */
 const handleResponse = res => {
   console.log(res);
@@ -22,7 +23,7 @@ const handleError = err => {
 };
 
 getEmbeddedSigningUrl({
-  id,
+  document_id,
   token,
 }, (err, res) => {
   if (err) {

@@ -20,9 +20,7 @@ const handleError = err => {
   console.error(err);
 };
 
-getEmbeddedApplicationUrl({
-  token,
-}, (err, res) => {
+getEmbeddedApplicationUrl({ token }, (err, res) => {
   if (err) {
     handleError(err);
   } else {
