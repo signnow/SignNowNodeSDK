@@ -17,7 +17,8 @@ SignNow REST Service Wrapper
       * [Retrieve User Information](#get-user)
     * [OAuth 2.0](#oauth2)
       * [Request Access Token](#get-token)
-      * [Verify an Access Token](#verify-token)
+      * [Verify Access Token](#verify-token)
+      * [Refresh Access Token](#refresh-token)
     * [Document](#document)
       * [Retrieve a List of the User’s Documents](#list-documents)
       * [Retrieve a Document Resource](#get-document)
@@ -138,16 +139,26 @@ api.user.retrieve({
 api.oauth2.requestToken({
   username: 'username',
   password: 'password',
-}, function(err, res){
+}, (err, res) => {
   // handle error or process response data
 });
 ```
 
-#### <a name="verify-token"></a>Verify an Access Token
+#### <a name="verify-token"></a>Verify Access Token
 
 ```javascript
 api.oauth2.verify({
   token: 'your auth token',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+#### <a name="refresh-token"></a>Refresh Access Token
+
+```javascript
+api.oauth2.refreshToken({
+  refresh_token: 'your refresh token',
 }, (err, res) => {
   // handle error or process response data
 });
