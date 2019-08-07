@@ -519,6 +519,7 @@ api.folder.documents({
   // handle error or process response data
 });
 ```
+
 ### <a name="document-group"></a>Document Group
 
 #### <a name="create-document-group"></a>Create Document Group
@@ -526,11 +527,12 @@ api.folder.documents({
 ```javascript
 api.documentGroup.create({
   token: 'your auth token',
-  document_ids: [
+  group_name: 'my document group name',
+  ids: [
+      // put document or template IDs here
       '84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa',
       'a71d963c49f33176e90c5827069c422616b1500c',
     ],
-  group_name: 'my document group name',
   }, (err, res) => {
     // handle error or process response data
   });
