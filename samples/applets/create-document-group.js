@@ -1,7 +1,8 @@
 /*
  * to run create document group applet from the project root folder type in your console:
- * > node samples/applets/create-document-group <client_id> <client_secret> <username> <password> <group_name> <...document_ids>
- * <client_id>, <client_secret>, <username>, <password>, <group_name>, <...document_ids> - are required params
+ * > node samples/applets/create-document-group <client_id> <client_secret> <username> <password> <group_name> <...ids>
+ * <client_id>, <client_secret>, <username>, <password>, <group_name>, <...ids> - are required params
+ * <...ids> - one or more document or template iDs
  */
 
 'use strict';
@@ -12,7 +13,7 @@ const [
   username,
   password,
   group_name,
-  ...document_ids
+  ...ids
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -34,7 +35,7 @@ getAccessToken({
 
     createDocumentGroup({
       token,
-      document_ids,
+      ids,
       group_name,
     }, (createGroupErr, createGroupRes) => {
       if (createGroupErr) {
