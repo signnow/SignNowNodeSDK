@@ -80,9 +80,7 @@ const handleError = err => {
 };
 
 sendInviteWithPaymentRequest({
-  data: {
-    ...fieldInviteWithPaymentRequest,
-  },
+  data: { ...fieldInviteWithPaymentRequest },
   id,
   token,
 }, (err, res) => {

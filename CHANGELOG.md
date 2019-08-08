@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.4.0] - 2019-08-08
+
+### Added
+
+- Implemented *Document Group Create* method with ability to create document group
+- Documented [*documentGroup*](https://signnow.github.io/SignNowNodeSDK/class/lib/documentGroup.js~DocumentGroup.html) methods
+- Documented [*link*](https://signnow.github.io/SignNowNodeSDK/class/lib/link.js~Link.html) methods
+- Added example of *Create Document Group* into [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#create-document-group)
+- Added example of *Create Signing Link* usage into [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#create-signing-link)
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document-group.js) for testing creating of document group with *Create Document Group* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-signing-link.js) for testing creation of url signing link with *Create Signing Link* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/verify-access-token.js) for verifying access token with *Verify Access Token* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/user-info.js) for testing getting a detailed information about user with *Retrieve User Info* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/document-list.js) for testing getting a document list of specific user with *Retrieve User Document List* method
+
+## [v1.3.1] - 2019-08-01
+
+### Changed
+
+- Updated [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md)
+
 ## [v1.3.0] - 2019-08-01
 
 ### Added
@@ -63,5 +84,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Made fix of feature bug related to `Content-Length` header in requests
 
+[v1.4.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.3.1...HEAD
+[v1.3.1]: https://github.com/signnow/SignNowNodeSDK/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.1.4...v1.2.0

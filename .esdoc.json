@@ -5,7 +5,9 @@
     "user.js",
     "oauth2.js",
     "document.js",
-    "template.js"
+    "template.js",
+    "link.js",
+    "documentGroup.js"
   ],
   "destination": "./docs",
   "plugins": [

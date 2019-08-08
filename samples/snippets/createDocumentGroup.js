@@ -4,16 +4,25 @@ const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
 });
-const getEmbeddedSigningUrl = signnow.link.create;
+const createDocumentGroup = signnow.documentGroup.create;
 
-const document_id = 'DOCUMENT_OR_TEMPLATE_ID_GOES_HERE';
+const group_name = 'NAME_OF_NEW_DOCUMENT_GROUP';
 const token = 'YOUR_ACCESS_TOKEN';
 
+// At least one document or template must contain fields
+// Documents should not contain sent invites
+const ids = [
+  'DOCUMENT_1_ID',
+  'DOCUMENT_2_ID',
+  'TEMPLATE_1_ID',
+
+  // ...
+];
+
 /**
- * @param {Object} res
- * @param {string} res.url - url for logged in user
- * @param {string} res.url_no_signup - url for not logged in user
- */
+* @param {Object} res
+* @param {string} res.id - id of created document group
+*/
 const handleResponse = res => {
   console.log(res);
 };
@@ -22,8 +31,9 @@ const handleError = err => {
   console.error(err);
 };
 
-getEmbeddedSigningUrl({
-  document_id,
+createDocumentGroup({
+  group_name,
+  ids,
   token,
 }, (err, res) => {
   if (err) {

@@ -14,7 +14,7 @@ const [
   username,
   password,
   filepath = './samples/files/pdf-sample.pdf',
-  fieldsStringified
+  fieldsStringified,
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -28,7 +28,7 @@ const {
     create: uploadDocument,
     view: viewDocument,
     update: addFields,
-  }
+  },
 } = api;
 
 getAccessToken({
@@ -43,11 +43,11 @@ getAccessToken({
     uploadDocument({
       filepath,
       token,
-    }, (viewErr, viewRes) => {
-      if (viewErr) {
-        console.error(viewErr);
+    }, (uploadErr, uploadRes) => {
+      if (uploadErr) {
+        console.error(uploadErr);
       } else {
-        const { id } = viewRes;
+        const { id } = uploadRes;
 
         if (fieldsStringified) {
           const client_timestamp = Math.floor(Date.now() / 1000);

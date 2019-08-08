@@ -1,26 +1,35 @@
 {
-  "coverage": "70.96%",
-  "expectCount": 31,
-  "actualCount": 22,
+  "coverage": "80.95%",
+  "expectCount": 42,
+  "actualCount": 34,
   "files": {
     "lib/document.js": {
       "expectCount": 17,
-      "actualCount": 8,
+      "actualCount": 9,
       "undocumentLines": [
         9,
         17,
         40,
         49,
-        185,
-        508,
-        622,
-        637,
-        668
+        561,
+        675,
+        690,
+        721
       ]
+    },
+    "lib/documentGroup.js": {
+      "expectCount": 9,
+      "actualCount": 9,
+      "undocumentLines": []
     },
     "lib/index.js": {
       "expectCount": 1,
       "actualCount": 1,
+      "undocumentLines": []
+    },
+    "lib/link.js": {
+      "expectCount": 2,
+      "actualCount": 2,
       "undocumentLines": []
     },
     "lib/oauth2.js": {

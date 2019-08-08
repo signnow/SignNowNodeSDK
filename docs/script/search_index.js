@@ -6,6 +6,18 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@signnow/api-client/lib/documentgroup.js~documentgroup",
+    "class/lib/documentGroup.js~DocumentGroup.html",
+    "<span>DocumentGroup</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/documentGroup.js</span>",
+    "class"
+  ],
+  [
+    "@signnow/api-client/lib/link.js~link",
+    "class/lib/link.js~Link.html",
+    "<span>Link</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/link.js</span>",
+    "class"
+  ],
+  [
     "@signnow/api-client/lib/oauth2.js~oauth2",
     "class/lib/oauth2.js~OAuth2.html",
     "<span>OAuth2</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/oauth2.js</span>",
@@ -282,6 +294,24 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/document.js~document.documentlistitem",
+    "typedef/index.html#static-typedef-DocumentListItem",
+    "lib/document.js~Document.DocumentListItem",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentlistparams",
+    "typedef/index.html#static-typedef-DocumentListParams",
+    "lib/document.js~Document.DocumentListParams",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentlistresponse",
+    "typedef/index.html#static-typedef-DocumentListResponse",
+    "lib/document.js~Document.DocumentListResponse",
+    "typedef"
+  ],
+  [
     "lib/document.js~document.documentremoveparams",
     "typedef/index.html#static-typedef-DocumentRemoveParams",
     "lib/document.js~Document.DocumentRemoveParams",
@@ -450,6 +480,30 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/documentgroup.js",
+    "file/lib/documentGroup.js.html",
+    "lib/documentGroup.js",
+    "file"
+  ],
+  [
+    "lib/documentgroup.js~documentgroup.documentgroupcreateparams",
+    "typedef/index.html#static-typedef-DocumentGroupCreateParams",
+    "lib/documentGroup.js~DocumentGroup.DocumentGroupCreateParams",
+    "typedef"
+  ],
+  [
+    "lib/documentgroup.js~documentgroup.documentgroupcreateresponse",
+    "typedef/index.html#static-typedef-DocumentGroupCreateResponse",
+    "lib/documentGroup.js~DocumentGroup.DocumentGroupCreateResponse",
+    "typedef"
+  ],
+  [
+    "lib/documentgroup.js~documentgroup.create",
+    "class/lib/documentGroup.js~DocumentGroup.html#static-method-create",
+    "lib/documentGroup.js~DocumentGroup.create",
+    "method"
+  ],
+  [
     "lib/index.js",
     "file/lib/index.js.html",
     "lib/index.js",
@@ -478,6 +532,30 @@ window.esdocSearchIndex = [
     "typedef/index.html#static-typedef-InitParams",
     "lib/index.js~InitParams",
     "typedef"
+  ],
+  [
+    "lib/link.js",
+    "file/lib/link.js.html",
+    "lib/link.js",
+    "file"
+  ],
+  [
+    "lib/link.js~link.signinglinkcreateparams",
+    "typedef/index.html#static-typedef-SigningLinkCreateParams",
+    "lib/link.js~Link.SigningLinkCreateParams",
+    "typedef"
+  ],
+  [
+    "lib/link.js~link.signinglinkcreateresponse",
+    "typedef/index.html#static-typedef-SigningLinkCreateResponse",
+    "lib/link.js~Link.SigningLinkCreateResponse",
+    "typedef"
+  ],
+  [
+    "lib/link.js~link.create",
+    "class/lib/link.js~Link.html#static-method-create",
+    "lib/link.js~Link.create",
+    "method"
   ],
   [
     "lib/oauth2.js",
@@ -685,13 +763,13 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber27",
+    "test-file/test/template.test.js.html#lineNumber13",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber13",
+    "test-file/test/template.test.js.html#lineNumber27",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],

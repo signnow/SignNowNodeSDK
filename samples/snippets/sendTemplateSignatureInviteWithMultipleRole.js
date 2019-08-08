@@ -74,9 +74,7 @@ const handleError = err => {
 };
 
 sendInvite({
-  data: {
-    ...fieldInvite,
-  },
+  data: { ...fieldInvite },
   id,
   token,
 }, (err, res) => {

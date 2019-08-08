@@ -1,4 +1,4 @@
-# SignNow API client v1.3.1
+# SignNow API client v1.4.0
 
 SignNow REST Service Wrapper
 
@@ -32,6 +32,8 @@ SignNow REST Service Wrapper
       * [Merge Existing Documents](#merge-documents)
       * [Get Document History](#get-history)
       * [Remove Document](#remove-document)
+    * [Links](#links)
+      * [Create signing link](#create-signing-link)
     * [Enumerations](#enumerations)
       * [Add Enumeration Field to a Document](#add-enumeration)
       * [Add Enumeration Options to the Field](#enumeration-options)
@@ -47,6 +49,8 @@ SignNow REST Service Wrapper
       * [Returns a list of Webhooks](#list-webhooks)
       * [Create a Webhook](#create-webhook)
     * [Promisify methods](#promisify)
+    * [Document Group](#document-group)
+      * [Create Document Group](#create-document-group)
 7. [Unit Tests](#unit-tests)</li>
 8. [License](#license)</li>
 9. [Additional Contact Information](#contacts)
@@ -338,6 +342,19 @@ api.document.remove({
 });
 ```
 
+### <a name="links"></a>Links
+
+#### <a name="create-signing-link"></a>Create Signing Link
+
+```javascript
+api.link.create({
+  token: 'your auth token',
+  document_id: 'document id',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
 ### <a name="enumerations"></a>Enumerations
 
 #### <a name="add-enumeration"></a>Add Enumeration Field to a Document
@@ -501,6 +518,24 @@ api.folder.documents({
 }, (err, res) => {
   // handle error or process response data
 });
+```
+
+### <a name="document-group"></a>Document Group
+
+#### <a name="create-document-group"></a>Create Document Group
+
+```javascript
+api.documentGroup.create({
+  token: 'your auth token',
+  group_name: 'my document group name',
+  ids: [
+      // put document or template IDs here
+      '84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa',
+      'a71d963c49f33176e90c5827069c422616b1500c',
+    ],
+  }, (err, res) => {
+    // handle error or process response data
+  });
 ```
 
 ### <a name="webhook"></a>Webhook
