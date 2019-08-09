@@ -307,6 +307,8 @@ api.document.share({
 
 #### <a name="merge-documents"></a>Merge Existing Documents
 
+By default original documents are not removed after merging. To remove original documents set `removeOriginalDocuments` option to `true`.
+
 ```javascript
 api.document.merge({
   token: 'your auth token',
@@ -315,6 +317,9 @@ api.document.merge({
     '84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa',
     'a71d963c49f33176e90c5827069c422616b1500c',
   ],
+  options: {
+    removeOriginalDocuments: true, // false by default
+  },
 }, (err, res) => {
   // handle error or process response data
 });

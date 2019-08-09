@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+- Added optional ability to remove original documents after merging documents in *Merge Documents* feature
+- Updated example of merging documents in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#merge-documents)
+
 ## [v1.4.0] - 2019-08-08
 
 ### Added
