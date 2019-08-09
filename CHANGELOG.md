@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Updated documentation with *Get Document History* feature description
+
 ## [v1.4.0] - 2019-08-08
 
 ### Added
