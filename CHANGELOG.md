@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Implemented *Create Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#create-document-group-template)
+
 ## [v1.4.0] - 2019-08-08
 
 ### Added

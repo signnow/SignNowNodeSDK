@@ -51,6 +51,8 @@ SignNow REST Service Wrapper
     * [Promisify methods](#promisify)
     * [Document Group](#document-group)
       * [Create Document Group](#create-document-group)
+    * [Document Group Template](#document-group-template)
+      * [Create Document Group Template](#create-document-group-template)
 7. [Unit Tests](#unit-tests)</li>
 8. [License](#license)</li>
 9. [Additional Contact Information](#contacts)
@@ -531,9 +533,85 @@ api.documentGroup.create({
       'a71d963c49f33176e90c5827069c422616b1500c',
     ],
   group_name: 'my document group name',
-  }, (err, res) => {
-    // handle error or process response data
-  });
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+### <a name="document-group-template"></a>Document Group Template
+
+#### <a name="create-document-group-template"></a>Create Document Group Template
+
+```javascript
+const routing_details = {
+  invite_steps: [
+    {
+      order: 1,
+      invite_emails: [
+        {
+          email: 'Email of Signer 1',
+          subject: 'Signer 1 Needs Your Signature',
+          message: 'Signer 1 invited you to sign Document 1',
+          expiration_days: 30,
+          reminder: 0,
+          hasSignActions: true,
+          allow_reassign: '0',
+        },
+      ],
+      invite_actions: [
+        {
+          email: 'Email of Signer 1',
+          role_name: 'Signer 1',
+          action: 'sign',
+          document_id: 'b6f4f61a5662c5c4385b02421397b76dc6d9c8af',
+          document_name: 'Document 1',
+          role_viewName: 'Signer 1',
+          allow_reassign: '0',
+          decline_by_signature: '0',
+        },
+      ],
+    },
+    {
+      order: 2,
+      invite_emails: [
+        {
+          email: 'Email of Signer 2',
+          subject: 'Signer 2 Needs Your Signature',
+          message: 'Signer 2 invited you to sign Document 2',
+          expiration_days: 30,
+          reminder: 0,
+          hasSignActions: true,
+          allow_reassign: '0',
+        },
+      ],
+      invite_actions: [
+        {
+          email: 'Email of Signer 2',
+          role_name: 'Signer 2',
+          action: 'sign',
+          document_id: '14f02aac643770f22a384fe4e7a6b1ed6d15a9b8',
+          document_name: 'Document 2',
+          role_viewName: 'Signer 2',
+          allow_reassign: '0',
+          decline_by_signature: '0',
+        },
+      ],
+    },
+  ],
+  include_email_attachments: 0,
+};
+
+api.documentGroupTemplate.create({
+  token: 'your auth token',
+  template_ids: [
+      '84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa',
+      'a71d963c49f33176e90c5827069c422616b1500c',
+    ],
+  template_group_name: 'Document group template name',
+  routing_details,
+}, (err, res) => {
+  // handle error or process response data
+});
 ```
 
 ### <a name="webhook"></a>Webhook
