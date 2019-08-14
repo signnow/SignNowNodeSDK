@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated documentation with *Get Document History* feature description
 - Implemented *Create Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#create-document-group-template)
 - Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document-group-template.js) for testing creating of document group template with *Create Document Group Template* method
+- Implemented *Create Document Group Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#document-group-invite)
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/document-group-invite.js) for testing creating of document group invite with *Create Document Group Invite* method
 
 ### Changed
 

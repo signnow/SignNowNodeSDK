@@ -55,6 +55,7 @@ SignNow REST Service Wrapper
       * [Create Document Group](#create-document-group)
     * [Document Group Template](#document-group-template)
       * [Create Document Group Template](#create-document-group-template)
+      * [Create to Sign a Document Group](#document-group-invite)
 7. [Unit Tests](#unit-tests)</li>
 8. [License](#license)</li>
 9. [Additional Contact Information](#contacts)
@@ -549,6 +550,7 @@ api.folder.documents({
   // handle error or process response data
 });
 ```
+
 ### <a name="document-group"></a>Document Group
 
 #### <a name="create-document-group"></a>Create Document Group
@@ -561,6 +563,67 @@ api.documentGroup.create({
       'a71d963c49f33176e90c5827069c422616b1500c',
     ],
   group_name: 'my document group name',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+#### <a name="document-group-invite">Create to Sign a Document Group
+
+```javascript
+const data = {
+  invite_steps: [
+    {
+      order: 1,
+      invite_emails: [
+        {
+          email: 'Email of Signer 1',
+          subject: 'Signer 1 Needs Your Signature',
+          message: 'Signer 1 invited you to sign Document 1',
+          expiration_days: 30,
+          reminder: 0,
+        },
+      ],
+      invite_actions: [
+        {
+          email: 'Email of Signer 1',
+          role_name: 'Signer 1',
+          action: 'sign',
+          document_id: 'Document 1 ID',
+          allow_reassign: '0',
+          decline_by_signature: '0',
+        },
+      ],
+    },
+    {
+      order: 2,
+      invite_emails: [
+        {
+          email: 'Email of Signer 2',
+          subject: 'Signer 2 Needs Your Signature',
+          message: 'Signer 2 invited you to sign Document 2',
+          expiration_days: 30,
+          reminder: 0,
+        },
+      ],
+      invite_actions: [
+        {
+          email: 'Email of Signer 2',
+          role_name: 'Signer 2',
+          action: 'sign',
+          document_id: 'Document 2 ID',
+          allow_reassign: '0',
+          decline_by_signature: '0',
+        },
+      ],
+    },
+  ],
+};
+
+api.documentGroup.invite({
+  token: 'your auth token',
+  id: 'Document Group ID'
+  data,
 }, (err, res) => {
   // handle error or process response data
 });
