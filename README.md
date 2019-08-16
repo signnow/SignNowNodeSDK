@@ -360,7 +360,7 @@ api.document.remove({
 ```javascript
 api.link.create({
   token: 'your auth token',
-  document_id: 'document id',
+  document_id: 'document or template id',
 }, (err, res) => {
   // handle error or process response data
 });
