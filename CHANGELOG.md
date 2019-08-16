@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [v1.5.0] - Unreleased Phase 4
 
+### Added
+
+- Implemented *Refresh Access Token* method with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#refresh-token)
+
 ### Changed
 
 - Added validation in *Create Signing Link* method: a document must have at least one role that does not have a fixed e-mail to create an invite link.
@@ -90,7 +94,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Made fix of feature bug related to `Content-Length` header in requests
 
-[v1.4.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.3.1...HEAD
+[v1.5.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.4.0...HEAD
+[v1.4.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.3.1...v1.4.0
 [v1.3.1]: https://github.com/signnow/SignNowNodeSDK/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.1.4...v1.2.0
