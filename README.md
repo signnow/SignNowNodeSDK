@@ -17,7 +17,8 @@ SignNow REST Service Wrapper
       * [Retrieve User Information](#get-user)
     * [OAuth 2.0](#oauth2)
       * [Request Access Token](#get-token)
-      * [Verify an Access Token](#verify-token)
+      * [Verify Access Token](#verify-token)
+      * [Refresh Access Token](#refresh-token)
     * [Document](#document)
       * [Retrieve a List of the User’s Documents](#list-documents)
       * [Retrieve a Document Resource](#get-document)
@@ -42,6 +43,7 @@ SignNow REST Service Wrapper
       * [Duplicate a Template](#copy-template)
       * [Create Invite to Sign a Template](#template-field-invite)
       * [Create Free Form Invite from Template](#template-freeform-invite)
+      * [Remove Template](#remove-template)
     * [Folder](#folder)
       * [Returns a list of folders](#list-folders)
       * [Returns a list of documents inside a folder](#list-documents-in-folder)
@@ -138,16 +140,26 @@ api.user.retrieve({
 api.oauth2.requestToken({
   username: 'username',
   password: 'password',
-}, function(err, res){
+}, (err, res) => {
   // handle error or process response data
 });
 ```
 
-#### <a name="verify-token"></a>Verify an Access Token
+#### <a name="verify-token"></a>Verify Access Token
 
 ```javascript
 api.oauth2.verify({
   token: 'your auth token',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+#### <a name="refresh-token"></a>Refresh Access Token
+
+```javascript
+api.oauth2.refreshToken({
+  refresh_token: 'your refresh token',
 }, (err, res) => {
   // handle error or process response data
 });
@@ -349,7 +361,7 @@ api.document.remove({
 ```javascript
 api.link.create({
   token: 'your auth token',
-  document_id: 'document id',
+  document_id: 'document or template id',
 }, (err, res) => {
   // handle error or process response data
 });
@@ -472,6 +484,17 @@ api.template.invite({
     from: 'EMAIL_OF_SENDER',
     to: 'EMAIL_OF_SIGNER',
   },
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+#### <a name="remove-template"></a>Remove Template
+
+```javascript
+api.template.remove({
+  token: 'your auth token',
+  id: 'template id',
 }, (err, res) => {
   // handle error or process response data
 });
