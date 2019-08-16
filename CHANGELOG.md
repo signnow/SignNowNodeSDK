@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implemented *Refresh Access Token* method with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#refresh-token)
 - Implemented *Remove Template* method with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#remove-template)
 - Updated documentation with *Get Document History* feature description
+- Implemented *Create Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#create-document-group-template)
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document-group-template.js) for testing creating of document group template with *Create Document Group Template* method
 
 ### Changed
 

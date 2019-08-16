@@ -7,7 +7,8 @@
     "document.js",
     "template.js",
     "link.js",
-    "documentGroup.js"
+    "documentGroup.js",
+    "documentGroupTemplate.js"
   ],
   "destination": "./docs",
   "plugins": [
