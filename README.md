@@ -1,6 +1,6 @@
-# SignNow API client v1.5.0
+# The Official SignNow API client v1.5.0
 
-SignNow REST Service Wrapper
+SignNow Node.js REST API Wrapper
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md)
 
@@ -64,7 +64,7 @@ SignNow REST Service Wrapper
 
 ### <a name="about-signnow"></a>About SignNow
 
-SignNow is a powerful web-based e-signature solution that streamlines the signing process and overall document flow for businesses of any size. SignNow offers SaaS as well as public and private cloud deployment options using the same underlying API. With SignNow you can easily sign, share and manage documents in compliance with international data laws and industry-specific regulations. SignNow enables you to collect signatures from partners, employees and customers from any device within minutes.
+[SignNow](https://www.signnow.com/) is a powerful web-based e-signature solution that streamlines the signing process and overall document flow for businesses of any size. SignNow offers SaaS as well as public and private cloud deployment options using the same underlying API. With SignNow you can easily sign, share and manage documents in compliance with international data laws and industry-specific regulations. SignNow enables you to collect signatures from partners, employees and customers from any device within minutes.
 
 ### <a name="api-contact-info"></a>API Contact Information
 
@@ -92,7 +92,7 @@ npm install @signnow/api-client
 
 ## <a name="documentation"></a>Documentation
 
-See api reference in our [Documentation](https://signnow.github.io/SignNowNodeSDK/).
+See API reference in our [Documentation](https://signnow.github.io/SignNowNodeSDK/).
 
 ## <a name="examples"></a>Examples
 
@@ -787,8 +787,8 @@ This project is released under the MIT [License](https://github.com/signnow/Sign
 
 ### <a name="support"></a>Support
 
-To contact SignNow support, please email [support@signnow.com](mailto:support@signnow.com).
+To contact SignNow support, please email [support@signnow.com](mailto:support@signnow.com) or [api@signnow.com](mailto:api@signnow.com).
 
 ### <a name="sales"></a>Sales
 
-For pricing information, please call [(800) 831-2050](tel:8008312050) or email [sales@signnow.com](mailto:sales@signnow.com).
+For pricing information, please call [(800) 831-2050](tel:8008312050), email [sales@signnow.com](mailto:sales@signnow.com) or visit [https://www.signnow.com/contact](https://www.signnow.com/contact).
