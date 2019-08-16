@@ -10,10 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Implemented *Refresh Access Token* method with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#refresh-token)
+- Implemented *Remove Template* method with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#remove-template)
 
 ### Changed
 
-- Added validation in *Create Signing Link* method: a document must have at least one role that does not have a fixed e-mail to create an invite link.
+- Added validation in *Create Signing Link* method: a document must have at least one role that does not have a fixed e-mail to create an invite link
 
 ## [v1.4.0] - 2019-08-08
 

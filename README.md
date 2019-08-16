@@ -43,6 +43,7 @@ SignNow REST Service Wrapper
       * [Duplicate a Template](#copy-template)
       * [Create Invite to Sign a Template](#template-field-invite)
       * [Create Free Form Invite from Template](#template-freeform-invite)
+      * [Remove Template](#remove-template)
     * [Folder](#folder)
       * [Returns a list of folders](#list-folders)
       * [Returns a list of documents inside a folder](#list-documents-in-folder)
@@ -483,6 +484,17 @@ api.template.invite({
     from: 'EMAIL_OF_SENDER',
     to: 'EMAIL_OF_SIGNER',
   },
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+#### <a name="remove-template"></a>Remove Template
+
+```javascript
+api.template.remove({
+  token: 'your auth token',
+  id: 'template id',
 }, (err, res) => {
   // handle error or process response data
 });
