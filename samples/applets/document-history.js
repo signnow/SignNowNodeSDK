@@ -1,7 +1,7 @@
 /*
- * to run remove document applet from the project root folder type in your console:
- * > node samples/applets/remove-document <cliend_id> <client_secret> <username> <password> <document_id>
- * <cliend_id>, <client_secret>, <username>, <password>, <document_id> - are required params
+ * to run document-history applet from the project root folder type in your console:
+ * > node samples/applets/document-history <client_id> <client_secret> <username> <password> <document_id>
+ * <client_id>, <client_secret>, <username>, <password>, <document_id> - are required params
  */
 
 'use strict';
@@ -20,7 +20,7 @@ const api = require('../../lib')({
 });
 
 const { oauth2: { requestToken: getAccessToken } } = api;
-const { document: { remove: removeDocument } } = api;
+const { document: { history: getDocumentHistory } } = api;
 
 getAccessToken({
   username,
@@ -31,14 +31,14 @@ getAccessToken({
   } else {
     const { access_token: token } = tokenRes;
 
-    removeDocument({
+    getDocumentHistory({
       id: documentId,
       token,
-    }, (removeErr, removeRes) => {
-      if (removeErr) {
-        console.error(removeErr);
+    }, (historyErr, historyRes) => {
+      if (historyErr) {
+        console.error(historyErr);
       } else {
-        console.log(removeRes);
+        console.log(historyRes);
       }
     });
   }
