@@ -1,7 +1,7 @@
 /*
- * to run remove document applet from the project root folder type in your console:
- * > node samples/applets/remove-document <cliend_id> <client_secret> <username> <password> <document_id>
- * <cliend_id>, <client_secret>, <username>, <password>, <document_id> - are required params
+ * to run remove template applet from the project root folder type in your console:
+ * > node samples/applets/remove-template <client_id> <client_secret> <username> <password> <template_id>
+ * <client_id>, <client_secret>, <username>, <password>, <template_id> - are required params
  */
 
 'use strict';
@@ -11,7 +11,7 @@ const [
   clientSecret,
   username,
   password,
-  documentId,
+  templateId,
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -20,7 +20,7 @@ const api = require('../../lib')({
 });
 
 const { oauth2: { requestToken: getAccessToken } } = api;
-const { document: { remove: removeDocument } } = api;
+const { template: { remove: removeTemplate } } = api;
 
 getAccessToken({
   username,
@@ -31,8 +31,8 @@ getAccessToken({
   } else {
     const { access_token: token } = tokenRes;
 
-    removeDocument({
-      id: documentId,
+    removeTemplate({
+      id: templateId,
       token,
     }, (removeErr, removeRes) => {
       if (removeErr) {
