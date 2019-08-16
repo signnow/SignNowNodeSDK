@@ -5,3 +5,7 @@ img[src="./image/brand_logo.svg"] {
 td[data-ice=type].code {
   word-break: break-word;
 }
+
+.github-markdown img:not([src*=".svg"]) {
+  box-shadow: none;
+}

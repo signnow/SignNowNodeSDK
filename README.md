@@ -2,7 +2,11 @@
 
 SignNow Node.js REST API Wrapper
 
-[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md)
+[![License](https://img.shields.io/github/license/signnow/SignNowNodeSDK)](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md)
+[![Node version support](https://img.shields.io/node/v/@signnow/api-client)](#)
+[![Snyk vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/@signnow/api-client)](#)
+[![NPM package version](https://img.shields.io/npm/v/@signnow/api-client)](https://www.npmjs.com/package/@signnow/api-client)
+[![Twitter Follow](https://img.shields.io/twitter/follow/signnow?style=social)](https://twitter.com/signnow?ref_src=https%3A%2F%2Fgithub.com%2Fsignnow%2FSignNowNodeSDK)
 
 ### <a name="table-of-contents"></a>Table of Contents
 
