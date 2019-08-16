@@ -1,4 +1,4 @@
-# SignNow API client v1.4.0
+# SignNow API client v1.5.0
 
 SignNow REST Service Wrapper
 

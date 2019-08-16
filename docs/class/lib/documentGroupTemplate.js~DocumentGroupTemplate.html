@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">lib/oauth2.js | SignNow API client</title>
+  <title data-ice="title">DocumentGroupTemplate | SignNow API client</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -125,140 +125,163 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">lib/oauth2.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
-const https = require(&apos;https&apos;);
-const querystring = require(&apos;querystring&apos;);
-const {
-  responseHandler, errorHandler, buildRequestOptions,
-} = require(&apos;./common&apos;);
+<div class="content" data-ice="content"><div class="header-notice">
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import DocumentGroupTemplate from &apos;<span><a href="file/lib/documentGroupTemplate.js.html#lineNumber11">@signnow/api-client/lib/documentGroupTemplate.js</a></span>&apos;</code></pre></div>
+  <span data-ice="access">public</span>
+  <span data-ice="kind">class</span>
+  
+  
+  
+  <span data-ice="source">| <span><a href="file/lib/documentGroupTemplate.js.html#lineNumber11">source</a></span></span>
+</div>
 
-/**
- * OAuth2 methods
- */
-class OAuth2 {
+<div class="self-detail detail">
+  <h1 data-ice="name">DocumentGroupTemplate</h1>
 
-  /**
-   * Request access token payload
-   * @typedef {Object} AccessTokenGetParams
-   * @property {string} username - email of a user
-   * @property {string} password - password of a user
-   */
+  
 
-  /**
-   * Request access token response data
-   * @typedef {Object} AccessTokenGetResponse
-   * @property {number} res.expires_in - time in seconds for which the token was issued
-   * @property {string} res.token_type - type of access token (e.g. &apos;bearer&apos;)
-   * @property {string} res.access_token - access token
-   * @property {string} res.refresh_token - refresh token
-   * @property {string} res.scope - access scopes
-   */
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-  /**
-   * Requests access token for a user
-   * @param {AccessTokenGetParams} data - access token reques payload
-   * @param {function(err: ApiErrorResponse, res: AccessTokenGetResponse)} [callback] - error first node.js callback
-   */
-  static requestToken (data, callback) {
-    const dataCopy = Object.assign({}, data, { grant_type: &apos;password&apos; });
-    const dataStringified = querystring.stringify(dataCopy).replace(&apos;%40&apos;, &apos;@&apos;);
-    const req = https
-      .request(buildRequestOptions({
-        method: &apos;POST&apos;,
-        path: &apos;/oauth2/token&apos;,
-        authorization: { type: &apos;Basic&apos; },
-        headers: {
-          &apos;Content-Type&apos;: &apos;application/x-www-form-urlencoded&apos;,
-          &apos;Content-Length&apos;: Buffer.byteLength(dataStringified),
-        },
-      }), responseHandler(callback))
-      .on(&apos;error&apos;, errorHandler(callback));
+  
+  
+  <div class="description" data-ice="description"><p>Document Group Template methods</p>
+</div>
+  
 
-    req.write(dataStringified);
-    req.end();
-  }
+  
 
-  /**
-   * Verify access token payload
-   * @typedef {Object} AccessTokenVerifyParams
-   * @property {string} token - your auth token
-   */
+  
 
-  /**
-   * Verify access token response data
-   * @typedef {Object} AccessTokenVerifyResponse
-   * @property {number} res.expires_in - time in seconds for which the token was issued
-   * @property {string} res.token_type - type of access token (e.g. &apos;bearer&apos;)
-   * @property {string} res.access_token - access token
-   * @property {string} res.scope - access scopes
-   */
+  
 
-  /**
-   * Verifies access token
-   * @param {AccessTokenVerifyParams} data - access token request payload
-   * @param {function(err: ApiErrorResponse, res: AccessTokenVerifyResponse)} [callback] - error first node.js callback
-   */
-  static verify ({ token }, callback) {
-    https
-      .request(buildRequestOptions({
-        method: &apos;GET&apos;,
-        path: &apos;/oauth2/token&apos;,
-        authorization: {
-          type: &apos;Bearer&apos;,
-          token,
-        },
-      }), responseHandler(callback))
-      .on(&apos;error&apos;, errorHandler(callback))
-      .end();
-  }
+  
+</div>
 
-  /**
-   * Refresh access token payload
-   * @typedef {Object} AccessTokenRefreshParams
-   * @property {string} refresh_token - your refresh token
-   * @property {string} [scope] - access scopes of access token
-   * @property {number} [expiration_time] - time in seconds for which the token was issued
-   */
 
-  /**
-   * Refresh access token response data
-   * @typedef {Object} AccessTokenRefreshResponse
-   * @property {number} res.expires_in - time in seconds for which the token was issued
-   * @property {string} res.token_type - type of access token (e.g. &apos;bearer&apos;)
-   * @property {string} res.access_token - access token
-   * @property {string} res.refresh_token - refresh token
-   * @property {string} res.scope - access scopes
-   */
+<div data-ice="staticMethodSummary"><h2>Static Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/lib/documentGroupTemplate.js~DocumentGroupTemplate.html#static-method-create">create</a></span></span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-DocumentGroupTemplateCreateParams">DocumentGroupTemplateCreateParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-DocumentGroupTemplateCreateResponse">DocumentGroupTemplateCreateResponse</a></span>)</span></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Creates Document Group Template with specified templates and settings</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
 
-  /**
-   * Refreshes access token for a user
-   * @param {AccessTokenRefreshParams} data - refresh token request payload
-   * @param {function(err: ApiErrorResponse, res: AccessTokenRefreshResponse)} [callback] - error first node.js callback
-   */
-  static refreshToken (data, callback) {
-    const dataCopy = Object.assign({}, data, { grant_type: &apos;refresh_token&apos; });
-    const dataStringified = querystring.stringify(dataCopy).replace(&apos;%40&apos;, &apos;@&apos;);
-    const req = https
-      .request(buildRequestOptions({
-        method: &apos;POST&apos;,
-        path: &apos;/oauth2/token&apos;,
-        authorization: { type: &apos;Basic&apos; },
-        headers: {
-          &apos;Content-Type&apos;: &apos;application/x-www-form-urlencoded&apos;,
-          &apos;Content-Length&apos;: Buffer.byteLength(dataStringified),
-        },
-      }), responseHandler(callback))
-      .on(&apos;error&apos;, errorHandler(callback));
 
-    req.write(dataStringified);
-    req.end();
-  }
 
-}
 
-module.exports = OAuth2;
-</code></pre>
+
+
+
+<div data-ice="staticMethodDetails"><h2 data-ice="title">Static Public Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-create">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">create</span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-DocumentGroupTemplateCreateParams">DocumentGroupTemplateCreateParams</a></span>, callback: <span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-DocumentGroupTemplateCreateResponse">DocumentGroupTemplateCreateResponse</a></span>)</span></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/lib/documentGroupTemplate.js.html#lineNumber73">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Creates Document Group Template with specified templates and settings</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">data</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-DocumentGroupTemplateCreateParams">DocumentGroupTemplateCreateParams</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>create Document Group Template payload</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">callback</td>
+      <td data-ice="type" class="code"><span><span>function</span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-DocumentGroupTemplateCreateResponse">DocumentGroupTemplateCreateResponse</a></span>)</span></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>error first node.js callback</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+
+
 
 </div>
 

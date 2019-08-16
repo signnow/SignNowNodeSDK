@@ -12,6 +12,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@signnow/api-client/lib/documentgrouptemplate.js~documentgrouptemplate",
+    "class/lib/documentGroupTemplate.js~DocumentGroupTemplate.html",
+    "<span>DocumentGroupTemplate</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/documentGroupTemplate.js</span>",
+    "class"
+  ],
+  [
     "@signnow/api-client/lib/link.js~link",
     "class/lib/link.js~Link.html",
     "<span>Link</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/link.js</span>",
@@ -240,6 +246,12 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/document.js~document.documentevent",
+    "typedef/index.html#static-typedef-DocumentEvent",
+    "lib/document.js~Document.DocumentEvent",
+    "typedef"
+  ],
+  [
     "lib/document.js~document.documentfieldextractparams",
     "typedef/index.html#static-typedef-DocumentFieldExtractParams",
     "lib/document.js~Document.DocumentFieldExtractParams",
@@ -267,6 +279,18 @@ window.esdocSearchIndex = [
     "lib/document.js~document.documentfreeforminviteresponse",
     "typedef/index.html#static-typedef-DocumentFreeformInviteResponse",
     "lib/document.js~Document.DocumentFreeformInviteResponse",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documenthistoryparams",
+    "typedef/index.html#static-typedef-DocumentHistoryParams",
+    "lib/document.js~Document.DocumentHistoryParams",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documenthistoryresponse",
+    "typedef/index.html#static-typedef-DocumentHistoryResponse",
+    "lib/document.js~Document.DocumentHistoryResponse",
     "typedef"
   ],
   [
@@ -309,6 +333,24 @@ window.esdocSearchIndex = [
     "lib/document.js~document.documentlistresponse",
     "typedef/index.html#static-typedef-DocumentListResponse",
     "lib/document.js~Document.DocumentListResponse",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentmergeoptions",
+    "typedef/index.html#static-typedef-DocumentMergeOptions",
+    "lib/document.js~Document.DocumentMergeOptions",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentmergeparams",
+    "typedef/index.html#static-typedef-DocumentMergeParams",
+    "lib/document.js~Document.DocumentMergeParams",
+    "typedef"
+  ],
+  [
+    "lib/document.js~document.documentmergeresponse",
+    "typedef/index.html#static-typedef-DocumentMergeResponse",
+    "lib/document.js~Document.DocumentMergeResponse",
     "typedef"
   ],
   [
@@ -498,9 +540,123 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/documentgroup.js~documentgroup.documentgroupinviteaction",
+    "typedef/index.html#static-typedef-DocumentGroupInviteAction",
+    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteAction",
+    "typedef"
+  ],
+  [
+    "lib/documentgroup.js~documentgroup.documentgroupinviteauthenticationpassword",
+    "typedef/index.html#static-typedef-DocumentGroupInviteAuthenticationPassword",
+    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteAuthenticationPassword",
+    "typedef"
+  ],
+  [
+    "lib/documentgroup.js~documentgroup.documentgroupinviteauthenticationphonecall",
+    "typedef/index.html#static-typedef-DocumentGroupInviteAuthenticationPhoneCall",
+    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteAuthenticationPhoneCall",
+    "typedef"
+  ],
+  [
+    "lib/documentgroup.js~documentgroup.documentgroupinviteauthenticationphonesms",
+    "typedef/index.html#static-typedef-DocumentGroupInviteAuthenticationPhoneSMS",
+    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteAuthenticationPhoneSMS",
+    "typedef"
+  ],
+  [
+    "lib/documentgroup.js~documentgroup.documentgroupinvitecompletionemailconfig",
+    "typedef/index.html#static-typedef-DocumentGroupInviteCompletionEmailConfig",
+    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteCompletionEmailConfig",
+    "typedef"
+  ],
+  [
+    "lib/documentgroup.js~documentgroup.documentgroupinviteemail",
+    "typedef/index.html#static-typedef-DocumentGroupInviteEmail",
+    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteEmail",
+    "typedef"
+  ],
+  [
+    "lib/documentgroup.js~documentgroup.documentgroupinviteparams",
+    "typedef/index.html#static-typedef-DocumentGroupInviteParams",
+    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteParams",
+    "typedef"
+  ],
+  [
+    "lib/documentgroup.js~documentgroup.documentgroupinviteresponse",
+    "typedef/index.html#static-typedef-DocumentGroupInviteResponse",
+    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteResponse",
+    "typedef"
+  ],
+  [
+    "lib/documentgroup.js~documentgroup.documentgroupinvitesettings",
+    "typedef/index.html#static-typedef-DocumentGroupInviteSettings",
+    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteSettings",
+    "typedef"
+  ],
+  [
+    "lib/documentgroup.js~documentgroup.documentgroupinvitestep",
+    "typedef/index.html#static-typedef-DocumentGroupInviteStep",
+    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteStep",
+    "typedef"
+  ],
+  [
     "lib/documentgroup.js~documentgroup.create",
     "class/lib/documentGroup.js~DocumentGroup.html#static-method-create",
     "lib/documentGroup.js~DocumentGroup.create",
+    "method"
+  ],
+  [
+    "lib/documentgroup.js~documentgroup.invite",
+    "class/lib/documentGroup.js~DocumentGroup.html#static-method-invite",
+    "lib/documentGroup.js~DocumentGroup.invite",
+    "method"
+  ],
+  [
+    "lib/documentgrouptemplate.js",
+    "file/lib/documentGroupTemplate.js.html",
+    "lib/documentGroupTemplate.js",
+    "file"
+  ],
+  [
+    "lib/documentgrouptemplate.js~documentgrouptemplate.documentgrouptemplatecreateparams",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateCreateParams",
+    "lib/documentGroupTemplate.js~DocumentGroupTemplate.DocumentGroupTemplateCreateParams",
+    "typedef"
+  ],
+  [
+    "lib/documentgrouptemplate.js~documentgrouptemplate.documentgrouptemplatecreateresponse",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateCreateResponse",
+    "lib/documentGroupTemplate.js~DocumentGroupTemplate.DocumentGroupTemplateCreateResponse",
+    "typedef"
+  ],
+  [
+    "lib/documentgrouptemplate.js~documentgrouptemplate.documentgrouptemplateinviteaction",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateInviteAction",
+    "lib/documentGroupTemplate.js~DocumentGroupTemplate.DocumentGroupTemplateInviteAction",
+    "typedef"
+  ],
+  [
+    "lib/documentgrouptemplate.js~documentgrouptemplate.documentgrouptemplateinviteemail",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateInviteEmail",
+    "lib/documentGroupTemplate.js~DocumentGroupTemplate.DocumentGroupTemplateInviteEmail",
+    "typedef"
+  ],
+  [
+    "lib/documentgrouptemplate.js~documentgrouptemplate.documentgrouptemplateinvitestep",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateInviteStep",
+    "lib/documentGroupTemplate.js~DocumentGroupTemplate.DocumentGroupTemplateInviteStep",
+    "typedef"
+  ],
+  [
+    "lib/documentgrouptemplate.js~documentgrouptemplate.documentgrouptemplateroutingdetails",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateRoutingDetails",
+    "lib/documentGroupTemplate.js~DocumentGroupTemplate.DocumentGroupTemplateRoutingDetails",
+    "typedef"
+  ],
+  [
+    "lib/documentgrouptemplate.js~documentgrouptemplate.create",
+    "class/lib/documentGroupTemplate.js~DocumentGroupTemplate.html#static-method-create",
+    "lib/documentGroupTemplate.js~DocumentGroupTemplate.create",
     "method"
   ],
   [
@@ -576,6 +732,18 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/oauth2.js~oauth2.accesstokenrefreshparams",
+    "typedef/index.html#static-typedef-AccessTokenRefreshParams",
+    "lib/oauth2.js~OAuth2.AccessTokenRefreshParams",
+    "typedef"
+  ],
+  [
+    "lib/oauth2.js~oauth2.accesstokenrefreshresponse",
+    "typedef/index.html#static-typedef-AccessTokenRefreshResponse",
+    "lib/oauth2.js~OAuth2.AccessTokenRefreshResponse",
+    "typedef"
+  ],
+  [
     "lib/oauth2.js~oauth2.accesstokenverifyparams",
     "typedef/index.html#static-typedef-AccessTokenVerifyParams",
     "lib/oauth2.js~OAuth2.AccessTokenVerifyParams",
@@ -586,6 +754,12 @@ window.esdocSearchIndex = [
     "typedef/index.html#static-typedef-AccessTokenVerifyResponse",
     "lib/oauth2.js~OAuth2.AccessTokenVerifyResponse",
     "typedef"
+  ],
+  [
+    "lib/oauth2.js~oauth2.refreshtoken",
+    "class/lib/oauth2.js~OAuth2.html#static-method-refreshToken",
+    "lib/oauth2.js~OAuth2.refreshToken",
+    "method"
   ],
   [
     "lib/oauth2.js~oauth2.requesttoken",
@@ -648,6 +822,18 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/template.js~template.templateremoveparams",
+    "typedef/index.html#static-typedef-TemplateRemoveParams",
+    "lib/template.js~Template.TemplateRemoveParams",
+    "typedef"
+  ],
+  [
+    "lib/template.js~template.templateremoveresponse",
+    "typedef/index.html#static-typedef-TemplateRemoveResponse",
+    "lib/template.js~Template.TemplateRemoveResponse",
+    "typedef"
+  ],
+  [
     "lib/template.js~template.create",
     "class/lib/template.js~Template.html#static-method-create",
     "lib/template.js~Template.create",
@@ -663,6 +849,12 @@ window.esdocSearchIndex = [
     "lib/template.js~template.invite",
     "class/lib/template.js~Template.html#static-method-invite",
     "lib/template.js~Template.invite",
+    "method"
+  ],
+  [
+    "lib/template.js~template.remove",
+    "class/lib/template.js~Template.html#static-method-remove",
+    "lib/template.js~Template.remove",
     "method"
   ],
   [
@@ -763,13 +955,13 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber13",
+    "test-file/test/template.test.js.html#lineNumber27",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber27",
+    "test-file/test/template.test.js.html#lineNumber13",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],
