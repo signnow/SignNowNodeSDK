@@ -1,14 +1,10 @@
 {
   "source": "./lib",
-  "includes": [
-    "index.js",
-    "user.js",
-    "oauth2.js",
-    "document.js",
-    "template.js",
-    "link.js",
-    "documentGroup.js",
-    "documentGroupTemplate.js"
+  "excludes": [
+    "webhook",
+    "enumerations",
+    "folder",
+    "common"
   ],
   "destination": "./docs",
   "plugins": [
