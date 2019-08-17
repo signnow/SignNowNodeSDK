@@ -3,24 +3,24 @@
   "expectCount": 41,
   "actualCount": 35,
   "files": {
-    "lib/document.js": {
+    "lib/document/index.js": {
       "expectCount": 17,
       "actualCount": 11,
       "undocumentLines": [
-        9,
-        17,
-        40,
-        49,
-        561,
-        675
+        11,
+        19,
+        42,
+        51,
+        563,
+        677
       ]
     },
-    "lib/documentGroup.js": {
+    "lib/document-group/index.js": {
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []
     },
-    "lib/documentGroupTemplate.js": {
+    "lib/document-group-template/index.js": {
       "expectCount": 2,
       "actualCount": 2,
       "undocumentLines": []
@@ -30,22 +30,22 @@
       "actualCount": 1,
       "undocumentLines": []
     },
-    "lib/link.js": {
+    "lib/link/index.js": {
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []
     },
-    "lib/oauth2.js": {
+    "lib/oauth2/index.js": {
       "expectCount": 4,
       "actualCount": 4,
       "undocumentLines": []
     },
-    "lib/template.js": {
+    "lib/template/index.js": {
       "expectCount": 8,
       "actualCount": 8,
       "undocumentLines": []
     },
-    "lib/user.js": {
+    "lib/user/index.js": {
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []
