@@ -5926,7 +5926,7 @@
     "__docId__": 144,
     "kind": "file",
     "name": "lib/oauth2/index.js",
-    "content": "'use strict';\nconst https = require('https');\nconst querystring = require('querystring');\nconst {\n  responseHandler,\n  errorHandler,\n  buildRequestOptions,\n} = require('../common');\n\n/**\n * OAuth2 methods\n */\nclass OAuth2 {\n\n  /**\n   * Request access token payload\n   * @typedef {Object} AccessTokenGetParams\n   * @property {string} username - email of a user\n   * @property {string} password - password of a user\n   */\n\n  /**\n   * Request access token response data\n   * @typedef {Object} AccessTokenGetResponse\n   * @property {number} res.expires_in - time in seconds for which the token was issued\n   * @property {string} res.token_type - type of access token (e.g. 'bearer')\n   * @property {string} res.access_token - access token\n   * @property {string} res.refresh_token - refresh token\n   * @property {string} res.scope - access scopes\n   */\n\n  /**\n   * Requests access token for a user\n   * @param {AccessTokenGetParams} data - access token reques payload\n   * @param {function(err: ApiErrorResponse, res: AccessTokenGetResponse)} [callback] - error first node.js callback\n   */\n  static requestToken (data, callback) {\n    const dataCopy = Object.assign({}, data, { grant_type: 'password' });\n    const dataStringified = querystring.stringify(dataCopy).replace('%40', '@');\n    const req = https\n      .request(buildRequestOptions({\n        method: 'POST',\n        path: '/oauth2/token',\n        authorization: { type: 'Basic' },\n        headers: {\n          'Content-Type': 'application/x-www-form-urlencoded',\n          'Content-Length': Buffer.byteLength(dataStringified),\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback));\n\n    req.write(dataStringified);\n    req.end();\n  }\n\n  /**\n   * Verify access token payload\n   * @typedef {Object} AccessTokenVerifyParams\n   * @property {string} token - your auth token\n   */\n\n  /**\n   * Verify access token response data\n   * @typedef {Object} AccessTokenVerifyResponse\n   * @property {number} res.expires_in - time in seconds for which the token was issued\n   * @property {string} res.token_type - type of access token (e.g. 'bearer')\n   * @property {string} res.access_token - access token\n   * @property {string} res.scope - access scopes\n   */\n\n  /**\n   * Verifies access token\n   * @param {AccessTokenVerifyParams} data - access token request payload\n   * @param {function(err: ApiErrorResponse, res: AccessTokenVerifyResponse)} [callback] - error first node.js callback\n   */\n  static verify ({ token }, callback) {\n    https\n      .request(buildRequestOptions({\n        method: 'GET',\n        path: '/oauth2/token',\n        authorization: {\n          type: 'Bearer',\n          token,\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback))\n      .end();\n  }\n\n  /**\n   * Refresh access token payload\n   * @typedef {Object} AccessTokenRefreshParams\n   * @property {string} refresh_token - your refresh token\n   * @property {string} [scope] - access scopes of access token\n   * @property {number} [expiration_time] - time in seconds for which the token was issued\n   */\n\n  /**\n   * Refresh access token response data\n   * @typedef {Object} AccessTokenRefreshResponse\n   * @property {number} res.expires_in - time in seconds for which the token was issued\n   * @property {string} res.token_type - type of access token (e.g. 'bearer')\n   * @property {string} res.access_token - access token\n   * @property {string} res.refresh_token - refresh token\n   * @property {string} res.scope - access scopes\n   */\n\n  /**\n   * Refreshes access token for a user\n   * @param {AccessTokenRefreshParams} data - refresh token request payload\n   * @param {function(err: ApiErrorResponse, res: AccessTokenRefreshResponse)} [callback] - error first node.js callback\n   */\n  static refreshToken (data, callback) {\n    const dataCopy = Object.assign({}, data, { grant_type: 'refresh_token' });\n    const dataStringified = querystring.stringify(dataCopy).replace('%40', '@');\n    const req = https\n      .request(buildRequestOptions({\n        method: 'POST',\n        path: '/oauth2/token',\n        authorization: { type: 'Basic' },\n        headers: {\n          'Content-Type': 'application/x-www-form-urlencoded',\n          'Content-Length': Buffer.byteLength(dataStringified),\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback));\n\n    req.write(dataStringified);\n    req.end();\n  }\n\n}\n\nmodule.exports = OAuth2;\n",
+    "content": "'use strict';\nconst https = require('https');\nconst querystring = require('querystring');\nconst {\n  responseHandler,\n  errorHandler,\n  buildRequestOptions,\n} = require('../common');\n\n/**\n * OAuth2 methods\n */\nclass OAuth2 {\n\n  /**\n   * Request access token payload\n   * @typedef {Object} AccessTokenGetParams\n   * @property {string} username - email of a user\n   * @property {string} password - password of a user\n   */\n\n  /**\n   * Request access token response data\n   * @typedef {Object} AccessTokenGetResponse\n   * @property {number} expires_in - time in seconds for which the token was issued\n   * @property {string} token_type - type of access token (e.g. 'bearer')\n   * @property {string} access_token - access token\n   * @property {string} refresh_token - refresh token\n   * @property {string} scope - access scopes\n   */\n\n  /**\n   * Requests access token for a user\n   * @param {AccessTokenGetParams} data - access token reques payload\n   * @param {function(err: ApiErrorResponse, res: AccessTokenGetResponse)} [callback] - error first node.js callback\n   */\n  static requestToken (data, callback) {\n    const dataCopy = Object.assign({}, data, { grant_type: 'password' });\n    const dataStringified = querystring.stringify(dataCopy).replace('%40', '@');\n    const req = https\n      .request(buildRequestOptions({\n        method: 'POST',\n        path: '/oauth2/token',\n        authorization: { type: 'Basic' },\n        headers: {\n          'Content-Type': 'application/x-www-form-urlencoded',\n          'Content-Length': Buffer.byteLength(dataStringified),\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback));\n\n    req.write(dataStringified);\n    req.end();\n  }\n\n  /**\n   * Verify access token payload\n   * @typedef {Object} AccessTokenVerifyParams\n   * @property {string} token - your auth token\n   */\n\n  /**\n   * Verify access token response data\n   * @typedef {Object} AccessTokenVerifyResponse\n   * @property {number} expires_in - time in seconds for which the token was issued\n   * @property {string} token_type - type of access token (e.g. 'bearer')\n   * @property {string} access_token - access token\n   * @property {string} scope - access scopes\n   */\n\n  /**\n   * Verifies access token\n   * @param {AccessTokenVerifyParams} data - access token request payload\n   * @param {function(err: ApiErrorResponse, res: AccessTokenVerifyResponse)} [callback] - error first node.js callback\n   */\n  static verify ({ token }, callback) {\n    https\n      .request(buildRequestOptions({\n        method: 'GET',\n        path: '/oauth2/token',\n        authorization: {\n          type: 'Bearer',\n          token,\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback))\n      .end();\n  }\n\n  /**\n   * Refresh access token payload\n   * @typedef {Object} AccessTokenRefreshParams\n   * @property {string} refresh_token - your refresh token\n   * @property {string} [scope] - access scopes of access token\n   * @property {number} [expiration_time] - time in seconds for which the token was issued\n   */\n\n  /**\n   * Refresh access token response data\n   * @typedef {Object} AccessTokenRefreshResponse\n   * @property {number} expires_in - time in seconds for which the token was issued\n   * @property {string} token_type - type of access token (e.g. 'bearer')\n   * @property {string} access_token - access token\n   * @property {string} refresh_token - refresh token\n   * @property {string} scope - access scopes\n   */\n\n  /**\n   * Refreshes access token for a user\n   * @param {AccessTokenRefreshParams} data - refresh token request payload\n   * @param {function(err: ApiErrorResponse, res: AccessTokenRefreshResponse)} [callback] - error first node.js callback\n   */\n  static refreshToken (data, callback) {\n    const dataCopy = Object.assign({}, data, { grant_type: 'refresh_token' });\n    const dataStringified = querystring.stringify(dataCopy).replace('%40', '@');\n    const req = https\n      .request(buildRequestOptions({\n        method: 'POST',\n        path: '/oauth2/token',\n        authorization: { type: 'Basic' },\n        headers: {\n          'Content-Type': 'application/x-www-form-urlencoded',\n          'Content-Length': Buffer.byteLength(dataStringified),\n        },\n      }), responseHandler(callback))\n      .on('error', errorHandler(callback));\n\n    req.write(dataStringified);\n    req.end();\n  }\n\n}\n\nmodule.exports = OAuth2;\n",
     "static": true,
     "longname": "/Users/ruslantereshchenko/workspace/SignNowNodeSDK/lib/oauth2/index.js",
     "access": "public",
@@ -6004,7 +6004,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.expires_in",
+        "name": "expires_in",
         "description": "time in seconds for which the token was issued"
       },
       {
@@ -6014,7 +6014,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.token_type",
+        "name": "token_type",
         "description": "type of access token (e.g. 'bearer')"
       },
       {
@@ -6024,7 +6024,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.access_token",
+        "name": "access_token",
         "description": "access token"
       },
       {
@@ -6034,7 +6034,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.refresh_token",
+        "name": "refresh_token",
         "description": "refresh token"
       },
       {
@@ -6044,7 +6044,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.scope",
+        "name": "scope",
         "description": "access scopes"
       }
     ],
@@ -6138,7 +6138,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.expires_in",
+        "name": "expires_in",
         "description": "time in seconds for which the token was issued"
       },
       {
@@ -6148,7 +6148,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.token_type",
+        "name": "token_type",
         "description": "type of access token (e.g. 'bearer')"
       },
       {
@@ -6158,7 +6158,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.access_token",
+        "name": "access_token",
         "description": "access token"
       },
       {
@@ -6168,7 +6168,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.scope",
+        "name": "scope",
         "description": "access scopes"
       }
     ],
@@ -6282,7 +6282,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.expires_in",
+        "name": "expires_in",
         "description": "time in seconds for which the token was issued"
       },
       {
@@ -6292,7 +6292,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.token_type",
+        "name": "token_type",
         "description": "type of access token (e.g. 'bearer')"
       },
       {
@@ -6302,7 +6302,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.access_token",
+        "name": "access_token",
         "description": "access token"
       },
       {
@@ -6312,7 +6312,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.refresh_token",
+        "name": "refresh_token",
         "description": "refresh token"
       },
       {
@@ -6322,7 +6322,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "res.scope",
+        "name": "scope",
         "description": "access scopes"
       }
     ],
