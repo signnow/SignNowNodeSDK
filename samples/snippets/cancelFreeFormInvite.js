@@ -4,7 +4,7 @@ const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
 });
-const cancelFreeFormInvite = signnow.document.cancelFreeFormInvite;
+const { cancelFreeFormInvite } = signnow.document;
 
 const invite_id = 'ID_OF_INVITE';
 const token = 'YOUR_ACCESS_TOKEN';
