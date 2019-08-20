@@ -32,7 +32,7 @@ SignNow Node.js REST API Wrapper
       * [Update Document (add fields)](#update-document)
       * [Create Invite to Sign a Document](#field-invite)
       * [Create Free Form Invite](#freeform-invite)
-      * [Cancel Field Invite to Sign a Document](#cancel-invite)
+      * [Cancel Field Invite to Sign a Document](#cancel-field-invite)
       * [Create a One-time Use Download URL](#share-document)
       * [Merge Existing Documents](#merge-documents)
       * [Get Document History](#get-history)
@@ -302,10 +302,10 @@ api.document.invite({
 });
 ```
 
-#### <a name="cancel-invite"></a>Cancel Field Invite to Sign a Document
+#### <a name="cancel-field-invite"></a>Cancel Field Invite to Sign a Document
 
 ```javascript
-api.document.cancelInvite({
+api.document.cancelFieldInvite({
   token: 'your auth token',
   id: 'document id',
 }, (err, res) => {
