@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Removed validation for Create Document Group for signatures and free from invites.
+- Removed validation for existing signatures and free from invites of documents intended for Document Group creation
 
 ## [v1.5.0] - Unreleased Phase 4
 
