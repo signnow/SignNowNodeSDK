@@ -11,7 +11,7 @@ const [
   clientSecret,
   username,
   password,
-  invite_id,
+  inviteId,
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -20,7 +20,7 @@ const api = require('../../lib')({
 });
 
 const { oauth2: { requestToken: getAccessToken } } = api;
-const { document: { cancelFreeFormInvite: cancelInvite } } = api;
+const { document: { cancelFreeFormInvite: cancelDocumentFreeFormInvite } } = api;
 
 getAccessToken({
   username,
@@ -31,8 +31,8 @@ getAccessToken({
   } else {
     const { access_token: token } = tokenRes;
 
-    cancelInvite({
-      invite_id,
+    cancelDocumentFreeFormInvite({
+      id: inviteId,
       token,
     }, (cancelErr, cancelRes) => {
       if (cancelErr) {
