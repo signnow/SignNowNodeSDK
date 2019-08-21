@@ -1,7 +1,7 @@
 {
-  "coverage": "85.36%",
-  "expectCount": 41,
-  "actualCount": 35,
+  "coverage": "87.5%",
+  "expectCount": 48,
+  "actualCount": 42,
   "files": {
     "lib/document.js": {
       "expectCount": 17,
@@ -16,8 +16,8 @@
       ]
     },
     "lib/documentGroup.js": {
-      "expectCount": 3,
-      "actualCount": 3,
+      "expectCount": 10,
+      "actualCount": 10,
       "undocumentLines": []
     },
     "lib/documentGroupTemplate.js": {

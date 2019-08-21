@@ -242,21 +242,13 @@ class DocumentGroup {
     ids,
     group_name,
   }, callback) {
-    const JSONData = JSON.stringify({
-      document_ids,
-      group_name,
-    });
-
-    const req = https
-      .request(buildRequestOptions({
-        method: &apos;POST&apos;,
-        path: &apos;/documentgroup&apos;,
-        authorization: {
-          type: &apos;Bearer&apos;,
+    const realDocumentIDs = ids
+      .map(id =&gt; {
+        return getDocumentDetails({
+          id,
           token,
         })
           .then(document =&gt; {
-
             if (isTemplate(document)) {
               return makeDocumentFromTemplate({
                 id,
