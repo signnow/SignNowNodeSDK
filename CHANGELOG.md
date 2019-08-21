@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.5.0] - 2019-08-21
+
+### Added
+
+- Implemented *Refresh Access Token* method with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#refresh-token)
+- Implemented *Remove Template* method with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#remove-template)
+- Updated documentation with *Get Document History* feature description
+- Implemented *Create Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#create-document-group-template)
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document-group-template.js) for testing creating of document group template with *Create Document Group Template* method
+- Implemented *Create Document Group Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#document-group-invite)
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/document-group-invite.js) for testing creating of document group invite with *Create Document Group Invite* method
+
+### Changed
+
+- Added validation in *Create Signing Link* method: a document must have at least one role that does not have a fixed e-mail to create an invite link
+- Added optional ability to remove original documents after merging documents in *Merge Documents* feature
+- Updated example of merging documents in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#merge-documents)
+
 ## [v1.4.0] - 2019-08-08
 
 ### Added
@@ -84,7 +102,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Made fix of feature bug related to `Content-Length` header in requests
 
-[v1.4.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.3.1...HEAD
+[v1.5.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.4.0...v1.5.0
+[v1.4.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.3.1...v1.4.0
 [v1.3.1]: https://github.com/signnow/SignNowNodeSDK/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.1.4...v1.2.0

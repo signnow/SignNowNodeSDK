@@ -1,25 +1,28 @@
 {
-  "coverage": "80.95%",
-  "expectCount": 42,
-  "actualCount": 34,
+  "coverage": "85.36%",
+  "expectCount": 41,
+  "actualCount": 35,
   "files": {
     "lib/document.js": {
       "expectCount": 17,
-      "actualCount": 9,
+      "actualCount": 11,
       "undocumentLines": [
         9,
         17,
         40,
         49,
         561,
-        675,
-        690,
-        721
+        675
       ]
     },
     "lib/documentGroup.js": {
-      "expectCount": 9,
-      "actualCount": 9,
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "lib/documentGroupTemplate.js": {
+      "expectCount": 2,
+      "actualCount": 2,
       "undocumentLines": []
     },
     "lib/index.js": {
@@ -28,18 +31,18 @@
       "undocumentLines": []
     },
     "lib/link.js": {
-      "expectCount": 2,
-      "actualCount": 2,
-      "undocumentLines": []
-    },
-    "lib/oauth2.js": {
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []
     },
+    "lib/oauth2.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
     "lib/template.js": {
-      "expectCount": 7,
-      "actualCount": 7,
+      "expectCount": 8,
+      "actualCount": 8,
       "undocumentLines": []
     },
     "lib/user.js": {

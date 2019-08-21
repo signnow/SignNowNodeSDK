@@ -1,8 +1,12 @@
-# SignNow API client v1.4.0
+# The Official SignNow API client v1.5.0
 
-SignNow REST Service Wrapper
+SignNow Node.js REST API Wrapper
 
-[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md)
+[![License](https://img.shields.io/github/license/signnow/SignNowNodeSDK)](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md)
+[![Node version support](https://img.shields.io/node/v/@signnow/api-client)](#)
+[![Snyk vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/@signnow/api-client)](#)
+[![NPM package version](https://img.shields.io/npm/v/@signnow/api-client)](https://www.npmjs.com/package/@signnow/api-client)
+[![Twitter Follow](https://img.shields.io/twitter/follow/signnow?style=social)](https://twitter.com/signnow?ref_src=https%3A%2F%2Fgithub.com%2Fsignnow%2FSignNowNodeSDK)
 
 ### <a name="table-of-contents"></a>Table of Contents
 
@@ -17,7 +21,8 @@ SignNow REST Service Wrapper
       * [Retrieve User Information](#get-user)
     * [OAuth 2.0](#oauth2)
       * [Request Access Token](#get-token)
-      * [Verify an Access Token](#verify-token)
+      * [Verify Access Token](#verify-token)
+      * [Refresh Access Token](#refresh-token)
     * [Document](#document)
       * [Retrieve a List of the User’s Documents](#list-documents)
       * [Retrieve a Document Resource](#get-document)
@@ -42,15 +47,19 @@ SignNow REST Service Wrapper
       * [Duplicate a Template](#copy-template)
       * [Create Invite to Sign a Template](#template-field-invite)
       * [Create Free Form Invite from Template](#template-freeform-invite)
+      * [Remove Template](#remove-template)
     * [Folder](#folder)
       * [Returns a list of folders](#list-folders)
       * [Returns a list of documents inside a folder](#list-documents-in-folder)
+    * [Document Group](#document-group)
+      * [Create Document Group](#create-document-group)
+    * [Document Group Template](#document-group-template)
+      * [Create Document Group Template](#create-document-group-template)
+      * [Create to Sign a Document Group](#document-group-invite)
     * [Webhook](#webhook)
       * [Returns a list of Webhooks](#list-webhooks)
       * [Create a Webhook](#create-webhook)
     * [Promisify methods](#promisify)
-    * [Document Group](#document-group)
-      * [Create Document Group](#create-document-group)
 7. [Unit Tests](#unit-tests)</li>
 8. [License](#license)</li>
 9. [Additional Contact Information](#contacts)
@@ -59,7 +68,7 @@ SignNow REST Service Wrapper
 
 ### <a name="about-signnow"></a>About SignNow
 
-SignNow is a powerful web-based e-signature solution that streamlines the signing process and overall document flow for businesses of any size. SignNow offers SaaS as well as public and private cloud deployment options using the same underlying API. With SignNow you can easily sign, share and manage documents in compliance with international data laws and industry-specific regulations. SignNow enables you to collect signatures from partners, employees and customers from any device within minutes.
+[SignNow](https://www.signnow.com/) is a powerful web-based e-signature solution that streamlines the signing process and overall document flow for businesses of any size. SignNow offers SaaS as well as public and private cloud deployment options using the same underlying API. With SignNow you can easily sign, share and manage documents in compliance with international data laws and industry-specific regulations. SignNow enables you to collect signatures from partners, employees and customers from any device within minutes.
 
 ### <a name="api-contact-info"></a>API Contact Information
 
@@ -87,7 +96,7 @@ npm install @signnow/api-client
 
 ## <a name="documentation"></a>Documentation
 
-See api reference in our [Documentation](https://signnow.github.io/SignNowNodeSDK/).
+See API reference in our [Documentation](https://signnow.github.io/SignNowNodeSDK/).
 
 ## <a name="examples"></a>Examples
 
@@ -138,16 +147,26 @@ api.user.retrieve({
 api.oauth2.requestToken({
   username: 'username',
   password: 'password',
-}, function(err, res){
+}, (err, res) => {
   // handle error or process response data
 });
 ```
 
-#### <a name="verify-token"></a>Verify an Access Token
+#### <a name="verify-token"></a>Verify Access Token
 
 ```javascript
 api.oauth2.verify({
   token: 'your auth token',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+#### <a name="refresh-token"></a>Refresh Access Token
+
+```javascript
+api.oauth2.refreshToken({
+  refresh_token: 'your refresh token',
 }, (err, res) => {
   // handle error or process response data
 });
@@ -307,6 +326,8 @@ api.document.share({
 
 #### <a name="merge-documents"></a>Merge Existing Documents
 
+By default original documents are not removed after merging. To remove original documents set `removeOriginalDocuments` option to `true`.
+
 ```javascript
 api.document.merge({
   token: 'your auth token',
@@ -315,6 +336,9 @@ api.document.merge({
     '84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa',
     'a71d963c49f33176e90c5827069c422616b1500c',
   ],
+  options: {
+    removeOriginalDocuments: true, // false by default
+  },
 }, (err, res) => {
   // handle error or process response data
 });
@@ -349,7 +373,7 @@ api.document.remove({
 ```javascript
 api.link.create({
   token: 'your auth token',
-  document_id: 'document id',
+  document_id: 'document or template id',
 }, (err, res) => {
   // handle error or process response data
 });
@@ -477,6 +501,17 @@ api.template.invite({
 });
 ```
 
+#### <a name="remove-template"></a>Remove Template
+
+```javascript
+api.template.remove({
+  token: 'your auth token',
+  id: 'template id',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
 ### <a name="folder"></a>Folder
 
 #### <a name="list-folders"></a>Returns a list of folders
@@ -529,13 +564,150 @@ api.documentGroup.create({
   token: 'your auth token',
   group_name: 'my document group name',
   ids: [
-      // put document or template IDs here
+    // put document or template IDs here
+    '84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa',
+    'a71d963c49f33176e90c5827069c422616b1500c',
+  ],
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+#### <a name="document-group-invite">Create to Sign a Document Group
+
+```javascript
+const data = {
+  invite_steps: [
+    {
+      order: 1,
+      invite_emails: [
+        {
+          email: 'Email of Signer 1',
+          subject: 'Signer 1 Needs Your Signature',
+          message: 'Signer 1 invited you to sign Document 1',
+          expiration_days: 30,
+          reminder: 0,
+        },
+      ],
+      invite_actions: [
+        {
+          email: 'Email of Signer 1',
+          role_name: 'Signer 1',
+          action: 'sign',
+          document_id: 'Document 1 ID',
+          allow_reassign: '0',
+          decline_by_signature: '0',
+        },
+      ],
+    },
+    {
+      order: 2,
+      invite_emails: [
+        {
+          email: 'Email of Signer 2',
+          subject: 'Signer 2 Needs Your Signature',
+          message: 'Signer 2 invited you to sign Document 2',
+          expiration_days: 30,
+          reminder: 0,
+        },
+      ],
+      invite_actions: [
+        {
+          email: 'Email of Signer 2',
+          role_name: 'Signer 2',
+          action: 'sign',
+          document_id: 'Document 2 ID',
+          allow_reassign: '0',
+          decline_by_signature: '0',
+        },
+      ],
+    },
+  ],
+};
+
+api.documentGroup.invite({
+  token: 'your auth token',
+  id: 'Document Group ID'
+  data,
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+### <a name="document-group-template"></a>Document Group Template
+
+#### <a name="create-document-group-template"></a>Create Document Group Template
+
+```javascript
+const routing_details = {
+  invite_steps: [
+    {
+      order: 1,
+      invite_emails: [
+        {
+          email: 'Email of Signer 1',
+          subject: 'Signer 1 Needs Your Signature',
+          message: 'Signer 1 invited you to sign Document 1',
+          expiration_days: 30,
+          reminder: 0,
+          hasSignActions: true,
+          allow_reassign: '0',
+        },
+      ],
+      invite_actions: [
+        {
+          email: 'Email of Signer 1',
+          role_name: 'Signer 1',
+          action: 'sign',
+          document_id: 'b6f4f61a5662c5c4385b02421397b76dc6d9c8af',
+          document_name: 'Document 1',
+          role_viewName: 'Signer 1',
+          allow_reassign: '0',
+          decline_by_signature: '0',
+        },
+      ],
+    },
+    {
+      order: 2,
+      invite_emails: [
+        {
+          email: 'Email of Signer 2',
+          subject: 'Signer 2 Needs Your Signature',
+          message: 'Signer 2 invited you to sign Document 2',
+          expiration_days: 30,
+          reminder: 0,
+          hasSignActions: true,
+          allow_reassign: '0',
+        },
+      ],
+      invite_actions: [
+        {
+          email: 'Email of Signer 2',
+          role_name: 'Signer 2',
+          action: 'sign',
+          document_id: '14f02aac643770f22a384fe4e7a6b1ed6d15a9b8',
+          document_name: 'Document 2',
+          role_viewName: 'Signer 2',
+          allow_reassign: '0',
+          decline_by_signature: '0',
+        },
+      ],
+    },
+  ],
+  include_email_attachments: 0,
+};
+
+api.documentGroupTemplate.create({
+  token: 'your auth token',
+  template_ids: [
       '84a18d12bf7473ea3dd0e4dd1cdcded6ba6281aa',
       'a71d963c49f33176e90c5827069c422616b1500c',
     ],
-  }, (err, res) => {
-    // handle error or process response data
-  });
+  template_group_name: 'Document group template name',
+  routing_details,
+}, (err, res) => {
+  // handle error or process response data
+});
 ```
 
 ### <a name="webhook"></a>Webhook
@@ -620,8 +792,8 @@ This project is released under the MIT [License](https://github.com/signnow/Sign
 
 ### <a name="support"></a>Support
 
-To contact SignNow support, please email [support@signnow.com](mailto:support@signnow.com).
+To contact SignNow support, please email [support@signnow.com](mailto:support@signnow.com) or [api@signnow.com](mailto:api@signnow.com).
 
 ### <a name="sales"></a>Sales
 
-For pricing information, please call [(800) 831-2050](tel:8008312050) or email [sales@signnow.com](mailto:sales@signnow.com).
+For pricing information, please call [(800) 831-2050](tel:8008312050), email [sales@signnow.com](mailto:sales@signnow.com) or visit [https://www.signnow.com/contact](https://www.signnow.com/contact).
