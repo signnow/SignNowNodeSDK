@@ -197,10 +197,13 @@ api.document.view({
 
 #### <a name="download-document"></a>Download a Collapsed Document
 
+By default document downloads without history. To download it with history set `withHistory` option to `true`.
+
 ```javascript
 api.document.download({
   token: 'your auth token',
   id: 'document id',
+  options: { withHistory: true }, // false by default
 }, (err, res) => {
   // handle error or process response data
 });
