@@ -1,7 +1,8 @@
 /*
  * to run download document applet from the project root folder type in your console:
- * > node samples/applets/download-document <cliend_id> <client_secret> <username> <password> <document_id> <with_history> <path_to_save>
- * <cliend_id>, <client_secret>, <username>, <password>, <document_id>, <with_history>, <path_to_save> - are required params
+ * > node samples/applets/download-document <cliend_id> <client_secret> <username> <password> <document_id> <path_to_save> <with_history>
+ * <cliend_id>, <client_secret>, <username>, <password>, <document_id>, <path_to_save> - are required params
+ * <with_history> - optional param
  */
 
 'use strict';
@@ -14,8 +15,8 @@ const [
   username,
   password,
   documentId,
-  withHistory,
   pathToSaveFile,
+  withHistory,
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({

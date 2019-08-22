@@ -11,10 +11,10 @@ const token = 'YOUR_ACCESS_TOKEN';
 const options = { withHistory: true }; // option points on downloading document with history
 
 /**
- * @param {Binary} res - binary data (file) of the entire document
+ * @param {Buffer} res - binary data (file) of the entire document
  */
 const handleResponse = res => {
-  console.log(res);
+  console.log(res); // save the file to your disk or pipe it to another handler
 };
 
 const handleError = err => {
