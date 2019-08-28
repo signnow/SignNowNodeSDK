@@ -10,13 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Implemented *Cancel Free Form Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-freeform-invite)
 - Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/cancel-freeform-invite.js) for *Cancel Free Form Invite* feature
-
 - Implemented *Cancel Field Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-field-invite)
+- Added *promisify* utility to common utilities with usage [example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#promisify)
 
 ### Changed
 
 - Changed internal implementation of `cancelInvite` method in *Document* class to use new *Cancel Field Invite* feature under the hood
 - Updated the [example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-field-invite) of *Cancel Field Invite* feature usage
+- Added optional ability to cancel document invites during deletion in *Remove Document* feature
 
 ### Deprecated
 

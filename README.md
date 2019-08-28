@@ -369,10 +369,15 @@ api.document.history({
 
 #### <a name="remove-document"></a>Remove Document
 
+By default document invites are not cancelled during deletion. To cancel all document invites set `cancelInvites` option to `true`.
+
 ```javascript
 api.document.remove({
   token: 'your auth token',
   id: 'document id',
+  options: {
+    cancelInvites: true, // false by default
+  },
 }, (err, res) => {
   // handle error or process response data
 });
@@ -759,6 +764,28 @@ If you are using node.js version **8.0.0** or higher you can use built in [*prom
 
 ```javascript
 const { promisify } = require('util');
+const api = require('@signnow/api-client')({
+  credentials: 'ENCODED_CLIENT_CREDENTIALS',
+  production: false, // if false uses eval server
+});
+const requestToken = promisify(api.oauth2.requestToken);
+
+requestToken({
+  username: 'username',
+  password: 'password',
+})
+  .then(res => {
+    // process response data
+  })
+  .catch(err => {
+    // handle error
+  });
+```
+
+If you are using node.js version prior to **8.0.0** you can use our own simple *promisify* utility:
+
+```javascript
+const { promisify } = require('@signnow/api-client/lib/utils');
 const api = require('@signnow/api-client')({
   credentials: 'ENCODED_CLIENT_CREDENTIALS',
   production: false, // if false uses eval server
