@@ -1,8 +1,7 @@
-/*
- * to run template free form invite applet from the project root folder type in your console:
- * > node samples/applets/template-freeform-invite <client_id> <client_secret> <username> <password> <path_to_file> '<template_name>' <signer_email> <delete_original>
- * <client_id>, <client_secret>, <username> <password>, <path_to_file>, <template_name>, <signer_email> - are required params
- * <delete_original> - optional param. If ommited defaults to false
+/**
+ * to run template-freeform-invite applet from the project root folder type in your console:
+ * > node samples/applets/template-freeform-invite <client_id> <client_secret> <username> <password> <template_id> <signer_email>
+ * <client_id>, <client_secret>, <username> <password>, <template_id>, <signer_email> - are required params
  */
 
 'use strict';
@@ -12,73 +11,35 @@ const [
   clientSecret,
   username,
   password,
-  filepath,
-  templateName,
+  templateId,
   signerEmail,
-  removeOriginalDocument,
 ] = process.argv.slice(2);
 
+const { promisify } = require('../../lib/utils');
 const api = require('../../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });
 
-const { oauth2: { requestToken: getAccessToken } } = api;
 const {
-  document: { create: uploadDocument },
-  template: {
-    create: createTemplate,
-    invite: sendInvite,
-  },
+  oauth2: { requestToken: getAccessToken },
+  template: { invite: sendFreeformInvite },
 } = api;
 
-getAccessToken({
+const getAccessToken$ = promisify(getAccessToken);
+const sendFreeformInvite$ = promisify(sendFreeformInvite);
+
+getAccessToken$({
   username,
   password,
-}, (tokenErr, tokenRes) => {
-  if (tokenErr) {
-    console.error(tokenErr);
-  } else {
-    const { access_token: token } = tokenRes;
-
-    uploadDocument({
-      filepath,
-      token,
-    }, (uploadErr, uploadRes) => {
-      if (uploadErr) {
-        console.error(uploadErr);
-      } else {
-        const { id } = uploadRes;
-
-        createTemplate({
-          document_id: id,
-          document_name: templateName,
-          options: { removeOriginalDocument: removeOriginalDocument === 'true' },
-          token,
-        }, (templateErr, templateRes) => {
-          if (templateErr) {
-            console.error(templateErr);
-          } else {
-            const { id: templateId } = templateRes;
-
-            sendInvite({
-              data: {
-                from: username,
-                to: signerEmail,
-              },
-              id: templateId,
-              token,
-            }, (inviteErr, inviteRes) => {
-              if (inviteErr) {
-                console.error(inviteErr);
-              } else {
-                console.log(inviteRes);
-              }
-            });
-          }
-        });
-
-      }
-    });
-  }
-});
+})
+  .then(({ access_token: token }) => sendFreeformInvite$({
+    data: {
+      from: username,
+      to: signerEmail,
+    },
+    id: templateId,
+    token,
+  }))
+  .then(res => console.log(res))
+  .catch(err => console.error(err));

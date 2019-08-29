@@ -1,7 +1,7 @@
-/*
+/**
  * to run document-list applet from the project root folder type in your console:
- * > node samples/applets/document-list <cliend_id> <client_secret> <username> <password>
- * <cliend_id>, <client_secret>, <username>, <password> - are required params
+ * > node samples/applets/document-list <client_id> <client_secret> <username> <password>
+ * <client_id>, <client_secret>, <username>, <password> - are required params
  */
 
 'use strict';
@@ -13,31 +13,24 @@ const [
   password,
 ] = process.argv.slice(2);
 
+const { promisify } = require('../../lib/utils');
 const api = require('../../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });
 
 const {
-  document: { list: getUserDocumentList },
   oauth2: { requestToken: getAccessToken },
+  document: { list: getUserDocumentList },
 } = api;
 
-getAccessToken({
+const getAccessToken$ = promisify(getAccessToken);
+const getUserDocumentList$ = promisify(getUserDocumentList);
+
+getAccessToken$({
   username,
   password,
-}, (tokenErr, tokenRes) => {
-  if (tokenErr) {
-    console.error(tokenErr);
-  } else {
-    const { access_token: token } = tokenRes;
-
-    getUserDocumentList({ token }, (listErr, listRes) => {
-      if (listErr) {
-        console.error(listErr);
-      } else {
-        console.log(listRes);
-      }
-    });
-  }
-});
+})
+  .then(({ access_token: token }) => getUserDocumentList$({ token }))
+  .then(res => console.log(res))
+  .catch(err => console.error(err));

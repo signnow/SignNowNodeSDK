@@ -1,5 +1,5 @@
-/*
- * to run cancel free form invite applet from the project root folder type in your console:
+/**
+ * to run cancel-freeform-invite applet from the project root folder type in your console:
  * > node samples/applets/cancel-freeform-invite <client_id> <client_secret> <username> <password> <invite_id>
  * <client_id>, <client_secret>, <username>, <password>, <invite_id> - are required params
  */
@@ -14,32 +14,28 @@ const [
   inviteId,
 ] = process.argv.slice(2);
 
+const { promisify } = require('../../lib/utils');
 const api = require('../../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });
 
-const { oauth2: { requestToken: getAccessToken } } = api;
-const { document: { cancelFreeFormInvite: cancelDocumentFreeFormInvite } } = api;
+const {
+  oauth2: { requestToken: getAccessToken },
+  document: { cancelFreeFormInvite: cancelDocumentFreeFormInvite },
+} = api;
 
-getAccessToken({
+const getAccessToken$ = promisify(getAccessToken);
+const cancelDocumentFreeFormInvite$ = promisify(cancelDocumentFreeFormInvite);
+
+getAccessToken$({
   username,
   password,
-}, (tokenErr, tokenRes) => {
-  if (tokenErr) {
-    console.error(tokenErr);
-  } else {
-    const { access_token: token } = tokenRes;
-
-    cancelDocumentFreeFormInvite({
-      id: inviteId,
-      token,
-    }, (cancelErr, cancelRes) => {
-      if (cancelErr) {
-        console.error(cancelErr);
-      } else {
-        console.log(cancelRes);
-      }
-    });
-  }
-});
+})
+  .then(tokenRes => tokenRes.access_token)
+  .then(token => cancelDocumentFreeFormInvite$({
+    id: inviteId,
+    token,
+  }))
+  .then(res => console.log(res))
+  .catch(err => console.error(err));

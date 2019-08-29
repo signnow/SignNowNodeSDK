@@ -11,45 +11,40 @@ const [
   clientSecret,
   username,
   password,
-  id,
+  documentGroupId,
   inviteConfigStringified,
 ] = process.argv.slice(2);
 
+const { promisify } = require('../../lib/utils');
 const api = require('../../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });
 
-const { oauth2: { requestToken: getAccessToken } } = api;
-const { documentGroup: { invite: createDocumentGroupInvite } } = api;
+const {
+  oauth2: { requestToken: getAccessToken },
+  documentGroup: { invite: createDocumentGroupInvite },
+} = api;
 
-getAccessToken({
+const getAccessToken$ = promisify(getAccessToken);
+const createDocumentGroupInvite$ = promisify(createDocumentGroupInvite);
+
+getAccessToken$({
   username,
   password,
-}, (tokenErr, tokenRes) => {
-  if (tokenErr) {
-    console.error(tokenErr);
-  } else {
-    const { access_token: token } = tokenRes;
-    let inviteConfig;
+})
+  .then(({ access_token: token }) => {
+    const inviteConfig = JSON.parse(inviteConfigStringified);
 
-    try {
-      inviteConfig = JSON.parse(inviteConfigStringified);
-    } catch (err) {
-      console.error(err);
-      return;
-    }
-
-    createDocumentGroupInvite({
-      data: inviteConfig,
+    return {
       token,
-      id,
-    }, (createErr, createRes) => {
-      if (createErr) {
-        console.error(createErr);
-      } else {
-        console.log(createRes);
-      }
-    });
-  }
-});
+      inviteConfig,
+    };
+  })
+  .then(({ token, inviteConfig }) => createDocumentGroupInvite$({
+    id: documentGroupId,
+    data: inviteConfig,
+    token,
+  }))
+  .then(res => console.log(res))
+  .catch(err => console.error(err));

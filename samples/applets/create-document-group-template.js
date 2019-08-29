@@ -16,44 +16,44 @@ const [
   ...templateIDsWithRoutingDetails
 ] = process.argv.slice(2);
 
+const { promisify } = require('../../lib/utils');
 const api = require('../../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });
 
-const { oauth2: { requestToken: getAccessToken } } = api;
-const { documentGroupTemplate: { create: createDocumentGroupTemplate } } = api;
+const {
+  oauth2: { requestToken: getAccessToken },
+  documentGroupTemplate: { create: createDocumentGroupTemplate },
+} = api;
 
-getAccessToken({
+const getAccessToken$ = promisify(getAccessToken);
+const createDocumentGroupTemplate$ = promisify(createDocumentGroupTemplate);
+
+getAccessToken$({
   username,
   password,
-}, (tokenErr, tokenRes) => {
-  if (tokenErr) {
-    console.error(tokenErr);
-  } else {
-    const { access_token: token } = tokenRes;
-    const routingDetailsStringified = templateIDsWithRoutingDetails.slice(-1);
+})
+  .then(({ access_token: token }) => {
     const template_ids = templateIDsWithRoutingDetails.slice(0, -1);
-    let routing_details;
+    const routingDetailsStringified = templateIDsWithRoutingDetails.slice(-1);
+    const routing_details = JSON.parse(routingDetailsStringified);
 
-    try {
-      routing_details = JSON.parse(routingDetailsStringified);
-    } catch (err) {
-      console.error(err);
-      return;
-    }
-
-    createDocumentGroupTemplate({
+    return {
       token,
       template_ids,
-      template_group_name,
       routing_details,
-    }, (createErr, createRes) => {
-      if (createErr) {
-        console.error(createErr);
-      } else {
-        console.log(createRes);
-      }
-    });
-  }
-});
+    };
+  })
+  .then(({
+    token,
+    template_ids,
+    routing_details,
+  }) => createDocumentGroupTemplate$({
+    token,
+    template_ids,
+    template_group_name,
+    routing_details,
+  }))
+  .then(res => console.log(res))
+  .catch(err => console.error(err));

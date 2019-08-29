@@ -1,5 +1,5 @@
-/*
- * to run remove document applet from the project root folder type in your console:
+/**
+ * to run remove-document applet from the project root folder type in your console:
  * > node samples/applets/remove-document <cliend_id> <client_secret> <username> <password> <document_id> <cancel_invites>
  * <cliend_id>, <client_secret>, <username>, <password>, <document_id> - are required params
  * <cancel_invites> - optional param. If ommited defaults to 'false'
@@ -17,7 +17,6 @@ const [
 ] = process.argv.slice(2);
 
 const { promisify } = require('../../lib/utils');
-
 const api = require('../../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
@@ -35,8 +34,7 @@ getAccessToken$({
   username,
   password,
 })
-  .then(tokenRes => tokenRes.access_token)
-  .then(token => removeDocument$({
+  .then(({ access_token: token }) => removeDocument$({
     id: documentId,
     options: { cancelInvites: cancelInvites === 'true' },
     token,
