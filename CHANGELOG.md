@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated the [example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-field-invite) of *Cancel Field Invite* feature usage
 - Added optional ability to cancel document invites during deletion in *Remove Document* feature
 - Applied *promisify* utility to CLI applets
+- Added links to CLI applets and full examples into [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md)
 
 ### Deprecated
 

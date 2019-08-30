@@ -13,7 +13,7 @@ const [
   username,
   password,
   group_name,
-  ...document_ids
+  ...ids
 ] = process.argv.slice(2);
 
 const { promisify } = require('../../lib/utils');
@@ -36,7 +36,7 @@ getAccessToken$({
 })
   .then(({ access_token: token }) => createDocumentGroup$({
     token,
-    document_ids,
+    ids,
     group_name,
   }))
   .then(res => console.log(res))

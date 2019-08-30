@@ -1,8 +1,9 @@
 /**
  * to run merge-documents applet from the project root folder type in your console:
- * > node samples/applets/merge-documents <client_id> <client_secret> <username> <password> <name> <remove_originals> <...document_ids>
- * <client_id> <client_secret> <username> <password> <name> <...document_ids> - are required params
+ * > node samples/applets/merge-documents <client_id> <client_secret> <username> <password> <new_name> <remove_originals> <...document_ids>
+ * <client_id>, <client_secret>, <username>, <password>, <new_name>, <remove_originals>, <...document_ids> - are required params
  * <...document_ids> - one or more document iDs
+ * <remove_originals> - set 'true' or 'false'
  */
 
 'use strict';
