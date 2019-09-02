@@ -1,7 +1,7 @@
-/*
- * to run create field invite applet from the project root folder type in your console:
- * > node samples/applets/create-field-invite <client_id> <client_secret> <username> <password> <path_to_file> <fields_stringified> <invite_stringified>
- * <client_id>, <client_secret>, <username>, <password>, <path_to_file>, <fields_stringified>, <invite_stringified> - are required params
+/**
+ * to run create-field-invite applet from the project root folder type in your console:
+ * > node samples/applets/create-field-invite <client_id> <client_secret> <username> <password> <document_id> '<signers_stringified>'
+ * <client_id>, <client_secret>, <username>, <password>, <document_id>, <signers_stringified> - are required params
  */
 
 'use strict';
@@ -11,9 +11,8 @@ const [
   clientSecret,
   username,
   password,
-  filepath,
-  fieldsStringified,
-  inviteStringified,
+  documentId,
+  signersStringified,
 ] = process.argv.slice(2);
 
 const api = require('../../lib')({
@@ -21,14 +20,9 @@ const api = require('../../lib')({
   production: false,
 });
 
-const { oauth2: { requestToken: getAccessToken } } = api;
 const {
-  document: {
-    create: uploadDocument,
-    update: addFields,
-    view: getDocumentDetails,
-    invite: sendFieldInvite,
-  },
+  oauth2: { requestToken: getAccessToken },
+  document: { invite: sendFieldInvite },
 } = api;
 
 getAccessToken({
@@ -39,80 +33,27 @@ getAccessToken({
     console.error(tokenErr);
   } else {
     const { access_token: token } = tokenRes;
+    let signers;
 
-    uploadDocument({
-      filepath,
+    try {
+      signers = JSON.parse(signersStringified);
+    } catch (err) {
+      console.error(err);
+      return;
+    }
+
+    sendFieldInvite({
+      data: {
+        from: username,
+        to: signers,
+      },
+      id: documentId,
       token,
-    }, (uploadErr, uploadRes) => {
-      if (uploadErr) {
-        console.error(uploadErr);
+    }, (inviteErr, inviteRes) => {
+      if (inviteErr) {
+        console.error(inviteErr);
       } else {
-        const { id } = uploadRes;
-        const client_timestamp = Math.floor(Date.now() / 1000);
-        let fields;
-
-        try {
-          fields = JSON.parse(fieldsStringified);
-        } catch (err) {
-          console.error(err);
-          return;
-        }
-
-        addFields({
-          fields: {
-            client_timestamp,
-            fields,
-          },
-          id,
-          token,
-        }, updateErr => {
-          if (updateErr) {
-            console.error(updateErr);
-          } else {
-            getDocumentDetails({
-              id,
-              token,
-            }, (detailsErr, detailsRes) => {
-              if (detailsErr) {
-                console.error(detailsErr);
-              } else {
-                const { roles } = detailsRes;
-                let signers;
-
-                try {
-                  signers = JSON.parse(inviteStringified);
-                } catch (err) {
-                  console.error(err);
-                  return;
-                }
-
-                for (const signer of signers) {
-                  try {
-                    signer.role_id = roles.find(role => role.name === signer.role).unique_id;
-                  } catch (err) {
-                    console.error(err);
-                    return;
-                  }
-                }
-
-                sendFieldInvite({
-                  data: {
-                    from: username,
-                    to: signers,
-                  },
-                  id,
-                  token,
-                }, (inviteErr, inviteRes) => {
-                  if (inviteErr) {
-                    console.error(inviteErr);
-                  } else {
-                    console.log(inviteRes);
-                  }
-                });
-              }
-            });
-          }
-        });
+        console.log(inviteRes);
       }
     });
   }

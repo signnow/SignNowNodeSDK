@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `role_id` parameter in signer configurations in *Create Document Field Invite* feature made optional for easier invite creation
+
 ## [v1.5.0] - Unreleased Phase 4
 
 ### Added

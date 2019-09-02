@@ -258,13 +258,11 @@ api.document.update({
 
 ```javascript
 const fieldInvite = {
-  document_id: 'DOCUMENT_ID_GOES_HERE',
   from: 'EMAIL_OF_SENDER',
   to: [
     {
       email: 'EMAIL_OF_SIGNER',
       role: 'Signer 1',
-      role_id: 'ROLE_ID', // can be discovered in document details
       order: 1,
       reassign: '0',
       decline_by_signature: '0',
