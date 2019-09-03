@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added optional ability to download document with history in *Download Document* feature
 - Updated documentation of *Download Document* feature
 - Updated example of download document in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#download-document)
+- Added handling of specific 404 error response from API
 
 ## [v1.5.0] - Unreleased Phase 4
 
