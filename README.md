@@ -53,10 +53,11 @@ SignNow Node.js REST API Wrapper
       * [Returns a list of documents inside a folder](#list-documents-in-folder)
     * [Document Group](#document-group)
       * [Create Document Group](#create-document-group)
+      * [Create Invite to Sign a Document Group](#document-group-invite)
     * [Document Group Template](#document-group-template)
       * [Create Document Group Template](#create-document-group-template)
-      * [Create to Sign a Document Group](#document-group-invite)
       * [View Document Group Template](#view-documentgroup-template)
+      * [Create Invite to Sign a Document Group Template](#invite-documentgroup-template)
     * [Webhook](#webhook)
       * [Returns a list of Webhooks](#list-webhooks)
       * [Create a Webhook](#create-webhook)
@@ -573,7 +574,7 @@ api.documentGroup.create({
 });
 ```
 
-#### <a name="document-group-invite">Create to Sign a Document Group
+#### <a name="document-group-invite">Invite to Sign a Document Group
 
 ```javascript
 const data = {
@@ -722,6 +723,67 @@ api.documentGroupTemplate.view({
 ```
 
 More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/viewDocumentGroupTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/view-documentgroup-template.js)
+
+#### <a name="invite-documentgroup-template"></a>Create Invite to Sign a Document Group Template
+
+```javascript
+const data = {
+  invite_steps: [
+    {
+      order: 1,
+      invite_emails: [
+        {
+          email: 'Email of Signer 1',
+          subject: 'Signer 1 Needs Your Signature',
+          message: 'Signer 1 invited you to sign Document 1',
+          expiration_days: 30,
+          reminder: 0,
+        },
+      ],
+      invite_actions: [
+        {
+          email: 'Email of Signer 1',
+          role_name: 'Signer 1',
+          action: 'sign',
+          document_id: 'Template 1 ID',
+          allow_reassign: '0',
+          decline_by_signature: '0',
+        },
+      ],
+    },
+    {
+      order: 2,
+      invite_emails: [
+        {
+          email: 'Email of Signer 2',
+          subject: 'Signer 2 Needs Your Signature',
+          message: 'Signer 2 invited you to sign Document 2',
+          expiration_days: 30,
+          reminder: 0,
+        },
+      ],
+      invite_actions: [
+        {
+          email: 'Email of Signer 2',
+          role_name: 'Signer 2',
+          action: 'sign',
+          document_id: 'Template 2 ID',
+          allow_reassign: '0',
+          decline_by_signature: '0',
+        },
+      ],
+    },
+  ],
+};
+
+api.documentGroupTemplate.invite({
+  token: 'Your auth token',
+  id: 'Document Group Template ID'
+  data,
+}, (err, res) => {
+  // handle error or process response data
+});
+```
 
 ### <a name="webhook"></a>Webhook
 
