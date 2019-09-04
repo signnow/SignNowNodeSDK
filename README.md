@@ -340,7 +340,7 @@ api.document.cancelFieldInvite({
 });
 ```
 
-#### <a name="cancel-freeform-invite"></a>Create Free Form Invite
+#### <a name="cancel-freeform-invite"></a>Cancel Free Form Invite
 
 ```javascript
 api.document.cancelFreeFormInvite({
