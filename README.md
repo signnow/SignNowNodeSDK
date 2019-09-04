@@ -53,6 +53,7 @@ SignNow Node.js REST API Wrapper
       * [Returns a list of documents inside a folder](#list-documents-in-folder)
     * [Document Group](#document-group)
       * [Create Document Group](#create-document-group)
+      * [View Document Group](#view-document-group)
     * [Document Group Template](#document-group-template)
       * [Create Document Group Template](#create-document-group-template)
       * [Create to Sign a Document Group](#document-group-invite)
@@ -571,6 +572,19 @@ api.documentGroup.create({
   // handle error or process response data
 });
 ```
+
+#### <a name="view-document-group"></a>View Document Group
+
+```javascript
+api.documentGroup.view({
+  token: 'Your auth token',
+  id: 'Document Group ID',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/viewDocumentGroup.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/view-document-group.js)
 
 #### <a name="document-group-invite">Create to Sign a Document Group
 
