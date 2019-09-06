@@ -16,7 +16,7 @@ const [
   last_name,
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../lib/utils');
+const { promisify } = require('../../utils');
 const { user: { create: createUser } } = require('../../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,

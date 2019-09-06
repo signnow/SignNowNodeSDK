@@ -12,7 +12,7 @@ const [
   refresh_token,
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../lib/utils');
+const { promisify } = require('../../utils');
 const { oauth2: { refreshToken: refreshAccessToken } } = require('../../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,

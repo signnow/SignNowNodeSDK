@@ -835,7 +835,7 @@ requestToken({
 If you are using node.js version prior to **8.0.0** you can use our own simple *promisify* utility:
 
 ```javascript
-const { promisify } = require('@signnow/api-client/lib/utils');
+const { promisify } = require('@signnow/api-client/utils');
 const api = require('@signnow/api-client')({
   credentials: 'ENCODED_CLIENT_CREDENTIALS',
   production: false, // if false uses eval server
