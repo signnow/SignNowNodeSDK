@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run extract-fields applet from the project root folder type in your console:
- * > node samples/applets/extract-fields <client_id> <client_secret> <username> <password> <path_to_file>
+ * > node bin/extract-fields <client_id> <client_secret> <username> <password> <path_to_file>
  * <client_id>, <client_secret>, <username>, <password> - are required params
  * <path_to_file> - optional parameter. dafault value is './samples/files/text-tags-sample.pdf'
  */
@@ -15,8 +17,8 @@ const [
   filepath = './samples/files/text-tags-sample.pdf',
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });

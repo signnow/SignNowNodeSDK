@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run remove-template applet from the project root folder type in your console:
- * > node samples/applets/remove-template <client_id> <client_secret> <username> <password> <template_id>
+ * > node bin/remove-template <client_id> <client_secret> <username> <password> <template_id>
  * <client_id>, <client_secret>, <username>, <password>, <template_id> - are required params
  */
 
@@ -14,8 +16,8 @@ const [
   templateId,
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });

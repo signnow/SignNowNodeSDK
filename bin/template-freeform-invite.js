@@ -1,7 +1,9 @@
+#!/usr/bin/env node
+
 /**
- * to run create-freeform-invite applet from the project root folder type in your console:
- * > node samples/applets/create-freeform-invite <client_id> <client_secret> <username> <password> <document_id> <signer_email>
- * <client_id>, <client_secret>, <username>, <password>, <document_id>, <signer_email> - are required params
+ * to run template-freeform-invite applet from the project root folder type in your console:
+ * > node bin/template-freeform-invite <client_id> <client_secret> <username> <password> <template_id> <signer_email>
+ * <client_id>, <client_secret>, <username> <password>, <template_id>, <signer_email> - are required params
  */
 
 'use strict';
@@ -11,19 +13,19 @@ const [
   clientSecret,
   username,
   password,
-  documentId,
-  signer,
+  templateId,
+  signerEmail,
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });
 
 const {
   oauth2: { requestToken: getAccessToken },
-  document: { invite: sendFreeformInvite },
+  template: { invite: sendFreeformInvite },
 } = api;
 
 const getAccessToken$ = promisify(getAccessToken);
@@ -36,9 +38,9 @@ getAccessToken$({
   .then(({ access_token: token }) => sendFreeformInvite$({
     data: {
       from: username,
-      to: signer,
+      to: signerEmail,
     },
-    id: documentId,
+    id: templateId,
     token,
   }))
   .then(res => console.log(res))

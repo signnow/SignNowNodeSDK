@@ -9,9 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Implemented *Cancel Free Form Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-freeform-invite)
-- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/cancel-freeform-invite.js) for *Cancel Free Form Invite* feature
+- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/cancel-freeform-invite.js) for *Cancel Free Form Invite* feature
 - Implemented *Cancel Free Form Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-freeform-invite)
-- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/cancel-freeform-invite.js) for *Cancel Free Form Invite* feature
+- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/cancel-freeform-invite.js) for *Cancel Free Form Invite* feature
 - Implemented *Cancel Field Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-field-invite)
 - Added *promisify* utility to common utilities with usage [example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#promisify)
 
@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implemented *View Document Group* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#view-document-group)
 - Implemented *Create Invite to Sign Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#invite-documentgroup-template)
 
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/share-document.js) for testing of creation download link with *Share Document* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/share-document.js) for testing of creation download link with *Share Document* method
 - Documented *Share Document* feature in [*Document*](https://signnow.github.io/SignNowNodeSDK/class/lib/document.js~Document.html) class
 
 ### Changed
@@ -50,9 +50,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implemented *Remove Template* method with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#remove-template)
 - Updated documentation with *Get Document History* feature description
 - Implemented *Create Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#create-document-group-template)
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document-group-template.js) for testing creating of document group template with *Create Document Group Template* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-document-group-template.js) for testing creating of document group template with *Create Document Group Template* method
 - Implemented *Create Document Group Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#document-group-invite)
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/document-group-invite.js) for testing creating of document group invite with *Create Document Group Invite* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/document-group-invite.js) for testing creating of document group invite with *Create Document Group Invite* method
 
 ### Changed
 
@@ -69,11 +69,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Documented [*link*](https://signnow.github.io/SignNowNodeSDK/class/lib/link.js~Link.html) methods
 - Added example of *Create Document Group* into [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#create-document-group)
 - Added example of *Create Signing Link* usage into [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#create-signing-link)
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document-group.js) for testing creating of document group with *Create Document Group* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-signing-link.js) for testing creation of url signing link with *Create Signing Link* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/verify-access-token.js) for verifying access token with *Verify Access Token* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/user-info.js) for testing getting a detailed information about user with *Retrieve User Info* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/document-list.js) for testing getting a document list of specific user with *Retrieve User Document List* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-document-group.js) for testing creating of document group with *Create Document Group* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-signing-link.js) for testing creation of url signing link with *Create Signing Link* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-access-token.js) for verifying access token with *Verify Access Token* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/user-info.js) for testing getting a detailed information about user with *Retrieve User Info* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/document-list.js) for testing getting a document list of specific user with *Retrieve User Document List* method
 
 ## [v1.3.1] - 2019-08-01
 
@@ -91,13 +91,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added examples of *Template Field Invite* and *Template Freeform Invite* into [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#template-field-invite)
 - Documented [*template*](https://signnow.github.io/SignNowNodeSDK/class/lib/template.js~Template.html) methods
 - Extended the description of update method in [*document*](https://signnow.github.io/SignNowNodeSDK/class/lib/document.js~Document.html) module
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/extract-fields.js) for testing *Upload Document with Field Extraction* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/view-document.js) for testing *View Document* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/download-document.js) for testing *Download Document* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/remove-document.js) for testing *Remove Document* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-template.js) for testing *Create Template* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/template-field-invite.js) for testing field invite with *Template Invite* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/template-freeform-invite.js) for testing freeform invite with *Template Invite* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/extract-fields.js) for testing *Upload Document with Field Extraction* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/view-document.js) for testing *View Document* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/download-document.js) for testing *Download Document* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/remove-document.js) for testing *Remove Document* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-template.js) for testing *Create Template* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/template-field-invite.js) for testing field invite with *Template Invite* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/template-freeform-invite.js) for testing freeform invite with *Template Invite* method
 
 ### Changed
 
@@ -117,12 +117,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Documented [*user*](https://signnow.github.io/SignNowNodeSDK/class/lib/user.js~User.html) methods
 - Documented [*oauth2*](https://signnow.github.io/SignNowNodeSDK/class/lib/oauth2.js~OAuth2.html) methods
 - Partially documented [*document*](https://signnow.github.io/SignNowNodeSDK/class/lib/document.js~Document.html) methods
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-user.js) for testing *Create User* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/get-access-token.js) for testing *Request Token* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document.js) for testing *Create Document* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/update-document.js) for testing *Update Document* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-field-invite.js) for testing *Creation of Field Invite* with *Document Invite* method
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-freeform-invite.js) for testing *Creation of Freeform Invite* with *Document Invite* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-user.js) for testing *Create User* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/get-access-token.js) for testing *Request Token* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-document.js) for testing *Create Document* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/update-document.js) for testing *Update Document* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-field-invite.js) for testing *Creation of Field Invite* with *Document Invite* method
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-freeform-invite.js) for testing *Creation of Freeform Invite* with *Document Invite* method
 - Added [Change Log](https://github.com/signnow/SignNowNodeSDK/blob/master/CHANGELOG.md)
 - Added [License](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md)
 - Integrated code linter ([ESLint](https://eslint.org/))

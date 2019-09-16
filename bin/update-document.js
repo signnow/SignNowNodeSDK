@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run update-document applet from the project root folder type in your console:
- * > node samples/applets/update-document <client_id> <client_secret> <username> <password> <document_id> '<fields_stringified>'
+ * > node bin/update-document <client_id> <client_secret> <username> <password> <document_id> '<fields_stringified>'
  * <client_id>, <client_secret>, <username>, <password>, <document_id>, <fields_stringified> - are required params
  */
 
@@ -15,8 +17,8 @@ const [
   fieldsStringified,
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });

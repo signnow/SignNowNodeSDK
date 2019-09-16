@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run template-field-invite applet from the project root folder type in your console:
- * > node samples/applets/template-field-invite <client_id> <client_secret> <username> <password> <template_id> '<invite_stringified>'
+ * > node bin/template-field-invite <client_id> <client_secret> <username> <password> <template_id> '<invite_stringified>'
  * <client_id>, <client_secret>, <username>, <password>, <template_id>, <invite_stringified> - are required params
  */
 
@@ -15,8 +17,8 @@ const [
   inviteStringified,
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });

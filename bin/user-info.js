@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run user-info applet from the project root folder type in your console:
- * > node samples/applets/user-info <client_id> <client_secret> <email> <password>
+ * > node bin/user-info <client_id> <client_secret> <email> <password>
  * <client_id>, <client_secret>, <email>, <password> - are required params
  */
 
@@ -13,8 +15,8 @@ const [
   password,
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });

@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run get-access-token applet from the project root folder type in your console:
- * > node samples/applets/get-access-token <client_id> <client_secret> <username> <password>
+ * > node bin/get-access-token <client_id> <client_secret> <username> <password>
  *  <client_id>, <client_secret>, <username>, <password> - are required params
  */
 
@@ -13,8 +15,8 @@ const [
   password,
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const { oauth2: { requestToken: getAccessToken } } = require('../../lib')({
+const { promisify } = require('../utils');
+const { oauth2: { requestToken: getAccessToken } } = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });

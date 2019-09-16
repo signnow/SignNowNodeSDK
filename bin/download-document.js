@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run download-document applet from the project root folder type in your console:
- * > node samples/applets/download-document <clienе_id> <client_secret> <username> <password> <document_id> <path_to_save> <with_history>
+ * > node bin/download-document <clienе_id> <client_secret> <username> <password> <document_id> <path_to_save> <with_history>
  * <client_id>, <client_secret>, <username>, <password>, <document_id>, <path_to_save> - are required params
  * <with_history> - optional param
  */
@@ -18,8 +20,8 @@ const [
 ] = process.argv.slice(2);
 
 const fs = require('fs');
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });

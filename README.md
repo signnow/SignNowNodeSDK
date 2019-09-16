@@ -133,7 +133,7 @@ api.user.create({
 });
 ```
 
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-user.js)
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-user.js)
 
 #### <a name="get-user"></a>Retrieve User Information
 
@@ -146,7 +146,7 @@ api.user.retrieve({
 });
 ```
 
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/user-info.js)
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/user-info.js)
 
 ### <a name="oauth2"></a>OAuth 2.0
 
@@ -161,7 +161,7 @@ api.oauth2.requestToken({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/requestAccessToken.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/get-access-token.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/requestAccessToken.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/get-access-token.js)
 
 #### <a name="verify-token"></a>Verify Access Token
 
@@ -173,7 +173,7 @@ api.oauth2.verify({
 });
 ```
 
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/verify-access-token.js)
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-access-token.js)
 
 #### <a name="refresh-token"></a>Refresh Access Token
 
@@ -185,7 +185,7 @@ api.oauth2.refreshToken({
 });
 ```
 
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/refresh-token.js)
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/refresh-token.js)
 
 ### <a name="document"></a>Document
 
@@ -199,7 +199,7 @@ api.document.list({
 });
 ```
 
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/document-list.js)
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/document-list.js)
 
 #### <a name="get-document"></a>Retrieve a Document Resource
 
@@ -212,7 +212,7 @@ api.document.view({
 });
 ```
 
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/view-document.js)
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/view-document.js)
 
 #### <a name="download-document"></a>Download a Collapsed Document
 
@@ -228,7 +228,7 @@ api.document.download({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadDocument.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/download-document.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadDocument.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/download-document.js)
 
 #### <a name="upload-document"></a>Upload Document
 
@@ -241,7 +241,7 @@ api.document.create({
 });
 ```
 
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document.js)
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-document.js)
 
 #### <a name="extract-fields"></a>Upload File & Extract Fields
 
@@ -254,7 +254,7 @@ api.document.fieldextract({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/uploadDocumentWithFieldExtract.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/extract-fields.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/uploadDocumentWithFieldExtract.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/extract-fields.js)
 
 #### <a name="update-document"></a>Update Document (add fields)
 
@@ -282,7 +282,7 @@ api.document.update({
 });
 ```
 
-More: [Add signature field example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/addSignatureField.js), [Add text field example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/addTextField.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/update-document.js)
+More: [Add signature field example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/addSignatureField.js), [Add text field example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/addTextField.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/update-document.js)
 
 #### <a name="field-invite"></a>Create Invite to Sign a Document
 
@@ -315,7 +315,7 @@ api.document.invite({
 });
 ```
 
-More: [Invite to sign example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendDocumentSignatureInviteWithOneRole.js), [Invite with payment request example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/requestPayment.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-field-invite.js)
+More: [Invite to sign example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendDocumentSignatureInviteWithOneRole.js), [Invite with payment request example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/requestPayment.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-field-invite.js)
 
 #### <a name="freeform-invite"></a>Create Free Form Invite
 
@@ -332,7 +332,7 @@ api.document.invite({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendDocumentFreeformInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-freeform-invite.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendDocumentFreeformInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-freeform-invite.js)
 
 #### <a name="cancel-freeform-invite"></a>Create Free Form Invite
 
@@ -400,7 +400,7 @@ api.document.merge({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/mergeDocuments.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/merge-documents.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/mergeDocuments.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/merge-documents.js)
 
 #### <a name="get-history"></a>Get Document History
 
@@ -413,7 +413,7 @@ api.document.history({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/getDocumentHistory.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/document-history.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/getDocumentHistory.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/document-history.js)
 
 #### <a name="remove-document"></a>Remove Document
 
@@ -431,7 +431,7 @@ api.document.remove({
 });
 ```
 
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/remove-document.js)
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/remove-document.js)
 
 ### <a name="links"></a>Links
 
@@ -446,7 +446,7 @@ api.link.create({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createSigningLink.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-signing-link.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createSigningLink.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-signing-link.js)
 
 ### <a name="enumerations"></a>Enumerations
 
@@ -512,7 +512,7 @@ api.template.create({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-template.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-template.js)
 
 #### <a name="copy-template"></a>Duplicate a Template
 
@@ -557,7 +557,7 @@ api.template.invite({
 });
 ```
 
-More: [Full one role example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendTemplateSignatureInviteWithOneRole%20copy.js), [Full two roles example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendTemplateSignatureInviteWithMultipleRole.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/template-field-invite.js)
+More: [Full one role example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendTemplateSignatureInviteWithOneRole%20copy.js), [Full two roles example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendTemplateSignatureInviteWithMultipleRole.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/template-field-invite.js)
 
 #### <a name="template-freeform-invite"></a>Create Free Form Invite from Template
 
@@ -574,7 +574,7 @@ api.template.invite({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendTemplateFreeformInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/template-freeform-invite.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendTemplateFreeformInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/template-freeform-invite.js)
 
 #### <a name="remove-template"></a>Remove Template
 
@@ -587,7 +587,7 @@ api.template.remove({
 });
 ```
 
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/remove-template.js)
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/remove-template.js)
 
 ### <a name="folder"></a>Folder
 
@@ -649,7 +649,7 @@ api.documentGroup.create({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroup.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document-group.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroup.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-document-group.js)
 
 #### <a name="view-document-group"></a>View Document Group
 
@@ -662,7 +662,7 @@ api.documentGroup.view({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/viewDocumentGroup.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/view-document-group.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/viewDocumentGroup.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/view-document-group.js)
 
 #### <a name="document-group-invite"></a>Create Invite to Sign a Document Group
 
@@ -725,7 +725,7 @@ api.documentGroup.invite({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroupInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/document-group-invite.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroupInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/document-group-invite.js)
 
 ### <a name="document-group-template"></a>Document Group Template
 
@@ -801,7 +801,7 @@ api.documentGroupTemplate.create({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroupTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document-group-template.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroupTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-document-group-template.js)
 
 #### <a name="view-documentgroup-template"></a>View Document Group Template
 
@@ -814,7 +814,7 @@ api.documentGroupTemplate.view({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/viewDocumentGroupTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/view-documentgroup-template.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/viewDocumentGroupTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/view-documentgroup-template.js)
 
 #### <a name="invite-documentgroup-template"></a>Create Invite to Sign a Document Group Template
 
@@ -827,7 +827,7 @@ api.documentGroupTemplate.invite({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/inviteDocumentGroupTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/invite-documentgroup-template.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/inviteDocumentGroupTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/invite-documentgroup-template.js)
 
 ### <a name="webhook"></a>Webhook
 

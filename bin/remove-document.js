@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run remove-document applet from the project root folder type in your console:
- * > node samples/applets/remove-document <cliend_id> <client_secret> <username> <password> <document_id> <cancel_invites>
+ * > node bin/remove-document <cliend_id> <client_secret> <username> <password> <document_id> <cancel_invites>
  * <cliend_id>, <client_secret>, <username>, <password>, <document_id> - are required params
  * <cancel_invites> - optional param. If ommited defaults to 'false'
  */
@@ -16,8 +18,8 @@ const [
   cancelInvites = 'false',
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });

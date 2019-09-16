@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run verify-access-token applet from the project root folder type in your console:
- * > node samples/applets/verify-access-token <client_id> <client_secret> <access_token>
+ * > node bin/verify-access-token <client_id> <client_secret> <access_token>
  * <client_id>, <client_secret>, <access_token> - are required params
  */
 
@@ -12,8 +14,8 @@ const [
   token,
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });

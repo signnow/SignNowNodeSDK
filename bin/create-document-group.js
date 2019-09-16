@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run create-document-group applet from the project root folder type in your console:
- * > node samples/applets/create-document-group <client_id> <client_secret> <username> <password> <group_name> <...document_ids>
+ * > node bin/create-document-group <client_id> <client_secret> <username> <password> <group_name> <...document_ids>
  * <client_id>, <client_secret>, <username>, <password>, <group_name>, <...document_ids> - are required params
  * <...document_ids> - ID(s) of one or more documents
  */
@@ -16,8 +18,8 @@ const [
   ...ids
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });

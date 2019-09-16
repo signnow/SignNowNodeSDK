@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run document-group-invite applet from the project root folder type in your console:
- * > node samples/applets/document-group-invite <client_id> <client_secret> <username> <password> <document_group_id> '<invite_config>'
+ * > node bin/document-group-invite <client_id> <client_secret> <username> <password> <document_group_id> '<invite_config>'
  * <client_id> <client_secret> <username> <password> <document_group_id> <invite_config> - are required params
  */
 
@@ -15,8 +17,8 @@ const [
   inviteConfigStringified,
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });

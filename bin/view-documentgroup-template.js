@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run view-documentgroup-template applet from the project root folder type in your console:
- * > node samples/applets/view-documentgroup-template <client_id> <client_secret> <username> <password> <documentgroup_template_id>
+ * > node bin/view-documentgroup-template <client_id> <client_secret> <username> <password> <documentgroup_template_id>
  * <client_id>, <client_secret>, <username>, <password>, <documentgroup_template_id> - are required params
  */
 
@@ -14,8 +16,8 @@ const [
   documentGroupTemplateId,
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });

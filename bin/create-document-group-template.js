@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run create-document-group-template applet from the project root folder type in your console:
- * > node samples/applets/create-document-group-template <client_id> <client_secret> <username> <password> <template_group_name> <...template_ids> <routing_details>
+ * > node bin/create-document-group-template <client_id> <client_secret> <username> <password> <template_group_name> <...template_ids> <routing_details>
  * <client_id> <client_secret> <username> <password> <template_group_name> <...template_ids> <routing_details> - are required params
  * <...template_ids> - ID(s) of one or more templates
  */
@@ -16,8 +18,8 @@ const [
   ...templateIDsWithRoutingDetails
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });

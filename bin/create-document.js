@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 /**
  * to run create-document applet from the project root folder type in your console:
- * > node samples/applets/create-document <client_id> <client_secret> <username> <password> <path_to_file>
+ * > node bin/create-document <client_id> <client_secret> <username> <password> <path_to_file>
  * <client_id>, <client_secret>, <username>, <password> - are required params
  * <path_to_file> - is optional param. If empty will be used default value './samples/files/pdf-sample.pdf'
  */
@@ -15,8 +17,8 @@ const [
   filepath = './samples/files/pdf-sample.pdf',
 ] = process.argv.slice(2);
 
-const { promisify } = require('../../utils');
-const api = require('../../lib')({
+const { promisify } = require('../utils');
+const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });
