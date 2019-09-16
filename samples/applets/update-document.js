@@ -1,7 +1,7 @@
-/*
- * to run update document applet from the project root folder type in your console:
- * > node samples/applets/update-document <cliend_id> <client_secret> <username> <password> <path_to_file> <fields_stringified>
- * <cliend_id>, <client_secret>, <username>, <password>, <path_to_file>, <fields_stringified> - are required params
+/**
+ * to run update-document applet from the project root folder type in your console:
+ * > node samples/applets/update-document <client_id> <client_secret> <username> <password> <document_id> '<fields_stringified>'
+ * <client_id>, <client_secret>, <username>, <password>, <document_id>, <fields_stringified> - are required params
  */
 
 'use strict';
@@ -11,65 +11,49 @@ const [
   clientSecret,
   username,
   password,
-  filepath,
+  documentId,
   fieldsStringified,
 ] = process.argv.slice(2);
 
+const { promisify } = require('../../utils');
 const api = require('../../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });
 
-const { oauth2: { requestToken: getAccessToken } } = api;
 const {
-  document: {
-    create: uploadDocument,
-    update: addFields,
-  },
+  oauth2: { requestToken: getAccessToken },
+  document: { update: addFields },
 } = api;
 
-getAccessToken({
+const getAccessToken$ = promisify(getAccessToken);
+const addFields$ = promisify(addFields);
+
+getAccessToken$({
   username,
   password,
-}, (tokenErr, tokenRes) => {
-  if (tokenErr) {
-    console.error(tokenErr);
-  } else {
-    const { access_token: token } = tokenRes;
+})
+  .then(({ access_token: token }) => {
+    const client_timestamp = Math.floor(Date.now() / 1000);
+    const fields = JSON.parse(fieldsStringified);
 
-    uploadDocument({
-      filepath,
+    return {
       token,
-    }, (uploadErr, uploadRes) => {
-      if (uploadErr) {
-        console.error(uploadErr);
-      } else {
-        const { id } = uploadRes;
-        const client_timestamp = Math.floor(Date.now() / 1000);
-        let fields;
-
-        try {
-          fields = JSON.parse(fieldsStringified);
-        } catch (err) {
-          console.error(err);
-          return;
-        }
-
-        addFields({
-          fields: {
-            client_timestamp,
-            fields,
-          },
-          id,
-          token,
-        }, (updateErr, updateRes) => {
-          if (updateErr) {
-            console.error(updateErr);
-          } else {
-            console.log(updateRes);
-          }
-        });
-      }
-    });
-  }
-});
+      client_timestamp,
+      fields,
+    };
+  })
+  .then(({
+    token,
+    client_timestamp,
+    fields,
+  }) => addFields$({
+    fields: {
+      client_timestamp,
+      fields,
+    },
+    id: documentId,
+    token,
+  }))
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
