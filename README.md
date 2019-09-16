@@ -56,10 +56,11 @@ SignNow Node.js REST API Wrapper
     * [Document Group](#document-group)
       * [Create Document Group](#create-document-group)
       * [View Document Group](#view-document-group)
-      * [Send to Sign a Document Group](#document-group-invite)
+      * [Create Invite to Sign a Document Group](#document-group-invite)
     * [Document Group Template](#document-group-template)
       * [Create Document Group Template](#create-document-group-template)
       * [View Document Group Template](#view-documentgroup-template)
+      * [Create Invite to Sign a Document Group Template](#invite-documentgroup-template)
     * [Webhook](#webhook)
       * [Returns a list of Webhooks](#list-webhooks)
       * [Create a Webhook](#create-webhook)
@@ -662,7 +663,7 @@ api.documentGroup.view({
 
 More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/viewDocumentGroup.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/view-document-group.js)
 
-#### <a name="document-group-invite"></a>Send to Sign a Document Group
+#### <a name="document-group-invite"></a>Create Invite to Sign a Document Group
 
 ```javascript
 const data = {
@@ -813,6 +814,19 @@ api.documentGroupTemplate.view({
 ```
 
 More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/viewDocumentGroupTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/view-documentgroup-template.js)
+
+#### <a name="invite-documentgroup-template"></a>Create Invite to Sign a Document Group Template
+
+```javascript
+api.documentGroupTemplate.invite({
+  token: 'Your auth token',
+  id: 'Document Group Template ID'
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/inviteDocumentGroupTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/invite-documentgroup-template.js)
 
 ### <a name="webhook"></a>Webhook
 

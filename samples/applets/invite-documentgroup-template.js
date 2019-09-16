@@ -1,6 +1,6 @@
 /**
- * to run view-documentgroup-template applet from the project root folder type in your console:
- * > node samples/applets/view-documentgroup-template <client_id> <client_secret> <username> <password> <documentgroup_template_id>
+ * to run invite-documentgroup-template applet from the project root folder type in your console:
+ * > node samples/applets/invite-documentgroup-template <client_id> <client_secret> <username> <password> <documentgroup_template_id>
  * <client_id>, <client_secret>, <username>, <password>, <documentgroup_template_id> - are required params
  */
 
@@ -21,7 +21,7 @@ const api = require('../../lib')({
 
 const {
   oauth2: { requestToken: getAccessToken },
-  documentGroupTemplate: { view: viewDocumentGroupTemplate },
+  documentGroupTemplate: { invite: inviteDocumentGroupTemplate },
 } = api;
 
 getAccessToken({
@@ -33,14 +33,14 @@ getAccessToken({
   } else {
     const { access_token: token } = tokenRes;
 
-    viewDocumentGroupTemplate({
+    inviteDocumentGroupTemplate({
       id: documentGroupTemplateId,
       token,
-    }, (viewErr, viewRes) => {
-      if (viewErr) {
-        console.error(viewErr);
+    }, (inviteErr, inviteRes) => {
+      if (inviteErr) {
+        console.error(inviteErr);
       } else {
-        console.log(viewRes);
+        console.log(inviteRes);
       }
     });
   }
