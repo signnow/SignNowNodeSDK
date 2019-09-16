@@ -1,7 +1,7 @@
 /**
- * to run remove-template applet from the project root folder type in your console:
- * > node samples/applets/remove-template <client_id> <client_secret> <username> <password> <template_id>
- * <client_id>, <client_secret>, <username>, <password>, <template_id> - are required params
+ * to run cancel-freeform-invite applet from the project root folder type in your console:
+ * > node samples/applets/cancel-freeform-invite <client_id> <client_secret> <username> <password> <invite_id>
+ * <client_id>, <client_secret>, <username>, <password>, <invite_id> - are required params
  */
 
 'use strict';
@@ -11,7 +11,7 @@ const [
   clientSecret,
   username,
   password,
-  templateId,
+  inviteId,
 ] = process.argv.slice(2);
 
 const { promisify } = require('../../utils');
@@ -22,18 +22,18 @@ const api = require('../../lib')({
 
 const {
   oauth2: { requestToken: getAccessToken },
-  template: { remove: removeTemplate },
+  document: { cancelFreeFormInvite: cancelDocumentFreeFormInvite },
 } = api;
 
 const getAccessToken$ = promisify(getAccessToken);
-const removeTemplate$ = promisify(removeTemplate);
+const cancelDocumentFreeFormInvite$ = promisify(cancelDocumentFreeFormInvite);
 
 getAccessToken$({
   username,
   password,
 })
-  .then(({ access_token: token }) => removeTemplate$({
-    id: templateId,
+  .then({ access_token: token } => cancelDocumentFreeFormInvite$({
+    id: inviteId,
     token,
   }))
   .then(res => console.log(res))
