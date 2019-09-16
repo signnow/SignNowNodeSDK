@@ -8,10 +8,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.6.0] - Unreleased Phase 5
 
 ### Added
+- Implemented *Cancel Free Form Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-freeform-invite)
+- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/cancel-freeform-invite.js) for *Cancel Free Form Invite* feature
+- Implemented *Cancel Free Form Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-freeform-invite)
+- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/cancel-freeform-invite.js) for *Cancel Free Form Invite* feature
+- Implemented *Cancel Field Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-field-invite)
+- Added *promisify* utility to common utilities with usage [example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#promisify)
+
+- Implemented *View Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#view-documentgroup-template)
+
+- Implemented *View Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#view-documentgroup-template)
+- Implemented *View Document Group* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#view-document-group)
+- Implemented *Create Invite to Sign Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#invite-documentgroup-template)
+
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/share-document.js) for testing of creation download link with *Share Document* method
+- Documented *Share Document* feature in [*Document*](https://signnow.github.io/SignNowNodeSDK/class/lib/document.js~Document.html) class
 
 ### Changed
 
 - `role_id` parameter in signer configurations in *Create Document Field Invite* feature made optional for easier invite creation
+- Added optional ability to download document with history in *Download Document* feature
+- Updated documentation of *Download Document* feature
+- Updated example of download document in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#download-document)
+- Added handling of specific 404 error response from API
+- Removed validation for existing signatures and free from invites of documents intended for Document Group creation
+- Changed internal implementation of `cancelInvite` method in *Document* class to use new *Cancel Field Invite* feature under the hood
+- Updated the [example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-field-invite) of *Cancel Field Invite* feature usage
+- Added optional ability to cancel document invites during deletion in *Remove Document* feature
+- Applied *promisify* utility to CLI applets
+- Added links to CLI applets and full examples into [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md)
+
+### Deprecated
+
+- `cancelInvite` method in *Document* class is about to be replaced with `cancelFieldInvite` to better fit its purpose
 
 ## [v1.5.0] - Unreleased Phase 4
 
