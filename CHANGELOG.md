@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Implemented *View Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#view-documentgroup-template)
 
+- Implemented *View Document Group* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#view-document-group)
+
 ### Changed
 
 - Removed validation for existing signatures and free from invites of documents intended for Document Group creation
