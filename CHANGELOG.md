@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `role_id` parameter in signer configurations in *Create Document Field Invite* feature made optional for easier invite creation
 - Added optional ability to download document with history in *Download Document* feature
 - Updated documentation of *Download Document* feature
 - Updated example of download document in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#download-document)
