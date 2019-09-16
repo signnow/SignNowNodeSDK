@@ -58,6 +58,7 @@ SignNow Node.js REST API Wrapper
       * [Send to Sign a Document Group](#document-group-invite)
     * [Document Group Template](#document-group-template)
       * [Create Document Group Template](#create-document-group-template)
+      * [View Document Group Template](#view-documentgroup-template)
     * [Webhook](#webhook)
       * [Returns a list of Webhooks](#list-webhooks)
       * [Create a Webhook](#create-webhook)
@@ -785,6 +786,19 @@ api.documentGroupTemplate.create({
 ```
 
 More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroupTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document-group-template.js)
+
+#### <a name="view-documentgroup-template"></a>View Document Group Template
+
+```javascript
+api.documentGroupTemplate.view({
+  token: 'Your auth token',
+  id: 'Document Group Template ID',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/viewDocumentGroupTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/view-documentgroup-template.js)
 
 ### <a name="webhook"></a>Webhook
 
