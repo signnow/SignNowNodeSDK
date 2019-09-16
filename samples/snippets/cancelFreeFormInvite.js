@@ -4,13 +4,14 @@ const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
 });
-const getEmbeddedApplicationUrl = signnow.embed.getApplicationUrl;
+const { cancelFreeFormInvite: cancelDocumentFreeFormInvite } = signnow.document;
 
+const id = 'ID_OF_INVITE';
 const token = 'YOUR_ACCESS_TOKEN';
 
 /**
  * @param {Object} res
- * @param {string} res.url - url to open embedded application
+ * @param {string} res.id - an id of invite
  */
 const handleResponse = res => {
   console.log(res);
@@ -20,7 +21,10 @@ const handleError = err => {
   console.error(err);
 };
 
-getEmbeddedApplicationUrl({ token }, (err, res) => {
+cancelDocumentFreeFormInvite({
+  id,
+  token,
+}, (err, res) => {
   if (err) {
     handleError(err);
   } else {
