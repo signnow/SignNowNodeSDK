@@ -1,7 +1,8 @@
 /**
  * to run download-document applet from the project root folder type in your console:
- * > node samples/applets/download-document <clienе_id> <client_secret> <username> <password> <document_id> <path_to_save>
+ * > node samples/applets/download-document <clienе_id> <client_secret> <username> <password> <document_id> <path_to_save> <with_history>
  * <client_id>, <client_secret>, <username>, <password>, <document_id>, <path_to_save> - are required params
+ * <with_history> - optional param
  */
 
 'use strict';
@@ -13,6 +14,7 @@ const [
   password,
   documentId,
   pathToSaveFile,
+  withHistory,
 ] = process.argv.slice(2);
 
 const fs = require('fs');
@@ -36,6 +38,7 @@ getAccessToken$({
 })
   .then(({ access_token: token }) => downloadDocument$({
     id: documentId,
+    options: { withHistory: withHistory === 'true' },
     token,
   }))
   .then(file => {

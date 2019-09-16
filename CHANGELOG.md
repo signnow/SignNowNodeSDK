@@ -26,6 +26,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Added optional ability to download document with history in *Download Document* feature
+- Updated documentation of *Download Document* feature
+- Updated example of download document in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#download-document)
+- Added handling of specific 404 error response from API
 - Removed validation for existing signatures and free from invites of documents intended for Document Group creation
 - Changed internal implementation of `cancelInvite` method in *Document* class to use new *Cancel Field Invite* feature under the hood
 - Updated the [example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-field-invite) of *Cancel Field Invite* feature usage
