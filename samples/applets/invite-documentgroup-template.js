@@ -14,6 +14,7 @@ const [
   documentGroupTemplateId,
 ] = process.argv.slice(2);
 
+const { promisify } = require('../../utils');
 const api = require('../../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
@@ -24,24 +25,16 @@ const {
   documentGroupTemplate: { invite: inviteDocumentGroupTemplate },
 } = api;
 
-getAccessToken({
+const getAccessToken$ = promisify(getAccessToken);
+const inviteDocumentGroupTemplate$ = promisify(inviteDocumentGroupTemplate);
+
+getAccessToken$({
   username,
   password,
-}, (tokenErr, tokenRes) => {
-  if (tokenErr) {
-    console.error(tokenErr);
-  } else {
-    const { access_token: token } = tokenRes;
-
-    inviteDocumentGroupTemplate({
-      id: documentGroupTemplateId,
-      token,
-    }, (inviteErr, inviteRes) => {
-      if (inviteErr) {
-        console.error(inviteErr);
-      } else {
-        console.log(inviteRes);
-      }
-    });
-  }
-});
+})
+  .then(({ access_token: token }) => inviteDocumentGroupTemplate$({
+    id: documentGroupTemplateId,
+    token,
+  }))
+  .then(res => console.log(res))
+  .catch(err => console.error(err));

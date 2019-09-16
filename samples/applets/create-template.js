@@ -35,8 +35,7 @@ getAccessToken$({
   username,
   password,
 })
-  .then(tokenRes => tokenRes.access_token)
-  .then(token => createTemplate$({
+  .then(({ access_token: token }) => createTemplate$({
     document_id: documentId,
     document_name: templateName,
     options: { removeOriginalDocument: removeOriginalDocument === 'true' },

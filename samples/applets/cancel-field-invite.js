@@ -32,8 +32,7 @@ getAccessToken$({
   username,
   password,
 })
-  .then(tokenRes => tokenRes.access_token)
-  .then(token => cancelDocumentFieldInvite$({
+  .then(({ access_token: token }) => cancelDocumentFieldInvite$({
     id: documentId,
     token,
   }))

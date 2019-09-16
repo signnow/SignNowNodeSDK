@@ -32,7 +32,7 @@ getAccessToken$({
   username,
   password,
 })
-  .then({ access_token: token } => cancelDocumentFreeFormInvite$({
+  .then(({ access_token: token }) => cancelDocumentFreeFormInvite$({
     id: inviteId,
     token,
   }))

@@ -15,6 +15,7 @@ const [
   signersStringified,
 ] = process.argv.slice(2);
 
+const { promisify } = require('../../utils');
 const api = require('../../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
@@ -25,36 +26,28 @@ const {
   document: { invite: sendFieldInvite },
 } = api;
 
-getAccessToken({
+const getAccessToken$ = promisify(getAccessToken);
+const sendFieldInvite$ = promisify(sendFieldInvite);
+
+getAccessToken$({
   username,
   password,
-}, (tokenErr, tokenRes) => {
-  if (tokenErr) {
-    console.error(tokenErr);
-  } else {
-    const { access_token: token } = tokenRes;
-    let signers;
+})
+  .then(({ access_token: token }) => {
+    const signers = JSON.parse(signersStringified);
 
-    try {
-      signers = JSON.parse(signersStringified);
-    } catch (err) {
-      console.error(err);
-      return;
-    }
-
-    sendFieldInvite({
-      data: {
-        from: username,
-        to: signers,
-      },
-      id: documentId,
+    return {
       token,
-    }, (inviteErr, inviteRes) => {
-      if (inviteErr) {
-        console.error(inviteErr);
-      } else {
-        console.log(inviteRes);
-      }
-    });
-  }
-});
+      signers,
+    };
+  })
+  .then(({ token, signers }) => sendFieldInvite$({
+    data: {
+      from: username,
+      to: signers,
+    },
+    id: documentId,
+    token,
+  }))
+  .then(res => console.log(res))
+  .catch(err => console.error(err));

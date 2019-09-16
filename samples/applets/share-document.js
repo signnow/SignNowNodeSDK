@@ -14,32 +14,27 @@ const [
   documentId,
 ] = process.argv.slice(2);
 
+const { promisify } = require('../../utils');
 const api = require('../../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
 });
 
-const { oauth2: { requestToken: getAccessToken } } = api;
-const { document: { share: shareDocument } } = api;
+const {
+  oauth2: { requestToken: getAccessToken },
+  document: { share: shareDocument },
+} = api;
 
-getAccessToken({
+const getAccessToken$ = promisify(getAccessToken);
+const shareDocument$ = promisify(shareDocument);
+
+getAccessToken$({
   username,
   password,
-}, (tokenErr, tokenRes) => {
-  if (tokenErr) {
-    console.error(tokenErr);
-  } else {
-    const { access_token: token } = tokenRes;
-
-    shareDocument({
-      id: documentId,
-      token,
-    }, (shareErr, shareRes) => {
-      if (shareErr) {
-        console.error(shareErr);
-      } else {
-        console.log(shareRes);
-      }
-    });
-  }
-});
+})
+  .then(({ access_token: token }) => shareDocument$({
+    id: documentId,
+    token,
+  }))
+  .then(res => console.log(res))
+  .catch(err => console.error(err));

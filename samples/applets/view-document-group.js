@@ -14,6 +14,7 @@ const [
   documentGroupId,
 ] = process.argv.slice(2);
 
+const { promisify } = require('../../utils');
 const api = require('../../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
   production: false,
@@ -24,24 +25,16 @@ const {
   documentGroup: { view: viewDocumentGroup },
 } = api;
 
-getAccessToken({
+const getAccessToken$ = promisify(getAccessToken);
+const viewDocumentGroup$ = promisify(viewDocumentGroup);
+
+getAccessToken$({
   username,
   password,
-}, (tokenErr, tokenRes) => {
-  if (tokenErr) {
-    console.error(tokenErr);
-  } else {
-    const { access_token: token } = tokenRes;
-
-    viewDocumentGroup({
-      id: documentGroupId,
-      token,
-    }, (viewErr, viewRes) => {
-      if (viewErr) {
-        console.error(viewErr);
-      } else {
-        console.log(viewRes);
-      }
-    });
-  }
-});
+})
+  .then(({ access_token: token }) => viewDocumentGroup$({
+    id: documentGroupId,
+    token,
+  }))
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
