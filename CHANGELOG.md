@@ -21,6 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implemented *View Document Group* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#view-document-group)
 - Implemented *Create Invite to Sign Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#invite-documentgroup-template)
 
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/share-document.js) for testing of creation download link with *Share Document* method
+- Documented *Share Document* feature in [*Document*](https://signnow.github.io/SignNowNodeSDK/class/lib/document.js~Document.html) class
+
 ### Changed
 
 - Removed validation for existing signatures and free from invites of documents intended for Document Group creation
