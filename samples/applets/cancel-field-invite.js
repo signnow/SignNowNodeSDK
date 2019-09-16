@@ -1,7 +1,7 @@
 /**
- * to run document-history applet from the project root folder type in your console:
- * > node samples/applets/document-history <client_id> <client_secret> <username> <password> <document_id>
- * <client_id>, <client_secret>, <username>, <password>, <document_id> - are required params
+ * to run cancel-field-invite applet from the project root folder type in your console:
+ * > node samples/applets/cancel-field-invite <client_id> <client_secret> <username> <password> <document_id>
+ * <client_id> <client_secret> <username> <password> <document_id> - are required params
  */
 
 'use strict';
@@ -22,17 +22,18 @@ const api = require('../../lib')({
 
 const {
   oauth2: { requestToken: getAccessToken },
-  document: { history: getDocumentHistory },
+  document: { cancelFieldInvite: cancelDocumentFieldInvite },
 } = api;
 
 const getAccessToken$ = promisify(getAccessToken);
-const getDocumentHistory$ = promisify(getDocumentHistory);
+const cancelDocumentFieldInvite$ = promisify(cancelDocumentFieldInvite);
 
 getAccessToken$({
   username,
   password,
 })
-  .then(({ access_token: token }) => getDocumentHistory$({
+  .then(tokenRes => tokenRes.access_token)
+  .then(token => cancelDocumentFieldInvite$({
     id: documentId,
     token,
   }))

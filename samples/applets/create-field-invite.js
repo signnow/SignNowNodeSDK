@@ -1,5 +1,5 @@
-/*
- * to run create field invite applet from the project root folder type in your console:
+/**
+ * to run create-field-invite applet from the project root folder type in your console:
  * > node samples/applets/create-field-invite <client_id> <client_secret> <username> <password> <path_to_file> <fields_stringified> <invite_stringified>
  * <client_id>, <client_secret>, <username>, <password>, <path_to_file>, <fields_stringified>, <invite_stringified> - are required params
  */
@@ -21,8 +21,8 @@ const api = require('../../lib')({
   production: false,
 });
 
-const { oauth2: { requestToken: getAccessToken } } = api;
 const {
+  oauth2: { requestToken: getAccessToken },
   document: {
     create: uploadDocument,
     update: addFields,
