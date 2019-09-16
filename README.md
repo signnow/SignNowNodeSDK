@@ -34,6 +34,7 @@ SignNow Node.js REST API Wrapper
       * [Create Free Form Invite](#freeform-invite)
       * [Cancel Free Form Invite](#cancel-freeform-invite)
       * [Cancel Field Invite to Sign a Document](#cancel-field-invite)
+      * [Cancel Free Form Invite](#cancel-freeform-invite)
       * [Create a One-time Use Download URL](#share-document)
       * [Merge Existing Documents](#merge-documents)
       * [Get Document History](#get-history)
@@ -54,9 +55,9 @@ SignNow Node.js REST API Wrapper
       * [Returns a list of documents inside a folder](#list-documents-in-folder)
     * [Document Group](#document-group)
       * [Create Document Group](#create-document-group)
+      * [Send to Sign a Document Group](#document-group-invite)
     * [Document Group Template](#document-group-template)
       * [Create Document Group Template](#create-document-group-template)
-      * [Create to Sign a Document Group](#document-group-invite)
     * [Webhook](#webhook)
       * [Returns a list of Webhooks](#list-webhooks)
       * [Create a Webhook](#create-webhook)
@@ -129,6 +130,8 @@ api.user.create({
 });
 ```
 
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-user.js)
+
 #### <a name="get-user"></a>Retrieve User Information
 
 ```javascript
@@ -139,6 +142,8 @@ api.user.retrieve({
 }
 });
 ```
+
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/user-info.js)
 
 ### <a name="oauth2"></a>OAuth 2.0
 
@@ -153,6 +158,8 @@ api.oauth2.requestToken({
 });
 ```
 
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/requestAccessToken.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/get-access-token.js)
+
 #### <a name="verify-token"></a>Verify Access Token
 
 ```javascript
@@ -163,6 +170,8 @@ api.oauth2.verify({
 });
 ```
 
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/verify-access-token.js)
+
 #### <a name="refresh-token"></a>Refresh Access Token
 
 ```javascript
@@ -172,6 +181,8 @@ api.oauth2.refreshToken({
   // handle error or process response data
 });
 ```
+
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/refresh-token.js)
 
 ### <a name="document"></a>Document
 
@@ -185,6 +196,8 @@ api.document.list({
 });
 ```
 
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/document-list.js)
+
 #### <a name="get-document"></a>Retrieve a Document Resource
 
 ```javascript
@@ -195,6 +208,8 @@ api.document.view({
   // handle error or process response data
 });
 ```
+
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/view-document.js)
 
 #### <a name="download-document"></a>Download a Collapsed Document
 
@@ -207,6 +222,8 @@ api.document.download({
 });
 ```
 
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadDocument.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/download-document.js)
+
 #### <a name="upload-document"></a>Upload Document
 
 ```javascript
@@ -218,6 +235,8 @@ api.document.create({
 });
 ```
 
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document.js)
+
 #### <a name="extract-fields"></a>Upload File & Extract Fields
 
 ```javascript
@@ -228,6 +247,8 @@ api.document.fieldextract({
   // handle error or process response data
 });
 ```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/uploadDocumentWithFieldExtract.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/extract-fields.js)
 
 #### <a name="update-document"></a>Update Document (add fields)
 
@@ -254,6 +275,8 @@ api.document.update({
   // handle error or process response data
 });
 ```
+
+More: [Add signature field example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/addSignatureField.js), [Add text field example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/addTextField.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/update-document.js)
 
 #### <a name="field-invite"></a>Create Invite to Sign a Document
 
@@ -288,6 +311,8 @@ api.document.invite({
 });
 ```
 
+More: [Invite to sign example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendDocumentSignatureInviteWithOneRole.js), [Invite with payment request example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/requestPayment.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-field-invite.js)
+
 #### <a name="freeform-invite"></a>Create Free Form Invite
 
 ```javascript
@@ -302,6 +327,8 @@ api.document.invite({
   // handle error or process response data
 });
 ```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendDocumentFreeformInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-freeform-invite.js)
 
 #### <a name="cancel-freeform-invite"></a>Create Free Form Invite
 
@@ -325,6 +352,17 @@ api.document.cancelFieldInvite({
 });
 ```
 
+#### <a name="cancel-freeform-invite"></a>Cancel Free Form Invite
+
+```javascript
+api.document.cancelFreeFormInvite({
+  token: 'your auth token',
+  id: 'id of invite',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
 #### <a name="share-document"></a>Create a One-time Use Download URL
 
 ```javascript
@@ -335,6 +373,8 @@ api.document.share({
   // handle error or process response data
 });
 ```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/shareDocument.js)
 
 #### <a name="merge-documents"></a>Merge Existing Documents
 
@@ -356,6 +396,8 @@ api.document.merge({
 });
 ```
 
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/mergeDocuments.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/merge-documents.js)
+
 #### <a name="get-history"></a>Get Document History
 
 ```javascript
@@ -367,16 +409,25 @@ api.document.history({
 });
 ```
 
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/getDocumentHistory.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/document-history.js)
+
 #### <a name="remove-document"></a>Remove Document
+
+By default document invites are not cancelled during deletion. To cancel all document invites set `cancelInvites` option to `true`.
 
 ```javascript
 api.document.remove({
   token: 'your auth token',
   id: 'document id',
+  options: {
+    cancelInvites: true, // false by default
+  },
 }, (err, res) => {
   // handle error or process response data
 });
 ```
+
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/remove-document.js)
 
 ### <a name="links"></a>Links
 
@@ -390,6 +441,8 @@ api.link.create({
   // handle error or process response data
 });
 ```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createSigningLink.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-signing-link.js)
 
 ### <a name="enumerations"></a>Enumerations
 
@@ -455,6 +508,8 @@ api.template.create({
 });
 ```
 
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-template.js)
+
 #### <a name="copy-template"></a>Duplicate a Template
 
 ```javascript
@@ -498,6 +553,8 @@ api.template.invite({
 });
 ```
 
+More: [Full one role example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendTemplateSignatureInviteWithOneRole%20copy.js), [Full two roles example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendTemplateSignatureInviteWithMultipleRole.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/template-field-invite.js)
+
 #### <a name="template-freeform-invite"></a>Create Free Form Invite from Template
 
 ```javascript
@@ -513,6 +570,8 @@ api.template.invite({
 });
 ```
 
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendTemplateFreeformInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/template-freeform-invite.js)
+
 #### <a name="remove-template"></a>Remove Template
 
 ```javascript
@@ -523,6 +582,8 @@ api.template.remove({
   // handle error or process response data
 });
 ```
+
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/remove-template.js)
 
 ### <a name="folder"></a>Folder
 
@@ -584,7 +645,9 @@ api.documentGroup.create({
 });
 ```
 
-#### <a name="document-group-invite">Create to Sign a Document Group
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroup.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document-group.js)
+
+#### <a name="document-group-invite"></a>Create to Sign a Document Group
 
 ```javascript
 const data = {
@@ -645,6 +708,8 @@ api.documentGroup.invite({
 });
 ```
 
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroupInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/document-group-invite.js)
+
 ### <a name="document-group-template"></a>Document Group Template
 
 #### <a name="create-document-group-template"></a>Create Document Group Template
@@ -672,7 +737,6 @@ const routing_details = {
           action: 'sign',
           document_id: 'b6f4f61a5662c5c4385b02421397b76dc6d9c8af',
           document_name: 'Document 1',
-          role_viewName: 'Signer 1',
           allow_reassign: '0',
           decline_by_signature: '0',
         },
@@ -698,7 +762,6 @@ const routing_details = {
           action: 'sign',
           document_id: '14f02aac643770f22a384fe4e7a6b1ed6d15a9b8',
           document_name: 'Document 2',
-          role_viewName: 'Signer 2',
           allow_reassign: '0',
           decline_by_signature: '0',
         },
@@ -720,6 +783,8 @@ api.documentGroupTemplate.create({
   // handle error or process response data
 });
 ```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroupTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/applets/create-document-group-template.js)
 
 ### <a name="webhook"></a>Webhook
 
@@ -759,6 +824,28 @@ If you are using node.js version **8.0.0** or higher you can use built in [*prom
 
 ```javascript
 const { promisify } = require('util');
+const api = require('@signnow/api-client')({
+  credentials: 'ENCODED_CLIENT_CREDENTIALS',
+  production: false, // if false uses eval server
+});
+const requestToken = promisify(api.oauth2.requestToken);
+
+requestToken({
+  username: 'username',
+  password: 'password',
+})
+  .then(res => {
+    // process response data
+  })
+  .catch(err => {
+    // handle error
+  });
+```
+
+If you are using node.js version prior to **8.0.0** you can use our own simple *promisify* utility:
+
+```javascript
+const { promisify } = require('@signnow/api-client/utils');
 const api = require('@signnow/api-client')({
   credentials: 'ENCODED_CLIENT_CREDENTIALS',
   production: false, // if false uses eval server
