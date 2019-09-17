@@ -67,6 +67,7 @@
     "sn:refresh-token": "./bin/refresh-token.js",
     "sn:remove-document": "./bin/remove-document.js",
     "sn:remove-template": "./bin/remove-template.js",
+    "sn:verify-email": "./bin/verify-email.js",
     "sn:share-document": "./bin/share-document.js",
     "sn:template-field-invite": "./bin/template-field-invite.js",
     "sn:template-freeform-invite": "./bin/template-freeform-invite.js",
