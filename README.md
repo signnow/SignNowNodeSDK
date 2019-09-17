@@ -18,6 +18,7 @@ SignNow Node.js REST API Wrapper
 6. [Examples](#examples)
     * [User](#user)
       * [Create a User](#create-user)
+      * [Send Verification Email](#verify-email)
       * [Retrieve User Information](#get-user)
     * [OAuth 2.0](#oauth2)
       * [Request Access Token](#get-token)
@@ -132,6 +133,19 @@ api.user.create({
   // handle error or process response data
 });
 ```
+
+#### <a name="verify-email"></a>Send Verification Email
+
+```javascript
+api.user.verifyEmail({
+  email: 'john@domain.com',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendEmailVerification.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js)
+
 
 More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-user.js)
 
