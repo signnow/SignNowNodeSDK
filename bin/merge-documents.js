@@ -2,13 +2,18 @@
 
 /**
  * to run merge-documents applet from the project root folder type in your console:
- * > node bin/merge-documents <client_id> <client_secret> <username> <password> <new_name> <remove_originals> <...document_ids>
- * <client_id>, <client_secret>, <username>, <password>, <new_name>, <remove_originals>, <...document_ids> - are required params
+ * > node bin/merge-documents <client_id> <client_secret> <username> <password> <new_name> <...document_ids>
+ * <client_id>, <client_secret>, <username>, <password>, <new_name>, <...document_ids> - are required params
  * <...document_ids> - one or more document iDs
- * <remove_originals> - set 'true' or 'false'
+ * options:
+ * --remove-originals - original documents will be removed after merging
  */
 
 'use strict';
+
+const args = process.argv.slice(2);
+const flags = args.filter(arg => /^--/.test(arg));
+const params = args.filter(arg => !/^--/.test(arg));
 
 const [
   clientId,
@@ -16,9 +21,10 @@ const [
   username,
   password,
   name,
-  removeOriginalDocuments,
   ...document_ids
-] = process.argv.slice(2);
+] = params;
+
+const removeOriginalDocuments = flags.includes('--remove-originals');
 
 const { promisify } = require('../utils');
 const api = require('../lib')({
@@ -41,7 +47,7 @@ getAccessToken$({
   .then(({ access_token: token }) => mergeDocuments$({
     name,
     document_ids,
-    options: { removeOriginalDocuments: removeOriginalDocuments === 'true' },
+    options: { removeOriginalDocuments },
     token,
   }))
   .then(res => console.log(res))
