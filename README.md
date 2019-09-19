@@ -39,6 +39,7 @@ SignNow Node.js REST API Wrapper
       * [Merge Existing Documents](#merge-documents)
       * [Get Document History](#get-history)
       * [Remove Document](#remove-document)
+      * [Document Signers](#document-signers)
     * [Links](#links)
       * [Create signing link](#create-signing-link)
     * [Enumerations](#enumerations)
@@ -435,6 +436,19 @@ api.document.remove({
 ```
 
 More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/remove-document.js)
+
+#### <a name="document-signers"></a>Document Signers
+
+```javascript
+api.document.signers({
+  token: 'your auth token',
+  id: 'document id',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/documentSigners.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/document-signers.js)
 
 ### <a name="links"></a>Links
 

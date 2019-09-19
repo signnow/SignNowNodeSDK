@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.7.0] - Unreleased Phase 6
 
 ### Added
+- Implemented *Document Signers* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#document-signers)
+- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/signers-list.js) for *Document Signers* feature
 
 - Implemented *View Template Routing Details* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/template/index.js~Template.html#static-method-getRoutingDetails), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#routing-details), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/getRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/routing-details.js).
 - Implemented *Update Template Routing Details* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/template/index.js~Template.html#static-method-updateRoutingDetails), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#update-routing-details), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/updateTemplateRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/update-routing-details.js).
