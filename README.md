@@ -134,6 +134,8 @@ api.user.create({
 });
 ```
 
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-user.js)
+
 #### <a name="verify-email"></a>Send Verification Email
 
 ```javascript
@@ -145,9 +147,6 @@ api.user.verifyEmail({
 ```
 
 More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendVerificationEmail.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js)
-
-
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-user.js)
 
 #### <a name="get-user"></a>Retrieve User Information
 
