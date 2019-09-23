@@ -510,9 +510,27 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateinviteparams",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateInviteParams",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateInviteParams",
+    "typedef"
+  ],
+  [
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateinviteresponse",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateInviteResponse",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateInviteResponse",
+    "typedef"
+  ],
+  [
     "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateinvitestep",
     "typedef/index.html#static-typedef-DocumentGroupTemplateInviteStep",
     "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateInviteStep",
+    "typedef"
+  ],
+  [
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateitem",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateItem",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateItem",
     "typedef"
   ],
   [
@@ -522,9 +540,33 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateviewparams",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateViewParams",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateViewParams",
+    "typedef"
+  ],
+  [
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateviewresponse",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateViewResponse",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateViewResponse",
+    "typedef"
+  ],
+  [
     "lib/document-group-template/index.js~documentgrouptemplate.create",
     "class/lib/document-group-template/index.js~DocumentGroupTemplate.html#static-method-create",
     "lib/document-group-template/index.js~DocumentGroupTemplate.create",
+    "method"
+  ],
+  [
+    "lib/document-group-template/index.js~documentgrouptemplate.invite",
+    "class/lib/document-group-template/index.js~DocumentGroupTemplate.html#static-method-invite",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.invite",
+    "method"
+  ],
+  [
+    "lib/document-group-template/index.js~documentgrouptemplate.view",
+    "class/lib/document-group-template/index.js~DocumentGroupTemplate.html#static-method-view",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.view",
     "method"
   ],
   [
@@ -606,6 +648,24 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/document-group/index.js~documentgroup.documentgroupitem",
+    "typedef/index.html#static-typedef-DocumentGroupItem",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupItem",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupviewparams",
+    "typedef/index.html#static-typedef-DocumentGroupViewParams",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupViewParams",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupviewresponse",
+    "typedef/index.html#static-typedef-DocumentGroupViewResponse",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupViewResponse",
+    "typedef"
+  ],
+  [
     "lib/document-group/index.js~documentgroup.create",
     "class/lib/document-group/index.js~DocumentGroup.html#static-method-create",
     "lib/document-group/index.js~DocumentGroup.create",
@@ -615,6 +675,12 @@ window.esdocSearchIndex = [
     "lib/document-group/index.js~documentgroup.invite",
     "class/lib/document-group/index.js~DocumentGroup.html#static-method-invite",
     "lib/document-group/index.js~DocumentGroup.invite",
+    "method"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.view",
+    "class/lib/document-group/index.js~DocumentGroup.html#static-method-view",
+    "lib/document-group/index.js~DocumentGroup.view",
     "method"
   ],
   [
@@ -636,6 +702,18 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/document/index.js~document.cancelfreeforminviteparams",
+    "typedef/index.html#static-typedef-CancelFreeformInviteParams",
+    "lib/document/index.js~Document.CancelFreeformInviteParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.cancelfreeforminviteresponse",
+    "typedef/index.html#static-typedef-CancelFreeformInviteResponse",
+    "lib/document/index.js~Document.CancelFreeformInviteResponse",
+    "typedef"
+  ],
+  [
     "lib/document/index.js~document.checkfield",
     "typedef/index.html#static-typedef-CheckField",
     "lib/document/index.js~Document.CheckField",
@@ -651,6 +729,12 @@ window.esdocSearchIndex = [
     "lib/document/index.js~document.documentcreateresponse",
     "typedef/index.html#static-typedef-DocumentCreateResponse",
     "lib/document/index.js~Document.DocumentCreateResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentdownloadoptions",
+    "typedef/index.html#static-typedef-DocumentDownloadOptions",
+    "lib/document/index.js~Document.DocumentDownloadOptions",
     "typedef"
   ],
   [
@@ -681,6 +765,18 @@ window.esdocSearchIndex = [
     "lib/document/index.js~document.documentfieldextractresponse",
     "typedef/index.html#static-typedef-DocumentFieldExtractResponse",
     "lib/document/index.js~Document.DocumentFieldExtractResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentfieldinvitecancelparams",
+    "typedef/index.html#static-typedef-DocumentFieldInviteCancelParams",
+    "lib/document/index.js~Document.DocumentFieldInviteCancelParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentfieldinvitecancelresponse",
+    "typedef/index.html#static-typedef-DocumentFieldInviteCancelResponse",
+    "lib/document/index.js~Document.DocumentFieldInviteCancelResponse",
     "typedef"
   ],
   [
@@ -774,6 +870,12 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/document/index.js~document.documentremoveoptions",
+    "typedef/index.html#static-typedef-DocumentRemoveOptions",
+    "lib/document/index.js~Document.DocumentRemoveOptions",
+    "typedef"
+  ],
+  [
     "lib/document/index.js~document.documentremoveparams",
     "typedef/index.html#static-typedef-DocumentRemoveParams",
     "lib/document/index.js~Document.DocumentRemoveParams",
@@ -783,6 +885,24 @@ window.esdocSearchIndex = [
     "lib/document/index.js~document.documentremoveresponse",
     "typedef/index.html#static-typedef-DocumentRemoveResponse",
     "lib/document/index.js~Document.DocumentRemoveResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentshareparams",
+    "typedef/index.html#static-typedef-DocumentShareParams",
+    "lib/document/index.js~Document.DocumentShareParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentshareresponse",
+    "typedef/index.html#static-typedef-DocumentShareResponse",
+    "lib/document/index.js~Document.DocumentShareResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentthumbnails",
+    "typedef/index.html#static-typedef-DocumentThumbnails",
+    "lib/document/index.js~Document.DocumentThumbnails",
     "typedef"
   ],
   [
@@ -868,6 +988,18 @@ window.esdocSearchIndex = [
     "typedef/index.html#static-typedef-TextField",
     "lib/document/index.js~Document.TextField",
     "typedef"
+  ],
+  [
+    "lib/document/index.js~document.cancelfieldinvite",
+    "class/lib/document/index.js~Document.html#static-method-cancelFieldInvite",
+    "lib/document/index.js~Document.cancelFieldInvite",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.cancelfreeforminvite",
+    "class/lib/document/index.js~Document.html#static-method-cancelFreeFormInvite",
+    "lib/document/index.js~Document.cancelFreeFormInvite",
+    "method"
   ],
   [
     "lib/document/index.js~document.cancelinvite",
