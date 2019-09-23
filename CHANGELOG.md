@@ -5,31 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.6.0] - Unreleased Phase 5
+## [v1.6.0] - 2019-09-24
 
 ### Added
-- Implemented *Cancel Free Form Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-freeform-invite)
-- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/cancel-freeform-invite.js) for *Cancel Free Form Invite* feature
+
 - Implemented *Cancel Free Form Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-freeform-invite)
 - Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/cancel-freeform-invite.js) for *Cancel Free Form Invite* feature
 - Implemented *Cancel Field Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-field-invite)
-- Added *promisify* utility to common utilities with usage [example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#promisify)
-
+- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/cancel-field-invite.js) for *Cancel Field Invite* feature
 - Implemented *View Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#view-documentgroup-template)
-
-- Implemented *View Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#view-documentgroup-template)
+- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/view-documentgroup-template.js) for *View Document Group Template* feature
 - Implemented *View Document Group* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#view-document-group)
+- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/view-document-group.js) for *View Document Group* feature
 - Implemented *Create Invite to Sign Document Group Template* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#invite-documentgroup-template)
-
-- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/share-document.js) for testing of creation download link with *Share Document* method
+- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/invite-documentgroup-template.js) for *Create Invite to Sign Document Group Template* feature
 - Documented *Share Document* feature in [*Document*](https://signnow.github.io/SignNowNodeSDK/class/lib/document.js~Document.html) class
+- Created [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/share-document.js) for testing of creation download link with *Share Document* method
+- Added *promisify* utility to common utilities with usage [example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#promisify)
 
 ### Changed
 
 - `role_id` parameter in signer configurations in *Create Document Field Invite* feature made optional for easier invite creation
 - Added optional ability to download document with history in *Download Document* feature
 - Updated documentation of *Download Document* feature
-- Updated example of download document in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#download-document)
+- Updated example of *Download Document* feature utilization in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#download-document)
 - Added handling of specific 404 error response from API
 - Removed validation for existing signatures and free from invites of documents intended for Document Group creation
 - Changed internal implementation of `cancelInvite` method in *Document* class to use new *Cancel Field Invite* feature under the hood
@@ -37,12 +36,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added optional ability to cancel document invites during deletion in *Remove Document* feature
 - Applied *promisify* utility to CLI applets
 - Added links to CLI applets and full examples into [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md)
+- Moved CLI applets from `samples/applets` to `bin` directory
 
 ### Deprecated
 
 - `cancelInvite` method in *Document* class is about to be replaced with `cancelFieldInvite` to better fit its purpose
 
-## [v1.5.0] - Unreleased Phase 4
+## [v1.5.0] - 2019-08-21
 
 ### Added
 

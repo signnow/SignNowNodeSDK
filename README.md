@@ -1,4 +1,4 @@
-# The Official SignNow API client v1.5.0
+# The Official SignNow API client v1.6.0
 
 SignNow Node.js REST API Wrapper
 
@@ -142,7 +142,6 @@ api.user.retrieve({
   token: 'your auth token',
 }, (err, res) => {
   // handle error or process response data
-}
 });
 ```
 
