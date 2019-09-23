@@ -16,19 +16,20 @@ const [
   password,
   documentId,
   pathToSaveFile,
-  withHistory,
+  zip,
+  withHistory
 ] = process.argv.slice(2);
 
 const fs = require('fs');
-const { promisify } = require('../utils');
+const {promisify} = require('../utils');
 const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
-  production: false,
+  production: false
 });
 
 const {
-  oauth2: { requestToken: getAccessToken },
-  document: { download: downloadDocument },
+  oauth2: {requestToken: getAccessToken},
+  document: {download: downloadDocument}
 } = api;
 
 const getAccessToken$ = promisify(getAccessToken);
@@ -36,16 +37,18 @@ const downloadDocument$ = promisify(downloadDocument);
 
 getAccessToken$({
   username,
-  password,
+  password
 })
-  .then(({ access_token: token }) => downloadDocument$({
-    id: documentId,
-    options: { withHistory: withHistory === 'true' },
-    token,
-  }))
+  .then(({access_token: token}) =>
+    downloadDocument$({
+      id: documentId,
+      options: {zip, withHistory},
+      token
+    })
+  )
   .then(file => {
     const absolutePath = `${pathToSaveFile}/${documentId}.pdf`;
-    fs.writeFileSync(absolutePath, file, { encoding: 'binary' });
+    fs.writeFileSync(absolutePath, file, {encoding: 'binary'});
     console.log(`Document has been downloaded. Check your ${pathToSaveFile} directory`);
   })
   .catch(err => console.error(err));
