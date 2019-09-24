@@ -1,7 +1,7 @@
 {
   "name": "@signnow/api-client",
   "description": "SignNow REST Service Wrapper",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "author": {
     "name": "SignNow Team",
     "email": "api@signnow.com"
@@ -40,7 +40,41 @@
     "node": ">=6.4.0"
   },
   "files": [
-    "lib"
+    "lib",
+    "utils",
+    "bin"
   ],
+  "bin": {
+    "sn:cancel-field-invite": "./bin/cancel-field-invite.js",
+    "sn:cancel-freeform-invite": "./bin/cancel-freeform-invite.js",
+    "sn:create-document-group-template": "./bin/create-document-group-template.js",
+    "sn:create-document-group": "./bin/create-document-group.js",
+    "sn:create-document": "./bin/create-document.js",
+    "sn:create-field-invite": "./bin/create-field-invite.js",
+    "sn:create-freeform-invite": "./bin/create-freeform-invite.js",
+    "sn:create-signing-link": "./bin/create-signing-link.js",
+    "sn:create-template": "./bin/create-template.js",
+    "sn:create-user": "./bin/create-user.js",
+    "sn:document-group-invite": "./bin/document-group-invite.js",
+    "sn:document-history": "./bin/document-history.js",
+    "sn:document-list": "./bin/document-list.js",
+    "sn:download-document": "./bin/download-document.js",
+    "sn:extract-fields": "./bin/extract-fields.js",
+    "sn:get-access-token": "./bin/get-access-token.js",
+    "sn:invite-documentgroup-template": "./bin/invite-documentgroup-template.js",
+    "sn:merge-documents": "./bin/merge-documents.js",
+    "sn:refresh-token": "./bin/refresh-token.js",
+    "sn:remove-document": "./bin/remove-document.js",
+    "sn:remove-template": "./bin/remove-template.js",
+    "sn:share-document": "./bin/share-document.js",
+    "sn:template-field-invite": "./bin/template-field-invite.js",
+    "sn:template-freeform-invite": "./bin/template-freeform-invite.js",
+    "sn:update-document": "./bin/update-document.js",
+    "sn:user-info": "./bin/user-info.js",
+    "sn:verify-access-token": "./bin/verify-access-token.js",
+    "sn:view-document-group": "./bin/view-document-group.js",
+    "sn:view-document": "./bin/view-document.js",
+    "sn:view-documentgroup-template": "./bin/view-documentgroup-template.js"
+  },
   "license": "MIT"
 }

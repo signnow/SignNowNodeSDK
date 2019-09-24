@@ -1,44 +1,44 @@
 window.esdocSearchIndex = [
   [
-    "@signnow/api-client/lib/document.js~document",
-    "class/lib/document.js~Document.html",
-    "<span>Document</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/document.js</span>",
+    "@signnow/api-client/lib/document/index.js~document",
+    "class/lib/document/index.js~Document.html",
+    "<span>Document</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/document/index.js</span>",
     "class"
   ],
   [
-    "@signnow/api-client/lib/documentgroup.js~documentgroup",
-    "class/lib/documentGroup.js~DocumentGroup.html",
-    "<span>DocumentGroup</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/documentGroup.js</span>",
+    "@signnow/api-client/lib/document-group/index.js~documentgroup",
+    "class/lib/document-group/index.js~DocumentGroup.html",
+    "<span>DocumentGroup</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/document-group/index.js</span>",
     "class"
   ],
   [
-    "@signnow/api-client/lib/documentgrouptemplate.js~documentgrouptemplate",
-    "class/lib/documentGroupTemplate.js~DocumentGroupTemplate.html",
-    "<span>DocumentGroupTemplate</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/documentGroupTemplate.js</span>",
+    "@signnow/api-client/lib/document-group-template/index.js~documentgrouptemplate",
+    "class/lib/document-group-template/index.js~DocumentGroupTemplate.html",
+    "<span>DocumentGroupTemplate</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/document-group-template/index.js</span>",
     "class"
   ],
   [
-    "@signnow/api-client/lib/link.js~link",
-    "class/lib/link.js~Link.html",
-    "<span>Link</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/link.js</span>",
+    "@signnow/api-client/lib/link/index.js~link",
+    "class/lib/link/index.js~Link.html",
+    "<span>Link</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/link/index.js</span>",
     "class"
   ],
   [
-    "@signnow/api-client/lib/oauth2.js~oauth2",
-    "class/lib/oauth2.js~OAuth2.html",
-    "<span>OAuth2</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/oauth2.js</span>",
+    "@signnow/api-client/lib/oauth2/index.js~oauth2",
+    "class/lib/oauth2/index.js~OAuth2.html",
+    "<span>OAuth2</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/oauth2/index.js</span>",
     "class"
   ],
   [
-    "@signnow/api-client/lib/template.js~template",
-    "class/lib/template.js~Template.html",
-    "<span>Template</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/template.js</span>",
+    "@signnow/api-client/lib/template/index.js~template",
+    "class/lib/template/index.js~Template.html",
+    "<span>Template</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/template/index.js</span>",
     "class"
   ],
   [
-    "@signnow/api-client/lib/user.js~user",
-    "class/lib/user.js~User.html",
-    "<span>User</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/user.js</span>",
+    "@signnow/api-client/lib/user/index.js~user",
+    "class/lib/user/index.js~User.html",
+    "<span>User</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/user/index.js</span>",
     "class"
   ],
   [
@@ -198,465 +198,879 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
-    "lib/document.js",
-    "file/lib/document.js.html",
-    "lib/document.js",
+    "lib/.external-ecmascript.js~array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "lib/.external-ecmascript.js~Array",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~arraybuffer",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "lib/.external-ecmascript.js~ArrayBuffer",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~boolean",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "lib/.external-ecmascript.js~Boolean",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~dataview",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "lib/.external-ecmascript.js~DataView",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~date",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "lib/.external-ecmascript.js~Date",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~error",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "lib/.external-ecmascript.js~Error",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~evalerror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "lib/.external-ecmascript.js~EvalError",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~float32array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "lib/.external-ecmascript.js~Float32Array",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~float64array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "lib/.external-ecmascript.js~Float64Array",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~function",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "lib/.external-ecmascript.js~Function",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~generator",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "lib/.external-ecmascript.js~Generator",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~generatorfunction",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "lib/.external-ecmascript.js~GeneratorFunction",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~infinity",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "lib/.external-ecmascript.js~Infinity",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~int16array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "lib/.external-ecmascript.js~Int16Array",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~int32array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "lib/.external-ecmascript.js~Int32Array",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~int8array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "lib/.external-ecmascript.js~Int8Array",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~internalerror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "lib/.external-ecmascript.js~InternalError",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~json",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "lib/.external-ecmascript.js~JSON",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~map",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "lib/.external-ecmascript.js~Map",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~nan",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "lib/.external-ecmascript.js~NaN",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~number",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "lib/.external-ecmascript.js~Number",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~object",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "lib/.external-ecmascript.js~Object",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~promise",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "lib/.external-ecmascript.js~Promise",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~proxy",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "lib/.external-ecmascript.js~Proxy",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~rangeerror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "lib/.external-ecmascript.js~RangeError",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~referenceerror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "lib/.external-ecmascript.js~ReferenceError",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~reflect",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "lib/.external-ecmascript.js~Reflect",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~regexp",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "lib/.external-ecmascript.js~RegExp",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~set",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "lib/.external-ecmascript.js~Set",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~string",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "lib/.external-ecmascript.js~String",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~symbol",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "lib/.external-ecmascript.js~Symbol",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~syntaxerror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "lib/.external-ecmascript.js~SyntaxError",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~typeerror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "lib/.external-ecmascript.js~TypeError",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~urierror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "lib/.external-ecmascript.js~URIError",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~uint16array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "lib/.external-ecmascript.js~Uint16Array",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~uint32array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "lib/.external-ecmascript.js~Uint32Array",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~uint8array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "lib/.external-ecmascript.js~Uint8Array",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~uint8clampedarray",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "lib/.external-ecmascript.js~Uint8ClampedArray",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~weakmap",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "lib/.external-ecmascript.js~WeakMap",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~weakset",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "lib/.external-ecmascript.js~WeakSet",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~boolean",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "lib/.external-ecmascript.js~boolean",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~function",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "lib/.external-ecmascript.js~function",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~null",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "lib/.external-ecmascript.js~null",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~number",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "lib/.external-ecmascript.js~number",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~object",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "lib/.external-ecmascript.js~object",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~string",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "lib/.external-ecmascript.js~string",
+    "external"
+  ],
+  [
+    "lib/.external-ecmascript.js~undefined",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "lib/.external-ecmascript.js~undefined",
+    "external"
+  ],
+  [
+    "lib/document-group-template/index.js",
+    "file/lib/document-group-template/index.js.html",
+    "lib/document-group-template/index.js",
     "file"
   ],
   [
-    "lib/document.js~document.attachmentfield",
-    "typedef/index.html#static-typedef-AttachmentField",
-    "lib/document.js~Document.AttachmentField",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.calculatedfield",
-    "typedef/index.html#static-typedef-CalculatedField",
-    "lib/document.js~Document.CalculatedField",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.checkfield",
-    "typedef/index.html#static-typedef-CheckField",
-    "lib/document.js~Document.CheckField",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentcreateparams",
-    "typedef/index.html#static-typedef-DocumentCreateParams",
-    "lib/document.js~Document.DocumentCreateParams",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentcreateresponse",
-    "typedef/index.html#static-typedef-DocumentCreateResponse",
-    "lib/document.js~Document.DocumentCreateResponse",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentdownloadparams",
-    "typedef/index.html#static-typedef-DocumentDownloadParams",
-    "lib/document.js~Document.DocumentDownloadParams",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentdownloadresponse",
-    "typedef/index.html#static-typedef-DocumentDownloadResponse",
-    "lib/document.js~Document.DocumentDownloadResponse",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentevent",
-    "typedef/index.html#static-typedef-DocumentEvent",
-    "lib/document.js~Document.DocumentEvent",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentfieldextractparams",
-    "typedef/index.html#static-typedef-DocumentFieldExtractParams",
-    "lib/document.js~Document.DocumentFieldExtractParams",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentfieldextractresponse",
-    "typedef/index.html#static-typedef-DocumentFieldExtractResponse",
-    "lib/document.js~Document.DocumentFieldExtractResponse",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentfieldinviteresponse",
-    "typedef/index.html#static-typedef-DocumentFieldInviteResponse",
-    "lib/document.js~Document.DocumentFieldInviteResponse",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentfields",
-    "typedef/index.html#static-typedef-DocumentFields",
-    "lib/document.js~Document.DocumentFields",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentfreeforminviteresponse",
-    "typedef/index.html#static-typedef-DocumentFreeformInviteResponse",
-    "lib/document.js~Document.DocumentFreeformInviteResponse",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documenthistoryparams",
-    "typedef/index.html#static-typedef-DocumentHistoryParams",
-    "lib/document.js~Document.DocumentHistoryParams",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documenthistoryresponse",
-    "typedef/index.html#static-typedef-DocumentHistoryResponse",
-    "lib/document.js~Document.DocumentHistoryResponse",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentinviteoptions",
-    "typedef/index.html#static-typedef-DocumentInviteOptions",
-    "lib/document.js~Document.DocumentInviteOptions",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentinviteparams",
-    "typedef/index.html#static-typedef-DocumentInviteParams",
-    "lib/document.js~Document.DocumentInviteParams",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentinviteresponse",
-    "typedef/index.html#static-typedef-DocumentInviteResponse",
-    "lib/document.js~Document.DocumentInviteResponse",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentinvitesettings",
-    "typedef/index.html#static-typedef-DocumentInviteSettings",
-    "lib/document.js~Document.DocumentInviteSettings",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentlistitem",
-    "typedef/index.html#static-typedef-DocumentListItem",
-    "lib/document.js~Document.DocumentListItem",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentlistparams",
-    "typedef/index.html#static-typedef-DocumentListParams",
-    "lib/document.js~Document.DocumentListParams",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentlistresponse",
-    "typedef/index.html#static-typedef-DocumentListResponse",
-    "lib/document.js~Document.DocumentListResponse",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentmergeoptions",
-    "typedef/index.html#static-typedef-DocumentMergeOptions",
-    "lib/document.js~Document.DocumentMergeOptions",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentmergeparams",
-    "typedef/index.html#static-typedef-DocumentMergeParams",
-    "lib/document.js~Document.DocumentMergeParams",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentmergeresponse",
-    "typedef/index.html#static-typedef-DocumentMergeResponse",
-    "lib/document.js~Document.DocumentMergeResponse",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentremoveparams",
-    "typedef/index.html#static-typedef-DocumentRemoveParams",
-    "lib/document.js~Document.DocumentRemoveParams",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentremoveresponse",
-    "typedef/index.html#static-typedef-DocumentRemoveResponse",
-    "lib/document.js~Document.DocumentRemoveResponse",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentupdateparams",
-    "typedef/index.html#static-typedef-DocumentUpdateParams",
-    "lib/document.js~Document.DocumentUpdateParams",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentupdateresponse",
-    "typedef/index.html#static-typedef-DocumentUpdateResponse",
-    "lib/document.js~Document.DocumentUpdateResponse",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentviewparams",
-    "typedef/index.html#static-typedef-DocumentViewParams",
-    "lib/document.js~Document.DocumentViewParams",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.documentviewresponse",
-    "typedef/index.html#static-typedef-DocumentViewResponse",
-    "lib/document.js~Document.DocumentViewResponse",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.enumerationfield",
-    "typedef/index.html#static-typedef-EnumerationField",
-    "lib/document.js~Document.EnumerationField",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.formulatree",
-    "typedef/index.html#static-typedef-FormulaTree",
-    "lib/document.js~Document.FormulaTree",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.formulatreebranch",
-    "typedef/index.html#static-typedef-FormulaTreeBranch",
-    "lib/document.js~Document.FormulaTreeBranch",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.formulatreebranchterminator",
-    "typedef/index.html#static-typedef-FormulaTreeBranchTerminator",
-    "lib/document.js~Document.FormulaTreeBranchTerminator",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.initialsfield",
-    "typedef/index.html#static-typedef-InitialsField",
-    "lib/document.js~Document.InitialsField",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.radiobutton",
-    "typedef/index.html#static-typedef-RadioButton",
-    "lib/document.js~Document.RadioButton",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.radiobuttonfield",
-    "typedef/index.html#static-typedef-RadioButtonField",
-    "lib/document.js~Document.RadioButtonField",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.signaturefield",
-    "typedef/index.html#static-typedef-SignatureField",
-    "lib/document.js~Document.SignatureField",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.signersettings",
-    "typedef/index.html#static-typedef-SignerSettings",
-    "lib/document.js~Document.SignerSettings",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.textfield",
-    "typedef/index.html#static-typedef-TextField",
-    "lib/document.js~Document.TextField",
-    "typedef"
-  ],
-  [
-    "lib/document.js~document.cancelinvite",
-    "class/lib/document.js~Document.html#static-method-cancelInvite",
-    "lib/document.js~Document.cancelInvite",
-    "method"
-  ],
-  [
-    "lib/document.js~document.create",
-    "class/lib/document.js~Document.html#static-method-create",
-    "lib/document.js~Document.create",
-    "method"
-  ],
-  [
-    "lib/document.js~document.download",
-    "class/lib/document.js~Document.html#static-method-download",
-    "lib/document.js~Document.download",
-    "method"
-  ],
-  [
-    "lib/document.js~document.fieldextract",
-    "class/lib/document.js~Document.html#static-method-fieldextract",
-    "lib/document.js~Document.fieldextract",
-    "method"
-  ],
-  [
-    "lib/document.js~document.history",
-    "class/lib/document.js~Document.html#static-method-history",
-    "lib/document.js~Document.history",
-    "method"
-  ],
-  [
-    "lib/document.js~document.invite",
-    "class/lib/document.js~Document.html#static-method-invite",
-    "lib/document.js~Document.invite",
-    "method"
-  ],
-  [
-    "lib/document.js~document.list",
-    "class/lib/document.js~Document.html#static-method-list",
-    "lib/document.js~Document.list",
-    "method"
-  ],
-  [
-    "lib/document.js~document.merge",
-    "class/lib/document.js~Document.html#static-method-merge",
-    "lib/document.js~Document.merge",
-    "method"
-  ],
-  [
-    "lib/document.js~document.remove",
-    "class/lib/document.js~Document.html#static-method-remove",
-    "lib/document.js~Document.remove",
-    "method"
-  ],
-  [
-    "lib/document.js~document.share",
-    "class/lib/document.js~Document.html#static-method-share",
-    "lib/document.js~Document.share",
-    "method"
-  ],
-  [
-    "lib/document.js~document.update",
-    "class/lib/document.js~Document.html#static-method-update",
-    "lib/document.js~Document.update",
-    "method"
-  ],
-  [
-    "lib/document.js~document.view",
-    "class/lib/document.js~Document.html#static-method-view",
-    "lib/document.js~Document.view",
-    "method"
-  ],
-  [
-    "lib/documentgroup.js",
-    "file/lib/documentGroup.js.html",
-    "lib/documentGroup.js",
-    "file"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.documentgroupcreateparams",
-    "typedef/index.html#static-typedef-DocumentGroupCreateParams",
-    "lib/documentGroup.js~DocumentGroup.DocumentGroupCreateParams",
-    "typedef"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.documentgroupcreateresponse",
-    "typedef/index.html#static-typedef-DocumentGroupCreateResponse",
-    "lib/documentGroup.js~DocumentGroup.DocumentGroupCreateResponse",
-    "typedef"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.documentgroupinviteaction",
-    "typedef/index.html#static-typedef-DocumentGroupInviteAction",
-    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteAction",
-    "typedef"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.documentgroupinviteauthenticationpassword",
-    "typedef/index.html#static-typedef-DocumentGroupInviteAuthenticationPassword",
-    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteAuthenticationPassword",
-    "typedef"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.documentgroupinviteauthenticationphonecall",
-    "typedef/index.html#static-typedef-DocumentGroupInviteAuthenticationPhoneCall",
-    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteAuthenticationPhoneCall",
-    "typedef"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.documentgroupinviteauthenticationphonesms",
-    "typedef/index.html#static-typedef-DocumentGroupInviteAuthenticationPhoneSMS",
-    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteAuthenticationPhoneSMS",
-    "typedef"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.documentgroupinvitecompletionemailconfig",
-    "typedef/index.html#static-typedef-DocumentGroupInviteCompletionEmailConfig",
-    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteCompletionEmailConfig",
-    "typedef"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.documentgroupinviteemail",
-    "typedef/index.html#static-typedef-DocumentGroupInviteEmail",
-    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteEmail",
-    "typedef"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.documentgroupinviteparams",
-    "typedef/index.html#static-typedef-DocumentGroupInviteParams",
-    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteParams",
-    "typedef"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.documentgroupinviteresponse",
-    "typedef/index.html#static-typedef-DocumentGroupInviteResponse",
-    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteResponse",
-    "typedef"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.documentgroupinvitesettings",
-    "typedef/index.html#static-typedef-DocumentGroupInviteSettings",
-    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteSettings",
-    "typedef"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.documentgroupinvitestep",
-    "typedef/index.html#static-typedef-DocumentGroupInviteStep",
-    "lib/documentGroup.js~DocumentGroup.DocumentGroupInviteStep",
-    "typedef"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.create",
-    "class/lib/documentGroup.js~DocumentGroup.html#static-method-create",
-    "lib/documentGroup.js~DocumentGroup.create",
-    "method"
-  ],
-  [
-    "lib/documentgroup.js~documentgroup.invite",
-    "class/lib/documentGroup.js~DocumentGroup.html#static-method-invite",
-    "lib/documentGroup.js~DocumentGroup.invite",
-    "method"
-  ],
-  [
-    "lib/documentgrouptemplate.js",
-    "file/lib/documentGroupTemplate.js.html",
-    "lib/documentGroupTemplate.js",
-    "file"
-  ],
-  [
-    "lib/documentgrouptemplate.js~documentgrouptemplate.documentgrouptemplatecreateparams",
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplatecreateparams",
     "typedef/index.html#static-typedef-DocumentGroupTemplateCreateParams",
-    "lib/documentGroupTemplate.js~DocumentGroupTemplate.DocumentGroupTemplateCreateParams",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateCreateParams",
     "typedef"
   ],
   [
-    "lib/documentgrouptemplate.js~documentgrouptemplate.documentgrouptemplatecreateresponse",
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplatecreateresponse",
     "typedef/index.html#static-typedef-DocumentGroupTemplateCreateResponse",
-    "lib/documentGroupTemplate.js~DocumentGroupTemplate.DocumentGroupTemplateCreateResponse",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateCreateResponse",
     "typedef"
   ],
   [
-    "lib/documentgrouptemplate.js~documentgrouptemplate.documentgrouptemplateinviteaction",
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateinviteaction",
     "typedef/index.html#static-typedef-DocumentGroupTemplateInviteAction",
-    "lib/documentGroupTemplate.js~DocumentGroupTemplate.DocumentGroupTemplateInviteAction",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateInviteAction",
     "typedef"
   ],
   [
-    "lib/documentgrouptemplate.js~documentgrouptemplate.documentgrouptemplateinviteemail",
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateinviteemail",
     "typedef/index.html#static-typedef-DocumentGroupTemplateInviteEmail",
-    "lib/documentGroupTemplate.js~DocumentGroupTemplate.DocumentGroupTemplateInviteEmail",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateInviteEmail",
     "typedef"
   ],
   [
-    "lib/documentgrouptemplate.js~documentgrouptemplate.documentgrouptemplateinvitestep",
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateinviteparams",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateInviteParams",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateInviteParams",
+    "typedef"
+  ],
+  [
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateinviteresponse",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateInviteResponse",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateInviteResponse",
+    "typedef"
+  ],
+  [
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateinvitestep",
     "typedef/index.html#static-typedef-DocumentGroupTemplateInviteStep",
-    "lib/documentGroupTemplate.js~DocumentGroupTemplate.DocumentGroupTemplateInviteStep",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateInviteStep",
     "typedef"
   ],
   [
-    "lib/documentgrouptemplate.js~documentgrouptemplate.documentgrouptemplateroutingdetails",
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateitem",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateItem",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateItem",
+    "typedef"
+  ],
+  [
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateroutingdetails",
     "typedef/index.html#static-typedef-DocumentGroupTemplateRoutingDetails",
-    "lib/documentGroupTemplate.js~DocumentGroupTemplate.DocumentGroupTemplateRoutingDetails",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateRoutingDetails",
     "typedef"
   ],
   [
-    "lib/documentgrouptemplate.js~documentgrouptemplate.create",
-    "class/lib/documentGroupTemplate.js~DocumentGroupTemplate.html#static-method-create",
-    "lib/documentGroupTemplate.js~DocumentGroupTemplate.create",
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateviewparams",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateViewParams",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateViewParams",
+    "typedef"
+  ],
+  [
+    "lib/document-group-template/index.js~documentgrouptemplate.documentgrouptemplateviewresponse",
+    "typedef/index.html#static-typedef-DocumentGroupTemplateViewResponse",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.DocumentGroupTemplateViewResponse",
+    "typedef"
+  ],
+  [
+    "lib/document-group-template/index.js~documentgrouptemplate.create",
+    "class/lib/document-group-template/index.js~DocumentGroupTemplate.html#static-method-create",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.create",
+    "method"
+  ],
+  [
+    "lib/document-group-template/index.js~documentgrouptemplate.invite",
+    "class/lib/document-group-template/index.js~DocumentGroupTemplate.html#static-method-invite",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.invite",
+    "method"
+  ],
+  [
+    "lib/document-group-template/index.js~documentgrouptemplate.view",
+    "class/lib/document-group-template/index.js~DocumentGroupTemplate.html#static-method-view",
+    "lib/document-group-template/index.js~DocumentGroupTemplate.view",
+    "method"
+  ],
+  [
+    "lib/document-group/index.js",
+    "file/lib/document-group/index.js.html",
+    "lib/document-group/index.js",
+    "file"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupcreateparams",
+    "typedef/index.html#static-typedef-DocumentGroupCreateParams",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupCreateParams",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupcreateresponse",
+    "typedef/index.html#static-typedef-DocumentGroupCreateResponse",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupCreateResponse",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupinviteaction",
+    "typedef/index.html#static-typedef-DocumentGroupInviteAction",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupInviteAction",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupinviteauthenticationpassword",
+    "typedef/index.html#static-typedef-DocumentGroupInviteAuthenticationPassword",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupInviteAuthenticationPassword",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupinviteauthenticationphonecall",
+    "typedef/index.html#static-typedef-DocumentGroupInviteAuthenticationPhoneCall",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupInviteAuthenticationPhoneCall",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupinviteauthenticationphonesms",
+    "typedef/index.html#static-typedef-DocumentGroupInviteAuthenticationPhoneSMS",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupInviteAuthenticationPhoneSMS",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupinvitecompletionemailconfig",
+    "typedef/index.html#static-typedef-DocumentGroupInviteCompletionEmailConfig",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupInviteCompletionEmailConfig",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupinviteemail",
+    "typedef/index.html#static-typedef-DocumentGroupInviteEmail",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupInviteEmail",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupinviteparams",
+    "typedef/index.html#static-typedef-DocumentGroupInviteParams",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupInviteParams",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupinviteresponse",
+    "typedef/index.html#static-typedef-DocumentGroupInviteResponse",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupInviteResponse",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupinvitesettings",
+    "typedef/index.html#static-typedef-DocumentGroupInviteSettings",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupInviteSettings",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupinvitestep",
+    "typedef/index.html#static-typedef-DocumentGroupInviteStep",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupInviteStep",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupitem",
+    "typedef/index.html#static-typedef-DocumentGroupItem",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupItem",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupviewparams",
+    "typedef/index.html#static-typedef-DocumentGroupViewParams",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupViewParams",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupviewresponse",
+    "typedef/index.html#static-typedef-DocumentGroupViewResponse",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupViewResponse",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.create",
+    "class/lib/document-group/index.js~DocumentGroup.html#static-method-create",
+    "lib/document-group/index.js~DocumentGroup.create",
+    "method"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.invite",
+    "class/lib/document-group/index.js~DocumentGroup.html#static-method-invite",
+    "lib/document-group/index.js~DocumentGroup.invite",
+    "method"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.view",
+    "class/lib/document-group/index.js~DocumentGroup.html#static-method-view",
+    "lib/document-group/index.js~DocumentGroup.view",
+    "method"
+  ],
+  [
+    "lib/document/index.js",
+    "file/lib/document/index.js.html",
+    "lib/document/index.js",
+    "file"
+  ],
+  [
+    "lib/document/index.js~document.attachmentfield",
+    "typedef/index.html#static-typedef-AttachmentField",
+    "lib/document/index.js~Document.AttachmentField",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.calculatedfield",
+    "typedef/index.html#static-typedef-CalculatedField",
+    "lib/document/index.js~Document.CalculatedField",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.cancelfreeforminviteparams",
+    "typedef/index.html#static-typedef-CancelFreeformInviteParams",
+    "lib/document/index.js~Document.CancelFreeformInviteParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.cancelfreeforminviteresponse",
+    "typedef/index.html#static-typedef-CancelFreeformInviteResponse",
+    "lib/document/index.js~Document.CancelFreeformInviteResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.checkfield",
+    "typedef/index.html#static-typedef-CheckField",
+    "lib/document/index.js~Document.CheckField",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentcreateparams",
+    "typedef/index.html#static-typedef-DocumentCreateParams",
+    "lib/document/index.js~Document.DocumentCreateParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentcreateresponse",
+    "typedef/index.html#static-typedef-DocumentCreateResponse",
+    "lib/document/index.js~Document.DocumentCreateResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentdownloadoptions",
+    "typedef/index.html#static-typedef-DocumentDownloadOptions",
+    "lib/document/index.js~Document.DocumentDownloadOptions",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentdownloadparams",
+    "typedef/index.html#static-typedef-DocumentDownloadParams",
+    "lib/document/index.js~Document.DocumentDownloadParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentdownloadresponse",
+    "typedef/index.html#static-typedef-DocumentDownloadResponse",
+    "lib/document/index.js~Document.DocumentDownloadResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentevent",
+    "typedef/index.html#static-typedef-DocumentEvent",
+    "lib/document/index.js~Document.DocumentEvent",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentfieldextractparams",
+    "typedef/index.html#static-typedef-DocumentFieldExtractParams",
+    "lib/document/index.js~Document.DocumentFieldExtractParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentfieldextractresponse",
+    "typedef/index.html#static-typedef-DocumentFieldExtractResponse",
+    "lib/document/index.js~Document.DocumentFieldExtractResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentfieldinvitecancelparams",
+    "typedef/index.html#static-typedef-DocumentFieldInviteCancelParams",
+    "lib/document/index.js~Document.DocumentFieldInviteCancelParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentfieldinvitecancelresponse",
+    "typedef/index.html#static-typedef-DocumentFieldInviteCancelResponse",
+    "lib/document/index.js~Document.DocumentFieldInviteCancelResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentfieldinviteresponse",
+    "typedef/index.html#static-typedef-DocumentFieldInviteResponse",
+    "lib/document/index.js~Document.DocumentFieldInviteResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentfields",
+    "typedef/index.html#static-typedef-DocumentFields",
+    "lib/document/index.js~Document.DocumentFields",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentfreeforminviteresponse",
+    "typedef/index.html#static-typedef-DocumentFreeformInviteResponse",
+    "lib/document/index.js~Document.DocumentFreeformInviteResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documenthistoryparams",
+    "typedef/index.html#static-typedef-DocumentHistoryParams",
+    "lib/document/index.js~Document.DocumentHistoryParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documenthistoryresponse",
+    "typedef/index.html#static-typedef-DocumentHistoryResponse",
+    "lib/document/index.js~Document.DocumentHistoryResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentinviteoptions",
+    "typedef/index.html#static-typedef-DocumentInviteOptions",
+    "lib/document/index.js~Document.DocumentInviteOptions",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentinviteparams",
+    "typedef/index.html#static-typedef-DocumentInviteParams",
+    "lib/document/index.js~Document.DocumentInviteParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentinviteresponse",
+    "typedef/index.html#static-typedef-DocumentInviteResponse",
+    "lib/document/index.js~Document.DocumentInviteResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentinvitesettings",
+    "typedef/index.html#static-typedef-DocumentInviteSettings",
+    "lib/document/index.js~Document.DocumentInviteSettings",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentlistitem",
+    "typedef/index.html#static-typedef-DocumentListItem",
+    "lib/document/index.js~Document.DocumentListItem",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentlistparams",
+    "typedef/index.html#static-typedef-DocumentListParams",
+    "lib/document/index.js~Document.DocumentListParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentlistresponse",
+    "typedef/index.html#static-typedef-DocumentListResponse",
+    "lib/document/index.js~Document.DocumentListResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentmergeoptions",
+    "typedef/index.html#static-typedef-DocumentMergeOptions",
+    "lib/document/index.js~Document.DocumentMergeOptions",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentmergeparams",
+    "typedef/index.html#static-typedef-DocumentMergeParams",
+    "lib/document/index.js~Document.DocumentMergeParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentmergeresponse",
+    "typedef/index.html#static-typedef-DocumentMergeResponse",
+    "lib/document/index.js~Document.DocumentMergeResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentremoveoptions",
+    "typedef/index.html#static-typedef-DocumentRemoveOptions",
+    "lib/document/index.js~Document.DocumentRemoveOptions",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentremoveparams",
+    "typedef/index.html#static-typedef-DocumentRemoveParams",
+    "lib/document/index.js~Document.DocumentRemoveParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentremoveresponse",
+    "typedef/index.html#static-typedef-DocumentRemoveResponse",
+    "lib/document/index.js~Document.DocumentRemoveResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentshareparams",
+    "typedef/index.html#static-typedef-DocumentShareParams",
+    "lib/document/index.js~Document.DocumentShareParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentshareresponse",
+    "typedef/index.html#static-typedef-DocumentShareResponse",
+    "lib/document/index.js~Document.DocumentShareResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentthumbnails",
+    "typedef/index.html#static-typedef-DocumentThumbnails",
+    "lib/document/index.js~Document.DocumentThumbnails",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentupdateparams",
+    "typedef/index.html#static-typedef-DocumentUpdateParams",
+    "lib/document/index.js~Document.DocumentUpdateParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentupdateresponse",
+    "typedef/index.html#static-typedef-DocumentUpdateResponse",
+    "lib/document/index.js~Document.DocumentUpdateResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentviewparams",
+    "typedef/index.html#static-typedef-DocumentViewParams",
+    "lib/document/index.js~Document.DocumentViewParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentviewresponse",
+    "typedef/index.html#static-typedef-DocumentViewResponse",
+    "lib/document/index.js~Document.DocumentViewResponse",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.enumerationfield",
+    "typedef/index.html#static-typedef-EnumerationField",
+    "lib/document/index.js~Document.EnumerationField",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.formulatree",
+    "typedef/index.html#static-typedef-FormulaTree",
+    "lib/document/index.js~Document.FormulaTree",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.formulatreebranch",
+    "typedef/index.html#static-typedef-FormulaTreeBranch",
+    "lib/document/index.js~Document.FormulaTreeBranch",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.formulatreebranchterminator",
+    "typedef/index.html#static-typedef-FormulaTreeBranchTerminator",
+    "lib/document/index.js~Document.FormulaTreeBranchTerminator",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.initialsfield",
+    "typedef/index.html#static-typedef-InitialsField",
+    "lib/document/index.js~Document.InitialsField",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.radiobutton",
+    "typedef/index.html#static-typedef-RadioButton",
+    "lib/document/index.js~Document.RadioButton",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.radiobuttonfield",
+    "typedef/index.html#static-typedef-RadioButtonField",
+    "lib/document/index.js~Document.RadioButtonField",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.signaturefield",
+    "typedef/index.html#static-typedef-SignatureField",
+    "lib/document/index.js~Document.SignatureField",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.signersettings",
+    "typedef/index.html#static-typedef-SignerSettings",
+    "lib/document/index.js~Document.SignerSettings",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.textfield",
+    "typedef/index.html#static-typedef-TextField",
+    "lib/document/index.js~Document.TextField",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.cancelfieldinvite",
+    "class/lib/document/index.js~Document.html#static-method-cancelFieldInvite",
+    "lib/document/index.js~Document.cancelFieldInvite",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.cancelfreeforminvite",
+    "class/lib/document/index.js~Document.html#static-method-cancelFreeFormInvite",
+    "lib/document/index.js~Document.cancelFreeFormInvite",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.cancelinvite",
+    "class/lib/document/index.js~Document.html#static-method-cancelInvite",
+    "lib/document/index.js~Document.cancelInvite",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.create",
+    "class/lib/document/index.js~Document.html#static-method-create",
+    "lib/document/index.js~Document.create",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.download",
+    "class/lib/document/index.js~Document.html#static-method-download",
+    "lib/document/index.js~Document.download",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.fieldextract",
+    "class/lib/document/index.js~Document.html#static-method-fieldextract",
+    "lib/document/index.js~Document.fieldextract",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.history",
+    "class/lib/document/index.js~Document.html#static-method-history",
+    "lib/document/index.js~Document.history",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.invite",
+    "class/lib/document/index.js~Document.html#static-method-invite",
+    "lib/document/index.js~Document.invite",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.list",
+    "class/lib/document/index.js~Document.html#static-method-list",
+    "lib/document/index.js~Document.list",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.merge",
+    "class/lib/document/index.js~Document.html#static-method-merge",
+    "lib/document/index.js~Document.merge",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.remove",
+    "class/lib/document/index.js~Document.html#static-method-remove",
+    "lib/document/index.js~Document.remove",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.share",
+    "class/lib/document/index.js~Document.html#static-method-share",
+    "lib/document/index.js~Document.share",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.update",
+    "class/lib/document/index.js~Document.html#static-method-update",
+    "lib/document/index.js~Document.update",
+    "method"
+  ],
+  [
+    "lib/document/index.js~document.view",
+    "class/lib/document/index.js~Document.html#static-method-view",
+    "lib/document/index.js~Document.view",
     "method"
   ],
   [
@@ -690,213 +1104,213 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
-    "lib/link.js",
-    "file/lib/link.js.html",
-    "lib/link.js",
+    "lib/link/index.js",
+    "file/lib/link/index.js.html",
+    "lib/link/index.js",
     "file"
   ],
   [
-    "lib/link.js~link.signinglinkcreateparams",
+    "lib/link/index.js~link.signinglinkcreateparams",
     "typedef/index.html#static-typedef-SigningLinkCreateParams",
-    "lib/link.js~Link.SigningLinkCreateParams",
+    "lib/link/index.js~Link.SigningLinkCreateParams",
     "typedef"
   ],
   [
-    "lib/link.js~link.signinglinkcreateresponse",
+    "lib/link/index.js~link.signinglinkcreateresponse",
     "typedef/index.html#static-typedef-SigningLinkCreateResponse",
-    "lib/link.js~Link.SigningLinkCreateResponse",
+    "lib/link/index.js~Link.SigningLinkCreateResponse",
     "typedef"
   ],
   [
-    "lib/link.js~link.create",
-    "class/lib/link.js~Link.html#static-method-create",
-    "lib/link.js~Link.create",
+    "lib/link/index.js~link.create",
+    "class/lib/link/index.js~Link.html#static-method-create",
+    "lib/link/index.js~Link.create",
     "method"
   ],
   [
-    "lib/oauth2.js",
-    "file/lib/oauth2.js.html",
-    "lib/oauth2.js",
+    "lib/oauth2/index.js",
+    "file/lib/oauth2/index.js.html",
+    "lib/oauth2/index.js",
     "file"
   ],
   [
-    "lib/oauth2.js~oauth2.accesstokengetparams",
+    "lib/oauth2/index.js~oauth2.accesstokengetparams",
     "typedef/index.html#static-typedef-AccessTokenGetParams",
-    "lib/oauth2.js~OAuth2.AccessTokenGetParams",
+    "lib/oauth2/index.js~OAuth2.AccessTokenGetParams",
     "typedef"
   ],
   [
-    "lib/oauth2.js~oauth2.accesstokengetresponse",
+    "lib/oauth2/index.js~oauth2.accesstokengetresponse",
     "typedef/index.html#static-typedef-AccessTokenGetResponse",
-    "lib/oauth2.js~OAuth2.AccessTokenGetResponse",
+    "lib/oauth2/index.js~OAuth2.AccessTokenGetResponse",
     "typedef"
   ],
   [
-    "lib/oauth2.js~oauth2.accesstokenrefreshparams",
+    "lib/oauth2/index.js~oauth2.accesstokenrefreshparams",
     "typedef/index.html#static-typedef-AccessTokenRefreshParams",
-    "lib/oauth2.js~OAuth2.AccessTokenRefreshParams",
+    "lib/oauth2/index.js~OAuth2.AccessTokenRefreshParams",
     "typedef"
   ],
   [
-    "lib/oauth2.js~oauth2.accesstokenrefreshresponse",
+    "lib/oauth2/index.js~oauth2.accesstokenrefreshresponse",
     "typedef/index.html#static-typedef-AccessTokenRefreshResponse",
-    "lib/oauth2.js~OAuth2.AccessTokenRefreshResponse",
+    "lib/oauth2/index.js~OAuth2.AccessTokenRefreshResponse",
     "typedef"
   ],
   [
-    "lib/oauth2.js~oauth2.accesstokenverifyparams",
+    "lib/oauth2/index.js~oauth2.accesstokenverifyparams",
     "typedef/index.html#static-typedef-AccessTokenVerifyParams",
-    "lib/oauth2.js~OAuth2.AccessTokenVerifyParams",
+    "lib/oauth2/index.js~OAuth2.AccessTokenVerifyParams",
     "typedef"
   ],
   [
-    "lib/oauth2.js~oauth2.accesstokenverifyresponse",
+    "lib/oauth2/index.js~oauth2.accesstokenverifyresponse",
     "typedef/index.html#static-typedef-AccessTokenVerifyResponse",
-    "lib/oauth2.js~OAuth2.AccessTokenVerifyResponse",
+    "lib/oauth2/index.js~OAuth2.AccessTokenVerifyResponse",
     "typedef"
   ],
   [
-    "lib/oauth2.js~oauth2.refreshtoken",
-    "class/lib/oauth2.js~OAuth2.html#static-method-refreshToken",
-    "lib/oauth2.js~OAuth2.refreshToken",
+    "lib/oauth2/index.js~oauth2.refreshtoken",
+    "class/lib/oauth2/index.js~OAuth2.html#static-method-refreshToken",
+    "lib/oauth2/index.js~OAuth2.refreshToken",
     "method"
   ],
   [
-    "lib/oauth2.js~oauth2.requesttoken",
-    "class/lib/oauth2.js~OAuth2.html#static-method-requestToken",
-    "lib/oauth2.js~OAuth2.requestToken",
+    "lib/oauth2/index.js~oauth2.requesttoken",
+    "class/lib/oauth2/index.js~OAuth2.html#static-method-requestToken",
+    "lib/oauth2/index.js~OAuth2.requestToken",
     "method"
   ],
   [
-    "lib/oauth2.js~oauth2.verify",
-    "class/lib/oauth2.js~OAuth2.html#static-method-verify",
-    "lib/oauth2.js~OAuth2.verify",
+    "lib/oauth2/index.js~oauth2.verify",
+    "class/lib/oauth2/index.js~OAuth2.html#static-method-verify",
+    "lib/oauth2/index.js~OAuth2.verify",
     "method"
   ],
   [
-    "lib/template.js",
-    "file/lib/template.js.html",
-    "lib/template.js",
+    "lib/template/index.js",
+    "file/lib/template/index.js.html",
+    "lib/template/index.js",
     "file"
   ],
   [
-    "lib/template.js~template.templatecreateoptions",
+    "lib/template/index.js~template.templatecreateoptions",
     "typedef/index.html#static-typedef-TemplateCreateOptions",
-    "lib/template.js~Template.TemplateCreateOptions",
+    "lib/template/index.js~Template.TemplateCreateOptions",
     "typedef"
   ],
   [
-    "lib/template.js~template.templatecreateparams",
+    "lib/template/index.js~template.templatecreateparams",
     "typedef/index.html#static-typedef-TemplateCreateParams",
-    "lib/template.js~Template.TemplateCreateParams",
+    "lib/template/index.js~Template.TemplateCreateParams",
     "typedef"
   ],
   [
-    "lib/template.js~template.templatecreateresponse",
+    "lib/template/index.js~template.templatecreateresponse",
     "typedef/index.html#static-typedef-TemplateCreateResponse",
-    "lib/template.js~Template.TemplateCreateResponse",
+    "lib/template/index.js~Template.TemplateCreateResponse",
     "typedef"
   ],
   [
-    "lib/template.js~template.templateduplicateparams",
+    "lib/template/index.js~template.templateduplicateparams",
     "typedef/index.html#static-typedef-TemplateDuplicateParams",
-    "lib/template.js~Template.TemplateDuplicateParams",
+    "lib/template/index.js~Template.TemplateDuplicateParams",
     "typedef"
   ],
   [
-    "lib/template.js~template.templateduplicateresponse",
+    "lib/template/index.js~template.templateduplicateresponse",
     "typedef/index.html#static-typedef-TemplateDuplicateResponse",
-    "lib/template.js~Template.TemplateDuplicateResponse",
+    "lib/template/index.js~Template.TemplateDuplicateResponse",
     "typedef"
   ],
   [
-    "lib/template.js~template.templateinviteparams",
+    "lib/template/index.js~template.templateinviteparams",
     "typedef/index.html#static-typedef-TemplateInviteParams",
-    "lib/template.js~Template.TemplateInviteParams",
+    "lib/template/index.js~Template.TemplateInviteParams",
     "typedef"
   ],
   [
-    "lib/template.js~template.templateinviteresponse",
+    "lib/template/index.js~template.templateinviteresponse",
     "typedef/index.html#static-typedef-TemplateInviteResponse",
-    "lib/template.js~Template.TemplateInviteResponse",
+    "lib/template/index.js~Template.TemplateInviteResponse",
     "typedef"
   ],
   [
-    "lib/template.js~template.templateremoveparams",
+    "lib/template/index.js~template.templateremoveparams",
     "typedef/index.html#static-typedef-TemplateRemoveParams",
-    "lib/template.js~Template.TemplateRemoveParams",
+    "lib/template/index.js~Template.TemplateRemoveParams",
     "typedef"
   ],
   [
-    "lib/template.js~template.templateremoveresponse",
+    "lib/template/index.js~template.templateremoveresponse",
     "typedef/index.html#static-typedef-TemplateRemoveResponse",
-    "lib/template.js~Template.TemplateRemoveResponse",
+    "lib/template/index.js~Template.TemplateRemoveResponse",
     "typedef"
   ],
   [
-    "lib/template.js~template.create",
-    "class/lib/template.js~Template.html#static-method-create",
-    "lib/template.js~Template.create",
+    "lib/template/index.js~template.create",
+    "class/lib/template/index.js~Template.html#static-method-create",
+    "lib/template/index.js~Template.create",
     "method"
   ],
   [
-    "lib/template.js~template.duplicate",
-    "class/lib/template.js~Template.html#static-method-duplicate",
-    "lib/template.js~Template.duplicate",
+    "lib/template/index.js~template.duplicate",
+    "class/lib/template/index.js~Template.html#static-method-duplicate",
+    "lib/template/index.js~Template.duplicate",
     "method"
   ],
   [
-    "lib/template.js~template.invite",
-    "class/lib/template.js~Template.html#static-method-invite",
-    "lib/template.js~Template.invite",
+    "lib/template/index.js~template.invite",
+    "class/lib/template/index.js~Template.html#static-method-invite",
+    "lib/template/index.js~Template.invite",
     "method"
   ],
   [
-    "lib/template.js~template.remove",
-    "class/lib/template.js~Template.html#static-method-remove",
-    "lib/template.js~Template.remove",
+    "lib/template/index.js~template.remove",
+    "class/lib/template/index.js~Template.html#static-method-remove",
+    "lib/template/index.js~Template.remove",
     "method"
   ],
   [
-    "lib/user.js",
-    "file/lib/user.js.html",
-    "lib/user.js",
+    "lib/user/index.js",
+    "file/lib/user/index.js.html",
+    "lib/user/index.js",
     "file"
   ],
   [
-    "lib/user.js~user.usercreateparams",
+    "lib/user/index.js~user.usercreateparams",
     "typedef/index.html#static-typedef-UserCreateParams",
-    "lib/user.js~User.UserCreateParams",
+    "lib/user/index.js~User.UserCreateParams",
     "typedef"
   ],
   [
-    "lib/user.js~user.usercreateresponse",
+    "lib/user/index.js~user.usercreateresponse",
     "typedef/index.html#static-typedef-UserCreateResponse",
-    "lib/user.js~User.UserCreateResponse",
+    "lib/user/index.js~User.UserCreateResponse",
     "typedef"
   ],
   [
-    "lib/user.js~user.usergetparams",
+    "lib/user/index.js~user.usergetparams",
     "typedef/index.html#static-typedef-UserGetParams",
-    "lib/user.js~User.UserGetParams",
+    "lib/user/index.js~User.UserGetParams",
     "typedef"
   ],
   [
-    "lib/user.js~user.usergetresponse",
+    "lib/user/index.js~user.usergetresponse",
     "typedef/index.html#static-typedef-UserGetResponse",
-    "lib/user.js~User.UserGetResponse",
+    "lib/user/index.js~User.UserGetResponse",
     "typedef"
   ],
   [
-    "lib/user.js~user.create",
-    "class/lib/user.js~User.html#static-method-create",
-    "lib/user.js~User.create",
+    "lib/user/index.js~user.create",
+    "class/lib/user/index.js~User.html#static-method-create",
+    "lib/user/index.js~User.create",
     "method"
   ],
   [
-    "lib/user.js~user.retrieve",
-    "class/lib/user.js~User.html#static-method-retrieve",
-    "lib/user.js~User.retrieve",
+    "lib/user/index.js~user.retrieve",
+    "class/lib/user/index.js~User.html#static-method-retrieve",
+    "lib/user/index.js~User.retrieve",
     "method"
   ],
   [
@@ -955,13 +1369,13 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber27",
+    "test-file/test/template.test.js.html#lineNumber13",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber13",
+    "test-file/test/template.test.js.html#lineNumber27",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],

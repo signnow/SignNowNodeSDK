@@ -43,12 +43,10 @@ const token = 'YOUR_ACCESS_TOKEN';
  * @property {?string} on_complete - on signing complete action
  */
 const fieldInviteWithPaymentRequest = {
-  document_id: 'DOCUMENT_ID_GOES_HERE',
   to: [
     {
       email: 'EMAIL_OF_SIGNER',
       role: 'Signer 1',
-      role_id: 'ROLE_ID', // can be discovered in document details
       order: 1,
       reassign: '0',
       decline_by_signature: '0',
