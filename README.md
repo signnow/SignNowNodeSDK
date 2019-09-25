@@ -123,12 +123,15 @@ Every resource returns two parameters. The first param contains any errors and t
 
 #### <a name="create-user"></a>Create a User
 
+By default verification email is not sent. To send it set `verifyEmail` option to `true`.
+
 ```javascript
 api.user.create({
   first_name: 'John',
   last_name: 'Wayne',
   email: 'john@domain.com',
   password: 'yourpwd',
+  options: { verifyEmail: true } // false by default
 }, (err, res) => {
   // handle error or process response data
 });
