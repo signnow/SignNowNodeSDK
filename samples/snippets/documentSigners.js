@@ -30,7 +30,7 @@ const options = {
 };
 
 /**
- * @param {Array} res - emails of document signers
+ * @param {string[]} res - emails of document signers
  */
 const handleResponse = res => {
   console.log(res);
