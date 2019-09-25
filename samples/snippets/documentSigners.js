@@ -40,7 +40,7 @@ const handleError = err => {
   console.error(err);
 };
 
-documentSigners({
+getDocumentSigners({
   id,
   token,
   options,
