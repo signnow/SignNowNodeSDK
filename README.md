@@ -589,6 +589,19 @@ api.template.remove({
 
 More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/remove-template.js)
 
+#### <a name="routing-details"></a>View Template Routing Details
+
+```javascript
+api.template.getRoutingDetails({
+  token: 'your auth token',
+  id: 'template id',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/getRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/routing-details.js)
+
 ### <a name="folder"></a>Folder
 
 #### <a name="list-folders"></a>Returns a list of folders
