@@ -8,10 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.7.0] - Unreleased Phase 6
 
 ### Added
+
 - Implemented *Send Verification Email* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#verify-email)
 - Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js) for *Send Verification Email* feature
 
 ### Changed
+
+- Added optional ability to send verification email in *Create User* feature
 
 ## [v1.6.0] - Unreleased Phase 5
 
