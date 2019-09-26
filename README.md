@@ -50,6 +50,7 @@ SignNow Node.js REST API Wrapper
       * [Create Invite to Sign a Template](#template-field-invite)
       * [Create Free Form Invite from Template](#template-freeform-invite)
       * [Remove Template](#remove-template)
+      * [Update Routing Details](#update-routing-details)
     * [Folder](#folder)
       * [Returns a list of folders](#list-folders)
       * [Returns a list of documents inside a folder](#list-documents-in-folder)
@@ -588,6 +589,57 @@ api.template.remove({
 ```
 
 More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/remove-template.js)
+
+#### <a name="update-routing-details"></a>Update Routing Details
+
+```javascript
+const routingDetails = {
+  template_data: [
+    {
+      default_email: '',
+      inviter_role: false,
+      name: 'Signer 1',
+      role_id: 'SIGNER 1 ROLE ID',
+      signing_order: 1,
+      decline_by_signature: true,
+    },
+    {
+      default_email: 'signer2@mail.com',
+      inviter_role: false,
+      name: 'Signer 2',
+      role_id: 'SIGNER 2 ROLE ID',
+      signing_order: 2,
+    },
+  ],
+  cc: [
+    'cc1@mail.com',
+    'cc2@mail.com',
+  ],
+  cc_step: [
+    {
+      email: 'cc1@mail.com',
+      step: 1,
+      name: 'CC 1',
+    },
+    {
+      email: 'cc2@mail.com',
+      step: 2,
+      name: 'CC 2',
+    },
+  ],
+  invite_link_instructions: 'Invite link signing instruction',
+};
+
+api.template.updateRoutingDetails({
+  data: routingDetails,
+  token: 'your auth token',
+  id: 'template id',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/updateTemplateRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/update-routing-details.js)
 
 ### <a name="folder"></a>Folder
 
