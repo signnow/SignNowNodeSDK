@@ -50,6 +50,7 @@ SignNow Node.js REST API Wrapper
       * [Create Invite to Sign a Template](#template-field-invite)
       * [Create Free Form Invite from Template](#template-freeform-invite)
       * [Remove Template](#remove-template)
+      * [Duplicate Template](#duplicate-template)
     * [Folder](#folder)
       * [Returns a list of folders](#list-folders)
       * [Returns a list of documents inside a folder](#list-documents-in-folder)
@@ -587,7 +588,21 @@ api.template.remove({
 });
 ```
 
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/remove-template.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/duplicateTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/duplicate-template.js)
+
+#### <a name="duplicate-template"></a>Duplicate Template
+
+```javascript
+api.template.duplicate({
+  token: 'your auth token',
+  id: 'template id',
+  name: 'document name',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/duplicate-template.js)
 
 ### <a name="folder"></a>Folder
 
