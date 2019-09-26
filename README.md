@@ -137,7 +137,7 @@ api.user.create({
 });
 ```
 
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-user.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createUser.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-user.js)
 
 #### <a name="verify-email"></a>Send Verification Email
 
