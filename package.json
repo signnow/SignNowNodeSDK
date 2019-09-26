@@ -23,7 +23,9 @@
     "lint": "./node_modules/.bin/eslint '**/*.js'",
     "lint:fix": "./node_modules/.bin/eslint '**/*.js' --fix",
     "docs": "./node_modules/.bin/esdoc",
-    "prepublishOnly": "npm install eslint@6.0.1 && npm run lint"
+    "preversion": "npm run lint",
+    "version": "./tools/update-readme.js && npm run docs && git add -A .",
+    "postversion": "git push && git push --tags"
   },
   "devDependencies": {
     "chai": "*",
