@@ -1,0 +1,41 @@
+'use strict';
+
+const signnow = require('@signnow/api-client')({
+  credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
+  production: true, // if false then uses eval server
+});
+const createUser = signnow.user.create;
+
+const username = 'USER_EMAIL_GOES_HERE';
+const password = 'PASSWORD_GOES_HERE';
+const firstName = 'USER_FIRST_NAME';
+const lastName = 'LAST_FIRST_NAME';
+const options = { verifyEmail: true };
+
+/**
+ * @param {Object} res
+ * @property {string} res.id - user unique id
+ * @property {number} res.verified - user is verified or not
+ * @property {string} res.email - user email
+ */
+const handleResponse = res => {
+  console.log(res);
+};
+
+const handleError = err => {
+  console.error(err);
+};
+
+createUser({
+  username,
+  password,
+  firstName,
+  lastName,
+  options,
+}, (err, res) => {
+  if (err) {
+    handleError(err);
+  } else {
+    handleResponse(res);
+  }
+});
