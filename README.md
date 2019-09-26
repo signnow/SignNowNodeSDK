@@ -57,6 +57,7 @@ SignNow Node.js REST API Wrapper
       * [Create Document Group](#create-document-group)
       * [View Document Group](#view-document-group)
       * [Create Invite to Sign a Document Group](#document-group-invite)
+      * [Cancel Invite to Sign a Document Group](#cancel-document-group-invite)
     * [Document Group Template](#document-group-template)
       * [Create Document Group Template](#create-document-group-template)
       * [View Document Group Template](#view-documentgroup-template)
@@ -718,7 +719,7 @@ const data = {
 
 api.documentGroup.invite({
   token: 'your auth token',
-  id: 'Document Group ID'
+  id: 'Document Group ID',
   data,
 }, (err, res) => {
   // handle error or process response data
@@ -726,6 +727,20 @@ api.documentGroup.invite({
 ```
 
 More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroupInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/document-group-invite.js)
+
+#### <a name="cancel-document-group-invite"></a>Cancel Invite to Sign a Document Group
+
+```javascript
+api.documentGroup.cancelInvite({
+  token: 'your auth token',
+  id: 'Document Group ID',
+  inviteId: 'Document Group invite ID'
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/cancelDocumentGroupInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/cancel-document-group-invite.js)
 
 ### <a name="document-group-template"></a>Document Group Template
 

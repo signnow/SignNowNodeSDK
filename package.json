@@ -75,7 +75,8 @@
     "sn:verify-access-token": "./bin/verify-access-token.js",
     "sn:view-document-group": "./bin/view-document-group.js",
     "sn:view-document": "./bin/view-document.js",
-    "sn:view-documentgroup-template": "./bin/view-documentgroup-template.js"
+    "sn:view-documentgroup-template": "./bin/view-documentgroup-template.js",
+    "sn:canel-documentgroup-invite": "./bin/cancel-documentgroup-invite.js"
   },
   "license": "MIT"
 }

@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.7.0] - Unreleased Phase 6
 
 ### Added
+- Implemented *Cancel Document Group Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-document-group-invite).
+Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/cancel-documentgroup-invite.js) for *Cancel Document Group Invite* feature
 
 ### Changed
 
