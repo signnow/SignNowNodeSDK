@@ -6,10 +6,7 @@
  * <client_id>, <client_secret>, <username>, <password>, <document_id>, <path_to_save> - are required params
  * options flags:
  * --zip - document will be  archived in zip
- * --base64 - document will be encoded in base64
  * --with-history - document will be downloaded with its history
- * --no-history - no saving history and no tracking download
- * --skip-watermark - document watermark will be skipping
  */
 
 'use strict';
@@ -28,10 +25,7 @@ const [
 ] = params;
 
 const zip = flags.includes('--zip');
-const base64 = flags.includes('--base64');
 const withHistory = flags.includes('--with-history');
-const noHistory = flags.includes('--no-history');
-const skipWatermark = flags.includes('--skip-watermark');
 
 const fs = require('fs');
 const { promisify } = require('../utils');
@@ -56,10 +50,7 @@ getAccessToken$({
     id: documentId,
     options: { 
       zip,
-      base64,
       withHistory,
-      noHistory,
-      skipWatermark
      },
     token,
   }))
