@@ -4,7 +4,7 @@ const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
 });
-const createUser = signnow.user.create;
+const { create: createUser } = signnow.user;
 
 const username = 'USER_EMAIL_GOES_HERE';
 const password = 'PASSWORD_GOES_HERE';
