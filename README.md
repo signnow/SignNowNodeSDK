@@ -216,7 +216,7 @@ More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/vie
 
 #### <a name="download-document"></a>Download a Collapsed Document
 
-There is a possibility to download a ducument by original (by default) or archived in zip (set `zip` option to `true`).
+There is a possibility to download a document by original (by default) or archived in zip (set `zip` option to `true`).
 Also, default document downloads without history. To download it with history set `withHistory` option to `true`.
 
 ```javascript
