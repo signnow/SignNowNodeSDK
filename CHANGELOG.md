@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
+- Added optional ability to download document archived in zip for *Download Document* feature
 
 ## [v1.6.0] - Unreleased Phase 5
 

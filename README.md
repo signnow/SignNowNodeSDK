@@ -216,13 +216,17 @@ More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/vie
 
 #### <a name="download-document"></a>Download a Collapsed Document
 
-By default document downloads without history. To download it with history set `withHistory` option to `true`.
+There is a possibility to download a ducument by original (by default) or archived in zip (set `zip` option to `true`).
+Also, default document downloads without history. To download it with history set `withHistory` option to `true`.
 
 ```javascript
 api.document.download({
   token: 'your auth token',
   id: 'document id',
-  options: { withHistory: true }, // false by default
+  options: { 
+    zip: true // false by default
+    withHistory: true // false by default
+    }, 
 }, (err, res) => {
   // handle error or process response data
 });
