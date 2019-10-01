@@ -4,16 +4,16 @@ const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
 });
-const duplicateTemplate = signnow.template.duplicate;
+const { duplicate: createDocumentFromTemplate } = signnow.template;
 
-const template_id = 'TEMPLATE_ID';
-const document_name = 'NEW_DOCUMENT_NAME';
+const templateId = 'TEMPLATE_ID';
+const documentName = 'NEW_DOCUMENT_NAME';
 const token = 'YOUR_ACCESS_TOKEN';
 
 /**
  * @param {Object} res
- * @param {string} res.id - an id of created template
- * @param {string} res.name - a name of created document
+ * @param {string} res.id - an id of created Document
+ * @param {string} res.name - a name of created Document
  */
 
 const handleResponse = res => {
@@ -24,9 +24,9 @@ const handleError = err => {
   console.error(err);
 };
 
-duplicateTemplate({
-  id: template_id,
-  name: document_name,
+createDocumentFromTemplate({
+  id: templateId,
+  name: documentName,
   token,
 }, (err, res) => {
   if (err) {

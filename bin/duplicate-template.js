@@ -3,7 +3,8 @@
 /**
  * to run duplicate-template applet from the project root folder type in your console:
  * > node bin/duplicate-template <client_id> <client_secret> <username> <password> <template_id> <document_name>
- * <client_id>, <client_secret>, <username>, <password>, <template_id>, <document_name> - are required params
+ * <client_id>, <client_secret>, <username>, <password>, <template_id> - are required params
+ * <document_name> - optional param
  */
 
 'use strict';
@@ -36,9 +37,9 @@ getAccessToken$({
   password,
 })
   .then(({ access_token: token }) => createDocument$({
-    token,
     id: templateId,
     name: documentName,
+    token,
   }))
   .then(res => console.log(res))
   .catch(err => console.error(err));

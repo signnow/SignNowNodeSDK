@@ -4,14 +4,14 @@ const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
 });
-const uploadDocument = signnow.document.create;
+const { create: uploadDocument } = signnow.document;
 
 const filepath = 'PATH_TO_FILE_TO_BE_UPLOADED';
 const token = 'YOUR_ACCESS_TOKEN';
 
 /**
  * @param {Object} res
- * @param {string} res.id - an id of created document
+ * @param {string} res.id - an id of created Document
  */
 const handleResponse = res => {
   console.log(res);
