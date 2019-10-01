@@ -12,7 +12,7 @@ const token = 'YOUR_ACCESS_TOKEN';
 
 /**
  * @param {Object} res
- * @param {string} res.status - status (exp. "success")
+ * @param {string} res.status - status of invite cancellation (e.g. "success")
  */
 const handleResponse = res => {
   console.log(res);

@@ -740,7 +740,7 @@ api.documentGroup.cancelInvite({
 });
 ```
 
-More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/cancelDocumentGroupInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/cancel-document-group-invite.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/cancelDocumentGroupInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/cancel-documentgroup-invite.js)
 
 ### <a name="document-group-template"></a>Document Group Template
 
