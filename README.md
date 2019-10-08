@@ -223,7 +223,7 @@ api.document.download({
   token: 'your auth token',
   id: 'document id',
   options: { 
-    zip: true // false by default
+    withAttachments: true, // false by default
     withHistory: true // false by default
     }, 
 }, (err, res) => {
