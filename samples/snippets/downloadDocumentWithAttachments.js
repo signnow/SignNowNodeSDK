@@ -11,7 +11,7 @@ const token = 'YOUR_ACCESS_TOKEN';
 const options = { withAttachments: true };
 
 /**
- * @param {Buffer} res - binary data (file) of the entire document
+ * @param {Buffer} res - binary data of zip package
  */
 
 const handleResponse = res => {
