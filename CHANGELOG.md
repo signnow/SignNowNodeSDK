@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
-- Added optional ability to download document archived in zip for *Download Document* feature
+- Added optional ability to download document archived in zip for *Download Document* feature. See how to apply it in [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#download-document), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadDocumentWithAttachments.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/download-document.js).
 
 ## [v1.6.0] - Unreleased Phase 5
 
