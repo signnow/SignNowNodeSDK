@@ -24,7 +24,7 @@ const [
   pathToSaveFile,
 ] = params;
 
-const zip = flags.includes('--zip');
+const withAttachments = flags.includes('--with-attachments');
 const withHistory = flags.includes('--with-history');
 
 const fs = require('fs');
