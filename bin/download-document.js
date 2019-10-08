@@ -49,7 +49,7 @@ getAccessToken$({
   .then(({ access_token: token }) => downloadDocument$({
     id: documentId,
     options: { 
-      zip,
+      withAttachments,
       withHistory,
      },
     token,
