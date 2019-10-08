@@ -224,7 +224,7 @@ api.document.download({
   id: 'document id',
   options: { 
     withAttachments: true, // false by default
-    withHistory: true // false by default
+    withHistory: true, // false by default
     }, 
 }, (err, res) => {
   // handle error or process response data
