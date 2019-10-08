@@ -1,5 +1,6 @@
 {
   "name": "@signnow/api-client",
+  "clientName": "SignNow Node.js API Client",
   "description": "SignNow REST Service Wrapper",
   "version": "1.5.0",
   "author": {
