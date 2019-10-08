@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Implemented *Send Verification Email* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/template/index.js~Template.html#verify-email), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#verify-email), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js).
+- Implemented *Send Verification Email* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/template/index.js~Template.html#verify-email), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#verify-email), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendVerificationEmail.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js).
 
 ### Changed
 
