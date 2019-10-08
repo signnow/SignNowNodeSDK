@@ -15,7 +15,7 @@ const options = { withAttachments: true };
  */
 
 const handleResponse = res => {
-  console.log(res); // save the file to your disk or pipe it to another handler
+  // save the file to your disk or pipe it to another handler
 };
 
 const handleError = err => {
