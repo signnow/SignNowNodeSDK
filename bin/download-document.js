@@ -5,7 +5,7 @@
  * > node bin/download-document <client_id> <client_secret> <username> <password> <document_id> <path_to_save>
  * <client_id>, <client_secret>, <username>, <password>, <document_id>, <path_to_save> - are required params
  * options:
- * --zip - document will be archived in zip
+ * --with-attachments - document will be downloaded as zip package with its attachments
  * --with-history - document will be downloaded with its history
  */
 
