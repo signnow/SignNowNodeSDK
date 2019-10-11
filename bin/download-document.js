@@ -55,7 +55,9 @@ getAccessToken$({
     token,
   }))
   .then(file => {
-    const absolutePath = `${pathToSaveFile}/${documentId}.pdf`;
+    let fileExtension = '';
+    withAttachments? fileExtension = 'zip' : fileExtension = 'pdf';
+    const absolutePath = `${pathToSaveFile}/${documentId}.${fileExtension}`;
     fs.writeFileSync(absolutePath, file, { encoding: 'binary' });
     console.log(`Document has been downloaded. Check your '${pathToSaveFile}' directory.`);
   })
