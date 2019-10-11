@@ -55,7 +55,7 @@ getAccessToken$({
     token,
   }))
   .then(file => {
-    let fileExtension = '';
+    const fileExtension = withAttachments ? 'zip' : 'pdf';
     withAttachments? fileExtension = 'zip' : fileExtension = 'pdf';
     const absolutePath = `${pathToSaveFile}/${documentId}.${fileExtension}`;
     fs.writeFileSync(absolutePath, file, { encoding: 'binary' });
