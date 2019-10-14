@@ -45,7 +45,7 @@ getAccessToken$({
     token,
     type,
     with_history: withHistory,
-    document_order: documentOrder,
+    document_order: JSON.parse(documentOrder),
   }))
   .then(file => {
     const absolutePath = `${pathToSaveFile}/${documentGroupId}.${type === 'merged' ? 'pdf' : 'zip'}`;
