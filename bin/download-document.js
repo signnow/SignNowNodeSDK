@@ -2,7 +2,7 @@
 
 /**
  * to run download-document applet from the project root folder type in your console:
- * > node bin/download-document <clienе_id> <client_secret> <username> <password> <document_id> <path_to_save>
+ * > node bin/download-document <client_id> <client_secret> <username> <password> <document_id> <path_to_save>
  * <client_id>, <client_secret>, <username>, <password>, <document_id>, <path_to_save> - are required params
  * options:
  * --with-history - document will be downloaded with its history

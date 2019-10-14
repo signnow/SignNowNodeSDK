@@ -60,6 +60,7 @@
     "sn:document-history": "./bin/document-history.js",
     "sn:document-list": "./bin/document-list.js",
     "sn:download-document": "./bin/download-document.js",
+    "sn:download-document-group": "./bin/download-document-group.js",
     "sn:extract-fields": "./bin/extract-fields.js",
     "sn:get-access-token": "./bin/get-access-token.js",
     "sn:invite-documentgroup-template": "./bin/invite-documentgroup-template.js",
