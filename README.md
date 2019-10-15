@@ -50,6 +50,7 @@ SignNow Node.js REST API Wrapper
       * [Create Invite to Sign a Template](#template-field-invite)
       * [Create Free Form Invite from Template](#template-freeform-invite)
       * [Remove Template](#remove-template)
+      * [View Routing Details](#routing-details)
       * [Update Routing Details](#update-routing-details)
     * [Folder](#folder)
       * [Returns a list of folders](#list-folders)
@@ -590,7 +591,7 @@ api.template.remove({
 
 More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/remove-template.js)
 
-#### <a name="routing-details"></a>View Template Routing Details
+#### <a name="routing-details"></a>View Routing Details
 
 ```javascript
 api.template.getRoutingDetails({
