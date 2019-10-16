@@ -52,6 +52,7 @@ SignNow Node.js REST API Wrapper
       * [Remove Template](#remove-template)
       * [View Routing Details](#routing-details)
       * [Update Routing Details](#update-routing-details)
+      * [Send Bulk Invite](#bulk-invite)
     * [Folder](#folder)
       * [Returns a list of folders](#list-folders)
       * [Returns a list of documents inside a folder](#list-documents-in-folder)
@@ -654,6 +655,23 @@ api.template.updateRoutingDetails({
 ```
 
 More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/updateTemplateRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/update-routing-details.js)
+
+#### <a name="bulk-invite"></a>Send Bulk Invite
+
+```javascript
+api.template.bulkInvite({
+  data: {
+    file: 'path./to/.csv/file/with/roles/and/their/emails', // Max file size should be <= 1 Megabyte
+    folder_id: 'an ID of folder where signed documents will be saved',
+  },
+  id: 'template id',
+  token: 'your auth token',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendTemplateBulkInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/bulk-invite.js)
 
 ### <a name="folder"></a>Folder
 

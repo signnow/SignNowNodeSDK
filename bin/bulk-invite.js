@@ -5,7 +5,7 @@
  * > node bin/bulk-invite <client_id> <client_secret> <username> <password> <template_id> <path_to_csv> <folder_id>
  * <client_id>, <client_secret>, <username>, <password>, <template_id>, <path_to_csv>, <folder_id> - are required params
  *
- * <path_to_csv> - path to .csv file with roles and their emails
+ * <path_to_csv> - path to .csv file with roles and their emails. Max file size should be <= 1 Megabyte
  * <folder_id> - an ID of folder where signed documents will be saved
  */
 
