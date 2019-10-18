@@ -57,7 +57,7 @@ SignNow Node.js REST API Wrapper
       * [Create Document Group](#create-document-group)
       * [View Document Group](#view-document-group)
       * [Create Invite to Sign a Document Group](#document-group-invite)
-      * [Download Document Group](#document-group-download)
+      * [Download Document Group](#download-document-group)
     * [Document Group Template](#document-group-template)
       * [Create Document Group Template](#create-document-group-template)
       * [View Document Group Template](#view-documentgroup-template)
@@ -728,14 +728,14 @@ api.documentGroup.invite({
 
 More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroupInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/document-group-invite.js)
 
-#### <a name="#document-group-download"></a>Download Document Group
+#### <a name="download-document-group"></a>Download Document Group
 
 By default Document Group is downloaded without history as .zip archive with PDF files. To download it as a signle merged PDF set `type` to `merged`. To download document group with history set `with_history` to `after_each_document` or `after_merged_pdf`.
 
 ```javascript
 api.documentGroup.download({
   token: 'your auth token',
-  id: 'document id',
+  id: 'document group ID',
   type: 'merged', // 'zip' by default
   with_history: 'after_each_document', // 'no' by default
 }, (err, res) => {

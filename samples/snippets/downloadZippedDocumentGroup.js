@@ -4,16 +4,16 @@ const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
 });
-const downloadDocumentGroup = signnow.documentGroup.download;
+const { download: downloadDocumentGroup } = signnow.documentGroup;
 
 const id = 'DOCUMENT_GROUP_ID_GOES_HERE';
 const token = 'YOUR_ACCESS_TOKEN';
 
 /**
- * @param {Binary} res - binary data (file) of the document group
+ * @param {Buffer} res - binary data of the zipped Document Group (ZIP archive)
  */
 const handleResponse = res => {
-  console.log(res);
+  // save the file to your disk or pipe it to another handler
 };
 
 const handleError = err => {

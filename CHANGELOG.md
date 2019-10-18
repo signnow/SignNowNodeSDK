@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.7.0] - Unreleased Phase 6
 
 ### Added
-- Implemented *Download Document Group* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#download-document-group)
-- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/download-document-group.js) for *Download Document Group* feature
+- Implemented *Download Document Group* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/document-group/index.js~Template.html#static-method-download), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#download-document-group), [Full example of zipped download](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadMergedDocumentGroup.js), [Full example of merged download](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadZippedDocumentGroup.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/download-document-group.js).
+
 
 ### Changed
 

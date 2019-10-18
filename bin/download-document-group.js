@@ -2,12 +2,19 @@
 
 /**
  * to run download-document-group applet from the project root folder type in your console:
- * > node bin/download-document-group <client_id> <client_secret> <username> <password> <document_group_id> <path_to_save> <type> <with_history> <document_order>
+ * > node bin/download-document-group <client_id> <client_secret> <username> <password> <document_group_id> <path_to_save> <document_order>
  * <client_id>, <client_secret>, <username>, <password>, <document_group_id>, <path_to_save> - are required params
- * <type>, <with_history>, <document_order> - are optional params
+ * <document_order> - is optional param
+ * options:
+ * --type - type of download flow, can be `zip` or `merged`
+ * --with_history - type of history merging flow, can be `no`, `after_each_document`, or `after_merged_pdf`
  */
 
 'use strict';
+
+const args = process.argv.slice(2);
+const flags = args.filter(arg => /^--/.test(arg));
+const params = args.filter(arg => !/^--/.test(arg));
 
 const [
   clientId,
@@ -16,10 +23,17 @@ const [
   password,
   documentGroupId,
   pathToSaveFile,
-  type,
-  withHistory,
-  documentOrder,
-] = process.argv.slice(2);
+  ...document_order
+] = params;
+
+const { type, with_history } = flags.reduce((acc, cur) => {
+  const [
+    key,
+    value,
+  ] = cur.split('=');
+  acc[key.slice(2)] = value;
+  return acc;
+}, {});
 
 const fs = require('fs');
 const { promisify } = require('../utils');
@@ -44,8 +58,8 @@ getAccessToken$({
     id: documentGroupId,
     token,
     type,
-    with_history: withHistory,
-    document_order: JSON.parse(documentOrder),
+    with_history,
+    document_order,
   }))
   .then(file => {
     const absolutePath = `${pathToSaveFile}/${documentGroupId}.${type === 'merged' ? 'pdf' : 'zip'}`;
