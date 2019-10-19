@@ -6,10 +6,12 @@ const signnow = require('@signnow/api-client')({
 });
 const { create: createUser } = signnow.user;
 
-const username = 'USER_EMAIL_GOES_HERE';
+const email = 'USER_EMAIL_GOES_HERE';
 const password = 'PASSWORD_GOES_HERE';
-const firstName = 'USER_FIRST_NAME';
-const lastName = 'LAST_FIRST_NAME';
+const first_name = 'USER_FIRST_NAME';
+const last_name = 'LAST_FIRST_NAME';
+const number = 'PHONE_NUMBER';
+const skip_30day_trial = 1;
 const options = { verifyEmail: true };
 
 /**
@@ -27,10 +29,12 @@ const handleError = err => {
 };
 
 createUser({
-  username,
+  email,
   password,
-  firstName,
-  lastName,
+  first_name,
+  last_name,
+  number,
+  skip_30day_trial,
   options,
 }, (err, res) => {
   if (err) {
