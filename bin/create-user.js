@@ -2,12 +2,12 @@
 
 /**
  * to run create-user applet from the project root folder type in your console:
- * > node bin/create-user <client_id> <client_secret> <email> <password> <first_name> <last_name> <number>
+ * > node bin/create-user <client_id> <client_secret> <email> <password> <first_name> <last_name> <phone_number>
  * <client_id>, <client_secret>, <email>, <password> - are required params
- * <first_name>, <last_name>, <number> - are optional
+ * <first_name>, <last_name>, <phone_number> - are optional
  * options:
  * --verify-email - send verification email
- * --skip-trial - skip 30 day free trial
+ * --start-trial - start 30 day free trial. Defaults to expired subscription
  */
 
 'use strict';
@@ -27,7 +27,7 @@ const [
 ] = params;
 
 const verifyEmail = flags.includes('--verify-email');
-const skip_30day_trial = flags.includes('--skip-trial') ? 1 : 0;
+const startTrial = flags.includes('--start-trial');
 
 const { promisify } = require('../utils');
 const { user: { create: createUser } } = require('../lib')({
@@ -43,8 +43,10 @@ createUser$({
   first_name,
   last_name,
   number,
-  skip_30day_trial,
-  options: { verifyEmail },
+  options: {
+    verifyEmail,
+    startTrial,
+  },
 })
   .then(res => console.log(res))
   .catch(err => console.error(err));

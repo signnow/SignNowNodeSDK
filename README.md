@@ -132,7 +132,6 @@ api.user.create({
   first_name: 'John',
   last_name: 'Wayne',
   number: '123-456-789',
-  skip_30day_trial: 1
   options: { verifyEmail: true } // false by default
 }, (err, res) => {
   // handle error or process response data

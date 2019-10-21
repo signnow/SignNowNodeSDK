@@ -11,8 +11,10 @@ const password = 'PASSWORD_GOES_HERE';
 const first_name = 'USER_FIRST_NAME';
 const last_name = 'LAST_FIRST_NAME';
 const number = 'PHONE_NUMBER';
-const skip_30day_trial = 1;
-const options = { verifyEmail: true };
+const options = {
+  verifyEmail: true,
+  startTrial: true,
+};
 
 /**
  * @param {Object} res
@@ -34,7 +36,6 @@ createUser({
   first_name,
   last_name,
   number,
-  skip_30day_trial,
   options,
 }, (err, res) => {
   if (err) {

@@ -13,8 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Added optional ability to send verification email in *Create User* feature
-- Added `number` and `skip_30day_trial` parameters to *Create User* feature
+- Added optional abilities to send verification email or start 30 days free trial in *Create User* feature
+- Added ability to set phone number into *Create User* feature
 
 ## [v1.6.0] - Unreleased Phase 5
 
