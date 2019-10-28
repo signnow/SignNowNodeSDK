@@ -8,9 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.7.0] - Unreleased Phase 6
 
 ### Added
-- Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/duplicate-template.js) for [Duplicate Template](https://signnow.github.io/SignNowNodeSDK/class/lib/template/index.js~Template.html#static-method-duplicate) feature.
 
 ### Changed
+
+- Added for *View Template Routing Details* feature a [CLI Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/duplicate-template.js)
 
 ## [v1.6.0] - Unreleased Phase 5
 
