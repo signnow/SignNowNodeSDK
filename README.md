@@ -439,6 +439,8 @@ More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/rem
 
 #### <a name="document-signers"></a>Get Document Signers
 
+If there is no options set you will get all document signers
+
 ```javascript
 api.document.signers({
   token: 'your auth token',
