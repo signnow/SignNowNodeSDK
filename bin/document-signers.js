@@ -10,14 +10,6 @@
  * --field-invite-status=pending,declined,fulfilled,created,skipped - will return a list of field invite signers by invite status(es). choose one(s) that you need
  * --payment-request-status (the same as --payment-request-status=all) - will return a list of all signers that payment requests are made for
  * --payment-request-status=created,pending,skipped,fulfilled - will return a list of signers that payment requests are made for by payment request status(es). choose one(s) that you need
- *
- * additional options flags for --field-invite-status
- *  all,pending,declined,fulfilled,created,skipped
- *  exp.(--field-invite-status=pending,declined)
- *
- * additional options flags for --payment-request-status
- *  all,created,pending,skipped,fulfilled
- * exp.(--payment-request-status=declined,all)
  */
 
 'use strict';
