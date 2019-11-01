@@ -444,7 +444,7 @@ api.document.signers({
   token: 'your auth token',
   id: 'document id',
   options: {
-    freeFormInvites: false,
+    freeFormInvites: false, // you can omit this option, it equals to false by default
     fieldInviteStatus: ['pending', 'skipped'],
     paymentRequestStatus: 'pending',
   },
