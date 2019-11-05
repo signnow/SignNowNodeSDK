@@ -4,21 +4,22 @@ const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
 });
-const getDocumentSigners = signnow.document.signers;
+const { signers: getDocumentSigners } = signnow.document;
 
 const id = 'DOCUMENT_ID_GOES_HERE';
 const token = 'YOUR_ACCESS_TOKEN';
 
 /**
- * @typedef {Object} Document signers options
- * @property {boolean} [allSignatures = true] - if true receive all document signers email
- * @property {boolean} [freeFormInvites = false] - if true receive free from invite signers email
- * @property {string[]} [fieldInvitesStatus = null] - receive signers depends on fields status.
- *  Accepts list of statuses or a single status.
- *  Available statuses: all, pending, declined, fulfilled, created, skipped.
- * @property {string[]} [paymentRequestsStatus = null] - receive signers depends on payment status
- *  Accepts list of statuses or a single status.
- *  Available statuses: all, pending, fulfilled, created, skipped.
+ * Get Document Signers optional settings
+ * @type {Object}
+ * @property {boolean} [allSignatures=true] - if true receive all document signers email
+ * @property {boolean} [freeFormInvites=false] - if `true` return free from invite signer emails
+ * @property {?string[]} [fieldInvitesStatus=null] - return signers according to specified field invite status(es)
+ * Accepts list of statuses or a single status.
+ * Acceptable statuses: all, pending, declined, fulfilled, created, skipped.
+ * @property {?string[]} [paymentRequestsStatus=null] - return signers according to specified to payment request status(es)
+ * Accepts list of statuses or a single status.
+ * Available statuses: all, pending, fulfilled, created, skipped.
  */
 const options = {
   freeFormInvites: false,

@@ -44,6 +44,7 @@
   },
   "files": [
     "lib",
+    "config",
     "utils",
     "bin"
   ],
