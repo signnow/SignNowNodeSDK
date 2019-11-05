@@ -10,6 +10,7 @@
  * --field-invite-status=pending,declined,fulfilled,created,skipped - will return a list of field invite signers by invite status(es). choose one(s) that you need
  * --payment-request-status (the same as --payment-request-status=all) - will return a list of all signers that payment requests are made for
  * --payment-request-status=created,pending,skipped,fulfilled - will return a list of signers that payment requests are made for by payment request status(es). choose one(s) that you need
+ * --dev - request will be sent to developer sandbox API
  */
 
 'use strict';
@@ -45,10 +46,12 @@ const [
   documentId,
 ] = params;
 
+const dev = flags.includes('--dev');
+
 const { promisify } = require('../utils');
 const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
-  production: false,
+  production: !dev,
 });
 
 const {

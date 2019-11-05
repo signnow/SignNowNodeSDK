@@ -5,9 +5,15 @@
  * > node bin/create-document-group <client_id> <client_secret> <username> <password> <group_name> <...document_ids>
  * <client_id>, <client_secret>, <username>, <password>, <group_name>, <...document_ids> - are required params
  * <...document_ids> - ID(s) of one or more documents
+ * options:
+ * --dev - request will be sent to developer sandbox API
  */
 
 'use strict';
+
+const args = process.argv.slice(2);
+const flags = args.filter(arg => /^--/.test(arg));
+const params = args.filter(arg => !/^--/.test(arg));
 
 const [
   clientId,
@@ -16,12 +22,14 @@ const [
   password,
   group_name,
   ...ids
-] = process.argv.slice(2);
+] = params;
+
+const dev = flags.includes('--dev');
 
 const { promisify } = require('../utils');
 const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
-  production: false,
+  production: !dev,
 });
 
 const {

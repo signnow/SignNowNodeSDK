@@ -7,6 +7,7 @@
  * <...document_ids> - one or more document iDs
  * options:
  * --remove-originals - original documents will be removed after merging
+ * --dev - request will be sent to developer sandbox API
  */
 
 'use strict';
@@ -25,11 +26,12 @@ const [
 ] = params;
 
 const removeOriginalDocuments = flags.includes('--remove-originals');
+const dev = flags.includes('--dev');
 
 const { promisify } = require('../utils');
 const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
-  production: false,
+  production: !dev,
 });
 
 const {

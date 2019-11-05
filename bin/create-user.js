@@ -5,9 +5,15 @@
  * > node bin/create-user <client_id> <client_secret> <email> <password> <first_name> <last_name>
  * <client_id>, <client_secret>, <email>, <password> - are required params
  * <first_name>, <last_name> - are optional
+ * options:
+ * --dev - request will be sent to developer sandbox API
  */
 
 'use strict';
+
+const args = process.argv.slice(2);
+const flags = args.filter(arg => /^--/.test(arg));
+const params = args.filter(arg => !/^--/.test(arg));
 
 const [
   clientId,
@@ -16,12 +22,14 @@ const [
   password,
   first_name,
   last_name,
-] = process.argv.slice(2);
+] = params;
+
+const dev = flags.includes('--dev');
 
 const { promisify } = require('../utils');
 const { user: { create: createUser } } = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
-  production: false,
+  production: !dev,
 });
 
 const createUser$ = promisify(createUser);

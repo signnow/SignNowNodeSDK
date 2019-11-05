@@ -2,10 +2,11 @@
 
 /**
  * to run download-document applet from the project root folder type in your console:
- * > node bin/download-document <clienе_id> <client_secret> <username> <password> <document_id> <path_to_save>
+ * > node bin/download-document <client_id> <client_secret> <username> <password> <document_id> <path_to_save>
  * <client_id>, <client_secret>, <username>, <password>, <document_id>, <path_to_save> - are required params
  * options:
  * --with-history - document will be downloaded with its history
+ * --dev - request will be sent to developer sandbox API
  */
 
 'use strict';
@@ -24,12 +25,13 @@ const [
 ] = params;
 
 const withHistory = flags.includes('--with-history');
+const dev = flags.includes('--dev');
 
 const fs = require('fs');
 const { promisify } = require('../utils');
 const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
-  production: false,
+  production: !dev,
 });
 
 const {
