@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Implemented *View Template Routing Details* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/template/index.js~Template.html#static-method-getRoutingDetails), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#routing-details), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/getRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/routing-details.js).
+- Implemented *Update Template Routing Details* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/template/index.js~Template.html#static-method-updateRoutingDetails), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#update-routing-details), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/updateTemplateRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/update-routing-details.js).
+- Implemented *Download Document Group* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/document-group/index.js~Template.html#static-method-download), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#download-document-group), [Full example of zipped download](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadMergedDocumentGroup.js), [Full example of merged download](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadZippedDocumentGroup.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/download-document-group.js).
+- Implemented *Send Verification Email* feature. See how to utilize it in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#verify-email) and [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js).
 - Implemented *Send Verification Email* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/template/index.js~Template.html#verify-email), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#verify-email), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendVerificationEmail.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js).
 
 ### Changed
@@ -19,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.6.0] - Unreleased Phase 5
 
 ### Added
+
 - Implemented *Cancel Free Form Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-freeform-invite)
 - Created CLI [Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/cancel-freeform-invite.js) for *Cancel Free Form Invite* feature
 - Implemented *Cancel Free Form Invite* feature with documentation and example in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-freeform-invite)
