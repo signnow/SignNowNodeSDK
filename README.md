@@ -627,7 +627,7 @@ api.template.remove({
 
 More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/remove-template.js)
 
-#### <a name="routing-details"></a>View Template Routing Details
+#### <a name="routing-details"></a>View Routing Details
 
 ```javascript
 api.template.getRoutingDetails({
