@@ -126,18 +126,34 @@ Every resource returns two parameters. The first param contains any errors and t
 
 #### <a name="create-user"></a>Create a User
 
+By default verification email is not sent. To send it set `verifyEmail` option to `true`.
+
 ```javascript
 api.user.create({
-  first_name: 'John',
-  last_name: 'Wayne',
   email: 'john@domain.com',
   password: 'yourpwd',
+  first_name: 'John',
+  last_name: 'Wayne',
+  number: '123-456-789',
+  options: { verifyEmail: true } // false by default
 }, (err, res) => {
   // handle error or process response data
 });
 ```
 
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-user.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createUser.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-user.js)
+
+#### <a name="verify-email"></a>Send Verification Email
+
+```javascript
+api.user.verifyEmail({
+  email: 'john@domain.com',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendVerificationEmail.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js)
 
 #### <a name="verify-email"></a>Send Verification Email
 

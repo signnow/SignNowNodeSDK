@@ -13,8 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implemented *Update Template Routing Details* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/template/index.js~Template.html#static-method-updateRoutingDetails), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#update-routing-details), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/updateTemplateRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/update-routing-details.js).
 - Implemented *Download Document Group* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/document-group/index.js~Template.html#static-method-download), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#download-document-group), [Full example of zipped download](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadMergedDocumentGroup.js), [Full example of merged download](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadZippedDocumentGroup.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/download-document-group.js).
 - Implemented *Send Verification Email* feature. See how to utilize it in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#verify-email) and [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js).
+- Implemented *Send Verification Email* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/template/index.js~Template.html#verify-email), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#verify-email), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendVerificationEmail.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js).
 
 ### Changed
+
+- Added optional abilities to send verification email or start 30 days free trial in *Create User* feature
+- Added ability to set phone number into *Create User* feature
 
 ## [v1.6.0] - Unreleased Phase 5
 
