@@ -5,6 +5,7 @@
  * > node bin/download-document <client_id> <client_secret> <username> <password> <document_id> <path_to_save>
  * <client_id>, <client_secret>, <username>, <password>, <document_id>, <path_to_save> - are required params
  * options:
+ * --with-attachments - document will be downloaded as zip package with its attachments
  * --with-history - document will be downloaded with its history
  */
 
@@ -23,6 +24,7 @@ const [
   pathToSaveFile,
 ] = params;
 
+const withAttachments = flags.includes('--with-attachments');
 const withHistory = flags.includes('--with-history');
 
 const fs = require('fs');
@@ -46,12 +48,16 @@ getAccessToken$({
 })
   .then(({ access_token: token }) => downloadDocument$({
     id: documentId,
-    options: { withHistory },
+    options: { 
+      withAttachments,
+      withHistory,
+     },
     token,
   }))
   .then(file => {
-    const absolutePath = `${pathToSaveFile}/${documentId}.pdf`;
+    const fileExtension = withAttachments ? 'zip' : 'pdf';
+    const absolutePath = `${pathToSaveFile}/${documentId}.${fileExtension}`;
     fs.writeFileSync(absolutePath, file, { encoding: 'binary' });
-    console.log(`Document has been downloaded. Check your ${pathToSaveFile} directory`);
+    console.log(`Document has been downloaded. Check your '${pathToSaveFile}' directory.`);
   })
   .catch(err => console.error(err));
