@@ -40,6 +40,7 @@ SignNow Node.js REST API Wrapper
       * [Merge Existing Documents](#merge-documents)
       * [Get Document History](#get-history)
       * [Remove Document](#remove-document)
+      * [Get Document Signers](#document-signers)
     * [Links](#links)
       * [Create signing link](#create-signing-link)
     * [Enumerations](#enumerations)
@@ -468,6 +469,26 @@ api.document.remove({
 ```
 
 More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/remove-document.js)
+
+#### <a name="document-signers"></a>Get Document Signers
+
+If there is no options set you will get all document signers
+
+```javascript
+api.document.signers({
+  token: 'your auth token',
+  id: 'document id',
+  options: {
+    freeFormInvites: false, // you can omit this option, it equals to false by default
+    fieldInviteStatus: ['pending', 'skipped'],
+    paymentRequestStatus: 'pending',
+  },
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/documentSigners.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/document-signers.js)
 
 ### <a name="links"></a>Links
 

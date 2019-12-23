@@ -8,6 +8,7 @@
  * options:
  * --verify-email - send verification email
  * --start-trial - start 30 day free trial. Defaults to expired subscription
+ * --dev - request will be sent to developer sandbox API
  */
 
 'use strict';
@@ -28,11 +29,12 @@ const [
 
 const verifyEmail = flags.includes('--verify-email');
 const startTrial = flags.includes('--start-trial');
+const dev = flags.includes('--dev');
 
 const { promisify } = require('../utils');
 const { user: { create: createUser } } = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
-  production: false,
+  production: !dev,
 });
 
 const createUser$ = promisify(createUser);

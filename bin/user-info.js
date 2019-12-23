@@ -4,21 +4,29 @@
  * to run user-info applet from the project root folder type in your console:
  * > node bin/user-info <client_id> <client_secret> <email> <password>
  * <client_id>, <client_secret>, <email>, <password> - are required params
+ * options:
+ * --dev - request will be sent to developer sandbox API
  */
 
 'use strict';
+
+const args = process.argv.slice(2);
+const flags = args.filter(arg => /^--/.test(arg));
+const params = args.filter(arg => !/^--/.test(arg));
 
 const [
   clientId,
   clientSecret,
   username,
   password,
-] = process.argv.slice(2);
+] = params;
+
+const dev = flags.includes('--dev');
 
 const { promisify } = require('../utils');
 const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
-  production: false,
+  production: !dev,
 });
 
 const {

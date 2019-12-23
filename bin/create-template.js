@@ -6,6 +6,7 @@
  * <client_id> <client_secret> <username> <password> <document_id> <template_name> - are required params
  * options:
  * --delete-original - original document will be removed after template creation
+ * --dev - request will be sent to developer sandbox API
  */
 
 'use strict';
@@ -24,11 +25,12 @@ const [
 ] = params;
 
 const removeOriginalDocument = flags.includes('--delete-original');
+const dev = flags.includes('--dev');
 
 const { promisify } = require('../utils');
 const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
-  production: false,
+  production: !dev,
 });
 
 const {

@@ -7,6 +7,7 @@
  * options:
  * --with-attachments - document will be downloaded as zip package with its attachments
  * --with-history - document will be downloaded with its history
+ * --dev - request will be sent to developer sandbox API
  */
 
 'use strict';
@@ -26,12 +27,13 @@ const [
 
 const withAttachments = flags.includes('--with-attachments');
 const withHistory = flags.includes('--with-history');
+const dev = flags.includes('--dev');
 
 const fs = require('fs');
 const { promisify } = require('../utils');
 const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
-  production: false,
+  production: !dev,
 });
 
 const {

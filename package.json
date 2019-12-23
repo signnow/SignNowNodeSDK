@@ -44,6 +44,7 @@
   },
   "files": [
     "lib",
+    "config",
     "utils",
     "bin"
   ],
@@ -84,7 +85,8 @@
     "sn:update-routing-details": "./bin/update-routing-details.js",
     "sn:cancel-documentgroup-invite": "./bin/cancel-documentgroup-invite.js",
     "sn:duplicate-template": "./bin/duplicate-template.js",
-    "sn:bulk-invite": "./bin/bulk-invite.js"
+    "sn:bulk-invite": "./bin/bulk-invite.js",
+    "sn:document-signers": "./bin/document-signers.js"
   },
   "license": "MIT"
 }
