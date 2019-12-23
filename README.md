@@ -47,7 +47,7 @@ SignNow Node.js REST API Wrapper
       * [Add Enumeration Options to the Field](#enumeration-options)
     * [Template](#template)
       * [Create a Template](#create-template)
-      * [Duplicate a Template](#copy-template)
+      * [Create a Document from a Template](#copy-template)
       * [Create Invite to Sign a Template](#template-field-invite)
       * [Create Free Form Invite from Template](#template-freeform-invite)
       * [Remove Template](#remove-template)
@@ -550,7 +550,7 @@ api.template.create({
 
 More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-template.js)
 
-#### <a name="copy-template"></a>Duplicate a Template
+#### <a name="copy-template"></a>Create a Document from a Template
 
 ```javascript
 api.template.duplicate({
@@ -561,6 +561,8 @@ api.template.duplicate({
   // handle error or process response data
 });
 ```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentFromTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/duplicate-template.js)
 
 #### <a name="template-field-invite"></a>Create Invite to Sign a Template
 

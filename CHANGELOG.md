@@ -22,6 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added optional abilities to send verification email or start 30 days free trial in *Create User* feature
 - Added ability to set phone number into *Create User* feature
 
+- Added for *View Template Routing Details* feature a [CLI Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/duplicate-template.js)
+
 ## [v1.6.0] - Unreleased Phase 5
 
 ### Added
