@@ -1,31 +1,31 @@
 'use strict';
 
-const fs = require('fs');
 const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
 });
-const { download: downloadDocument } = signnow.document;
+const { cancelInvite: cancelDocumentGroupInvite } = signnow.documentGroup;
 
-const id = 'DOCUMENT_ID_GOES_HERE';
+const id = 'ID_OF_DOCUMENTGROUP';
+const inviteId = 'ID_OF_INVITE';
 const token = 'YOUR_ACCESS_TOKEN';
-const options = { withAttachments: true };
 
 /**
- * @param {Buffer} res - binary data of zip package
+ * @param {Object} res
+ * @param {string} res.status - status of invite cancellation (e.g. "success")
  */
 const handleResponse = res => {
-  fs.writeFileSync('absolute/path', res, { encoding: 'binary' });
+  console.log(res);
 };
 
 const handleError = err => {
   console.error(err);
 };
 
-downloadDocument({
+cancelDocumentGroupInvite({
   id,
+  inviteId,
   token,
-  options,
 }, (err, res) => {
   if (err) {
     handleError(err);

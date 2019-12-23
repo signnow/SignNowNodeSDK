@@ -1,5 +1,6 @@
 'use strict';
 
+const fs = require('fs');
 const signnow = require('@signnow/api-client')({
   credentials: 'BASE64_ENCODED_CLIENT_CREDENTIALS',
   production: true, // if false then uses eval server
@@ -19,7 +20,7 @@ const document_order = [
  * @param {Buffer} res - binary data of the merged Document Group (PDF file)
  */
 const handleResponse = res => {
-  // save the file to your disk or pipe it to another handler
+  fs.writeFileSync('absolute/path', res, { encoding: 'binary' });
 };
 
 const handleError = err => {

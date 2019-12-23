@@ -48,10 +48,10 @@ getAccessToken$({
 })
   .then(({ access_token: token }) => downloadDocument$({
     id: documentId,
-    options: { 
+    options: {
       withAttachments,
       withHistory,
-     },
+    },
     token,
   }))
   .then(file => {

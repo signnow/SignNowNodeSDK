@@ -6,8 +6,8 @@
  * <client_id>, <client_secret>, <username>, <password>, <document_group_id>, <path_to_save> - are required params
  * <...document_order> - is optional param. It stands for one or more document IDs
  * options:
- * --type - type of download flow, can be `zip` or `merged`. Defaults to `zip` 
- * --with-history - type of history merging flow, can be `no`, `after-each-document`, or `after-merged-pdf`. Defaults to `no` 
+ * --type - type of download flow, can be `zip` or `merged`. Defaults to `zip`
+ * --with-history - type of history merging flow, can be `no`, `after-each-document`, or `after-merged-pdf`. Defaults to `no`
  */
 
 'use strict';
