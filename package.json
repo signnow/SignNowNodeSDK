@@ -1,5 +1,6 @@
 {
   "name": "@signnow/api-client",
+  "clientName": "SignNow Node.js API Client",
   "description": "SignNow REST Service Wrapper",
   "version": "1.5.0",
   "author": {
@@ -59,6 +60,7 @@
     "sn:document-history": "./bin/document-history.js",
     "sn:document-list": "./bin/document-list.js",
     "sn:download-document": "./bin/download-document.js",
+    "sn:download-document-group": "./bin/download-document-group.js",
     "sn:extract-fields": "./bin/extract-fields.js",
     "sn:get-access-token": "./bin/get-access-token.js",
     "sn:invite-documentgroup-template": "./bin/invite-documentgroup-template.js",
@@ -75,7 +77,9 @@
     "sn:verify-access-token": "./bin/verify-access-token.js",
     "sn:view-document-group": "./bin/view-document-group.js",
     "sn:view-document": "./bin/view-document.js",
-    "sn:view-documentgroup-template": "./bin/view-documentgroup-template.js"
+    "sn:view-documentgroup-template": "./bin/view-documentgroup-template.js",
+    "sn:routing-details": "./bin/routing-details.js",
+    "sn:update-routing-details": "./bin/update-routing-details.js"
   },
   "license": "MIT"
 }

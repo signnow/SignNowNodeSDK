@@ -2,12 +2,17 @@
 
 /**
  * to run remove-document applet from the project root folder type in your console:
- * > node bin/remove-document <cliend_id> <client_secret> <username> <password> <document_id> <cancel_invites>
+ * > node bin/remove-document <cliend_id> <client_secret> <username> <password> <document_id>
  * <cliend_id>, <client_secret>, <username>, <password>, <document_id> - are required params
- * <cancel_invites> - optional param. If ommited defaults to 'false'
+ * options:
+ * --cancel-invites - invites of document will be cancelled if exist
  */
 
 'use strict';
+
+const args = process.argv.slice(2);
+const flags = args.filter(arg => /^--/.test(arg));
+const params = args.filter(arg => !/^--/.test(arg));
 
 const [
   clientId,
@@ -15,8 +20,9 @@ const [
   username,
   password,
   documentId,
-  cancelInvites = 'false',
-] = process.argv.slice(2);
+] = params;
+
+const cancelInvites = flags.includes('--cancel-invites');
 
 const { promisify } = require('../utils');
 const api = require('../lib')({
@@ -38,7 +44,7 @@ getAccessToken$({
 })
   .then(({ access_token: token }) => removeDocument$({
     id: documentId,
-    options: { cancelInvites: cancelInvites === 'true' },
+    options: { cancelInvites },
     token,
   }))
   .then(res => console.log(res))

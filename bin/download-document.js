@@ -2,12 +2,17 @@
 
 /**
  * to run download-document applet from the project root folder type in your console:
- * > node bin/download-document <clienе_id> <client_secret> <username> <password> <document_id> <path_to_save> <with_history>
+ * > node bin/download-document <client_id> <client_secret> <username> <password> <document_id> <path_to_save>
  * <client_id>, <client_secret>, <username>, <password>, <document_id>, <path_to_save> - are required params
- * <with_history> - optional param
+ * options:
+ * --with-history - document will be downloaded with its history
  */
 
 'use strict';
+
+const args = process.argv.slice(2);
+const flags = args.filter(arg => /^--/.test(arg));
+const params = args.filter(arg => !/^--/.test(arg));
 
 const [
   clientId,
@@ -16,8 +21,9 @@ const [
   password,
   documentId,
   pathToSaveFile,
-  withHistory,
-] = process.argv.slice(2);
+] = params;
+
+const withHistory = flags.includes('--with-history');
 
 const fs = require('fs');
 const { promisify } = require('../utils');
@@ -40,7 +46,7 @@ getAccessToken$({
 })
   .then(({ access_token: token }) => downloadDocument$({
     id: documentId,
-    options: { withHistory: withHistory === 'true' },
+    options: { withHistory },
     token,
   }))
   .then(file => {

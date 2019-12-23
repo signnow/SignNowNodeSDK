@@ -51,6 +51,8 @@ SignNow Node.js REST API Wrapper
       * [Create Invite to Sign a Template](#template-field-invite)
       * [Create Free Form Invite from Template](#template-freeform-invite)
       * [Remove Template](#remove-template)
+      * [View Routing Details](#routing-details)
+      * [Update Routing Details](#update-routing-details)
     * [Folder](#folder)
       * [Returns a list of folders](#list-folders)
       * [Returns a list of documents inside a folder](#list-documents-in-folder)
@@ -58,6 +60,7 @@ SignNow Node.js REST API Wrapper
       * [Create Document Group](#create-document-group)
       * [View Document Group](#view-document-group)
       * [Create Invite to Sign a Document Group](#document-group-invite)
+      * [Download Document Group](#download-document-group)
     * [Document Group Template](#document-group-template)
       * [Create Document Group Template](#create-document-group-template)
       * [View Document Group Template](#view-documentgroup-template)
@@ -602,6 +605,70 @@ api.template.remove({
 
 More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/remove-template.js)
 
+#### <a name="routing-details"></a>View Template Routing Details
+
+```javascript
+api.template.getRoutingDetails({
+  token: 'your auth token',
+  id: 'template id',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/getRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/routing-details.js)
+
+#### <a name="update-routing-details"></a>Update Routing Details
+
+```javascript
+const routingDetails = {
+  template_data: [
+    {
+      default_email: '',
+      inviter_role: false,
+      name: 'Signer 1',
+      role_id: 'SIGNER 1 ROLE ID',
+      signing_order: 1,
+      decline_by_signature: true,
+    },
+    {
+      default_email: 'signer2@mail.com',
+      inviter_role: false,
+      name: 'Signer 2',
+      role_id: 'SIGNER 2 ROLE ID',
+      signing_order: 2,
+    },
+  ],
+  cc: [
+    'cc1@mail.com',
+    'cc2@mail.com',
+  ],
+  cc_step: [
+    {
+      email: 'cc1@mail.com',
+      step: 1,
+      name: 'CC 1',
+    },
+    {
+      email: 'cc2@mail.com',
+      step: 2,
+      name: 'CC 2',
+    },
+  ],
+  invite_link_instructions: 'Invite link signing instruction',
+};
+
+api.template.updateRoutingDetails({
+  data: routingDetails,
+  token: 'your auth token',
+  id: 'template id',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/updateTemplateRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/update-routing-details.js)
+
 ### <a name="folder"></a>Folder
 
 #### <a name="list-folders"></a>Returns a list of folders
@@ -739,6 +806,23 @@ api.documentGroup.invite({
 ```
 
 More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroupInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/document-group-invite.js)
+
+#### <a name="download-document-group"></a>Download Document Group
+
+By default Document Group is downloaded without history as .zip archive with PDF files. To download it as a signle merged PDF set `type` to `merged`. To download document group with history set `with_history` to `after_each_document` or `after_merged_pdf`.
+
+```javascript
+api.documentGroup.download({
+  token: 'your auth token',
+  id: 'document group ID',
+  type: 'merged', // 'zip' by default
+  with_history: 'after_each_document', // 'no' by default
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Zipped Download Example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadZippedDocumentGroup.js), [Merged Download Example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadMergedDocumentGroup.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/download-document-group.js)
 
 ### <a name="document-group-template"></a>Document Group Template
 
