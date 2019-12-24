@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.7.0] - 2019-12-24
+
+### Added
+
+- Implemented *Document Signers* feature. See gow to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/document/index.js~Document.html#static-method-signers), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#document-signers), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/documentSigners.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/document-signers.js).
+- Implemented *View Template Routing Details* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/template/index.js~Template.html#static-method-getRoutingDetails), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#routing-details), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/getRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/routing-details.js).
+- Implemented *Update Template Routing Details* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/template/index.js~Template.html#static-method-updateRoutingDetails), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#update-routing-details), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/updateTemplateRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/update-routing-details.js).
+- Implemented *Download Document Group* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/document-group/index.js~Template.html#static-method-download), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#download-document-group), [Full example of zipped download](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadMergedDocumentGroup.js), [Full example of merged download](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadZippedDocumentGroup.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/download-document-group.js).
+- Implemented *Send Verification Email* feature. See how to utilize it in [README](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#verify-email) and [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js).
+- Implemented *Send Verification Email* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/template/index.js~Template.html#verify-email), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#verify-email), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendVerificationEmail.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js).
+- Implemented *Cancel Document Group Invite* feature. See how to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/document-group/index.js~DocumentGroup.html#static-method-cancelInvite), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#cancel-document-group-invite), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/cancelDocumentGroupInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/cancel-documentgroup-invite.js).
+
+### Changed
+
+- Added optional abilities to send verification email or start 30 days free trial in *Create User* feature.
+- Added ability to set phone number into *Create User* feature.
+- Added for *View Template Routing Details* feature a [CLI Applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/duplicate-template.js).
+- Added optional ability to download document archived in zip for *Download Document* feature. See how to apply it in [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#download-document), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadDocumentWithAttachments.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/download-document.js).
+
 ## [v1.6.0] - 2019-09-24
 
 ### Added
@@ -139,6 +158,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Made fix of feature bug related to `Content-Length` header in requests
 
+[v1.7.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.6.0...v1.7.0
 [v1.6.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.5.0...v1.6.0
 [v1.5.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.4.0...v1.5.0
 [v1.4.0]: https://github.com/signnow/SignNowNodeSDK/compare/v1.3.1...v1.4.0

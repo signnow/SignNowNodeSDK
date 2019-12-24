@@ -5,9 +5,15 @@
  * > node bin/create-document-group-template <client_id> <client_secret> <username> <password> <template_group_name> <...template_ids> <routing_details>
  * <client_id> <client_secret> <username> <password> <template_group_name> <...template_ids> <routing_details> - are required params
  * <...template_ids> - ID(s) of one or more templates
+ * options:
+ * --dev - request will be sent to developer sandbox API
  */
 
 'use strict';
+
+const args = process.argv.slice(2);
+const flags = args.filter(arg => /^--/.test(arg));
+const params = args.filter(arg => !/^--/.test(arg));
 
 const [
   clientId,
@@ -16,12 +22,14 @@ const [
   password,
   template_group_name,
   ...templateIDsWithRoutingDetails
-] = process.argv.slice(2);
+] = params;
+
+const dev = flags.includes('--dev');
 
 const { promisify } = require('../utils');
 const api = require('../lib')({
   credentials: Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
-  production: false,
+  production: !dev,
 });
 
 const {

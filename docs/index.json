@@ -5534,7 +5534,7 @@
       {
         "nullable": null,
         "types": [
-          "string"
+          "DocumentViewResponse"
         ],
         "spread": false,
         "optional": false,
@@ -5554,7 +5554,7 @@
       {
         "nullable": null,
         "types": [
-          "string"
+          "DocumentViewResponse"
         ],
         "spread": false,
         "optional": false,
@@ -5562,9 +5562,18 @@
         "description": "phone number"
       }
     ],
-    "type": {
+    "return": {
+      "nullable": null,
       "types": [
-        "Object"
+        "boolean"
+      ],
+      "spread": false,
+      "description": "is there any signature in given document"
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "function"
       ],
       "optional": false,
       "name": "DocumentGroupInviteAuthenticationPhoneSMS"
@@ -5583,7 +5592,7 @@
       {
         "nullable": null,
         "types": [
-          "string"
+          "DocumentViewResponse"
         ],
         "spread": false,
         "optional": false,

@@ -18,6 +18,7 @@ SignNow Node.js REST API Wrapper
 6. [Examples](#examples)
     * [User](#user)
       * [Create a User](#create-user)
+      * [Send Verification Email](#verify-email)
       * [Retrieve User Information](#get-user)
     * [OAuth 2.0](#oauth2)
       * [Request Access Token](#get-token)
@@ -46,10 +47,12 @@ SignNow Node.js REST API Wrapper
       * [Add Enumeration Options to the Field](#enumeration-options)
     * [Template](#template)
       * [Create a Template](#create-template)
-      * [Duplicate a Template](#copy-template)
+      * [Create a Document from a Template](#copy-template)
       * [Create Invite to Sign a Template](#template-field-invite)
       * [Create Free Form Invite from Template](#template-freeform-invite)
       * [Remove Template](#remove-template)
+      * [View Routing Details](#routing-details)
+      * [Update Routing Details](#update-routing-details)
     * [Folder](#folder)
       * [Returns a list of folders](#list-folders)
       * [Returns a list of documents inside a folder](#list-documents-in-folder)
@@ -57,6 +60,8 @@ SignNow Node.js REST API Wrapper
       * [Create Document Group](#create-document-group)
       * [View Document Group](#view-document-group)
       * [Create Invite to Sign a Document Group](#document-group-invite)
+      * [Cancel Invite to Sign a Document Group](#cancel-document-group-invite)
+      * [Download Document Group](#download-document-group)
     * [Document Group Template](#document-group-template)
       * [Create Document Group Template](#create-document-group-template)
       * [View Document Group Template](#view-documentgroup-template)
@@ -77,7 +82,7 @@ SignNow Node.js REST API Wrapper
 
 ### <a name="api-contact-info"></a>API Contact Information
 
-If you have questions about the SignNow API, please visit [https://help.signnow.com/docs](https://help.signnow.com/docs) or email [api@signnow.com](mailto:api@signnow.com).
+If you have questions about the SignNow API, please visit [https://docs.signnow.com](https://docs.signnow.com) or email [api@signnow.com](mailto:api@signnow.com).
 
 See additional contact information at the bottom.
 
@@ -105,7 +110,7 @@ See API reference in our [Documentation](https://signnow.github.io/SignNowNodeSD
 
 ## <a name="examples"></a>Examples
 
-To run the examples you will need an API key. You can get one here [https://www.signnow.com/api](https://www.signnow.com/api). For a full list of accepted parameters, refer to the SignNow REST Endpoints API guide: [https://help.signnow.com/docs](https://help.signnow.com/docs).
+To run the examples you will need an API key. You can get one here [https://www.signnow.com/api](https://www.signnow.com/api). For a full list of accepted parameters, refer to the SignNow REST Endpoints API guide: [https://docs.signnow.com](https://docs.signnow.com).
 
 Every resource is accessed via your api client instance:
 
@@ -122,18 +127,46 @@ Every resource returns two parameters. The first param contains any errors and t
 
 #### <a name="create-user"></a>Create a User
 
+By default verification email is not sent. To send it set `verifyEmail` option to `true`.
+
 ```javascript
 api.user.create({
-  first_name: 'John',
-  last_name: 'Wayne',
   email: 'john@domain.com',
   password: 'yourpwd',
+  first_name: 'John',
+  last_name: 'Wayne',
+  number: '123-456-789',
+  options: { verifyEmail: true } // false by default
 }, (err, res) => {
   // handle error or process response data
 });
 ```
 
-More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-user.js)
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createUser.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-user.js)
+
+#### <a name="verify-email"></a>Send Verification Email
+
+```javascript
+api.user.verifyEmail({
+  email: 'john@domain.com',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendVerificationEmail.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js)
+
+#### <a name="verify-email"></a>Send Verification Email
+
+```javascript
+api.user.verifyEmail({
+  email: 'john@domain.com',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/sendVerificationEmail.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/verify-email.js)
 
 #### <a name="get-user"></a>Retrieve User Information
 
@@ -215,13 +248,16 @@ More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/vie
 
 #### <a name="download-document"></a>Download a Collapsed Document
 
-By default document downloads without history. To download it with history set `withHistory` option to `true`.
+By default document is downloaded without history or attachments. To download it with history set `withHistory` option to `true`. To download it with attachments set `withAttachments` option to `true`.
 
 ```javascript
 api.document.download({
   token: 'your auth token',
   id: 'document id',
-  options: { withHistory: true }, // false by default
+  options: { 
+    withAttachments: true, // false by default
+    withHistory: true, // false by default
+  },
 }, (err, res) => {
   // handle error or process response data
 });
@@ -513,7 +549,7 @@ api.template.create({
 
 More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/create-template.js)
 
-#### <a name="copy-template"></a>Duplicate a Template
+#### <a name="copy-template"></a>Create a Document from a Template
 
 ```javascript
 api.template.duplicate({
@@ -524,6 +560,8 @@ api.template.duplicate({
   // handle error or process response data
 });
 ```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentFromTemplate.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/duplicate-template.js)
 
 #### <a name="template-field-invite"></a>Create Invite to Sign a Template
 
@@ -587,6 +625,70 @@ api.template.remove({
 ```
 
 More: [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/remove-template.js)
+
+#### <a name="routing-details"></a>View Routing Details
+
+```javascript
+api.template.getRoutingDetails({
+  token: 'your auth token',
+  id: 'template id',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/getRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/routing-details.js)
+
+#### <a name="update-routing-details"></a>Update Routing Details
+
+```javascript
+const routingDetails = {
+  template_data: [
+    {
+      default_email: '',
+      inviter_role: false,
+      name: 'Signer 1',
+      role_id: 'SIGNER 1 ROLE ID',
+      signing_order: 1,
+      decline_by_signature: true,
+    },
+    {
+      default_email: 'signer2@mail.com',
+      inviter_role: false,
+      name: 'Signer 2',
+      role_id: 'SIGNER 2 ROLE ID',
+      signing_order: 2,
+    },
+  ],
+  cc: [
+    'cc1@mail.com',
+    'cc2@mail.com',
+  ],
+  cc_step: [
+    {
+      email: 'cc1@mail.com',
+      step: 1,
+      name: 'CC 1',
+    },
+    {
+      email: 'cc2@mail.com',
+      step: 2,
+      name: 'CC 2',
+    },
+  ],
+  invite_link_instructions: 'Invite link signing instruction',
+};
+
+api.template.updateRoutingDetails({
+  data: routingDetails,
+  token: 'your auth token',
+  id: 'template id',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/updateTemplateRoutingDetails.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/update-routing-details.js)
 
 ### <a name="folder"></a>Folder
 
@@ -718,7 +820,7 @@ const data = {
 
 api.documentGroup.invite({
   token: 'your auth token',
-  id: 'Document Group ID'
+  id: 'Document Group ID',
   data,
 }, (err, res) => {
   // handle error or process response data
@@ -726,6 +828,37 @@ api.documentGroup.invite({
 ```
 
 More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/createDocumentGroupInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/document-group-invite.js)
+
+#### <a name="cancel-document-group-invite"></a>Cancel Invite to Sign a Document Group
+
+```javascript
+api.documentGroup.cancelInvite({
+  token: 'your auth token',
+  id: 'Document Group ID',
+  inviteId: 'Document Group invite ID'
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/cancelDocumentGroupInvite.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/cancel-documentgroup-invite.js)
+
+#### <a name="download-document-group"></a>Download Document Group
+
+By default Document Group is downloaded without history as .zip archive with PDF files. To download it as a signle merged PDF set `type` to `merged`. To download document group with history set `with_history` to `after_each_document` or `after_merged_pdf`.
+
+```javascript
+api.documentGroup.download({
+  token: 'your auth token',
+  id: 'document group ID',
+  type: 'merged', // 'zip' by default
+  with_history: 'after_each_document', // 'no' by default
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+More: [Zipped Download Example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadZippedDocumentGroup.js), [Merged Download Example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/downloadMergedDocumentGroup.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/download-document-group.js)
 
 ### <a name="document-group-template"></a>Document Group Template
 

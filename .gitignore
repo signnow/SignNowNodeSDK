@@ -13,3 +13,4 @@ test-settings.js
 *.DS_Store
 launch.json
 .vscode
+.history
