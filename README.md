@@ -69,8 +69,8 @@ SignNow Node.js REST API Wrapper
       * [Returns a list of Webhooks](#list-webhooks)
       * [Create a Webhook](#create-webhook)
     * [Promisify methods](#promisify)
-7. [Unit Tests](#unit-tests)</li>
-8. [License](#license)</li>
+7. [Unit Tests](#unit-tests)
+8. [License](#license)
 9. [Additional Contact Information](#contacts)
     * [Support](#support)
     * [Sales](#sales)
@@ -131,7 +131,7 @@ By default verification email is not sent. To send it set `verifyEmail` option t
 ```javascript
 api.user.create({
   email: 'john@domain.com',
-  password: 'yourpwd',
+  password: 'your password',
   first_name: 'John',
   last_name: 'Wayne',
   number: '123-456-789',
