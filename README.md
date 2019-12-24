@@ -82,7 +82,7 @@ SignNow Node.js REST API Wrapper
 
 ### <a name="api-contact-info"></a>API Contact Information
 
-If you have questions about the SignNow API, please visit [https://help.signnow.com/docs](https://help.signnow.com/docs) or email [api@signnow.com](mailto:api@signnow.com).
+If you have questions about the SignNow API, please visit [https://docs.signnow.com](https://docs.signnow.com) or email [api@signnow.com](mailto:api@signnow.com).
 
 See additional contact information at the bottom.
 
@@ -110,7 +110,7 @@ See API reference in our [Documentation](https://signnow.github.io/SignNowNodeSD
 
 ## <a name="examples"></a>Examples
 
-To run the examples you will need an API key. You can get one here [https://www.signnow.com/api](https://www.signnow.com/api). For a full list of accepted parameters, refer to the SignNow REST Endpoints API guide: [https://help.signnow.com/docs](https://help.signnow.com/docs).
+To run the examples you will need an API key. You can get one here [https://www.signnow.com/api](https://www.signnow.com/api). For a full list of accepted parameters, refer to the SignNow REST Endpoints API guide: [https://docs.signnow.com](https://docs.signnow.com).
 
 Every resource is accessed via your api client instance:
 
