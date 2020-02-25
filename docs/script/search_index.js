@@ -576,6 +576,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "lib/document-group/index.js~documentgroup.documentgroupcancelinviteparams",
+    "typedef/index.html#static-typedef-DocumentGroupCancelInviteParams",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupCancelInviteParams",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupcancelinviteresponse",
+    "typedef/index.html#static-typedef-DocumentGroupCancelInviteResponse",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupCancelInviteResponse",
+    "typedef"
+  ],
+  [
     "lib/document-group/index.js~documentgroup.documentgroupcreateparams",
     "typedef/index.html#static-typedef-DocumentGroupCreateParams",
     "lib/document-group/index.js~DocumentGroup.DocumentGroupCreateParams",
@@ -585,6 +597,18 @@ window.esdocSearchIndex = [
     "lib/document-group/index.js~documentgroup.documentgroupcreateresponse",
     "typedef/index.html#static-typedef-DocumentGroupCreateResponse",
     "lib/document-group/index.js~DocumentGroup.DocumentGroupCreateResponse",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupdownloadparams",
+    "typedef/index.html#static-typedef-DocumentGroupDownloadParams",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupDownloadParams",
+    "typedef"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.documentgroupdownloadresponse",
+    "typedef/index.html#static-typedef-DocumentGroupDownloadResponse",
+    "lib/document-group/index.js~DocumentGroup.DocumentGroupDownloadResponse",
     "typedef"
   ],
   [
@@ -666,9 +690,21 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/document-group/index.js~documentgroup.cancelinvite",
+    "class/lib/document-group/index.js~DocumentGroup.html#static-method-cancelInvite",
+    "lib/document-group/index.js~DocumentGroup.cancelInvite",
+    "method"
+  ],
+  [
     "lib/document-group/index.js~documentgroup.create",
     "class/lib/document-group/index.js~DocumentGroup.html#static-method-create",
     "lib/document-group/index.js~DocumentGroup.create",
+    "method"
+  ],
+  [
+    "lib/document-group/index.js~documentgroup.download",
+    "class/lib/document-group/index.js~DocumentGroup.html#static-method-download",
+    "lib/document-group/index.js~DocumentGroup.download",
     "method"
   ],
   [
@@ -900,6 +936,24 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/document/index.js~document.documentsignersoptions",
+    "typedef/index.html#static-typedef-DocumentSignersOptions",
+    "lib/document/index.js~Document.DocumentSignersOptions",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentsignersparams",
+    "typedef/index.html#static-typedef-DocumentSignersParams",
+    "lib/document/index.js~Document.DocumentSignersParams",
+    "typedef"
+  ],
+  [
+    "lib/document/index.js~document.documentsignersresponse",
+    "typedef/index.html#static-typedef-DocumentSignersResponse",
+    "lib/document/index.js~Document.DocumentSignersResponse",
+    "typedef"
+  ],
+  [
     "lib/document/index.js~document.documentthumbnails",
     "typedef/index.html#static-typedef-DocumentThumbnails",
     "lib/document/index.js~Document.DocumentThumbnails",
@@ -1062,6 +1116,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/document/index.js~document.signers",
+    "class/lib/document/index.js~Document.html#static-method-signers",
+    "lib/document/index.js~Document.signers",
+    "method"
+  ],
+  [
     "lib/document/index.js~document.update",
     "class/lib/document/index.js~Document.html#static-method-update",
     "lib/document/index.js~Document.update",
@@ -1194,6 +1254,24 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "lib/template/index.js~template.templatebulkinviteparams",
+    "typedef/index.html#static-typedef-TemplateBulkInviteParams",
+    "lib/template/index.js~Template.TemplateBulkInviteParams",
+    "typedef"
+  ],
+  [
+    "lib/template/index.js~template.templatebulkinviteresponse",
+    "typedef/index.html#static-typedef-TemplateBulkInviteResponse",
+    "lib/template/index.js~Template.TemplateBulkInviteResponse",
+    "typedef"
+  ],
+  [
+    "lib/template/index.js~template.templatebulkinvitesettings",
+    "typedef/index.html#static-typedef-TemplateBulkInviteSettings",
+    "lib/template/index.js~Template.TemplateBulkInviteSettings",
+    "typedef"
+  ],
+  [
     "lib/template/index.js~template.templatecreateoptions",
     "typedef/index.html#static-typedef-TemplateCreateOptions",
     "lib/template/index.js~Template.TemplateCreateOptions",
@@ -1224,6 +1302,18 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/template/index.js~template.templategetroutingdetailsparams",
+    "typedef/index.html#static-typedef-TemplateGetRoutingDetailsParams",
+    "lib/template/index.js~Template.TemplateGetRoutingDetailsParams",
+    "typedef"
+  ],
+  [
+    "lib/template/index.js~template.templategetroutingdetailsresponse",
+    "typedef/index.html#static-typedef-TemplateGetRoutingDetailsResponse",
+    "lib/template/index.js~Template.TemplateGetRoutingDetailsResponse",
+    "typedef"
+  ],
+  [
     "lib/template/index.js~template.templateinviteparams",
     "typedef/index.html#static-typedef-TemplateInviteParams",
     "lib/template/index.js~Template.TemplateInviteParams",
@@ -1248,6 +1338,48 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/template/index.js~template.templateroutingdetailsccstep",
+    "typedef/index.html#static-typedef-TemplateRoutingDetailsCCStep",
+    "lib/template/index.js~Template.TemplateRoutingDetailsCCStep",
+    "typedef"
+  ],
+  [
+    "lib/template/index.js~template.templateroutingdetailsitem",
+    "typedef/index.html#static-typedef-TemplateRoutingDetailsItem",
+    "lib/template/index.js~Template.TemplateRoutingDetailsItem",
+    "typedef"
+  ],
+  [
+    "lib/template/index.js~template.templateupdateroutingdetailsitem",
+    "typedef/index.html#static-typedef-TemplateUpdateRoutingDetailsItem",
+    "lib/template/index.js~Template.TemplateUpdateRoutingDetailsItem",
+    "typedef"
+  ],
+  [
+    "lib/template/index.js~template.templateupdateroutingdetailsparams",
+    "typedef/index.html#static-typedef-TemplateUpdateRoutingDetailsParams",
+    "lib/template/index.js~Template.TemplateUpdateRoutingDetailsParams",
+    "typedef"
+  ],
+  [
+    "lib/template/index.js~template.templateupdateroutingdetailsresponse",
+    "typedef/index.html#static-typedef-TemplateUpdateRoutingDetailsResponse",
+    "lib/template/index.js~Template.TemplateUpdateRoutingDetailsResponse",
+    "typedef"
+  ],
+  [
+    "lib/template/index.js~template.templateupdateroutingdetailssettings",
+    "typedef/index.html#static-typedef-TemplateUpdateRoutingDetailsSettings",
+    "lib/template/index.js~Template.TemplateUpdateRoutingDetailsSettings",
+    "typedef"
+  ],
+  [
+    "lib/template/index.js~template.bulkinvite",
+    "class/lib/template/index.js~Template.html#static-method-bulkInvite",
+    "lib/template/index.js~Template.bulkInvite",
+    "method"
+  ],
+  [
     "lib/template/index.js~template.create",
     "class/lib/template/index.js~Template.html#static-method-create",
     "lib/template/index.js~Template.create",
@@ -1257,6 +1389,12 @@ window.esdocSearchIndex = [
     "lib/template/index.js~template.duplicate",
     "class/lib/template/index.js~Template.html#static-method-duplicate",
     "lib/template/index.js~Template.duplicate",
+    "method"
+  ],
+  [
+    "lib/template/index.js~template.getroutingdetails",
+    "class/lib/template/index.js~Template.html#static-method-getRoutingDetails",
+    "lib/template/index.js~Template.getRoutingDetails",
     "method"
   ],
   [
@@ -1272,10 +1410,34 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/template/index.js~template.updateroutingdetails",
+    "class/lib/template/index.js~Template.html#static-method-updateRoutingDetails",
+    "lib/template/index.js~Template.updateRoutingDetails",
+    "method"
+  ],
+  [
+    "lib/template/index.js~templateupdatesigningroleparams",
+    "typedef/index.html#static-typedef-TemplateUpdateSigningRoleParams",
+    "lib/template/index.js~TemplateUpdateSigningRoleParams",
+    "typedef"
+  ],
+  [
+    "lib/template/index.js~templateupdatesigningroleresponse",
+    "typedef/index.html#static-typedef-TemplateUpdateSigningRoleResponse",
+    "lib/template/index.js~TemplateUpdateSigningRoleResponse",
+    "typedef"
+  ],
+  [
     "lib/user/index.js",
     "file/lib/user/index.js.html",
     "lib/user/index.js",
     "file"
+  ],
+  [
+    "lib/user/index.js~user.createuseroptions",
+    "typedef/index.html#static-typedef-CreateUserOptions",
+    "lib/user/index.js~User.CreateUserOptions",
+    "typedef"
   ],
   [
     "lib/user/index.js~user.usercreateparams",
@@ -1302,6 +1464,18 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/user/index.js~user.userverifyemailparams",
+    "typedef/index.html#static-typedef-UserVerifyEmailParams",
+    "lib/user/index.js~User.UserVerifyEmailParams",
+    "typedef"
+  ],
+  [
+    "lib/user/index.js~user.userverifyemailresponse",
+    "typedef/index.html#static-typedef-UserVerifyEmailResponse",
+    "lib/user/index.js~User.UserVerifyEmailResponse",
+    "typedef"
+  ],
+  [
     "lib/user/index.js~user.create",
     "class/lib/user/index.js~User.html#static-method-create",
     "lib/user/index.js~User.create",
@@ -1311,6 +1485,12 @@ window.esdocSearchIndex = [
     "lib/user/index.js~user.retrieve",
     "class/lib/user/index.js~User.html#static-method-retrieve",
     "lib/user/index.js~User.retrieve",
+    "method"
+  ],
+  [
+    "lib/user/index.js~user.verifyemail",
+    "class/lib/user/index.js~User.html#static-method-verifyEmail",
+    "lib/user/index.js~User.verifyEmail",
     "method"
   ],
   [

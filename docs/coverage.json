@@ -1,21 +1,16 @@
 {
-  "coverage": "86.79%",
-  "expectCount": 53,
-  "actualCount": 46,
+  "coverage": "94.73%",
+  "expectCount": 57,
+  "actualCount": 54,
   "files": {
     "lib/document/index.js": {
-      "expectCount": 19,
-      "actualCount": 15,
-      "undocumentLines": [
-        13,
-        21,
-        44,
-        53
-      ]
+      "expectCount": 16,
+      "actualCount": 16,
+      "undocumentLines": []
     },
     "lib/document-group/index.js": {
-      "expectCount": 8,
-      "actualCount": 8,
+      "expectCount": 10,
+      "actualCount": 10,
       "undocumentLines": []
     },
     "lib/document-group-template/index.js": {
@@ -43,13 +38,13 @@
       "undocumentLines": []
     },
     "lib/template/index.js": {
-      "expectCount": 8,
-      "actualCount": 8,
+      "expectCount": 12,
+      "actualCount": 12,
       "undocumentLines": []
     },
     "lib/user/index.js": {
-      "expectCount": 3,
-      "actualCount": 3,
+      "expectCount": 4,
+      "actualCount": 4,
       "undocumentLines": []
     }
   }
