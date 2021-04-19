@@ -68,6 +68,8 @@ SignNow Node.js REST API Wrapper
     * [Webhook](#webhook)
       * [Returns a list of Webhooks](#list-webhooks)
       * [Create a Webhook](#create-webhook)
+    * [Embedded](#embedded)
+      * [Create embedded signing invites for a document without sending emails](#embedded-create-invites)
     * [Promisify methods](#promisify)
 7. [Unit Tests](#unit-tests)
 8. [License](#license)
@@ -977,6 +979,28 @@ api.webhook.create({
   token: 'your auth token',
   event: 'document.create',
   callback_url: 'http://www.domain.com/path',
+}, (err, res) => {
+  // handle error or process response data
+});
+```
+
+
+### <a name="embedded"></a>Embedded
+
+#### <a name="embedded-create-invites"></a>Create embedded signing invites for a document without sending emails
+
+```javascript
+signnow.embedded.createInvite({
+  token: 'access token',
+  document_id: 'document id',
+  invites: [
+    {
+      email: 'email of signer',
+      role_id: 'role id',
+      order: 1,
+      auth_method: 'password',
+    },
+  ],
 }, (err, res) => {
   // handle error or process response data
 });

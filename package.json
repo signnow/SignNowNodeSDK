@@ -86,7 +86,8 @@
     "sn:cancel-documentgroup-invite": "./bin/cancel-documentgroup-invite.js",
     "sn:duplicate-template": "./bin/duplicate-template.js",
     "sn:bulk-invite": "./bin/bulk-invite.js",
-    "sn:document-signers": "./bin/document-signers.js"
+    "sn:document-signers": "./bin/document-signers.js",
+    "sn:embedded-create-invites": "./bin/embedded-create-invites.js"
   },
   "license": "MIT"
 }

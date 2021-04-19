@@ -7,19 +7,21 @@ const signnow = require('../lib')({
 
 (function() {
 
-  describe('link', () => {
+  describe('embedded', () => {
 
-    describe('.create()', () => {
-      it('should create a new signing link and return two urls', done => {
-        signnow.link.create({ document_id: settings.documentid }, (err, res) => {
+    describe('.createInvite()', () => {
+      it('should create a new embedded signing invites for a document without sending emails', done => {
+        signnow.embedded.createInvite({
+          document_id: settings.documentid,
+          invites: [],
+        }, (err, res) => {
           if (err) { throw err[0].message; }
           res.should.be.a('object');
-          res.should.have.property('url');
+          res.should.have.property('data');
           done();
         });
       });
     });
-
 
   });
 
