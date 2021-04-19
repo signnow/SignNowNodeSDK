@@ -87,7 +87,8 @@
     "sn:duplicate-template": "./bin/duplicate-template.js",
     "sn:bulk-invite": "./bin/bulk-invite.js",
     "sn:document-signers": "./bin/document-signers.js",
-    "sn:embedded-create-invites": "./bin/embedded-create-invites.js"
+    "sn:embedded-create-invites": "./bin/embedded-create-invites.js",
+    "sn:embedded-generate-link": "./bin/embedded-generate-link.js"
   },
   "license": "MIT"
 }
