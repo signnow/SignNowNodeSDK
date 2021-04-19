@@ -121,8 +121,13 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentGroupTemplateViewParams">DocumentGroupTemplateViewParams</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentGroupTemplateViewResponse">DocumentGroupTemplateViewResponse</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#embedded">embedded</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/embedded/index.js~Embedded.html">Embedded</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EmbeddedCancelInvitePayload">EmbeddedCancelInvitePayload</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EmbeddedCancelInviteResponse">EmbeddedCancelInviteResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EmbeddedCreateInvitesPayload">EmbeddedCreateInvitesPayload</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EmbeddedCreateInvitesResponse">EmbeddedCreateInvitesResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EmbeddedGenerateLinkPayload">EmbeddedGenerateLinkPayload</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EmbeddedGenerateLinkResponse">EmbeddedGenerateLinkResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EmbeddedGeneratedLink">EmbeddedGeneratedLink</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EmbeddedInvite">EmbeddedInvite</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EmbeddedSigningInvite">EmbeddedSigningInvite</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#link">link</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/link/index.js~Link.html">Link</a></span></span></li>
@@ -175,7 +180,7 @@
 const { settings } = require(&apos;./test.settings&apos;);
 const signnow = require(&apos;../lib&apos;)({
   credentials: settings.credentials,
-  production: settings.production, // (false by defult)
+  production: settings.production, // (false by default)
 });
 
 (function() {
@@ -185,12 +190,44 @@ const signnow = require(&apos;../lib&apos;)({
     describe(&apos;.createInvite()&apos;, () =&gt; {
       it(&apos;should create a new embedded signing invites for a document without sending emails&apos;, done =&gt; {
         signnow.embedded.createInvite({
+          token: settings.token,
           document_id: settings.documentid,
           invites: [],
         }, (err, res) =&gt; {
           if (err) { throw err[0].message; }
           res.should.be.a(&apos;object&apos;);
           res.should.have.property(&apos;data&apos;);
+          done();
+        });
+      });
+    });
+
+    describe(&apos;.generateInviteLink()&apos;, () =&gt; {
+      it(&apos;should create a link for the embedded invite.&apos;, done =&gt; {
+        signnow.embedded.generateInviteLink({
+          token: settings.token,
+          document_id: settings.documentid,
+          field_invite_unique_id: settings.fieldInviteUniqueId,
+          link_expiration: 15,
+          auth_method: &apos;password&apos;,
+        }, (err, res) =&gt; {
+          if (err) { throw err[0].message; }
+          res.should.be.a(&apos;object&apos;);
+          res.should.have.property(&apos;data&apos;);
+          done();
+        });
+      });
+    });
+
+    describe(&apos;.cancelInvites()&apos;, () =&gt; {
+      it(&apos;should delete embedded invites for a document.&apos;, done =&gt; {
+        signnow.embedded.cancelInvites({
+          token: settings.token,
+          document_id: settings.documentid,
+        }, (err, res) =&gt; {
+          if (err) { throw err[0].message; }
+          res.should.be.a(&apos;object&apos;);
+          res.should.have.property(&apos;status&apos;);
           done();
         });
       });

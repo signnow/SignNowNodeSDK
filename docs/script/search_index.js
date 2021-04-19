@@ -145,6 +145,48 @@ window.esdocSearchIndex = [
   ],
   [
     "",
+    "test-file/test/embedded.test.js.html#lineNumber10",
+    "embedded",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/embedded.test.js.html#lineNumber44",
+    "embedded .cancelInvites()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/embedded.test.js.html#lineNumber45",
+    "embedded .cancelInvites() should delete embedded invites for a document.",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/embedded.test.js.html#lineNumber12",
+    "embedded .createInvite()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/embedded.test.js.html#lineNumber13",
+    "embedded .createInvite() should create a new embedded signing invites for a document without sending emails",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/embedded.test.js.html#lineNumber27",
+    "embedded .generateInviteLink()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/embedded.test.js.html#lineNumber28",
+    "embedded .generateInviteLink() should create a link for the embedded invite.",
+    "test"
+  ],
+  [
+    "",
     "test-file/test/enumeration.test.js.html#lineNumber10",
     "enumerations",
     "test"
@@ -1146,6 +1188,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "lib/embedded/index.js~embedded.embeddedcancelinvitepayload",
+    "typedef/index.html#static-typedef-EmbeddedCancelInvitePayload",
+    "lib/embedded/index.js~Embedded.EmbeddedCancelInvitePayload",
+    "typedef"
+  ],
+  [
+    "lib/embedded/index.js~embedded.embeddedcancelinviteresponse",
+    "typedef/index.html#static-typedef-EmbeddedCancelInviteResponse",
+    "lib/embedded/index.js~Embedded.EmbeddedCancelInviteResponse",
+    "typedef"
+  ],
+  [
     "lib/embedded/index.js~embedded.embeddedcreateinvitespayload",
     "typedef/index.html#static-typedef-EmbeddedCreateInvitesPayload",
     "lib/embedded/index.js~Embedded.EmbeddedCreateInvitesPayload",
@@ -1186,6 +1240,12 @@ window.esdocSearchIndex = [
     "typedef/index.html#static-typedef-EmbeddedSigningInvite",
     "lib/embedded/index.js~Embedded.EmbeddedSigningInvite",
     "typedef"
+  ],
+  [
+    "lib/embedded/index.js~embedded.cancelinvites",
+    "class/lib/embedded/index.js~Embedded.html#static-method-cancelInvites",
+    "lib/embedded/index.js~Embedded.cancelInvites",
+    "method"
   ],
   [
     "lib/embedded/index.js~embedded.createinvite",
@@ -1629,6 +1689,12 @@ window.esdocSearchIndex = [
     "test/document.test.js",
     "test-file/test/document.test.js.html",
     "test/document.test.js",
+    "testFile"
+  ],
+  [
+    "test/embedded.test.js",
+    "test-file/test/embedded.test.js.html",
+    "test/embedded.test.js",
     "testFile"
   ],
   [
