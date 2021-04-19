@@ -18,6 +18,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@signnow/api-client/lib/embedded/index.js~embedded",
+    "class/lib/embedded/index.js~Embedded.html",
+    "<span>Embedded</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/embedded/index.js</span>",
+    "class"
+  ],
+  [
     "@signnow/api-client/lib/link/index.js~link",
     "class/lib/link/index.js~Link.html",
     "<span>Link</span> <span class=\"search-result-import-path\">@signnow/api-client/lib/link/index.js</span>",
@@ -135,6 +141,24 @@ window.esdocSearchIndex = [
     "",
     "test-file/test/document.test.js.html#lineNumber79",
     "document should send an invite to sign a document",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/embedded.test.js.html#lineNumber10",
+    "embedded",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/embedded.test.js.html#lineNumber12",
+    "embedded .createInvite()",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/embedded.test.js.html#lineNumber13",
+    "embedded .createInvite() should create a new embedded signing invites for a document without sending emails",
     "test"
   ],
   [
@@ -1134,6 +1158,42 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/embedded/index.js",
+    "file/lib/embedded/index.js.html",
+    "lib/embedded/index.js",
+    "file"
+  ],
+  [
+    "lib/embedded/index.js~embedded.embeddedcreateinvitespayload",
+    "typedef/index.html#static-typedef-EmbeddedCreateInvitesPayload",
+    "lib/embedded/index.js~Embedded.EmbeddedCreateInvitesPayload",
+    "typedef"
+  ],
+  [
+    "lib/embedded/index.js~embedded.embeddedcreateinvitesresponse",
+    "typedef/index.html#static-typedef-EmbeddedCreateInvitesResponse",
+    "lib/embedded/index.js~Embedded.EmbeddedCreateInvitesResponse",
+    "typedef"
+  ],
+  [
+    "lib/embedded/index.js~embedded.embeddedinvite",
+    "typedef/index.html#static-typedef-EmbeddedInvite",
+    "lib/embedded/index.js~Embedded.EmbeddedInvite",
+    "typedef"
+  ],
+  [
+    "lib/embedded/index.js~embedded.embeddedsigninginvite",
+    "typedef/index.html#static-typedef-EmbeddedSigningInvite",
+    "lib/embedded/index.js~Embedded.EmbeddedSigningInvite",
+    "typedef"
+  ],
+  [
+    "lib/embedded/index.js~embedded.createinvite",
+    "class/lib/embedded/index.js~Embedded.html#static-method-createInvite",
+    "lib/embedded/index.js~Embedded.createInvite",
+    "method"
+  ],
+  [
     "lib/index.js",
     "file/lib/index.js.html",
     "lib/index.js",
@@ -1563,6 +1623,12 @@ window.esdocSearchIndex = [
     "test/document.test.js",
     "test-file/test/document.test.js.html",
     "test/document.test.js",
+    "testFile"
+  ],
+  [
+    "test/embedded.test.js",
+    "test-file/test/embedded.test.js.html",
+    "test/embedded.test.js",
     "testFile"
   ],
   [

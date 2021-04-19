@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.8.0] - 2021-04-26
+
+### Added
+
+- Implemented *Create embedded signing invites for a document without sending emails.* feature. See gow to apply it in [Documentation](https://github.com/signnow/SignNowNodeSDK/blob/master/lib/embedded/index.js~Embedded.html#static-method-createInvite), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#embedded-create-invites), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/embeddedCreateInvites.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/embedded-create-invites.js).
+
 ## [v1.7.0] - 2019-12-24
 
 ### Added

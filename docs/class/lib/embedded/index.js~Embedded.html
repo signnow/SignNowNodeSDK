@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">lib/index.js | SignNow API client</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">Embedded | SignNow API client</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -170,88 +170,163 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">lib/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
-const user = require(&apos;./user&apos;);
-const document = require(&apos;./document&apos;);
-const folder = require(&apos;./folder&apos;);
-const webhook = require(&apos;./webhook&apos;);
-const oauth2 = require(&apos;./oauth2&apos;);
-const enumerations = require(&apos;./enumerations&apos;);
-const template = require(&apos;./template&apos;);
-const link = require(&apos;./link&apos;);
-const documentGroup = require(&apos;./document-group&apos;);
-const documentGroupTemplate = require(&apos;./document-group-template&apos;);
-const embedded = require(&apos;./embedded&apos;);
-const { setCredentials } = require(&apos;./common&apos;);
-const { setEnvConfig } = require(&apos;../config&apos;);
+<div class="content" data-ice="content"><div class="header-notice">
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Embedded from &apos;<span><a href="file/lib/embedded/index.js.html#lineNumber12">@signnow/api-client/lib/embedded/index.js</a></span>&apos;</code></pre></div>
+  <span data-ice="access">public</span>
+  <span data-ice="kind">class</span>
+  
+  
+  
+  <span data-ice="source">| <span><a href="file/lib/embedded/index.js.html#lineNumber12">source</a></span></span>
+</div>
 
-/**
- * Api client initialization params
- * @typedef {Object} InitParams
- * @property {string} credentials - base64 encoded basic API credentials
- * @property {boolean} [production=true] - production/eval API flag. If false uses eval
- */
+<div class="self-detail detail">
+  <h1 data-ice="name">Embedded</h1>
 
-/**
- * Api client features
- * @typedef {Object} Features
- * @property {User} user - user related methods
- * @property {OAuth2} oauth2 - authentication related methods
- * @property {Document} document - document related methods
- * @property {Template} template - template related methods
- * @property {Link} link - link related methods
- * @property {DocumentGroup} documentGroup - document group related methods
- * @property {DocumentGroupTemplate} documentGroupTemplate - document group template related methods
- * @property {Embedded} embedded - embedded signing related methods
- */
+  
 
-/**
- * SignNow API client initialization
- * @param {InitParams} params - API client initialization params
- * @return {Features}
- */
-module.exports = function init ({
-  production = true,
-  credentials,
-}) {
-  if (credentials) {
-    setCredentials(credentials);
-  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-  if (production) {
-    setEnvConfig(&apos;prod&apos;);
-  } else {
-    setEnvConfig(&apos;eval&apos;);
-  }
+  
+  
+  <div class="description" data-ice="description"><p>Embedded methods</p>
+</div>
+  
 
-  return {
-    user,
-    oauth2,
-    document,
-    webhook,
-    folder,
-    enumerations,
-    template,
-    link,
-    documentGroup,
-    documentGroupTemplate,
-    embedded,
-  };
-};
+  
 
-/**
- * Api error object
- * @typedef {Object} ApiError
- * @property {number} code - error code
- * @property {string} message - error message
- */
+  
 
-/**
- * Api error response
- * @typedef {?(ApiError[]|ApiError|Error|string)} ApiErrorResponse
- */
-</code></pre>
+  
+
+  
+</div>
+
+
+<div data-ice="staticMethodSummary"><h2>Static Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/lib/embedded/index.js~Embedded.html#static-method-createInvite">createInvite</a></span></span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-EmbeddedCreateInvitesPayload">EmbeddedCreateInvitesPayload</a></span>, callback: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-EmbeddedCreateInvitesResponse">EmbeddedCreateInvitesResponse</a></span>)</span></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Create embedded signing invites for a document without sending emails.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<div data-ice="staticMethodDetails"><h2 data-ice="title">Static Public Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-createInvite">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">createInvite</span><span class="code" data-ice="signature">(data: <span><a href="typedef/index.html#static-typedef-EmbeddedCreateInvitesPayload">EmbeddedCreateInvitesPayload</a></span>, callback: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-EmbeddedCreateInvitesResponse">EmbeddedCreateInvitesResponse</a></span>)</span></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/lib/embedded/index.js.html#lineNumber52">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Create embedded signing invites for a document without sending emails.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">data</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-EmbeddedCreateInvitesPayload">EmbeddedCreateInvitesPayload</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Create invites payload</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">callback</td>
+      <td data-ice="type" class="code"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(err: <span><a href="typedef/index.html#static-typedef-ApiErrorResponse">ApiErrorResponse</a></span>, res: <span><a href="typedef/index.html#static-typedef-EmbeddedCreateInvitesResponse">EmbeddedCreateInvitesResponse</a></span>)</span></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>error first node.js callback</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+
+
 
 </div>
 

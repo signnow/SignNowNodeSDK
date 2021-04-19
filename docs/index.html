@@ -120,6 +120,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentGroupTemplateRoutingDetails">DocumentGroupTemplateRoutingDetails</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentGroupTemplateViewParams">DocumentGroupTemplateViewParams</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DocumentGroupTemplateViewResponse">DocumentGroupTemplateViewResponse</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#embedded">embedded</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/embedded/index.js~Embedded.html">Embedded</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EmbeddedCreateInvitesPayload">EmbeddedCreateInvitesPayload</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EmbeddedCreateInvitesResponse">EmbeddedCreateInvitesResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EmbeddedInvite">EmbeddedInvite</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EmbeddedSigningInvite">EmbeddedSigningInvite</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#link">link</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/link/index.js~Link.html">Link</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SigningLinkCreateParams">SigningLinkCreateParams</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SigningLinkCreateResponse">SigningLinkCreateResponse</a></span></span></li>
@@ -248,6 +253,10 @@
 <li><a href="#webhook">Webhook</a><ul>
 <li><a href="#list-webhooks">Returns a list of Webhooks</a></li>
 <li><a href="#create-webhook">Create a Webhook</a></li>
+</ul>
+</li>
+<li><a href="#embedded">Embedded</a><ul>
+<li><a href="#embedded-create-invites">Create embedded signing invites for a document without sending emails</a></li>
 </ul>
 </li>
 <li><a href="#promisify">Promisify methods</a></li>
@@ -980,6 +989,21 @@ api.documentGroupTemplate.create({
   token: &apos;your auth token&apos;,
   event: &apos;document.create&apos;,
   callback_url: &apos;http://www.domain.com/path&apos;,
+}, (err, res) =&gt; {
+  // handle error or process response data
+});</code>
+</code></pre>
+<h3 id="-a-name--embedded----a-embedded"><a name="embedded"></a>Embedded</h3><h4 id="-a-name--embedded-create-invites----a-create-embedded-signing-invites-for-a-document-without-sending-emails"><a name="embedded-create-invites"></a>Create embedded signing invites for a document without sending emails</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">signnow.embedded.createInvite({
+  token: &apos;access token&apos;,
+  document_id: &apos;document id&apos;,
+  invites: [
+    {
+      email: &apos;email of signer&apos;,
+      role_id: &apos;role id&apos;,
+      order: 1,
+      auth_method: &apos;password&apos;,
+    },
+  ],
 }, (err, res) =&gt; {
   // handle error or process response data
 });</code>
