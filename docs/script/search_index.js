@@ -145,24 +145,6 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/embedded.test.js.html#lineNumber10",
-    "embedded",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/embedded.test.js.html#lineNumber12",
-    "embedded .createInvite()",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/embedded.test.js.html#lineNumber13",
-    "embedded .createInvite() should create a new embedded signing invites for a document without sending emails",
-    "test"
-  ],
-  [
-    "",
     "test-file/test/enumeration.test.js.html#lineNumber10",
     "enumerations",
     "test"
@@ -1176,6 +1158,24 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/embedded/index.js~embedded.embeddedgeneratelinkpayload",
+    "typedef/index.html#static-typedef-EmbeddedGenerateLinkPayload",
+    "lib/embedded/index.js~Embedded.EmbeddedGenerateLinkPayload",
+    "typedef"
+  ],
+  [
+    "lib/embedded/index.js~embedded.embeddedgeneratelinkresponse",
+    "typedef/index.html#static-typedef-EmbeddedGenerateLinkResponse",
+    "lib/embedded/index.js~Embedded.EmbeddedGenerateLinkResponse",
+    "typedef"
+  ],
+  [
+    "lib/embedded/index.js~embedded.embeddedgeneratedlink",
+    "typedef/index.html#static-typedef-EmbeddedGeneratedLink",
+    "lib/embedded/index.js~Embedded.EmbeddedGeneratedLink",
+    "typedef"
+  ],
+  [
     "lib/embedded/index.js~embedded.embeddedinvite",
     "typedef/index.html#static-typedef-EmbeddedInvite",
     "lib/embedded/index.js~Embedded.EmbeddedInvite",
@@ -1191,6 +1191,12 @@ window.esdocSearchIndex = [
     "lib/embedded/index.js~embedded.createinvite",
     "class/lib/embedded/index.js~Embedded.html#static-method-createInvite",
     "lib/embedded/index.js~Embedded.createInvite",
+    "method"
+  ],
+  [
+    "lib/embedded/index.js~embedded.generateinvitelink",
+    "class/lib/embedded/index.js~Embedded.html#static-method-generateInviteLink",
+    "lib/embedded/index.js~Embedded.generateInviteLink",
     "method"
   ],
   [
@@ -1623,12 +1629,6 @@ window.esdocSearchIndex = [
     "test/document.test.js",
     "test-file/test/document.test.js.html",
     "test/document.test.js",
-    "testFile"
-  ],
-  [
-    "test/embedded.test.js",
-    "test-file/test/embedded.test.js.html",
-    "test/embedded.test.js",
     "testFile"
   ],
   [

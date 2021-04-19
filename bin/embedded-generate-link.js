@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 /**
- * to run embedded-create-invites applet from the project root folder type in your console:
- * > node bin/embedded-create-invites <client_id> <client_secret> <username> <password> <document_id> <invites_stringified>
- * <client_id>, <client_secret>, <username>, <password>, <document_id> <invites_stringified> - are required params
+ * to run embedded-generate-link applet from the project root folder type in your console:
+ * > node bin/embedded-generate-link <client_id> <client_secret> <username> <password> <document_id> <field_invite_unique_id> <link_expiration> <auth_method>
+ * <client_id>, <client_secret>, <username>, <password>, <document_id> <field_invite_unique_id> <link_expiration> <auth_method> - are required params
  * options:
  * --dev - request will be sent to developer sandbox API
  */
@@ -20,7 +20,9 @@ const [
   username,
   password,
   documentId,
-  invitesStringified,
+  fieldInviteUniqueId,
+  linkExpiration,
+  authMethod,
 ] = params;
 
 const dev = flags.includes('--dev');
@@ -33,20 +35,22 @@ const api = require('../lib')({
 
 const {
   oauth2: { requestToken: getAccessToken },
-  embedded: { createInvite },
+  embedded: { generateInviteLink },
 } = api;
 
 const getAccessToken$ = promisify(getAccessToken);
-const createInvite$ = promisify(createInvite);
+const generateInviteLink$ = promisify(generateInviteLink);
 
 getAccessToken$({
   username,
   password,
 })
-  .then(({ access_token: token }) => createInvite$({
+  .then(({ access_token: token }) => generateInviteLink$({
     token,
     document_id: documentId,
-    invites: JSON.parse(invitesStringified),
+    field_invite_unique_id: fieldInviteUniqueId,
+    link_expiration: linkExpiration,
+    auth_method: authMethod,
   }))
   .then(res => console.log(res))
   .catch(err => console.error(err));

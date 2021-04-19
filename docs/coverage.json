@@ -1,7 +1,7 @@
 {
-  "coverage": "94.91%",
-  "expectCount": 59,
-  "actualCount": 56,
+  "coverage": "95%",
+  "expectCount": 60,
+  "actualCount": 57,
   "files": {
     "lib/document/index.js": {
       "expectCount": 16,
@@ -23,8 +23,8 @@
       ]
     },
     "lib/embedded/index.js": {
-      "expectCount": 2,
-      "actualCount": 2,
+      "expectCount": 3,
+      "actualCount": 3,
       "undocumentLines": []
     },
     "lib/index.js": {

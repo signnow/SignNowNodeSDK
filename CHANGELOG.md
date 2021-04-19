@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Implemented *Create embedded signing invites for a document without sending emails.* feature. See gow to apply it in [Documentation](https://github.com/signnow/SignNowNodeSDK/blob/master/lib/embedded/index.js~Embedded.html#static-method-createInvite), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#embedded-create-invites), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/embeddedCreateInvites.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/embedded-create-invites.js).
+- Implemented *Creates a link for the embedded invite.* feature. See gow to apply it in [Documentation](https://github.com/signnow/SignNowNodeSDK/blob/master/lib/embedded/index.js~Embedded.html#static-method-generateInviteLink), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#embedded-generate-invite), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/embeddedGenerateInviteLink.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/embedded-generate-link.js).
 
 ## [v1.7.0] - 2019-12-24
 
