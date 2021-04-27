@@ -5,13 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.8.1] - 2021-04-27
+
+### Changed
+
+- Updated [CHANGELOG.md](https://github.com/signnow/SignNowNodeSDK/blob/master/CHANGELOG.md)
+
 ## [v1.8.0] - 2021-04-26
 
 ### Added
 
-- Implemented *Create embedded signing invites for a document without sending emails.* feature. See gow to apply it in [Documentation](https://github.com/signnow/SignNowNodeSDK/blob/master/lib/embedded/index.js~Embedded.html#static-method-createInvite), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#embedded-create-invites), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/embeddedCreateInvites.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/embedded-create-invites.js).
-- Implemented *Create a link for the embedded invite.* feature. See gow to apply it in [Documentation](https://github.com/signnow/SignNowNodeSDK/blob/master/lib/embedded/index.js~Embedded.html#static-method-generateInviteLink), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#embedded-generate-invite), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/embeddedGenerateInviteLink.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/embedded-generate-link.js).
-- Implemented *Delete embedded invites for a document.* feature. See gow to apply it in [Documentation](https://github.com/signnow/SignNowNodeSDK/blob/master/lib/embedded/index.js~Embedded.html#static-method-cancelInvites), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#embedded-cancel-invites), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/embeddedCancelInvites.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/embedded-cancel-invites.js).
+- Implemented *Create embedded signing invites for a document without sending emails.* feature. See gow to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/embedded/index.js~Embedded.html#static-method-createInvite), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#embedded-create-invites), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/embeddedCreateInvites.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/embedded-create-invites.js).
+- Implemented *Create a link for the embedded invite.* feature. See gow to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/embedded/index.js~Embedded.html#static-method-generateInviteLink), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#embedded-generate-invite), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/embeddedGenerateInviteLink.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/embedded-generate-link.js).
+- Implemented *Delete embedded invites for a document.* feature. See gow to apply it in [Documentation](https://signnow.github.io/SignNowNodeSDK/class/lib/embedded/index.js~Embedded.html#static-method-cancelInvites), [Short example](https://github.com/signnow/SignNowNodeSDK/blob/master/README.md#embedded-cancel-invites), [Full example](https://github.com/signnow/SignNowNodeSDK/blob/master/samples/snippets/embeddedCancelInvites.js), [CLI applet](https://github.com/signnow/SignNowNodeSDK/blob/master/bin/embedded-cancel-invites.js).
 
 ## [v1.7.0] - 2019-12-24
 
