@@ -2,7 +2,7 @@
   "name": "@signnow/api-client",
   "clientName": "SignNow Node.js API Client",
   "description": "SignNow REST Service Wrapper",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "author": {
     "name": "SignNow Team",
     "email": "api@signnow.com"
