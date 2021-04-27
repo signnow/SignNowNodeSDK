@@ -1,4 +1,4 @@
-# The Official SignNow API client v1.7.1
+# The Official SignNow API client v1.8.0
 
 SignNow Node.js REST API Wrapper
 

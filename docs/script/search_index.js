@@ -151,38 +151,20 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/embedded.test.js.html#lineNumber44",
-    "embedded .cancelInvites()",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/embedded.test.js.html#lineNumber45",
-    "embedded .cancelInvites() should delete embedded invites for a document.",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/embedded.test.js.html#lineNumber12",
-    "embedded .createInvite()",
+    "test-file/test/embedded.test.js.html#lineNumber28",
+    "embedded should create a link for the embedded invite.",
     "test"
   ],
   [
     "",
     "test-file/test/embedded.test.js.html#lineNumber13",
-    "embedded .createInvite() should create a new embedded signing invites for a document without sending emails",
+    "embedded should create a new embedded signing invites for a document without sending emails",
     "test"
   ],
   [
     "",
-    "test-file/test/embedded.test.js.html#lineNumber27",
-    "embedded .generateInviteLink()",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/embedded.test.js.html#lineNumber28",
-    "embedded .generateInviteLink() should create a link for the embedded invite.",
+    "test-file/test/embedded.test.js.html#lineNumber45",
+    "embedded should delete embedded invites for a document.",
     "test"
   ],
   [
@@ -1675,13 +1657,13 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber13",
+    "test-file/test/template.test.js.html#lineNumber27",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber27",
+    "test-file/test/template.test.js.html#lineNumber13",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],

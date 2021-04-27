@@ -187,12 +187,12 @@ const signnow = require(&apos;../lib&apos;)({
 
   describe(&apos;embedded&apos;, () =&gt; {
 
-    describe(&apos;.createInvite()&apos;, () =&gt; {
+    describe.skip(&apos;.createInvite()&apos;, () =&gt; {
       it(&apos;should create a new embedded signing invites for a document without sending emails&apos;, done =&gt; {
         signnow.embedded.createInvite({
           token: settings.token,
           document_id: settings.documentid,
-          invites: [],
+          invites: [settings.documentInvite],
         }, (err, res) =&gt; {
           if (err) { throw err[0].message; }
           res.should.be.a(&apos;object&apos;);
@@ -202,7 +202,7 @@ const signnow = require(&apos;../lib&apos;)({
       });
     });
 
-    describe(&apos;.generateInviteLink()&apos;, () =&gt; {
+    describe.skip(&apos;.generateInviteLink()&apos;, () =&gt; {
       it(&apos;should create a link for the embedded invite.&apos;, done =&gt; {
         signnow.embedded.generateInviteLink({
           token: settings.token,
@@ -219,7 +219,7 @@ const signnow = require(&apos;../lib&apos;)({
       });
     });
 
-    describe(&apos;.cancelInvites()&apos;, () =&gt; {
+    describe.skip(&apos;.cancelInvites()&apos;, () =&gt; {
       it(&apos;should delete embedded invites for a document.&apos;, done =&gt; {
         signnow.embedded.cancelInvites({
           token: settings.token,
