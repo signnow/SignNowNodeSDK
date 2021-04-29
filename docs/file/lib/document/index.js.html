@@ -790,7 +790,7 @@ class Document {
    * Document invite settings
    * @typedef {Object} DocumentInviteSettings
    * @property {string} from - email of sender
-   * @property {SignerSettings[]|string[]|string} to - array of signers or email of single signer
+   * @property {SignerSettings[]|string} to - array of signers or email of single signer
    * @property {string} [document_id] - an id of document
    * @property {string[]} [cc] - array with emails of copy receivers
    * @property {string} [subject] - specify subject of email
@@ -801,7 +801,7 @@ class Document {
   /**
    * Document invite optional settings
    * @typedef {Object} DocumentInviteOptions
-   * @property {string} [email] - ability to disable invitation by email. to disabale email assign value &apos;disable&apos;
+   * @property {string} [email] - ability to disable invitation by email. to disable email assign value &apos;disable&apos;
    */
 
   /**
@@ -845,15 +845,6 @@ class Document {
     token,
   }, callback) {
     const inviteData = Object.assign({}, data, { document_id: id });
-
-    try {
-      inviteData.to.forEach(signer =&gt; {
-        signer.role_id = signer.role_id || &apos;&apos;;
-      });
-    } catch (err) {
-      callback(err);
-      return;
-    }
 
     const JSONData = JSON.stringify(inviteData);
     let path = `/document/${id}/invite`;

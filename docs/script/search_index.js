@@ -1657,13 +1657,13 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber27",
+    "test-file/test/template.test.js.html#lineNumber13",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],
   [
     "",
-    "test-file/test/template.test.js.html#lineNumber13",
+    "test-file/test/template.test.js.html#lineNumber27",
     "template should create a template by flattening an existing document and return the template id",
     "test"
   ],
