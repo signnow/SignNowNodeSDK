@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "strict": true,
+
+    "skipLibCheck": true,
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "target": "ES2022",
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "outDir": "./dist",
+
+    "forceConsistentCasingInFileNames": true, 
+    "declaration": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": true,
+
+     "noUnusedLocals": true,
+     "noUnusedParameters": true,
+     "noImplicitReturns": true,
+     "noFallthroughCasesInSwitch": true,
+
+    "removeComments": true,
+    "sourceMap": true,
+    "noLib": false,
+  },
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+  "include": ["**/*.ts"],
+}

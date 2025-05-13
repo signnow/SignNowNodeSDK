@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "urlPathPattern": "/v2/documents/[0-9a-z]{40}/embedded-editor"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"data\":{\"url\":\"https:\\/\\/www.bahringer.com\\/quis-ducimus-temporibus-est-omnis-praesentium-est\"}}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "urlPathPattern": "/documentgroup/[0-9a-z]{40}/groupinvite"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"id\":\"7db86fcd838e5983526e3093212c9f7251f447fc\"}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

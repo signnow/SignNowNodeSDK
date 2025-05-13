@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "PUT",
+        "urlPathPattern": "/document/[0-9a-z]{40}/fieldinvitecancel"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"status\":\"success\"}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

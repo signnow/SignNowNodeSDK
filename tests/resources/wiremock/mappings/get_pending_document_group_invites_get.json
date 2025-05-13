@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPathPattern": "/documentgroup/[0-9a-z]{40}/groupinvite/[0-9a-z]{40}/pendinginvites"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"invites\":[{\"link\":\"http:\\/\\/jakubowski.com\\/magni-vero-enim-ut-dolores-ut-dignissimos.html\",\"document_name\":\"facere sed\",\"inviter_email\":\"kovacek.carroll@yahoo.com\",\"action\":\"molestias\",\"status\":\"occaecati\"}],\"document_group_name\":\"quo\",\"sign_as_merged\":false}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

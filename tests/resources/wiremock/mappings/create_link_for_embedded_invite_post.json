@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "urlPathPattern": "/v2/documents/[0-9a-z]{40}/embedded-invites/[0-9a-z]{40}/link"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"data\":{\"link\":\"http:\\/\\/jones.com\\/consectetur-quia-quo-excepturi-modi-asperiores-aut-iusto-placeat\"}}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

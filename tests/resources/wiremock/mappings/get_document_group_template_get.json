@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPathPattern": "/documentgroup/template/[0-9a-z]{40}"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"id\":\"ff2c51a349c8d872928e0a18ff34019908fdb6bb\",\"user_id\":\"294d3f5f1ae979c7c8d66b7ee721de09c85c9b2b\",\"group_name\":\"asperiores\",\"folder_id\":\"620b4df12ac1f9b37d005b5f4e8d9fce510a14b5\",\"routing_details\":{\"sign_as_merged\":false,\"include_email_attachments\":\"rerum\",\"invite_steps\":[{\"order\":48004,\"invite_emails\":[],\"invite_actions\":[{\"email\":\"ileuschke@wehner.com\",\"document_id\":\"29731d2c57f9ad243c58905152ded9e5a11975bb\",\"document_name\":\"porro laudantium\",\"authentication\":{\"type\":\"officiis\"},\"allow_reassign\":42540,\"decline_by_signature\":45560,\"lock\":false,\"action\":\"soluta\",\"role_name\":\"exercitationem\"}]}]},\"templates\":[{\"roles\":[\"esse\"],\"template_name\":\"et\",\"id\":\"f1fac9f500fd881756e5206bf944dff0a325d86c\",\"owner_email\":\"rosalia14@hotmail.com\",\"thumbnail\":{\"small\":\"https:\\/\\/api.signnow.com\\/document\\/fcc67339fabb9187048c7fabc30de30ba78444c8\\/thumbnail?size=small\",\"medium\":\"https:\\/\\/api.signnow.com\\/document\\/fcc67339fabb9187048c7fabc30de30ba78444c8\\/thumbnail?size=medium\",\"large\":\"https:\\/\\/api.signnow.com\\/document\\/fcc67339fabb9187048c7fabc30de30ba78444c8\\/thumbnail?size=large\"},\"readable\":true}],\"shared\":66609,\"document_group_template_owner_email\":\"kaela.nitzsche@hotmail.com\",\"shared_team_id\":\"ffddbb9e70355f7d7eef8bf1f220bf3d82644e08\",\"own_as_merged\":true,\"email_action_on_complete\":\"provident\",\"created\":898031334,\"updated\":846756172,\"recently_used\":825749879,\"pinned\":false}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

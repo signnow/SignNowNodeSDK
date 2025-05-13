@@ -1,95 +1,38 @@
 {
-  "name": "@signnow/api-client",
-  "clientName": "SignNow Node.js API Client",
-  "description": "SignNow REST Service Wrapper",
-  "version": "1.8.2",
-  "author": {
-    "name": "SignNow Team",
-    "email": "api@signnow.com"
-  },
-  "keywords": [
-    "signnow",
-    "document",
-    "sign",
-    "online",
-    "electronic",
-    "signature",
-    "api",
-    "client"
-  ],
-  "main": "lib/index.js",
-  "repository": "github:signnow/SignNowNodeSDK",
+  "name": "nodejs-sdk-3.0",
+  "version": "1.0.0",
+  "description": "signNow API NODEJS SDK",
+  "main": "index.ts",
+  "type": "module",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint '**/*.js'",
-    "lint:fix": "./node_modules/.bin/eslint '**/*.js' --fix",
-    "docs": "./node_modules/.bin/esdoc",
-    "preversion": "npm run lint",
-    "version": "./tools/update-readme.js && npm run docs && git add -A .",
-    "postversion": "git push && git push --tags"
-  },
-  "devDependencies": {
-    "chai": "*",
-    "esdoc": "1.1.0",
-    "esdoc-ecmascript-proposal-plugin": "1.0.0",
-    "esdoc-external-nodejs-plugin": "1.0.0",
-    "esdoc-inject-style-plugin": "1.0.0",
-    "esdoc-node": "1.0.4",
-    "esdoc-standard-plugin": "1.0.0",
-    "eslint": "6.0.1",
-    "husky": "3.0.2",
-    "mocha": "*"
+    "start": "tsx index.ts",
+    "test": "DOTENV_CONFIG_PATH=.env.test jest",
+    "eslint": "eslint . --fix"
   },
   "engines": {
-    "node": ">=6.4.0"
+    "node": ">=20.x.x",
+    "npm": ">=10.x.x"
   },
-  "files": [
-    "lib",
-    "config",
-    "utils",
-    "bin"
-  ],
-  "bin": {
-    "sn:cancel-field-invite": "./bin/cancel-field-invite.js",
-    "sn:cancel-freeform-invite": "./bin/cancel-freeform-invite.js",
-    "sn:create-document-group-template": "./bin/create-document-group-template.js",
-    "sn:create-document-group": "./bin/create-document-group.js",
-    "sn:create-document": "./bin/create-document.js",
-    "sn:create-field-invite": "./bin/create-field-invite.js",
-    "sn:create-freeform-invite": "./bin/create-freeform-invite.js",
-    "sn:create-signing-link": "./bin/create-signing-link.js",
-    "sn:create-template": "./bin/create-template.js",
-    "sn:create-user": "./bin/create-user.js",
-    "sn:document-group-invite": "./bin/document-group-invite.js",
-    "sn:document-history": "./bin/document-history.js",
-    "sn:document-list": "./bin/document-list.js",
-    "sn:download-document": "./bin/download-document.js",
-    "sn:download-document-group": "./bin/download-document-group.js",
-    "sn:extract-fields": "./bin/extract-fields.js",
-    "sn:get-access-token": "./bin/get-access-token.js",
-    "sn:invite-documentgroup-template": "./bin/invite-documentgroup-template.js",
-    "sn:merge-documents": "./bin/merge-documents.js",
-    "sn:refresh-token": "./bin/refresh-token.js",
-    "sn:remove-document": "./bin/remove-document.js",
-    "sn:remove-template": "./bin/remove-template.js",
-    "sn:verify-email": "./bin/verify-email.js",
-    "sn:share-document": "./bin/share-document.js",
-    "sn:template-field-invite": "./bin/template-field-invite.js",
-    "sn:template-freeform-invite": "./bin/template-freeform-invite.js",
-    "sn:update-document": "./bin/update-document.js",
-    "sn:user-info": "./bin/user-info.js",
-    "sn:verify-access-token": "./bin/verify-access-token.js",
-    "sn:view-document-group": "./bin/view-document-group.js",
-    "sn:view-document": "./bin/view-document.js",
-    "sn:view-documentgroup-template": "./bin/view-documentgroup-template.js",
-    "sn:routing-details": "./bin/routing-details.js",
-    "sn:update-routing-details": "./bin/update-routing-details.js",
-    "sn:cancel-documentgroup-invite": "./bin/cancel-documentgroup-invite.js",
-    "sn:duplicate-template": "./bin/duplicate-template.js",
-    "sn:bulk-invite": "./bin/bulk-invite.js",
-    "sn:document-signers": "./bin/document-signers.js",
-    "sn:embedded-create-invites": "./bin/embedded-create-invites.js",
-    "sn:embedded-generate-link": "./bin/embedded-generate-link.js",
-    "sn:embedded-cancel-invites": "./bin/embedded-cancel-invites.js"
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@faker-js/faker": "^9.5.1",
+    "@stylistic/eslint-plugin-ts": "^2.11.0",
+    "@types/node": "^22.9.1",
+    "@types/node-fetch": "^2.6.12",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.16.0"
   },
-  "license": "MIT"
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "form-data": "^4.0.1",
+    "node-fetch": "^2.7.0"
+  }
 }

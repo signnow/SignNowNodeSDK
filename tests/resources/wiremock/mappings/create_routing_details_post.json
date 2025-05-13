@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "urlPathPattern": "/document/[0-9a-z]{40}/template/routing/detail"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"routing_details\":[{\"default_email\":\"stroman.vergie@ziemann.com\",\"inviter_role\":false,\"name\":\"voluptas\",\"role_id\":\"58d17313c97523fdbdbc5582fbaff3795fc4f145\",\"signing_order\":43559}]}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

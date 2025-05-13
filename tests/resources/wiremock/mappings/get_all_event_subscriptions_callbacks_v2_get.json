@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/v2/event-subscriptions/callbacks"
+    },
+    "response": {
+        "status": 200,
+        "body": "{}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

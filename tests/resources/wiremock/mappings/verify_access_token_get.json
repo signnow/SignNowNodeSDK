@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/oauth2/token"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"access_token\":\"320d88e4ca62bfaef22f1e78b20339ba9a858b44e64b75dcd33a076972c5403b\",\"scope\":\"*\",\"expires_in\":\"1096626775\",\"token_type\":\"bearer\"}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

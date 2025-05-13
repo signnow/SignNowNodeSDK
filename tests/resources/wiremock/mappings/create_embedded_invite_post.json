@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "urlPathPattern": "/v2/documents/[0-9a-z]{40}/embedded-invites"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"data\":[{\"id\":\"092b57b0e7b5aef63d066c7d5fbe6471d319b0a2\",\"email\":\"coconnell@gmail.com\",\"role_id\":\"ea4d4f0159273555f0f1712d2d945ce1c20e1b88\",\"order\":62272,\"status\":\"success\"}]}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

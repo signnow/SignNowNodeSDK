@@ -1,0 +1,14 @@
+{
+  "request": {
+      "method": "DELETE",
+      "urlPathPattern": "/document/[0-9a-z]{40}"
+  },
+  "response": {
+      "status": 200,
+      "body": "{\"status\":\"ducimus\"}",
+      "headers": {
+          "Content-Type": "application/json"
+      }
+  }
+}
+

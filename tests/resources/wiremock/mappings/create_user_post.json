@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "url": "/user"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"id\":\"6ec532c0312c9014ca87c260ef73ebac0f7c236b\",\"verified\":70647,\"email\":\"wkonopelski@crist.com\"}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

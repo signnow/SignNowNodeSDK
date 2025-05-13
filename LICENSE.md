@@ -1,6 +1,6 @@
 # The MIT License
 
-Copyright (c) 2003-2019 airSlate Inc. [LICENSE](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md)
+Copyright (c) 2003-present airSlate Inc. [LICENSE](https://github.com/signnow/SignNowNodeSDK/blob/master/LICENSE.md)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
