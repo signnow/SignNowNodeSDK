@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "url": "/document"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"id\":\"f7a05b0f82152552840b0c4a4544f69233b1f427\"}",
+        "headers": {
+            "Content-Type": "multipart/form-data"
+        }
+    }
+}

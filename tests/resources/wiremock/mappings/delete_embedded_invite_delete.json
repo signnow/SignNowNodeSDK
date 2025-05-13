@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "DELETE",
+        "urlPathPattern": "/v2/documents/[0-9a-z]{40}/embedded-invites"
+    },
+    "response": {
+        "status": 200,
+        "body": "{}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

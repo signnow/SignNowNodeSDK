@@ -1,0 +1,14 @@
+{
+    "request": {
+        "method": "POST",
+        "urlPathPattern": "/document/[0-9a-z]{40}/invite",
+        "bodyPatterns": [{"matchesJsonPath": "$.to[?(@.email)]"}]
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"status\":\"success\"}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

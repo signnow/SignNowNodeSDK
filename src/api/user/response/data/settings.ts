@@ -1,0 +1,119 @@
+/*
+ * This file is a part of signNow SDK API client.
+ *
+ * (с) Copyright © 2011-present airSlate Inc. (https://www.signnow.com)
+ *
+ * For more details on copyright, see LICENSE.md file
+ * that was distributed with this source code.
+ */
+
+export interface Settings {
+  no_document_attachment: boolean;
+  copy_export: boolean;
+  no_document_file_attachments: boolean;
+  no_user_signature_return: boolean;
+  mobileweb_option: boolean;
+  require_drawn_signatures: boolean;
+  org_allowed_team_admins: boolean;
+  cloud_auto_export: boolean;
+  digitally_sign_dowloaded_docs: boolean;
+  invite_completion_redirect_url: boolean;
+  invite_decline_redirect_url: boolean;
+  add_signature_stamp: boolean;
+  pending_invite_document_view_notification: boolean;
+  signing_link_document_download: boolean;
+  required_preset_signature_name: boolean;
+  cloud_export_with_history: boolean;
+  emailed_docs_include_history: boolean;
+  document_completion_retention_days: boolean;
+  enable_hyperlink_protection: boolean;
+  enable_advanced_threat_protection: boolean;
+  require_login_for_signing: boolean;
+  logout_on_signing: boolean;
+  audit_trail_completion_retention_days: boolean;
+  front_end_session_length: boolean;
+  email_admin_on_banned_login: boolean;
+  add_signature_stamp_with_name: boolean;
+  cfr_title21_part11: boolean;
+  unsuccessful_logout_attempts_allowed: boolean;
+  require_authentication_for_invites: boolean;
+  electronic_consent_required: boolean;
+  electronic_consent_text: boolean;
+  document_guide: boolean;
+  watermark_downloaded_document: boolean;
+  restrict_download: boolean;
+  disable_email_notifications: boolean;
+  upload_limit: boolean;
+  document_schema_extended: boolean;
+  invite_update_notifications_for_all_invites_at_invite_create: boolean;
+  enable_full_story_tracker: boolean;
+  document_attachment_only_for_signer: boolean;
+  sso_only_login: boolean;
+  block_export_options_when_credit_card_validation_is_used: boolean;
+  only_administrator_is_able_to_invite_to_the_team: boolean;
+  block_login_via_social_networks: boolean;
+  redirect_to_registration_when_fields_saved: boolean;
+  common_experiments: boolean;
+  hide_decline_to_sign_option_in_signing_session: boolean;
+  hide_upgrade_subscription_button: boolean;
+  do_no_consent_redirect_url: boolean;
+  lock_signing_date_by_default: boolean;
+  allow_download_certificate: boolean;
+  have_merged_document_group_option: boolean;
+  enable_eu_date_format: boolean;
+  guide_signers_only_through_required_fields: boolean;
+  allow_document_copying_to_other_accounts: boolean;
+  email_custom_subject: boolean;
+  email_custom_message: boolean;
+  invite_expiration_days: boolean;
+  enable_mfa: boolean;
+  enable_document_download_link_for_invite_completion_mails: boolean;
+  allow_big_attachment_file: boolean;
+  allow_big_count_of_attachment_fields_per_document?: boolean;
+  enable_hyperlink_field?: boolean;
+  disable_download_action_in_editor?: boolean;
+  signature_stamp_position?: boolean;
+  enable_pki?: boolean;
+  enable_document_comments?: boolean;
+  cc_completion_email_contain_only_downloading_document_link?: boolean;
+  save_signer_signature_and_initials?: boolean;
+  auto_apply_signatures_and_initials_to_document_fields?: boolean;
+  block_organization_selfleave_by_member?: boolean;
+  receive_signer_email_after_sent_field_invite_to_yourself?: boolean;
+  date_format?: boolean;
+  completed_document_name_formula?: boolean;
+  agreement_to_test_new_functionality_in_organization?: boolean;
+  agree_to_be_beta_tester?: boolean;
+  default_field_invite_remind_before?: boolean;
+  default_field_invite_remind_after?: boolean;
+  default_field_invite_remind_repeat?: boolean;
+  default_field_invite_expiration_time?: boolean;
+  email_logo_position?: boolean;
+  email_btn_bkgd_color?: boolean;
+  email_btn_text_color?: boolean;
+  allow_edit_document_after_signing?: boolean;
+  allow_embedded_extended_token_expiration?: boolean;
+  every_signature_and_initials_field_requires_user_authentication?: boolean;
+  enable_render_pages_in_editor_as_images?: boolean;
+  enable_team_admin_move_docs?: boolean;
+  disable_email_recipients?: boolean;
+  allow_team_admin_rename_docs?: boolean;
+  email_footer_enabled?: boolean;
+  parse_only_signature_fields?: boolean;
+  flatten_before_aspose?: boolean;
+  run_experiments?: boolean;
+  disable_form_search?: boolean;
+  allow_team_admin_create_csv_report_for_shared_template?: boolean;
+  enable_team_generic_email?: boolean;
+  use_team_generic_data?: boolean;
+  signing_reason?: boolean;
+  allow_qes?: boolean;
+  enable_qes?: boolean;
+  advanced_signing_flow?: boolean;
+  document_prefill_disable_fields_existing_validation?: boolean;
+  disable_problem_invite_email_notifications?: boolean;
+  default_workspace_assigned?: boolean;
+  workspace_organization?: boolean;
+  default_workspace?: boolean;
+  workspace_subscription_admin?: boolean;
+}

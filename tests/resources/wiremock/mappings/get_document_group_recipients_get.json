@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPathPattern": "/v2/document-groups/[0-9a-z]{40}/recipients"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"data\":{\"recipients\":[{\"name\":\"tempore\",\"email\":\"layne.terry@yahoo.com\",\"email_group\":{\"id\":\"246d4a175643748e8ba9e50428f5587a1e2304fe\"},\"order\":45790,\"attributes\":{\"message\":\"dolorem\",\"subject\":\"accusantium\",\"expiration_days\":96614,\"reminder\":{\"remind_after\":53973,\"remind_before\":48364,\"remind_repeat\":43534},\"allow_forwarding\":true,\"show_decline_button\":true,\"i_am_recipient\":false,\"authentication\":{\"type\":\"laboriosam\",\"value\":\"aliquid\",\"phone\":\"et\",\"method\":\"laboriosam\"}},\"documents\":[{\"id\":\"303d778e5e62e8cd2ec18440d2fcfc7038e5d135\",\"role\":\"ab\",\"action\":\"saepe\"}]}],\"unmapped_documents\":[{\"id\":\"49abb8d546450880f519434be9d01261bb37152e\",\"role\":\"dolor\",\"action\":\"maiores\"}],\"allowed_unmapped_sign_documents\":[{\"id\":\"3e9d2eced121ad69d239cb6dbd337a42e3219b3b\",\"role\":\"excepturi\",\"recipient\":\"aut\"}],\"cc\":[\"consequatur\"]}}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

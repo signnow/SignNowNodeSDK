@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "urlPathPattern": "/v2/document-groups/[0-9a-z]{40}/embedded-sending"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"data\":{\"url\":\"http:\\/\\/cremin.com\\/vero-eos-accusantium-error-eum-suscipit-magni\"}}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

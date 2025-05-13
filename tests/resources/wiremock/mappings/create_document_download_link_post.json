@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "urlPathPattern": "/document/[0-9a-z]{40}/download/link"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"link\":\"https:\\/\\/www.reichert.com\\/est-quia-non-quia-placeat-quo-animi-eos-doloribus\"}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

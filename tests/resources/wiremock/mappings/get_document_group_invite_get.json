@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPathPattern": "/documentgroup/[0-9a-z]{40}/groupinvite/[0-9a-z]{40}"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"invite\":{\"id\":\"f469f80c441e5547a173b15981ee4c17bcf644c5\",\"status\":\"soluta\",\"steps\":[{\"id\":\"95883ffb2d1971d02604f1814765be89fc75f6aa\",\"status\":\"praesentium\",\"order\":53494,\"actions\":[{\"action\":\"qui\",\"email\":\"abbigail.abshire@hotmail.com\",\"document_id\":\"db631f0c4998e012e1519aaa7cc3ad276c935a51\",\"status\":\"non\",\"role_name\":\"nemo\"}]}]}}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

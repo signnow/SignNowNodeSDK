@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPathPattern": "/v2/documents/[0-9a-z]{40}/free-form-invites"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"meta\":{\"pagination\":{\"total\":33773,\"count\":54180,\"per_page\":51444,\"current_page\":29590,\"total_pages\":44811,\"links\":[\"eveniet\"]}}}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

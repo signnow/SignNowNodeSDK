@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "PUT",
+        "urlPathPattern": "/document/[0-9a-z]{40}/template/routing/detail"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"id\":\"0df6cbb6db21eccc3e877484309e21c8565f5d38\",\"document_id\":\"06c205dda08cfa585315e33e4da8abea3ce4aaa5\",\"data\":{\"name\":\"possimus\",\"role_id\":\"bd52ce73acee4cb6d8f83cddb1c29c8598dcc325\",\"signing_order\":79415},\"cc\":[\"tina.braun@gmail.com\"],\"cc_step\":[{\"email\":\"andreanne74@will.com\",\"name\":\"ex\",\"step\":35059}],\"viewers\":[{\"default_email\":\"smiller@yahoo.com\",\"name\":\"illum\",\"signing_order\":88622}],\"approvers\":[{\"default_email\":\"kassulke.eula@yahoo.com\",\"name\":\"maxime\",\"signing_order\":81167}],\"invite_link_instructions\":[\"aut\"]}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

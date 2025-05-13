@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/api/v2/events"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"data\":[{\"id\":\"06a26b942b863a797b63e49afae4abf1e2ed2a33\",\"event\":\"perferendis\",\"entity_id\":36322,\"action\":\"ut\",\"json_attributes\":{\"use_tls_12\":false,\"docid_queryparam\":false,\"integration_id\":\"0b5dab2c7a68f208211b4b5903916dd6383df4c8\",\"callback_url\":\"https:\\/\\/www.blick.com\\/mollitia-et-molestiae-ullam\",\"headers\":{\"string_head\":\"in\",\"int_head\":83444,\"bool_head\":false,\"float_head\":283916976.8772552},\"secret_key\":\"3c2bb9bc36a78f19d27ebf810b0ff9f20de726f6\"},\"created\":1136643764,\"content\":{\"key\":\"id\",\"key1\":\"rem\",\"key2\":\"voluptas\",\"account_id\":\"ea01e5e1b88ec86259dab938e3707fe5ec20a8ac\",\"source\":\"voluptatem\"}}]}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

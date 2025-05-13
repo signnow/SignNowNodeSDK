@@ -1,0 +1,14 @@
+{
+    "request": {
+        "method": "POST",
+        "url": "/oauth2/token",
+        "bodyPatterns": [{"matches": "(.*)refresh_token=(.*)"}]
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"expires_in\":1489230235,\"token_type\":\"bearer\",\"access_token\":\"170393c3ea4ebf3769ef3b87de0f9d6f1e1772177a4ed64b0841d2a8df869c62\",\"refresh_token\":\"0bedcb556b757cd2a273e08db0f2f4f1f75e9b2e12b4471c1c9ad17ad1cd94e6\",\"scope\":\"*\",\"last_login\":793660579}",
+        "headers": {
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+    }
+}
