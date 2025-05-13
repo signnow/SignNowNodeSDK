@@ -1,0 +1,14 @@
+{
+    "request": {
+        "method": "POST",
+        "urlPathPattern": "/document/[0-9a-z]{40}/invite",
+        "bodyPatterns": [{"matchesJsonPath": "$.[?(@.to =~ /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/)]"}]
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"result\":\"success\",\"id\":\"2bdb4ce13705895b1cd67f32cb63072079bb3f78\",\"callback_url\":\"https:\\/\\/www.gutmann.biz\\/in-laborum-quia-enim-ut-et-nisi-neque\"}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

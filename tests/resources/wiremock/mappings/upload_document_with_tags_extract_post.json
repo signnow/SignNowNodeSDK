@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "url": "/document/fieldextract"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"id\":\"81ed436fd4b0761f510371935e64280369610f4c\"}",
+        "headers": {
+            "Content-Type": "multipart/form-data"
+        }
+    }
+}

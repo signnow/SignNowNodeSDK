@@ -1,0 +1,13 @@
+{
+  "request": {
+      "method": "GET",
+      "urlPathPattern": "/document/[0-9a-z]{40}/historyfull"
+  },
+  "response": {
+      "status": 200,
+      "body": "{\"unique_id\":\"390ae6c63917c1e05a5ae3618aa16bf1541c595d\",\"user_id\":\"6a86c63793da0354bb1fcbb341e82ffe395642f6\",\"document_id\":\"8d75e14f6da7ca4f0f043373cbffad118c048727\",\"client_app_name\":\"hic\",\"ip_address\":\"9.228.153.3\",\"email\":\"carmella.adams@hartmann.biz\",\"json_attributes\":{\"page_number\":0,\"x\":60019,\"y\":85443,\"width\":29580,\"height\":41630,\"required\":true,\"name\":\"labore\",\"label\":\"soluta\",\"bold\":false,\"underline\":false,\"max_lines\":39535,\"validator_id\":\"b558ee58669c4044d25ae621c3596520a0631063\"},\"client_timestamp\": 1672751421,\"created\":1328281139,\"event\":\"exercitationem\"}",
+      "headers": {
+          "Content-Type": "application/json"
+      }
+  }
+}

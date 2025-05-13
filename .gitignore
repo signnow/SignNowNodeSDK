@@ -1,0 +1,12 @@
+/.idea
+/.fleet
+/.vscode
+/.netbeans
+/node_modules
+/target
+.env
+.env.backup
+.env.test
+.env.production
+.env.development
+package-lock.json

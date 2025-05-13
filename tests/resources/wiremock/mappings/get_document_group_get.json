@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPathPattern": "/documentgroup/[0-9a-z]{40}"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"id\":\"3a17e73f57712570acf78da5f6056908d4cb24b3\",\"group_name\":\"architecto\",\"documents\":[{\"id\":\"dc0850bbaf4b6db08ecfda0eaa1ddc4f220cc6c9\",\"roles\":[\"sapiente\"],\"document_name\":\"quia ut\",\"thumbnail\":{\"small\":\"https:\\/\\/api.signnow.com\\/document\\/c1dd2815eb4e60ef397cecc01794d861d81571c4\\/thumbnail?size=small\",\"medium\":\"https:\\/\\/api.signnow.com\\/document\\/c1dd2815eb4e60ef397cecc01794d861d81571c4\\/thumbnail?size=medium\",\"large\":\"https:\\/\\/api.signnow.com\\/document\\/c1dd2815eb4e60ef397cecc01794d861d81571c4\\/thumbnail?size=large\"},\"origin_document_id\":\"772a920760184eac70513ee9b459dcbf946d4aad\",\"has_unassigned_field\":false,\"has_credit_card_number\":false}],\"originator_organization_settings\":[{\"setting\":\"culpa\",\"value\":\"et\"}]}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

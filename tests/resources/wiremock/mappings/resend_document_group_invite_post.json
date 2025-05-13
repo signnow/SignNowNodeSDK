@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "urlPathPattern": "/documentgroup/[0-9a-z]{40}/groupinvite/[0-9a-z]{40}/resendinvites"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"status\":\"success\"}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

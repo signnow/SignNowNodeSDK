@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "url": "/api/v2/events"
+    },
+    "response": {
+        "status": 200,
+        "body": "{}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

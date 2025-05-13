@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPathPattern": "/document/[0-9a-z]{40}/template/routing/detail"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"routing_details\":[{\"name\":\"culpa\",\"role_id\":\"eb216aa0bdf5ffac277305c4e8d0006b6e444166\",\"default_email\":\"orrin39@marks.biz\",\"inviter_role\":false,\"signing_order\":60061,\"decline_by_signature\":false,\"delivery_type\":\"commodi\"}],\"cc\":[\"easter.moore@yahoo.com\"],\"cc_step\":[{\"email\":\"schmeler.lavern@pagac.com\",\"name\":\"quia\",\"step\":98078}],\"viewers\":[{\"default_email\":\"gunner.stamm@casper.com\",\"name\":\"repellat\",\"signing_order\":66761}],\"approvers\":[{\"default_email\":\"kuvalis.rhett@reynolds.com\",\"name\":\"modi\",\"signing_order\":13980}],\"attributes\":{\"brand_id\":\"autem\",\"redirect_uri\":\"https:\\/\\/www.becker.com\\/laboriosam-voluptatem-amet-quod-sit-quos\",\"on_complete\":\"quo\"}}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

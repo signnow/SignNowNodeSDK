@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "url": "/link"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"url\":\"http:\\/\\/walsh.com\\/voluptatem-nemo-veniam-dolor-modi-repellendus\",\"url_no_signup\":\"http:\\/\\/www.smitham.info\\/aut-quae-vitae-eos-assumenda-veniam-saepe.html\"}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}
