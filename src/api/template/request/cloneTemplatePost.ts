@@ -8,8 +8,8 @@
  */
 
 import { BaseClass } from '../../../types/baseClass';
-import { HttpMethod } from '../../../core/contstants';
-import { HttpAuthType } from '../../../core/contstants';
+import { HttpMethod } from '../../../core/constants';
+import { HttpAuthType } from '../../../core/constants';
 
 export class CloneTemplatePost implements BaseClass {
   private queryParams: Record<string, string> = {};

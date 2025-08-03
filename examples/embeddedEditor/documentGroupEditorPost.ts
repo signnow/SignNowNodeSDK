@@ -1,10 +1,7 @@
-import { DocumentPostRequest, DocumentPostResponse } from '../../src/api/document';
-import { DocumentGroupPost } from '../../src/api/documentGroup/request/documentGroupPost';
-import { DocumentGroupPost as DocumentGroupPostResponse } from '../../src/api/documentGroup/response/documentGroupPost';
-import { DocumentGroupEmbeddedEditorLinkPost } from '../../src/api/embeddedEditor/request/documentGroupEmbeddedEditorLinkPost';
-import { DocumentGroupEmbeddedEditorLinkPost as DocumentGroupEmbeddedEditorLinkPostResponse } from '../../src/api/embeddedEditor/response/documentGroupEmbeddedEditorLinkPost';
-import { displayResult } from '../../src/core/error/displayResult';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentPostRequest, DocumentPostResponse } from '@signnow/api-client/api/document';
+import { DocumentGroupPostRequest, DocumentGroupPostResponse } from '@signnow/api-client/api/documentGroup';
+import { DocumentGroupEmbeddedEditorLinkPostRequest, DocumentGroupEmbeddedEditorLinkPostResponse } from '@signnow/api-client/api/embeddedEditor';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function createDocumentGroupEmbeddedEditorLink(): Promise<DocumentGroupEmbeddedEditorLinkPostResponse> {
   const sdk = await new Sdk().authenticate();
@@ -27,7 +24,7 @@ export async function createDocumentGroupEmbeddedEditorLink(): Promise<DocumentG
   const documentId2 = documentResponse2.id;
 
   // 3. Create document group
-  const documentGroupPost = new DocumentGroupPost(
+  const documentGroupPost = new DocumentGroupPostRequest(
     [documentId1, documentId2],
     groupName
   );
@@ -35,7 +32,7 @@ export async function createDocumentGroupEmbeddedEditorLink(): Promise<DocumentG
   const groupId = documentGroupResponse.id;
 
   // 4. Create a link to embedded editor for the document group
-  const editorRequest = new DocumentGroupEmbeddedEditorLinkPost(
+  const editorRequest = new DocumentGroupEmbeddedEditorLinkPostRequest(
     groupId,
     redirectUri,
     redirectTarget,
@@ -47,4 +44,4 @@ export async function createDocumentGroupEmbeddedEditorLink(): Promise<DocumentG
   return response;
 }
 
-createDocumentGroupEmbeddedEditorLink().then(displayResult).catch(displayResult);
+createDocumentGroupEmbeddedEditorLink().then(displayResultError).catch(displayResultError); 

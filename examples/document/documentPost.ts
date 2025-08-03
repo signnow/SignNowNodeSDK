@@ -1,6 +1,5 @@
-import { DocumentPostRequest, DocumentPostResponse } from '../../src/api/document';
-import { displayResult } from '../../src/core/error/displayResult';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentPostRequest, DocumentPostResponse } from '@signnow/api-client/api/document';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function postDocument(): Promise<DocumentPostResponse> {
   const sdk = await new Sdk().authenticate();
@@ -12,4 +11,4 @@ export async function postDocument(): Promise<DocumentPostResponse> {
   return response;
 }
 
-postDocument().then(displayResult).catch(displayResult);
+postDocument().then(displayResultError).catch(displayResultError); 

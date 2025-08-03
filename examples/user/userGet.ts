@@ -1,5 +1,5 @@
-import { UserGetRequest, UserGetResponse } from '../../src/api/user';
-import { Sdk } from '../../src/core/sdk';
+import { UserGetRequest, UserGetResponse } from '@signnow/api-client/api/user';
+import { Sdk } from '@signnow/api-client/core';
 
 export async function getUser(): Promise<UserGetResponse> {
   const sdk = await new Sdk().authenticate();
@@ -11,4 +11,4 @@ export async function getUser(): Promise<UserGetResponse> {
   return response;
 }
 
-getUser().then(console.log, console.error);
+getUser().then(console.log, console.error); 

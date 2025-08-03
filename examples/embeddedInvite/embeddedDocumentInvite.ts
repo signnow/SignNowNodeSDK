@@ -1,7 +1,6 @@
-import { DocumentGetRequest, DocumentGetResponse, DocumentPostRequest, DocumentPostResponse, DocumentPutRequest, DocumentPutResponse } from '../../src/api/document';
-import { DocumentInvitePostRequest, DocumentInvitePostResponse, InviteRequest } from '../../src/api/embeddedInvite';
-import { displayResult } from '../../src/core/error/displayResult';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentGetRequest, DocumentGetResponse, DocumentPostRequest, DocumentPostResponse, DocumentPutRequest, DocumentPutResponse } from '@signnow/api-client/api/document';
+import { DocumentInvitePostRequest, DocumentInvitePostResponse, InviteRequestAttribute } from '@signnow/api-client/api/embeddedInvite';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function createEmbeddedInvite(): Promise<DocumentInvitePostResponse> {
   const sdk = await new Sdk().authenticate();
@@ -61,7 +60,7 @@ export async function createEmbeddedInvite(): Promise<DocumentInvitePostResponse
 
   // 4. Create embedded invite
   // Define the invitees with their roles and settings
-  const invites: InviteRequest[] = [
+  const invites: InviteRequestAttribute[] = [
     {
       email: signers[0].email,
       role_id: roleIds[0], // Use the first role ID from the document
@@ -94,4 +93,4 @@ export async function createEmbeddedInvite(): Promise<DocumentInvitePostResponse
   return response;
 }
 
-createEmbeddedInvite().then(displayResult).catch(displayResult);
+createEmbeddedInvite().then(displayResultError).catch(displayResultError); 

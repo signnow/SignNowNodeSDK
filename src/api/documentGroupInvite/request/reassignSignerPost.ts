@@ -8,8 +8,8 @@
  */
 
 import { BaseClass } from '../../../types/baseClass';
-import { HttpMethod } from '../../../core/contstants';
-import { HttpAuthType } from '../../../core/contstants';
+import { HttpMethod } from '../../../core/constants';
+import { HttpAuthType } from '../../../core/constants';
 import { InviteEmail } from './data/inviteEmail';
 import { UpdateInviteActionAttribute } from './data/updateInviteActionAttribute';
 
@@ -22,7 +22,7 @@ export class ReassignSignerPost implements BaseClass {
     private stepId: string,
     private userToUpdate: string,
     private replaceWithThisUser: string = '',
-    private inviteEmail: InviteEmail = [],
+    private inviteEmail: InviteEmail = {},
     private updateInviteActionAttributes: UpdateInviteActionAttribute[] = [],
   ) {}
 

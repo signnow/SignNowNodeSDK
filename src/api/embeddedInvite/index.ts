@@ -7,12 +7,12 @@
  * that was distributed with this source code.
  */
 
-export type { Authentication as AuthenticationRequest } from './request/data/authentication';
-export type { Data as DataResponse } from './response/data/data';
 export type { DocumentInviteDelete as DocumentInviteDeleteResponse } from './response/documentInviteDelete';
 export type { DocumentInviteLinkPost as DocumentInviteLinkPostResponse } from './response/documentInviteLinkPost';
 export type { DocumentInvitePost as DocumentInvitePostResponse } from './response/documentInvitePost';
-export type { Invite as InviteRequest } from './request/data/invite';
+export type { Authentication as AuthenticationRequestAttribute } from './request/data/authentication';
+export type { Invite as InviteRequestAttribute } from './request/data/invite';
+export type { Data as DataResponseAttribute } from './response/data/data';
 export { DocumentInviteDelete as DocumentInviteDeleteRequest } from './request/documentInviteDelete';
 export { DocumentInviteLinkPost as DocumentInviteLinkPostRequest } from './request/documentInviteLinkPost';
 export { DocumentInvitePost as DocumentInvitePostRequest } from './request/documentInvitePost';

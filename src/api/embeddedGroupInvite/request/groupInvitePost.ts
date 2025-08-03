@@ -8,8 +8,8 @@
  */
 
 import { BaseClass } from '../../../types/baseClass';
-import { HttpMethod } from '../../../core/contstants';
-import { HttpAuthType } from '../../../core/contstants';
+import { HttpMethod } from '../../../core/constants';
+import { HttpAuthType } from '../../../core/constants';
 import { Invite } from './data/invite/invite';
 
 export class GroupInvitePost implements BaseClass {

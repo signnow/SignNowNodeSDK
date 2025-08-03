@@ -7,6 +7,6 @@
  * that was distributed with this source code.
  */
 
-export type { Data as DataRequest } from './request/data/data';
 export type { DocumentPrefillSmartFieldPost as DocumentPrefillSmartFieldPostResponse } from './response/documentPrefillSmartFieldPost';
+export type { Data as DataRequestAttribute } from './request/data/data';
 export { DocumentPrefillSmartFieldPost as DocumentPrefillSmartFieldPostRequest } from './request/documentPrefillSmartFieldPost';

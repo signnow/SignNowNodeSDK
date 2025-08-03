@@ -1,7 +1,5 @@
-import { CancelFreeFormInvitePut } from '../../src/api/documentInvite/request/cancelFreeFormInvitePut';
-import { CancelFreeFormInvitePut as CancelFreeFormInvitePutResponse } from '../../src/api/documentInvite/response/cancelFreeFormInvitePut';
-import { Sdk } from '../../src/core/sdk';
-import { displayResult } from '../../src/core/error/displayResult';
+import { CancelFreeFormInvitePutRequest, CancelFreeFormInvitePutResponse } from '@signnow/api-client/api/documentInvite';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function cancelFreeFormInvite(): Promise<CancelFreeFormInvitePutResponse> {
   const sdk = await new Sdk().authenticate();
@@ -14,7 +12,7 @@ export async function cancelFreeFormInvite(): Promise<CancelFreeFormInvitePutRes
   const cancelReason = 'The invite was sent by mistake.';
 
   // Cancel the free-form invite
-  const cancelFreeFormInvite = new CancelFreeFormInvitePut(
+  const cancelFreeFormInvite = new CancelFreeFormInvitePutRequest(
     inviteId,
     cancelReason
   );
@@ -24,4 +22,4 @@ export async function cancelFreeFormInvite(): Promise<CancelFreeFormInvitePutRes
   return response;
 }
 
-cancelFreeFormInvite().then(displayResult).catch(displayResult);
+cancelFreeFormInvite().then(displayResultError).catch(displayResultError); 

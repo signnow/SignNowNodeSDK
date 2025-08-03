@@ -1,11 +1,7 @@
-import { DocumentPostRequest, DocumentPostResponse, DocumentPutRequest, DocumentPutResponse } from '../../src/api/document';
-import { DocumentGroupPost as DocumentGroupPostRequest } from '../../src/api/documentGroup/request/documentGroupPost';
-import { DocumentGroupPost as DocumentGroupPostResponse } from '../../src/api/documentGroup/response/documentGroupPost';
-import { GroupInvitePostRequest, GroupInvitePostResponse } from '../../src/api/documentGroupInvite';
-import { InviteStepInviteActionRequest } from '../../src/api/documentGroupInvite';
-import { InviteStepInviteStepRequest } from '../../src/api/documentGroupInvite';
-import { displayResult } from '../../src/core/error/displayResult';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentPostRequest, DocumentPostResponse, DocumentPutRequest, DocumentPutResponse } from '@signnow/api-client/api/document';
+import { DocumentGroupPostRequest, DocumentGroupPostResponse } from '@signnow/api-client/api/documentGroup';
+import { GroupInvitePostRequest, GroupInvitePostResponse, InviteStepInviteActionRequestAttribute, InviteStepRequestAttribute } from '@signnow/api-client/api/documentGroupInvite';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function sendDocumentGroupInvite(): Promise<GroupInvitePostResponse> {
   const sdk = await new Sdk().authenticate();
@@ -64,7 +60,7 @@ export async function sendDocumentGroupInvite(): Promise<GroupInvitePostResponse
   const documentGroupId = responseDocumentGroupPost.id;
 
   // 5. Define invite actions for the document group
-  const inviteActions: InviteStepInviteActionRequest[] = [
+  const inviteActions: InviteStepInviteActionRequestAttribute[] = [
     {
       email: signerEmail,
       role_name: signerRole,
@@ -80,7 +76,7 @@ export async function sendDocumentGroupInvite(): Promise<GroupInvitePostResponse
   ];
 
   // 6. Create invite steps
-  const inviteSteps: InviteStepInviteStepRequest[] = [
+  const inviteSteps: InviteStepRequestAttribute[] = [
     {
       order: 1,
       invite_actions: inviteActions
@@ -102,4 +98,4 @@ export async function sendDocumentGroupInvite(): Promise<GroupInvitePostResponse
   return response;
 }
 
-sendDocumentGroupInvite().then(displayResult).catch(displayResult);
+sendDocumentGroupInvite().then(displayResultError).catch(displayResultError); 

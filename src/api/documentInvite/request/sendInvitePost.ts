@@ -8,9 +8,9 @@
  */
 
 import { BaseClass } from '../../../types/baseClass';
-import { HttpMethod } from '../../../core/contstants';
-import { HttpAuthType } from '../../../core/contstants';
-import { To } from './data/to';
+import { HttpMethod } from '../../../core/constants';
+import { HttpAuthType } from '../../../core/constants';
+import { To } from './data/to/to';
 import { EmailGroup } from './data/emailGroup/emailGroup';
 import { CcStep } from './data/ccStep';
 import { Viewer } from './data/viewer';

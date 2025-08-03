@@ -1,8 +1,6 @@
-import { DocumentPostRequest, DocumentPostResponse, DocumentPutRequest, DocumentPutResponse } from '../../src/api/document';
-import { displayResult } from '../../src/core/error/displayResult';
-import { SigningLinkPost } from '../../src/api/documentInvite/request/signingLinkPost';
-import { SigningLinkPost as SigningLinkPostResponse } from '../../src/api/documentInvite/response/signingLinkPost';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentPostRequest, DocumentPostResponse, DocumentPutRequest, DocumentPutResponse } from '@signnow/api-client/api/document';
+import { SigningLinkPostRequest, SigningLinkPostResponse } from '@signnow/api-client/api/documentInvite';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function createSigningLink(): Promise<SigningLinkPostResponse> {
   const sdk = await new Sdk().authenticate();
@@ -34,7 +32,7 @@ export async function createSigningLink(): Promise<SigningLinkPostResponse> {
   await client.send<DocumentPutResponse>(documentPut);
 
   // 3. Generate a signing link for the document
-  const signingLinkPost = new SigningLinkPost(
+  const signingLinkPost = new SigningLinkPostRequest(
     documentId,
     redirectUri
   );
@@ -44,4 +42,4 @@ export async function createSigningLink(): Promise<SigningLinkPostResponse> {
   return response;
 }
 
-createSigningLink().then(displayResult).catch(displayResult);
+createSigningLink().then(displayResultError).catch(displayResultError); 

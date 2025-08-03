@@ -1,13 +1,6 @@
-import { Field } from '../../src/api/document/request/data/field';
-import { DocumentPost as DocumentPostRequest } from '../../src/api/document/request/documentPost';
-import { DocumentPut as DocumentPutRequest } from '../../src/api/document/request/documentPut';
-import { DocumentPost as DocumentPostResponse } from '../../src/api/document/response/documentPost';
-import { DocumentPut as DocumentPutResponse } from '../../src/api/document/response/documentPut';
-import { RoutingDetailsGet as RoutingDetailsGetRequest } from '../../src/api/template/request/routingDetailsGet';
-import { RoutingDetailsPost as RoutingDetailsPostRequest } from '../../src/api/template/request/routingDetailsPost';
-import { RoutingDetailsGet as RoutingDetailsGetResponse } from '../../src/api/template/response/routingDetailsGet';
-import { RoutingDetailsPost as RoutingDetailsPostResponse } from '../../src/api/template/response/routingDetailsPost';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentPostRequest, DocumentPutRequest, DocumentPostResponse, DocumentPutResponse, FieldRequestAttribute } from '@signnow/api-client/api/document';
+import { RoutingDetailsGetRequest, RoutingDetailsPostRequest, RoutingDetailsGetResponse, RoutingDetailsPostResponse } from '@signnow/api-client/api/template';
+import { Sdk } from '@signnow/api-client/core';
 
 export async function getRoutingDetails(): Promise<RoutingDetailsGetResponse> {
   const sdk = await new Sdk().authenticate();
@@ -22,7 +15,7 @@ export async function getRoutingDetails(): Promise<RoutingDetailsGetResponse> {
   /**
    * Add a field to the document.
    */
-  const fields: Field[] = [{
+  const fields: FieldRequestAttribute[] = [{
     x: 358,
     y: 171,
     width: 177,
@@ -50,4 +43,4 @@ export async function getRoutingDetails(): Promise<RoutingDetailsGetResponse> {
   return response;
 }
 
-getRoutingDetails().then(console.log, console.error);
+getRoutingDetails().then(console.log, console.error); 

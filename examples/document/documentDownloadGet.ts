@@ -1,6 +1,5 @@
-import { DocumentDownloadGetRequest, DocumentDownloadGetResponse } from '../../src/api/document';
-import { displayResult } from '../../src/core/error/displayResult';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentDownloadGetRequest, DocumentDownloadGetResponse } from '@signnow/api-client/api/document';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function documentDownloadGet(documentId: string): Promise<DocumentDownloadGetResponse> {
   const sdk = await new Sdk().authenticate();
@@ -16,4 +15,4 @@ export async function documentDownloadGet(documentId: string): Promise<DocumentD
   return response;
 }
 
-documentDownloadGet('8612b8e9ea3e4fe8aa997ea4ab43619e56a32691').then(displayResult).catch(displayResult);
+documentDownloadGet('8612b8e9ea3e4fe8aa997ea4ab43619e56a32691').then(displayResultError).catch(displayResultError); 

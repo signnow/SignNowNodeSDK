@@ -1,10 +1,8 @@
-import { DocumentPostRequest, DocumentPostResponse, DocumentPutRequest, DocumentPutResponse } from '../../src/api/document';
-import { DocumentEmbeddedSendingLinkPost as DocumentEmbeddedSendingLinkPostRequest } from '../../src/api/embeddedSending/request/documentEmbeddedSendingLinkPost';
-import { DocumentGroupEmbeddedSendingLinkPost as DocumentGroupEmbeddedSendingLinkPostResponse } from '../../src/api/embeddedSending/response/documentGroupEmbeddedSendingLinkPost';
-import { displayResult } from '../../src/core/error/displayResult';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentPostRequest, DocumentPostResponse, DocumentPutRequest, DocumentPutResponse } from '@signnow/api-client/api/document';
+import { DocumentEmbeddedSendingLinkPostRequest, DocumentEmbeddedSendingLinkPostResponse } from '@signnow/api-client/api/embeddedSending';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
-export async function createEmbeddedDocumentSending(): Promise<DocumentGroupEmbeddedSendingLinkPostResponse> {
+export async function createEmbeddedDocumentSending(): Promise<DocumentEmbeddedSendingLinkPostResponse> {
   const sdk = await new Sdk().authenticate();
   const client = sdk.getClient();
 
@@ -59,9 +57,9 @@ export async function createEmbeddedDocumentSending(): Promise<DocumentGroupEmbe
     redirectTarget
   );
 
-  const response = await client.send<DocumentGroupEmbeddedSendingLinkPostResponse>(embeddedSendingRequest);
+  const response = await client.send<DocumentEmbeddedSendingLinkPostResponse>(embeddedSendingRequest);
   
   return response;
 }
 
-createEmbeddedDocumentSending().then(displayResult).catch(displayResult);
+createEmbeddedDocumentSending().then(displayResultError).catch(displayResultError); 
