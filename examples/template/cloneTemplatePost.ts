@@ -1,10 +1,6 @@
-import { DocumentPost as DocumentPostRequest } from '../../src/api/document/request/documentPost';
-import { DocumentPost as DocumentPostResponse } from '../../src/api/document/response/documentPost';
-import { CloneTemplatePost as CloneTemplatePostRequest } from '../../src/api/template/request/cloneTemplatePost';
-import { TemplatePost as TemplatePostRequest } from '../../src/api/template/request/templatePost';
-import { CloneTemplatePost as CloneTemplatePostResponse } from '../../src/api/template/response/cloneTemplatePost';
-import { TemplatePost  as TemplatePostResponse } from '../../src/api/template/response/templatePost';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentPostRequest, DocumentPostResponse } from '@signnow/api-client/api/document';
+import { CloneTemplatePostRequest, TemplatePostRequest, CloneTemplatePostResponse, TemplatePostResponse } from '@signnow/api-client/api/template';
+import { Sdk } from '@signnow/api-client/core';
 
 export async function postTemplateCopy(): Promise<CloneTemplatePostResponse> {
   const sdk = await new Sdk().authenticate();
@@ -31,4 +27,4 @@ export async function postTemplateCopy(): Promise<CloneTemplatePostResponse> {
   return response;
 }
 
-postTemplateCopy().then(console.log, console.error);
+postTemplateCopy().then(console.log, console.error); 

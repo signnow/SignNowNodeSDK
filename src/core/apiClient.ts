@@ -14,7 +14,7 @@ import FormData from 'form-data';
 import { Config } from './config/config';
 import { BaseClass } from '../types/baseClass';
 import { FileDownloader } from './response/fileDownloader';
-import { HttpStatusCode } from './contstants';
+import { HttpStatusCode } from './constants';
 import { SignNowApiException } from './error/signNowApiException';
 
 /**

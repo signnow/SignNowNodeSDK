@@ -1,7 +1,5 @@
-import { SubscriptionPost } from '../../src/api/webhook/request/subscriptionPost';
-import { displayResult } from '../../src/core/error/displayResult';
-import { Sdk } from '../../src/core/sdk';
-import { SubscriptionPost as SubscriptionPostResponse } from '../../src/api/webhook/response/subscriptionPost';
+import { SubscriptionPostRequest, SubscriptionPostResponse } from '@signnow/api-client/api/webhook';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function createWebhookSubscription(): Promise<SubscriptionPostResponse> {
   const sdk = await new Sdk().authenticate();
@@ -16,7 +14,7 @@ export async function createWebhookSubscription(): Promise<SubscriptionPostRespo
     use_tls_12: false,
   };
 
-  const subscriptionRequest = new SubscriptionPost(
+  const subscriptionRequest = new SubscriptionPostRequest(
     event,
     userId,
     action,
@@ -27,4 +25,4 @@ export async function createWebhookSubscription(): Promise<SubscriptionPostRespo
   return response;
 }
 
-createWebhookSubscription().then(displayResult).catch(displayResult);
+createWebhookSubscription().then(displayResultError).catch(displayResultError); 

@@ -1,8 +1,6 @@
-import { DocumentPostRequest, DocumentPostResponse } from '../../src/api/document';
-import { DocumentGroupPost as DocumentGroupPostRequest } from '../../src/api/documentGroup/request/documentGroupPost';
-import { DocumentGroupPost as DocumentGroupPostResponse } from '../../src/api/documentGroup/response/documentGroupPost';
-import { displayResult } from '../../src/core/error/displayResult';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentPostRequest, DocumentPostResponse } from '@signnow/api-client/api/document';
+import { DocumentGroupPostRequest, DocumentGroupPostResponse } from '@signnow/api-client/api/documentGroup';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function createDocumentGroup(): Promise<DocumentGroupPostResponse> {
 	const sdk = await new Sdk().authenticate();
@@ -26,4 +24,4 @@ export async function createDocumentGroup(): Promise<DocumentGroupPostResponse> 
 	return documentGroupResponse;
 }
 
-createDocumentGroup().then(displayResult).catch(displayResult);
+createDocumentGroup().then(displayResultError).catch(displayResultError); 

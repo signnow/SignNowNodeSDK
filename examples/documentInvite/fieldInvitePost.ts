@@ -1,9 +1,6 @@
-import { DocumentPostRequest, DocumentPostResponse, DocumentGetRequest, DocumentGetResponse, DocumentPutRequest, DocumentPutResponse } from '../../src/api/document';
-import { SendInvitePost } from '../../src/api/documentInvite/request/sendInvitePost';
-import { SendInvitePost as SendInvitePostResponse } from '../../src/api/documentInvite/response/sendInvitePost';
-import { To } from '../../src/api/documentInvite/request/data/to';
-import { displayResult } from '../../src/core/error/displayResult';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentPostRequest, DocumentPostResponse, DocumentGetRequest, DocumentGetResponse, DocumentPutRequest, DocumentPutResponse } from '@signnow/api-client/api/document';
+import { SendInvitePostRequest, SendInvitePostResponse, ToRequestAttribute } from '@signnow/api-client/api/documentInvite';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function sendFieldInvite(): Promise<SendInvitePostResponse> {
   const sdk = await new Sdk().authenticate();
@@ -43,7 +40,7 @@ export async function sendFieldInvite(): Promise<SendInvitePostResponse> {
   const roles = responseDocumentGet.roles;
 
   // 4. Send an invite for signature
-  const recipients: To[] = roles.map(role => ({
+  const recipients: ToRequestAttribute[] = roles.map(role => ({
     email: signerEmail,
     role: role.name,
     role_id: role.unique_id,
@@ -52,7 +49,7 @@ export async function sendFieldInvite(): Promise<SendInvitePostResponse> {
     message: emailMessage
   }));
 
-  const sendInviteRequest = new SendInvitePost(
+  const sendInviteRequest = new SendInvitePostRequest(
     documentId,
     recipients,
     senderEmail,
@@ -65,4 +62,4 @@ export async function sendFieldInvite(): Promise<SendInvitePostResponse> {
   return response;
 }
 
-sendFieldInvite().then(displayResult).catch(displayResult);
+sendFieldInvite().then(displayResultError).catch(displayResultError); 

@@ -25,7 +25,7 @@ import { Text } from '../../../src/api/document/request/data/text';
 import { RoutingDetail } from '../../../src/api/template/request/data/routingDetail/routingDetail';
 import { InviteAction } from '../../../src/api/template/request/data/routingDetail/inviteAction';
 import { InviteStep } from '../../../src/api/template/request/data/routingDetail/inviteStep';
-import { To } from '../../../src/api/documentInvite/request/data/to';
+import { To } from '../../../src/api/documentInvite/request/data/to/to';
 import { CcStep } from '../../../src/api/documentInvite/request/data/ccStep';
 import { Viewer } from '../../../src/api/documentInvite/request/data/viewer';
 import { EmailGroup } from '../../../src/api/documentInvite/request/data/emailGroup/emailGroup';

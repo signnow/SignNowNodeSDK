@@ -1,20 +1,125 @@
 {
-  "name": "nodejs-sdk-3.0",
-  "version": "1.0.0",
-  "description": "signNow API NODEJS SDK",
-  "main": "index.ts",
-  "type": "module",
+  "name": "@signnow/api-client",
+  "description": "SignNow REST Service Wrapper",
+  "version": "3.0.0",
+  "author": {
+    "name": "SignNow Team",
+    "email": "api@signnow.com"
+  },
+  "type": "commonjs",
+  "exports": {
+    "./api/auth": {
+      "require": "./dist/api/auth/index.js",
+      "import": "./dist/api/auth/index.js",
+      "types": "./dist/api/auth/index.d.ts"
+    },
+    "./api/document": {
+      "require": "./dist/api/document/index.js",
+      "import": "./dist/api/document/index.js",
+      "types": "./dist/api/document/index.d.ts"
+    },
+    "./api/documentField": {
+      "require": "./dist/api/documentField/index.js",
+      "import": "./dist/api/documentField/index.js",
+      "types": "./dist/api/documentField/index.d.ts"
+    },
+    "./api/documentGroup": {
+      "require": "./dist/api/documentGroup/index.js",
+      "import": "./dist/api/documentGroup/index.js",
+      "types": "./dist/api/documentGroup/index.d.ts"
+    },
+    "./api/documentGroupInvite": {
+      "require": "./dist/api/documentGroupInvite/index.js",
+      "import": "./dist/api/documentGroupInvite/index.js",
+      "types": "./dist/api/documentGroupInvite/index.d.ts"
+    },
+    "./api/documentGroupTemplate": {
+      "require": "./dist/api/documentGroupTemplate/index.js",
+      "import": "./dist/api/documentGroupTemplate/index.js",
+      "types": "./dist/api/documentGroupTemplate/index.d.ts"
+    },
+    "./api/documentInvite": {
+      "require": "./dist/api/documentInvite/index.js",
+      "import": "./dist/api/documentInvite/index.js",
+      "types": "./dist/api/documentInvite/index.d.ts"
+    },
+    "./api/embeddedEditor": {
+      "require": "./dist/api/embeddedEditor/index.js",
+      "imoport": "./dist/api/embeddedEditor/index.js",
+      "types": "./dist/api/embeddedEditor/index.d.ts"
+    },
+    "./api/embeddedGroupInvite": {
+      "require": "./dist/api/embeddedGroupInvite/index.js",
+      "imoport": "./dist/api/embeddedGroupInvite/index.js",
+      "types": "./dist/api/embeddedGroupInvite/index.d.ts"
+    },
+    "./api/embeddedInvite": {
+      "require": "./dist/api/embeddedInvite/index.js",
+      "impoort": "./dist/api/embeddedInvite/index.js",
+      "types": "./dist/api/embeddedInvite/index.d.ts"
+    },
+    "./api/embeddedSending": {
+      "require": "./dist/api/embeddedSending/index.js",
+      "import": "./dist/api/embeddedSending/index.js",
+      "types": "./dist/api/embeddedSending/index.d.ts"
+    },
+    "./api/folder": {
+      "require": "./dist/api/folder/index.js",
+      "import": "./dist/api/folder/index.js",
+      "types": "./dist/api/folder/index.d.ts"
+    },
+    "./api/smartFields": {
+      "require": "./dist/api/smartFields/index.js",
+      "import": "./dist/api/smartFields/index.js",
+      "types": "./dist/api/smartFields/index.d.ts"
+    },
+    "./api/template": {
+      "require": "./dist/api/template/index.js",
+      "import": "./dist/api/template/index.js",
+      "types": "./dist/api/template/index.d.ts"
+    },
+    "./api/user": {
+      "require": "./dist/api/user/index.js",
+      "import": "./dist/api/user/index.js",
+      "types": "./dist/api/user/index.d.ts"
+    },
+    "./api/webhook": {
+      "require": "./dist/api/webhook/index.js",
+      "import": "./dist/api/webhook/index.js",
+      "types": "./dist/api/webhook/index.d.ts"
+    },
+    "./api/webhookV2": {
+      "require": "./dist/api/webhookV2/index.js",
+      "import": "./dist/api/webhookV2/index.js",
+      "types": "./dist/api/webhookV2/index.d.ts"
+    },
+    "./core": {
+      "require": "./dist/core/index.js",
+      "import": "./dist/core/index.js",
+      "types": "./dist/core/index.d.ts"
+    }
+  },
   "scripts": {
-    "start": "tsx index.ts",
+    "start": "tsx src/index.ts",
     "test": "DOTENV_CONFIG_PATH=.env.test jest",
     "eslint": "eslint . --fix"
   },
+  "repository": "github:signnow/SignNowNodeSDK",
   "engines": {
-    "node": ">=20.x.x",
-    "npm": ">=10.x.x"
+    "node": "17.x",
+    "npm": ">=8.x"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "signnow",
+    "document",
+    "sign",
+    "online",
+    "electronic",
+    "signature",
+    "api",
+    "client"
+  ],
+  "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.15.0",
     "@faker-js/faker": "^9.5.1",
@@ -34,5 +139,8 @@
     "dotenv": "^16.4.5",
     "form-data": "^4.0.1",
     "node-fetch": "^2.7.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

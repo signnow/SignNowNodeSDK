@@ -1,15 +1,9 @@
-import { DocumentPostRequest, DocumentPostResponse, DocumentPutRequest, DocumentPutResponse } from '../../src/api/document';
-import { Sdk } from '../../src/core/sdk';
-import { displayResult } from '../../src/core/error/displayResult';
-import { Invite } from '../../src/api/embeddedGroupInvite/request/data/invite/invite';
-import { Document } from '../../src/api/embeddedGroupInvite/request/data/invite/document';
-import { Signer } from '../../src/api/embeddedGroupInvite/request/data/invite/signer';
-import { GroupInvitePost as EmbeddedGroupInvitePostRequest } from '../../src/api/embeddedGroupInvite/request/groupInvitePost';
-import { GroupInvitePost as EmbeddedGroupInvitePostResponse } from '../../src/api/embeddedGroupInvite/response/groupInvitePost';
-import { DocumentGroupPost as DocumentGroupPostRequest } from '../../src/api/documentGroup/request/documentGroupPost';
-import { DocumentGroupPost as DocumentGroupPostResponse } from '../../src/api/documentGroup/response/documentGroupPost';
+import { DocumentPostRequest, DocumentPostResponse, DocumentPutRequest, DocumentPutResponse } from '@signnow/api-client/api/document';
+import { DocumentGroupPostRequest, DocumentGroupPostResponse } from '@signnow/api-client/api/documentGroup';
+import { GroupInvitePostRequest, GroupInvitePostResponse, InviteRequestAttribute, DocumentRequestAttribute, SignerRequestAttribute } from '@signnow/api-client/api/embeddedGroupInvite';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
-export async function createEmbeddedDocumentGroupInvite(): Promise<EmbeddedGroupInvitePostResponse> {
+export async function createEmbeddedDocumentGroupInvite(): Promise<GroupInvitePostResponse> {
   const sdk = await new Sdk().authenticate();
   const client = sdk.getClient();
 
@@ -74,7 +68,7 @@ export async function createEmbeddedDocumentGroupInvite(): Promise<EmbeddedGroup
 	const documentGroupId = documentGroupResponse.id;
 
   // 3. Create embedded group invite
-  const documentsSinger1: Document[] = [
+  const documentsSinger1: DocumentRequestAttribute[] = [
     {
       id: documentId1,
       role: signers[0].role,
@@ -82,7 +76,7 @@ export async function createEmbeddedDocumentGroupInvite(): Promise<EmbeddedGroup
     }
   ];
 
-  const embeddedSigners1: Signer[] = [
+  const embeddedSigners1: SignerRequestAttribute[] = [
     {
       email: signers[0].email,
       auth_method: 'none', // No authentication required
@@ -95,7 +89,7 @@ export async function createEmbeddedDocumentGroupInvite(): Promise<EmbeddedGroup
     }
   ];
 
-	const documentsSinger2: Document[] = [
+	const documentsSinger2: DocumentRequestAttribute[] = [
     {
       id: documentId2,
       role: signers[1].role,
@@ -103,7 +97,7 @@ export async function createEmbeddedDocumentGroupInvite(): Promise<EmbeddedGroup
     }
   ];
 
-  const embeddedSigners2: Signer[] = [
+  const embeddedSigners2: SignerRequestAttribute[] = [
     {
       email: signers[1].email,
       auth_method: 'none', // No authentication required
@@ -115,7 +109,7 @@ export async function createEmbeddedDocumentGroupInvite(): Promise<EmbeddedGroup
   ];
 
   // Define invites with order
-  const invites: Invite[] = [
+  const invites: InviteRequestAttribute[] = [
     {
       order: 1,
       signers: embeddedSigners1
@@ -126,15 +120,15 @@ export async function createEmbeddedDocumentGroupInvite(): Promise<EmbeddedGroup
     }
   ];
 
-  const embeddedGroupInviteRequest = new EmbeddedGroupInvitePostRequest(
+  const embeddedGroupInviteRequest = new GroupInvitePostRequest(
 		documentGroupId,
     invites,
 		true // sign_as_merged
   );
 
-  const response = await client.send<EmbeddedGroupInvitePostResponse>(embeddedGroupInviteRequest);
+  const response = await client.send<GroupInvitePostResponse>(embeddedGroupInviteRequest);
   
   return response;
 }
 
-createEmbeddedDocumentGroupInvite().then(displayResult).catch(displayResult);
+createEmbeddedDocumentGroupInvite().then(displayResultError).catch(displayResultError); 

@@ -1,6 +1,5 @@
-import { displayResult } from '../../src/core/error/displayResult';
-import { Sdk } from '../../src/core/sdk';
-import { FieldsGetRequest, FieldsGetResponse } from '../../src/api/document';
+import { FieldsGetRequest, FieldsGetResponse } from '@signnow/api-client/api/document';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function getDocumentFields(documentId: string): Promise<FieldsGetResponse> {
   const sdk = await new Sdk().authenticate();
@@ -12,4 +11,4 @@ export async function getDocumentFields(documentId: string): Promise<FieldsGetRe
   return response;
 }
 
-getDocumentFields('6c9f255cfb7c42cbbe74b8fba05ca97c90467730').then(displayResult).catch(displayResult);
+getDocumentFields('6c9f255cfb7c42cbbe74b8fba05ca97c90467730').then(displayResultError).catch(displayResultError); 

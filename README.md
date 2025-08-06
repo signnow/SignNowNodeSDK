@@ -4,7 +4,7 @@
 [![Node.js Version](https://img.shields.io/badge/supported->=20-blue?logo=node.js)](https://nodejs.org/)
 
 ### Requirements
-- Node.js 20 or higher
+- Node.js 17 or higher
 
 ### Installation
 Get SDK code

@@ -1,15 +1,13 @@
-import { SubscriptionGet } from '../../src/api/webhook/request/subscriptionGet';
-import { SubscriptionGet as SubscriptionGetResponse } from '../../src/api/webhook/response/subscriptionGet';
-import { displayResult } from '../../src/core/error/displayResult';
-import { Sdk } from '../../src/core/sdk';
+import { SubscriptionGetRequest, SubscriptionGetResponse } from '@signnow/api-client/api/webhook';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function getWebhookSubscriptions(): Promise<SubscriptionGetResponse> {
   const sdk = await new Sdk().authenticate();
   const client = sdk.getClient();
 
-  const subscriptionRequest = new SubscriptionGet();
+  const subscriptionRequest = new SubscriptionGetRequest();
   const response = await client.send<SubscriptionGetResponse>(subscriptionRequest);
   return response;
 }
 
-getWebhookSubscriptions().then(displayResult).catch(displayResult);
+getWebhookSubscriptions().then(displayResultError).catch(displayResultError); 

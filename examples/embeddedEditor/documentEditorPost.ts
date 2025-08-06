@@ -1,8 +1,6 @@
-import { DocumentPostRequest, DocumentPostResponse } from '../../src/api/document';
-import { DocumentEmbeddedEditorLinkPost } from '../../src/api/embeddedEditor/request/documentEmbeddedEditorLinkPost';
-import { DocumentEmbeddedEditorLinkPost as DocumentEmbeddedEditorLinkPostResponse } from '../../src/api/embeddedEditor/response/documentEmbeddedEditorLinkPost';
-import { displayResult } from '../../src/core/error/displayResult';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentPostRequest, DocumentPostResponse } from '@signnow/api-client/api/document';
+import { DocumentEmbeddedEditorLinkPostRequest, DocumentEmbeddedEditorLinkPostResponse } from '@signnow/api-client/api/embeddedEditor';
+import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function createEmbeddedEditorLink(): Promise<DocumentEmbeddedEditorLinkPostResponse> {
   const sdk = await new Sdk().authenticate();
@@ -19,7 +17,7 @@ export async function createEmbeddedEditorLink(): Promise<DocumentEmbeddedEditor
   const documentId = responseDocumentPost.id;
 
   // 2. Create a link to embedded editor for the document
-  const editorRequest = new DocumentEmbeddedEditorLinkPost(
+  const editorRequest = new DocumentEmbeddedEditorLinkPostRequest(
     documentId,
     redirectUri,
     redirectTarget,
@@ -31,4 +29,4 @@ export async function createEmbeddedEditorLink(): Promise<DocumentEmbeddedEditor
   return response;
 }
 
-createEmbeddedEditorLink().then(displayResult).catch(displayResult);
+createEmbeddedEditorLink().then(displayResultError).catch(displayResultError); 

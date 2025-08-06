@@ -1,8 +1,6 @@
-import { DocumentPost as DocumentPostRequest } from '../../src/api/document/request/documentPost';
-import { DocumentPost as DocumentPostResponse } from '../../src/api/document/response/documentPost';
-import { RoutingDetailsPut as RoutingDetailsPutRequest } from '../../src/api/template/request/routingDetailsPut';
-import { RoutingDetailsPut as RoutingDetailsPutResponse } from '../../src/api/template/response/routingDetailsPut';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentPostRequest, DocumentPostResponse } from '@signnow/api-client/api/document';
+import { RoutingDetailsPutRequest, RoutingDetailsPutResponse } from '@signnow/api-client/api/template';
+import { Sdk } from '@signnow/api-client/core';
 
 export async function putRoutingDetails(): Promise<RoutingDetailsPutResponse> {
   const sdk = await new Sdk().authenticate();
@@ -23,4 +21,4 @@ export async function putRoutingDetails(): Promise<RoutingDetailsPutResponse> {
   return response;
 }
 
-putRoutingDetails().then(console.log, console.error);
+putRoutingDetails().then(console.log, console.error); 
