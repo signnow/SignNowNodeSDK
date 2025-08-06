@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "POST",
+        "urlPathPattern": "/v2/document-group-templates/[0-9a-z]{40}/document-group"
+    },
+    "response": {
+        "status": 200,
+        "body": "{\"data\":{\"unique_id\":\"077b709092a8028c52c9ee6f446f3692c23f4f37\",\"name\":\"temporibus\",\"created\":536477385,\"invite_id\":\"c0d350b49504b8ecf5a41e003810505ce0c2d83c\",\"state\":\"voluptatibus\",\"last_invite_id\":\"a1214f44439d198677b4662bc76c6a84d7777a06\",\"owner_email\":\"kshlerin.jaylon@yahoo.com\",\"documents\":[{\"roles\":[\"dolor\"],\"document_name\":\"tempora magnam\",\"id\":\"c93cc8654a6d19f80357cd051b34cd713ae58bf1\",\"thumbnail\":{\"small\":\"https://example.com/small\",\"medium\":\"https://example.com/medium\",\"large\":\"https://example.com/large\"},\"origin_document_id\":\"d51b84f0906a657875664bf9bad7ddef0e451685\",\"has_unassigned_field\":false,\"has_credit_card_number\":true}],\"owner\":{\"id\":\"d6XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\"email\":\"lukas87@hotmail.com\",\"organization\":{\"id\":null}}}}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

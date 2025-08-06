@@ -41,8 +41,8 @@ import { UpdateInviteActionAttribute as GroupUpdateInviteActionAttribute } from 
 import { Invite as EmbeddedGroupInvite } from '../../../src/api/embeddedGroupInvite/request/data/invite/invite';
 import { Document as EmbeddedGroupInviteDocument } from '../../../src/api/embeddedGroupInvite/request/data/invite/document';
 import { Signer as EmbeddedGroupInviteSigner } from '../../../src/api/embeddedGroupInvite/request/data/invite/signer';
-import { AttributeRequest } from '../../../src/api/webhook';
-import { AttributeRequestV2 } from '../../../src/api/webhookV2';
+import { AttributeRequestAttribute } from '../../../src/api/webhook';
+import { AttributeRequestAttributeV2 } from '../../../src/api/webhookV2';
 
 export class Faker {
   private faker: typeof faker;
@@ -68,6 +68,10 @@ export class Faker {
   }
 
   public templateId(): string {
+    return this.uid();
+  }
+
+  public templateGroupId(): string {
     return this.uid();
   }
 
@@ -746,13 +750,13 @@ export class Faker {
     return this.string();
   }
 
-  public webhookSubscriptionAttributes(): AttributeRequest {
+  public webhookSubscriptionAttributes(): AttributeRequestAttribute {
     return {
       callback: this.url(),
     };
   }
 
-  public webhookV2EventSubscriptionAttributes(): AttributeRequestV2 {
+  public webhookV2EventSubscriptionAttributes(): AttributeRequestAttributeV2 {
     return {
       callback: this.url(),
     };
