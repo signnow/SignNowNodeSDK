@@ -19,6 +19,7 @@ export class DocumentGroupEmbeddedSendingLinkPost implements BaseClass {
     private redirectUri: string = '',
     private linkExpiration: number = 0,
     private redirectTarget: string = '',
+    private type: string = 'manage',
   ) {}
 
   public getPayload(): Record<string, string | number> {
@@ -27,6 +28,7 @@ export class DocumentGroupEmbeddedSendingLinkPost implements BaseClass {
       redirect_uri: this.redirectUri,
       link_expiration: this.linkExpiration,
       redirect_target: this.redirectTarget,
+      type: this.type,
     };
   }
 

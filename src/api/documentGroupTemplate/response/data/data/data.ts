@@ -7,15 +7,17 @@
  * that was distributed with this source code.
  */
 
-import { EmailGroup } from './emailGroup';
-import { Attribute } from './attribute';
 import { Document } from './document';
+import { Owner } from './owner';
 
-export interface Recipient {
+export interface Data {
+  unique_id: string;
   name: string;
-  email: string | null;
-  order: number;
+  created: number;
+  state: string;
+  owner_email: string;
   documents: Document[];
-  email_group?: EmailGroup;
-  attributes?: Attribute;
+  owner: Owner;
+  invite_id?: string | null;
+  last_invite_id?: string | null;
 }

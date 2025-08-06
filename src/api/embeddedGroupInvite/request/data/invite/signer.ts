@@ -20,4 +20,5 @@ export interface Signer {
   redirect_uri?: string;
   decline_redirect_uri?: string;
   redirect_target?: string;
+  delivery_type?: string;
 }

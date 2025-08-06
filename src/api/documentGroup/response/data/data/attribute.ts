@@ -16,7 +16,7 @@ export interface Attribute {
   i_am_recipient: boolean;
   message?: string;
   subject?: string;
-  expiration_days?: number;
+  expiration_days?: number | null;
   reminder?: Reminder;
   authentication?: Authentication;
 }
