@@ -2,7 +2,7 @@ import { DocumentGetRequest, DocumentGetResponse } from '@signnow/api-client/api
 import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function getDocument(documentId: string): Promise<DocumentGetResponse> {
-  const sdk = await new Sdk().authenticate();
+  const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
   const client = sdk.getClient();
 
   const documentGet = new DocumentGetRequest(documentId);

@@ -1,50 +1,52 @@
-# signNow API NODE.JS SDK
-## v3.0.0
+# SignNow API Node.js SDK
 
-[![Node.js Version](https://img.shields.io/badge/supported->=20-blue?logo=node.js)](https://nodejs.org/)
+## v3.2.0
 
-### Requirements
+[![Node.js Version](https://img.shields.io/badge/supported->=17-blue?logo=node.js)](https://nodejs.org/)
+
+**Requirements**
+
 - Node.js 17 or higher
 
-### Installation
-Get SDK code
+**Installation**
+
+Install the SDK from [`npm`](https://www.npmjs.com/package/@signnow/api-client):
+
 ```bash
-git clone git@github.com:signnow/SignNowNodeSDK.git
-```
-Install dependencies
-```bash
-npm install
+npm install @signnow/api-client
 ```
 
-### Configuration
-Copy `.env.example` to `.env` and fill your credentials in the required values
-```bash
-cp .env.example .env
-```
+**Usage**
 
-### Run tests
-To run tests you need to have a valid `.env.test` file with credentials for testing.
-If you don't have it, you can create it by copying the `.env.test.dist` file and renaming it to `.env.test`.
-However, the file will be created automatically if you just run test execution with the following commands:
-```bash
-npm run test
-```
-
-### Usage
-To start using the SDK, you need to create a new instance of the SDK API client and authenticate it using the credentials from the `.env` file.
-Example of sending a request to get a document by id:
+To start using the SDK, initialize the client with your credentials.
+You can authenticate using either an API key:
 ```typescript
+const sdk = new Sdk({ apiKey: '{{API_KEY}}' });
+```
+or by exchanging your Basic authorization token, username, and password for an access token:
+```typescript
+const sdk = await new Sdk({ basicToken: '{{BASIC_TOKEN}}' }).authenticate(username, password);
+```
+**Note:** While the Basic authorization token is optional for requests authenticated via API key, it is required for:
+* Generating OAuth 2.0 access tokens.
+* Accessing specific endpoints, such as [/api/v2/events](https://docs.signnow.com/docs/signnow/basic-auth).
 
-import { Sdk, DocumentGet } from '@signnow/api-sdk';
-import type { Document } from '@signnow/api-sdk';
+For details on generating tokens and endpoint requirements, refer to the [SignNow Authentication Guide](https://docs.signnow.com/docs/signnow/authentication).
 
-const sdk = await new Sdk().authenticate();
+Example of retrieving the document information by ID:
+
+```typescript
+import { Sdk } from '@signnow/api-client/core/sdk';
+import { DocumentGetRequest, DocumentGetResponse } from '@signnow/api-client/api/document';
+
+const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
 const client = sdk.getClient();
 
-const documentGet = new DocumentGet('29db9956636d481f9c532ef64951ae78209f7483');
-const responseDocumentGet = await client.send<Document>(documentGet);
+const documentGet = new DocumentGetRequest('1b23ed1a6aaf4d3392ed0e88bc2bfafb2a3cf414');
+const responseDocumentGet = await client.send<DocumentGetResponse>(documentGet);
 console.log('response document get', responseDocumentGet);
 ```
 
-### Examples
-You can find more examples of API usage in the [`examples`](./examples) directory.
+**Examples**
+
+Find more API usage examples in the [`examples`](https://github.com/signnow/SignNowNodeSDK/tree/master/examples) directory.

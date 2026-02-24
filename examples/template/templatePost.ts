@@ -3,7 +3,7 @@ import { TemplatePostRequest, TemplatePostResponse } from '@signnow/api-client/a
 import { Sdk } from '@signnow/api-client/core';
 
 export async function postTemplate(): Promise<TemplatePostResponse> {
-  const sdk = await new Sdk().authenticate();
+  const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
   const client = sdk.getClient();
 
   /**

@@ -20,7 +20,7 @@ import { UserGet as UserGetResponse } from '../../../src/api/user/response/userG
 
 describe('userPost', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const faker = new Faker();
@@ -42,7 +42,7 @@ describe('userPost', () => {
 
 describe('userPut', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const faker = new Faker();
@@ -64,7 +64,7 @@ describe('userPut', () => {
 
 describe('userGet', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const userGet = new UserGet();

@@ -21,15 +21,13 @@ import { SignNowApiException } from './error/signNowApiException';
  * Client for making API requests to SignNow
  */
 export class ApiClient {
-  private readonly config: Config;
-
   private readonly fileDownloader: FileDownloader;
 
   constructor(
+    private readonly config: Config,
     private bearerToken?: string,
-    private headers?: Record<string, string>,
+    private readonly headers?: Record<string, string>,
   ) {
-    this.config = new Config();
     this.fileDownloader = new FileDownloader(this.config);
   }
 
@@ -147,7 +145,7 @@ export class ApiClient {
     const isBasicAuth = request.getAuthMethod() === 'basic';
     const contentType = request.getContentType();
     const authValue = isBasicAuth
-      ? `Basic ${this.config.getApiBasicToken()}`
+      ? `Basic ${this.config.getBasicToken()}`
       : `Bearer ${this.bearerToken}`;
 
     const headers: Record<string, string> = {

@@ -3,7 +3,7 @@ import { DocumentEmbeddedSendingLinkPostRequest, DocumentEmbeddedSendingLinkPost
 import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function createEmbeddedDocumentSending(): Promise<DocumentEmbeddedSendingLinkPostResponse> {
-  const sdk = await new Sdk().authenticate();
+  const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
   const client = sdk.getClient();
 
   // Source data

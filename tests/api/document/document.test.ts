@@ -20,7 +20,7 @@ import { DocumentPut as DocumentPutResponse } from '../../../src/api/document/re
 
 describe('documentPost', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const faker = new Faker();
@@ -46,7 +46,7 @@ describe('documentPost', () => {
 
 describe('documentGet', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const faker = new Faker();
@@ -64,7 +64,7 @@ describe('documentGet', () => {
 
 describe('documentPut', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const faker = new Faker();

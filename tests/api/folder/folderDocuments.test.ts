@@ -16,7 +16,7 @@ import { FolderDocumentsGet as FolderDocumentsGetResponse } from '../../../src/a
 
 describe('folderDocumentsGet', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const faker = new Faker();

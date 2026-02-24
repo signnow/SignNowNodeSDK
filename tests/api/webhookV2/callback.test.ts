@@ -16,7 +16,7 @@ import { CallbackGet as CallbackGetResponse } from '../../../src/api/webhookV2/r
 
 describe('callbackGet', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const faker = new Faker();

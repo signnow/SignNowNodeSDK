@@ -9,7 +9,7 @@ import { DocumentGroupTemplatePost as DocumentGroupTemplatePostResponse } from '
 import { Sdk } from '../../src/core/sdk';
 
 export async function postDocumentGroupTemplate(): Promise<DocumentGroupTemplatePostResponse> {
-  const sdk = await new Sdk().authenticate();
+  const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
   const client = sdk.getClient();
 
   /**
