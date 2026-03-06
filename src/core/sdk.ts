@@ -14,7 +14,7 @@ import { TokenPost as TokenResponse } from '../api/auth/response/tokenPost';
 import { SdkParameters } from '../types/sdkParameters';
 
 export class Sdk {
-  private readonly API_VERSION = '2026-01-19';
+  private readonly API_VERSION = '2026-01-30';
 
   private readonly GRANT_TYPE_PASSWORD = 'password';
 
@@ -32,7 +32,7 @@ export class Sdk {
     this.apiClient = new ApiClient(this.config, this.config.getApiKey());
   }
 
-  public async authenticate(username = this.config.getUsername(), password = this.config.getPassword()): Promise<Sdk> {
+  public async authenticate(username = this.config.getApiUsername(), password = this.config.getApiPassword()): Promise<Sdk> {
     if (username) {
       this.config.setUsername(username);
     }
@@ -41,7 +41,7 @@ export class Sdk {
       this.config.setPassword(password);
     }
 
-    const request = new TokenPost(this.config.getUsername(), this.config.getPassword(), this.GRANT_TYPE_PASSWORD);
+    const request = new TokenPost(this.config.getApiUsername(), this.config.getApiPassword(), this.GRANT_TYPE_PASSWORD);
     const response = await this.apiClient.send<TokenResponse>(request);
 
     this.apiClient.setBearerToken(response.access_token);

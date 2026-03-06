@@ -50,15 +50,15 @@ export class Config {
     return this.apiHost;
   }
 
-  public getBasicToken(): string {
+  public getApiBasicToken(): string {
     return this.basicToken;
   }
 
-  public getUsername(): string {
+  public getApiUsername(): string {
     return this.username;
   }
 
-  public getPassword(): string {
+  public getApiPassword(): string {
     return this.password;
   }
 

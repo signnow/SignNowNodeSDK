@@ -145,7 +145,7 @@ export class ApiClient {
     const isBasicAuth = request.getAuthMethod() === 'basic';
     const contentType = request.getContentType();
     const authValue = isBasicAuth
-      ? `Basic ${this.config.getBasicToken()}`
+      ? `Basic ${this.config.getApiBasicToken()}`
       : `Bearer ${this.bearerToken}`;
 
     const headers: Record<string, string> = {
