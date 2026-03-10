@@ -3,7 +3,7 @@ import { FreeFormInvitePostRequest, FreeFormInvitePostResponse } from '@signnow/
 import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function sendFreeFormInvite(): Promise<FreeFormInvitePostResponse> {
-  const sdk = await new Sdk().authenticate();
+  const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
   const client = sdk.getClient();
 
   const senderEmail = 'sender@signnow.com';

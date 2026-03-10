@@ -3,7 +3,7 @@ import { DocumentInvitePostRequest, DocumentInvitePostResponse, InviteRequestAtt
 import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function createEmbeddedInvite(): Promise<DocumentInvitePostResponse> {
-  const sdk = await new Sdk().authenticate();
+  const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
   const client = sdk.getClient();
 
   // Source data

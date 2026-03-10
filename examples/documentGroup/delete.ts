@@ -2,7 +2,7 @@ import { DocumentGroupDeleteRequest, DocumentGroupDeleteResponse } from '@signno
 import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function deleteDocumentGroup(documentGroupId: string): Promise<DocumentGroupDeleteResponse> {
-  const sdk = await new Sdk().authenticate();
+  const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
   const client = sdk.getClient();
 
   const documentGroupDelete = new DocumentGroupDeleteRequest(documentGroupId);

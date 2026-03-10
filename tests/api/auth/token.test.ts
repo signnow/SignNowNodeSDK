@@ -18,7 +18,7 @@ import { TokenGet as TokenGetResponse } from '../../../src/api/auth/response/tok
 
 describe('tokenPost', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const faker = new Faker();
@@ -40,7 +40,7 @@ describe('tokenPost', () => {
 
 describe('tokenGet', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const tokenGet = new TokenGet();

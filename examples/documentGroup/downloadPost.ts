@@ -2,7 +2,7 @@ import { DownloadDocumentGroupPostRequest } from '@signnow/api-client/api/docume
 import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function downloadDocumentGroup(documentGroupId: string): Promise<Buffer> {
-  const sdk = await new Sdk().authenticate();
+  const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
   const client = sdk.getClient();
 
   const downloadDocumentGroup = new DownloadDocumentGroupPostRequest(

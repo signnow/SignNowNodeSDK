@@ -18,7 +18,7 @@ import { GroupTemplatePut as GroupTemplatePutResponse } from '../../../src/api/t
 
 describe('groupTemplateGet', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const faker = new Faker();
@@ -36,7 +36,7 @@ describe('groupTemplateGet', () => {
 
 describe('groupTemplatePut', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const faker = new Faker();

@@ -3,14 +3,14 @@ import { SendInvitePostRequest, SendInvitePostResponse, ToRequestAttribute } fro
 import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function sendFieldInvite(): Promise<SendInvitePostResponse> {
-  const sdk = await new Sdk().authenticate();
+  const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
   const client = sdk.getClient();
 
   // Source data
   const senderEmail = 'sender@example.com';
   const signerEmail = 'signer@signnow.com';
   const signerRole = 'HR Manager';
-  const emailSubject = 'You have got an invitation to sign the contact';
+  const emailSubject = 'You have got an invitation to sign the contract';
   const emailMessage = 'Please review and sign the attached document';
 
   // 1. Upload the document

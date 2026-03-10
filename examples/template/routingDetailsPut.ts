@@ -3,7 +3,7 @@ import { RoutingDetailsPutRequest, RoutingDetailsPutResponse } from '@signnow/ap
 import { Sdk } from '@signnow/api-client/core';
 
 export async function putRoutingDetails(): Promise<RoutingDetailsPutResponse> {
-  const sdk = await new Sdk().authenticate();
+  const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
   const client = sdk.getClient();
 
   /**

@@ -4,7 +4,7 @@ import { GroupInvitePostRequest, GroupInvitePostResponse, InviteStepInviteAction
 import { displayResultError, Sdk } from '@signnow/api-client/core';
 
 export async function sendDocumentGroupInvite(): Promise<GroupInvitePostResponse> {
-  const sdk = await new Sdk().authenticate();
+  const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
   const client = sdk.getClient();
 
   // Source data

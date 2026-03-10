@@ -22,7 +22,7 @@ import { SubscriptionDelete as SubscriptionDeleteResponse } from '../../../src/a
 
 describe('subscriptionPost', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const faker = new Faker();
@@ -44,7 +44,7 @@ describe('subscriptionPost', () => {
 
 describe('subscriptionGet', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const subscriptionGet = new SubscriptionGet();
@@ -59,7 +59,7 @@ describe('subscriptionGet', () => {
 
 describe('subscriptionPut', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const faker = new Faker();
@@ -81,7 +81,7 @@ describe('subscriptionPut', () => {
 
 describe('subscriptionDelete', () => {
   it('Should return correct response', async () => {
-    const sdk = await new Sdk().authenticate();
+    const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
     const expectationReader = new ExpectationReader();
     const client = sdk.getClient();
     const faker = new Faker();
