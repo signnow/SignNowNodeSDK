@@ -1,12 +1,32 @@
+# Build / dependencies
+/node_modules
+/target
+/dist
+/coverage
+.next/
+
+# IDE
 /.idea
 /.fleet
 /.vscode
 /.netbeans
-/node_modules
-/target
+
+# Editor swap files
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment / credentials
 .env
+.env.local
 .env.backup
 .env.test
 .env.production
 .env.development
+
+# Lock file (intentional — repo policy)
 package-lock.json
