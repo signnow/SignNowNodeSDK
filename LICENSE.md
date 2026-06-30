@@ -1,6 +1,6 @@
 # The MIT License
 
-Copyright (c) 2003-2026 SignNow
+Copyright (c) 2003-present SignNow
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
