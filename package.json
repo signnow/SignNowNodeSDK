@@ -55,7 +55,7 @@
     },
     "./api/embeddedInvite": {
       "require": "./dist/api/embeddedInvite/index.js",
-      "impoort": "./dist/api/embeddedInvite/index.js",
+      "import": "./dist/api/embeddedInvite/index.js",
       "types": "./dist/api/embeddedInvite/index.d.ts"
     },
     "./api/embeddedSending": {
