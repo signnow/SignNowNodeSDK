@@ -45,17 +45,17 @@
     },
     "./api/embeddedEditor": {
       "require": "./dist/api/embeddedEditor/index.js",
-      "imoport": "./dist/api/embeddedEditor/index.js",
+      "import": "./dist/api/embeddedEditor/index.js",
       "types": "./dist/api/embeddedEditor/index.d.ts"
     },
     "./api/embeddedGroupInvite": {
       "require": "./dist/api/embeddedGroupInvite/index.js",
-      "imoport": "./dist/api/embeddedGroupInvite/index.js",
+      "import": "./dist/api/embeddedGroupInvite/index.js",
       "types": "./dist/api/embeddedGroupInvite/index.d.ts"
     },
     "./api/embeddedInvite": {
       "require": "./dist/api/embeddedInvite/index.js",
-      "impoort": "./dist/api/embeddedInvite/index.js",
+      "import": "./dist/api/embeddedInvite/index.js",
       "types": "./dist/api/embeddedInvite/index.d.ts"
     },
     "./api/embeddedSending": {
