@@ -1,0 +1,57 @@
+name: Create Release on Merge
+run-name: Create release for ${{ github.event.pull_request.head.ref }}
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main, master]
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  release:
+    if: >-
+      github.event.pull_request.merged == true &&
+      startsWith(github.event.pull_request.head.ref, 'release/v') &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      HEAD_REF: ${{ github.event.pull_request.head.ref }}
+      MERGE_SHA: ${{ github.event.pull_request.merge_commit_sha }}
+      PR_BODY: ${{ github.event.pull_request.body }}
+
+    steps:
+      - name: Create GitHub release
+        id: release
+        run: |
+          TAG="${HEAD_REF#release/}"
+          if ! [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::Branch $HEAD_REF does not contain a valid version tag"
+            exit 1
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+          # Created manually or by a previous attempt of this run
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "::notice::Release $TAG already exists, skipping creation"
+            exit 0
+          fi
+
+          ARGS=(--target "$MERGE_SHA" --title "Release $TAG" --notes "$PR_BODY")
+          if [[ "$TAG" == *-* ]]; then
+            ARGS+=(--prerelease)
+          fi
+          gh release create "$TAG" "${ARGS[@]}"
+
+      # Releases created with GITHUB_TOKEN do not trigger other workflows,
+      # so publishing is started explicitly via workflow_dispatch. Also runs when the
+      # release already exists, so a re-run recovers from a failed dispatch;
+      # publish-npm.yml skips a version that is already on npm
+      - name: Trigger npm publish
+        env:
+          TAG: ${{ steps.release.outputs.tag }}
+        run: gh workflow run publish-npm.yml --ref "$TAG" -f tag="$TAG"

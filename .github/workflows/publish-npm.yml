@@ -1,0 +1,98 @@
+name: Publish to npm
+run-name: Publish ${{ github.event.release.tag_name || inputs.tag }} to npm
+
+on:
+  release:
+    types: [published]
+  # Dispatched by release-on-merge.yml; can also be used to re-run a publish manually
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag to publish (e.g. v3.4.0)'
+        required: true
+
+permissions:
+  contents: read
+  id-token: write # OIDC for npm Trusted Publishing
+
+concurrency:
+  group: publish-npm
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+
+    steps:
+      - name: Resolve release
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Only published (non-draft) releases of this repository can be published to npm
+          IS_PRERELEASE=$(gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json isDraft,isPrerelease --jq 'select(.isDraft | not) | .isPrerelease') || true
+          if [ -z "$IS_PRERELEASE" ]; then
+            echo "::error::'$TAG' is not a published release of $GITHUB_REPOSITORY"
+            exit 1
+          fi
+          echo "prerelease=$IS_PRERELEASE" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/tags/${{ env.TAG }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+          registry-url: 'https://registry.npmjs.org'
+
+      # Trusted Publishing (OIDC) requires npm 11.5.1 or later
+      - name: Update npm
+        run: npm install -g npm@^11.5.1
+
+      - name: Check tag matches package.json version
+        run: |
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          if [ "${TAG#v}" != "$PKG_VERSION" ]; then
+            echo "::error::Tag $TAG does not match package.json version $PKG_VERSION"
+            exit 1
+          fi
+
+      # A manual release triggers this workflow by itself and release-on-merge.yml
+      # dispatches it as well, so the second run finds the version already published
+      - name: Check if already published
+        id: npm
+        run: |
+          PKG_NAME=$(node -p "require('./package.json').name")
+          PUBLISHED=$(npm view "$PKG_NAME@${TAG#v}" version 2>/dev/null || true)
+          if [ "$PUBLISHED" = "${TAG#v}" ]; then
+            echo "::notice::$PKG_NAME@${TAG#v} is already published, skipping"
+            echo "published=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install dependencies
+        if: steps.npm.outputs.published == 'false'
+        run: npm install
+
+      - name: Build
+        if: steps.npm.outputs.published == 'false'
+        run: |
+          rm -rf dist
+          npx tsc
+          test -f dist/core/index.js
+
+      - name: Publish
+        if: steps.npm.outputs.published == 'false'
+        env:
+          PRERELEASE: ${{ steps.release.outputs.prerelease }}
+        run: |
+          if [ "$PRERELEASE" = "true" ]; then
+            npm publish --access public --tag next
+          else
+            npm publish --access public
+          fi
