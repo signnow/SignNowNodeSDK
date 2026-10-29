@@ -50,3 +50,5 @@ console.log('response document get', responseDocumentGet);
 **Examples**
 
 Find more API usage examples in the [`examples`](https://github.com/signnow/SignNowNodeSDK/tree/master/examples) directory.
+
+This repository is maintained primarily for internal use. While we strive to keep our dependencies secure and up to date for our own requirements, this project is provided to the community "as is" without any warranties. Users who choose to fork or use this code in their own environments do so at their own risk and are responsible for their own security audits and dependency management. We disclaim all liability for any vulnerabilities or issues arising from third-party implementations.
