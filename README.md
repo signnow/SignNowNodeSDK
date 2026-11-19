@@ -1,6 +1,6 @@
 # SignNow API Node.js SDK
 
-## v3.2.0
+## v3.3.0
 
 [![Node.js Version](https://img.shields.io/badge/supported->=17-blue?logo=node.js)](https://nodejs.org/)
 
@@ -50,3 +50,20 @@ console.log('response document get', responseDocumentGet);
 **Examples**
 
 Find more API usage examples in the [`examples`](https://github.com/signnow/SignNowNodeSDK/tree/master/examples) directory.
+
+To run an example from a cloned repository, replace placeholders such as `{{API_KEY}}` with your credentials and pass the file path:
+
+```bash
+npm install
+npm run example examples/document/documentGet.ts
+```
+
+This repository is maintained primarily for internal use. While we strive to keep our dependencies secure and up to date for our own requirements, this project is provided to the community "as is" without any warranties.
+Users who choose to fork or use this code in their own environments do so at their own risk and are responsible for their own security audits and dependency management. We disclaim all liability for any vulnerabilities or issues arising from third-party implementations.
+
+`.pre-commit-config.yaml` is a recommended local GitLeaks check: it scans staged files on `git commit` and blocks secrets. Install once:
+
+```bash
+brew install pre-commit
+pre-commit install
+```

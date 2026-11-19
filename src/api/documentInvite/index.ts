@@ -19,6 +19,7 @@ export type { Signature as SignatureRequestAttribute } from './request/data/to/s
 export type { To as ToRequestAttribute } from './request/data/to/to';
 export type { Viewer as ViewerRequestAttribute } from './request/data/viewer';
 export type { Email as EmailRequestAttribute } from './request/data/emailGroup/email';
+export type { EmailGroup as InviteEmailGroupRequestAttribute } from './request/data/emailGroup/emailGroup';
 export type { Data as DataResponseAttribute } from './response/data/data';
 export type { Meta as MetaResponseAttribute } from './response/data/meta/meta';
 export type { Pagination as MetaPaginationResponseAttribute } from './response/data/meta/pagination';
