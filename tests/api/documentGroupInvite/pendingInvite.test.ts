@@ -21,8 +21,8 @@ describe('pendingInviteGet', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const pendingInviteGet = new PendingInviteGet(
-        faker.documentGroupId(),
-        faker.inviteId()
+      faker.documentGroupId(),
+      faker.inviteId(),
     );
 
     const response = await client.send<PendingInviteGetResponse>(pendingInviteGet);

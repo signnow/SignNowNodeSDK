@@ -21,11 +21,11 @@ describe('groupInviteLinkPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const groupInviteLinkPost = new GroupInviteLinkPost(
-        faker.documentGroupId(),
-        faker.embeddedInviteId(),
-        faker.email(),
-        faker.authMethod(),
-        faker.linkExpiration()
+      faker.documentGroupId(),
+      faker.embeddedInviteId(),
+      faker.email(),
+      faker.authMethod(),
+      faker.linkExpiration(),
     );
 
     const response = await client.send<GroupInviteLinkPostResponse>(groupInviteLinkPost);

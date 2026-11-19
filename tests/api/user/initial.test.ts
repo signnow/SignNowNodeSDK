@@ -38,7 +38,7 @@ describe('initialPut', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const initialPut = new InitialPut(
-        faker.data()
+      faker.data(),
     );
 
     const response = await client.send<InitialPutResponse>(initialPut);

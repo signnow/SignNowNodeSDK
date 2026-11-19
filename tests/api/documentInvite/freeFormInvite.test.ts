@@ -23,21 +23,21 @@ describe('freeFormInvitePost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const freeFormInvitePost = new FreeFormInvitePost(
-        faker.documentId(),
-        faker.to(),
-        faker.from(),
-        faker.documentInviteFreeFormInviteCc(),
-        faker.subject(),
-        faker.message(),
-        faker.ccSubject(),
-        faker.ccMessage(),
-        faker.language(),
-        faker.clientTimestampAsNumber(),
-        faker.callbackUrl(),
-        faker.boolean(),
-        faker.redirectUri(),
-        faker.closeRedirectUri(),
-        faker.redirectTarget()
+      faker.documentId(),
+      faker.to(),
+      faker.from(),
+      faker.documentInviteFreeFormInviteCc(),
+      faker.subject(),
+      faker.message(),
+      faker.ccSubject(),
+      faker.ccMessage(),
+      faker.language(),
+      faker.clientTimestampAsNumber(),
+      faker.callbackUrl(),
+      faker.boolean(),
+      faker.redirectUri(),
+      faker.closeRedirectUri(),
+      faker.redirectTarget(),
     );
 
     const response = await client.send<FreeFormInvitePostResponse>(freeFormInvitePost);
@@ -55,7 +55,7 @@ describe('freeFormInviteGet', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const freeFormInviteGet = new FreeFormInviteGet(
-        faker.documentId()
+      faker.documentId(),
     );
 
     const response = await client.send<FreeFormInviteGetResponse>(freeFormInviteGet);

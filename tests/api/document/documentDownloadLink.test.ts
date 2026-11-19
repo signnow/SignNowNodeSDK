@@ -21,7 +21,7 @@ describe('documentDownloadLinkPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentDownloadLinkPost = new DocumentDownloadLinkPost(
-        faker.documentId()
+      faker.documentId(),
     );
 
     const response = await client.send<DocumentDownloadLinkPostResponse>(documentDownloadLinkPost);

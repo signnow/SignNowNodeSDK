@@ -21,7 +21,7 @@ export async function createEmbeddedEditorLink(): Promise<DocumentEmbeddedEditor
     documentId,
     redirectUri,
     redirectTarget,
-    linkExpiration
+    linkExpiration,
   );
 
   const response = await client.send<DocumentEmbeddedEditorLinkPostResponse>(editorRequest);
@@ -29,4 +29,4 @@ export async function createEmbeddedEditorLink(): Promise<DocumentEmbeddedEditor
   return response;
 }
 
-createEmbeddedEditorLink().then(displayResultError).catch(displayResultError); 
+createEmbeddedEditorLink().then(console.log).catch(displayResultError);

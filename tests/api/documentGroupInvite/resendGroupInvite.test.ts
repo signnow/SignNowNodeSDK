@@ -21,9 +21,9 @@ describe('resendGroupInvitePost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const resendGroupInvitePost = new ResendGroupInvitePost(
-        faker.documentGroupId(),
-        faker.inviteId(),
-        faker.email()
+      faker.documentGroupId(),
+      faker.inviteId(),
+      faker.email(),
     );
 
     const response = await client.send<ResendGroupInvitePostResponse>(resendGroupInvitePost);

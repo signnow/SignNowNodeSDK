@@ -21,7 +21,7 @@ describe('folderDocumentsGet', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const folderDocumentsGet = new FolderDocumentsGet(
-        faker.folderId()
+      faker.folderId(),
     );
 
     const response = await client.send<FolderDocumentsGetResponse>(folderDocumentsGet);

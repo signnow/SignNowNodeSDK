@@ -21,17 +21,17 @@ describe('sendInvitePost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const sendInvitePost = new SendInvitePost(
-        faker.documentId(),
-        faker.documentInviteSendInviteTo(),
-        faker.from(),
-        faker.subject(),
-        faker.message(),
-        faker.documentInviteSendInviteEmailGroups(),
-        faker.documentInviteSendInviteCc(),
-        faker.documentInviteSendInviteCcStep(),
-        faker.documentInviteSendInviteViewers(),
-        faker.ccSubject(),
-        faker.ccMessage()
+      faker.documentId(),
+      faker.documentInviteSendInviteTo(),
+      faker.from(),
+      faker.subject(),
+      faker.message(),
+      faker.documentInviteSendInviteEmailGroups(),
+      faker.documentInviteSendInviteCc(),
+      faker.documentInviteSendInviteCcStep(),
+      faker.documentInviteSendInviteViewers(),
+      faker.ccSubject(),
+      faker.ccMessage(),
     );
 
     const response = await client.send<SendInvitePostResponse>(sendInvitePost);

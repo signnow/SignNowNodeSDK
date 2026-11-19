@@ -21,8 +21,8 @@ describe('cancelGroupInvitePost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const cancelGroupInvitePost = new CancelGroupInvitePost(
-        faker.documentGroupId(),
-        faker.inviteId()
+      faker.documentGroupId(),
+      faker.inviteId(),
     );
 
     const response = await client.send<CancelGroupInvitePostResponse>(cancelGroupInvitePost);

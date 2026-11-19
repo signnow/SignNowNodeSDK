@@ -21,8 +21,8 @@ describe('signingLinkPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const signingLinkPost = new SigningLinkPost(
-        faker.documentId(),
-        faker.redirectUri()
+      faker.documentId(),
+      faker.redirectUri(),
     );
 
     const response = await client.send<SigningLinkPostResponse>(signingLinkPost);

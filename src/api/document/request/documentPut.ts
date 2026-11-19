@@ -8,8 +8,7 @@
  */
 
 import { BaseClass } from '../../../types/baseClass';
-import { HttpMethod } from '../../../core/constants';
-import { HttpAuthType } from '../../../core/constants';
+import { HttpMethod, HttpAuthType } from '../../../core/constants';
 import { Field } from './data/field';
 import { Line } from './data/line/line';
 import { Check } from './data/check';

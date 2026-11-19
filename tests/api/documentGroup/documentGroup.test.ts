@@ -25,8 +25,8 @@ describe('documentGroupPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentGroupPost = new DocumentGroupPost(
-        faker.documentGroupDocumentIds(),
-        faker.groupName()
+      faker.documentGroupDocumentIds(),
+      faker.groupName(),
     );
 
     const response = await client.send<DocumentGroupPostResponse>(documentGroupPost);
@@ -44,7 +44,7 @@ describe('documentGroupGet', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentGroupGet = new DocumentGroupGet(
-        faker.documentGroupId()
+      faker.documentGroupId(),
     );
 
     const response = await client.send<DocumentGroupGetResponse>(documentGroupGet);
@@ -62,7 +62,7 @@ describe('documentGroupDelete', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentGroupDelete = new DocumentGroupDelete(
-        faker.documentGroupId()
+      faker.documentGroupId(),
     );
 
     const response = await client.send<DocumentGroupDeleteResponse>(documentGroupDelete);

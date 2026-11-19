@@ -14,7 +14,7 @@ export async function cancelFreeFormInvite(): Promise<CancelFreeFormInvitePutRes
   // Cancel the free-form invite
   const cancelFreeFormInvite = new CancelFreeFormInvitePutRequest(
     inviteId,
-    cancelReason
+    cancelReason,
   );
 
   const response = await client.send<CancelFreeFormInvitePutResponse>(cancelFreeFormInvite);
@@ -22,4 +22,4 @@ export async function cancelFreeFormInvite(): Promise<CancelFreeFormInvitePutRes
   return response;
 }
 
-cancelFreeFormInvite().then(displayResultError).catch(displayResultError); 
+cancelFreeFormInvite().then(console.log).catch(displayResultError);

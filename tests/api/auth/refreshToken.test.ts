@@ -21,10 +21,10 @@ describe('refreshTokenPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const refreshTokenPost = new RefreshTokenPost(
-        faker.refreshToken(),
-        faker.scope(),
-        faker.expirationTime(),
-        faker.grantType()
+      faker.refreshToken(),
+      faker.scope(),
+      faker.expirationTime(),
+      faker.grantType(),
     );
 
     const response = await client.send<RefreshTokenPostResponse>(refreshTokenPost);

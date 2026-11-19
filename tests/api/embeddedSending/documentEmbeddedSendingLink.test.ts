@@ -21,11 +21,11 @@ describe('documentEmbeddedSendingLinkPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentEmbeddedSendingLinkPost = new DocumentEmbeddedSendingLinkPost(
-        faker.documentId(),
-        faker.type(),
-        faker.redirectUri(),
-        faker.linkExpiration(),
-        faker.redirectTarget()
+      faker.documentId(),
+      faker.type(),
+      faker.redirectUri(),
+      faker.linkExpiration(),
+      faker.redirectTarget(),
     );
 
     const response = await client.send<DocumentEmbeddedSendingLinkPostResponse>(documentEmbeddedSendingLinkPost);

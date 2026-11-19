@@ -21,8 +21,8 @@ describe('documentMovePost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentMovePost = new DocumentMovePost(
-        faker.documentId(),
-        faker.folderId()
+      faker.documentId(),
+      faker.folderId(),
     );
 
     const response = await client.send<DocumentMovePostResponse>(documentMovePost);

@@ -23,7 +23,7 @@ export async function getRoutingDetails(): Promise<RoutingDetailsGetResponse> {
     type: 'signature',
     page_number: 0,
     required: true,
-    role: 'Signer 1'
+    role: 'Signer 1',
   }];
   const documentPut = new DocumentPutRequest(documentPostResponse.id, fields);
   await client.send<DocumentPutResponse>(documentPut);

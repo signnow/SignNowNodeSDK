@@ -21,11 +21,11 @@ describe('fieldExtractPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const fieldExtractPost = new FieldExtractPost(
-        faker.file(),
-        faker.documentFieldExtractTags(),
-        faker.parseType(),
-        faker.password(),
-        faker.clientTimestampAsNumber()
+      faker.file(),
+      faker.documentFieldExtractTags(),
+      faker.parseType(),
+      faker.password(),
+      faker.clientTimestampAsNumber(),
     );
 
     const response = await client.send<FieldExtractPostResponse>(fieldExtractPost);

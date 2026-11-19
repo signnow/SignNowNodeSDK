@@ -21,10 +21,10 @@ describe('documentGroupEmbeddedEditorLinkPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentGroupEmbeddedEditorLinkPost = new DocumentGroupEmbeddedEditorLinkPost(
-        faker.documentGroupId(),
-        faker.redirectUri(),
-        faker.redirectTarget(),
-        faker.linkExpiration()
+      faker.documentGroupId(),
+      faker.redirectUri(),
+      faker.redirectTarget(),
+      faker.linkExpiration(),
     );
 
     const response = await client.send<DocumentGroupEmbeddedEditorLinkPostResponse>(documentGroupEmbeddedEditorLinkPost);

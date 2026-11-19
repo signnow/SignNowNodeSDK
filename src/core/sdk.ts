@@ -58,7 +58,7 @@ export class Sdk {
   }
 
   public actualBearerToken(): string | undefined {
-      return this.apiClient.getBearerToken();
+    return this.apiClient.getBearerToken();
   }
 
   public setBearerToken(bearerToken: string): Sdk {

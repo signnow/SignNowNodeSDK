@@ -23,9 +23,9 @@ describe('groupInvitePost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const groupInvitePost = new GroupInvitePost(
-        faker.documentGroupId(),
-        faker.embeddedGroupInviteGroupInviteInvites(),
-        faker.boolean()
+      faker.documentGroupId(),
+      faker.embeddedGroupInviteGroupInviteInvites(),
+      faker.boolean(),
     );
 
     const response = await client.send<GroupInvitePostResponse>(groupInvitePost);
@@ -43,7 +43,7 @@ describe('groupInviteDelete', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const groupInviteDelete = new GroupInviteDelete(
-        faker.documentGroupId()
+      faker.documentGroupId(),
     );
 
     const response = await client.send<GroupInviteDeleteResponse>(groupInviteDelete);

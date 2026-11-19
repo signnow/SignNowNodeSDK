@@ -9,7 +9,7 @@ export async function deleteDocumentGroup(documentGroupId: string): Promise<Docu
   
   const response = await client.send<DocumentGroupDeleteResponse>(documentGroupDelete);
 
-	return response;
+  return response;
 }
 
-deleteDocumentGroup('4612b8e9ef3e4fe8aa999ea4ab43619e56a32692').then(displayResultError).catch(displayResultError); 
+deleteDocumentGroup('4612b8e9ef3e4fe8aa999ea4ab43619e56a32692').then(console.log).catch(displayResultError);

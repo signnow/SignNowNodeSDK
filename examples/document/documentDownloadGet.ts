@@ -15,4 +15,4 @@ export async function documentDownloadGet(documentId: string): Promise<DocumentD
   return response;
 }
 
-documentDownloadGet('8612b8e9ea3e4fe8aa997ea4ab43619e56a32691').then(displayResultError).catch(displayResultError); 
+documentDownloadGet('8612b8e9ea3e4fe8aa997ea4ab43619e56a32691').then(console.log).catch(displayResultError);

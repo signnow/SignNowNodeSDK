@@ -18,7 +18,7 @@ export async function sendFreeFormInvite(): Promise<FreeFormInvitePostResponse> 
   const freeFormInvite = new FreeFormInvitePostRequest(
     documentId,
     recipientEmail,
-    senderEmail
+    senderEmail,
   );
 
   const response = await client.send<FreeFormInvitePostResponse>(freeFormInvite);
@@ -26,4 +26,4 @@ export async function sendFreeFormInvite(): Promise<FreeFormInvitePostResponse> 
   return response;
 }
 
-sendFreeFormInvite().then(displayResultError).catch(displayResultError); 
+sendFreeFormInvite().then(console.log).catch(displayResultError);

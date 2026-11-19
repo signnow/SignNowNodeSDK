@@ -67,7 +67,7 @@ export class ApiClient {
     method: string,
     url: string,
     headers: Record<string, string>,
-    body?: BodyInit
+    body?: BodyInit,
   ): Promise<T> {
     const apiUrl = `${this.config.getApiHost()}${url}`;
     const response = await fetch(apiUrl, { method, headers, body });

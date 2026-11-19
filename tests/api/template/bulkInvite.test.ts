@@ -21,13 +21,13 @@ describe('bulkInvitePost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const bulkInvitePost = new BulkInvitePost(
-        faker.documentId(),
-        faker.file(),
-        faker.folderId(),
-        faker.clientTimestampAsNumber(),
-        faker.documentName(),
-        faker.subject(),
-        faker.message()
+      faker.documentId(),
+      faker.file(),
+      faker.folderId(),
+      faker.clientTimestampAsNumber(),
+      faker.documentName(),
+      faker.subject(),
+      faker.message(),
     );
 
     const response = await client.send<BulkInvitePostResponse>(bulkInvitePost);

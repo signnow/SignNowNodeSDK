@@ -23,7 +23,7 @@ export async function postBulkInvite(): Promise<BulkInvitePostResponse> {
     type: 'signature',
     page_number: 0,
     required: true,
-    role: 'Recipient 1'
+    role: 'Recipient 1',
   }];
   const documentPut = new DocumentPutRequest(documentPostResponse.id, fields);
   await client.send<DocumentPutResponse>(documentPut);
@@ -46,7 +46,7 @@ export async function postBulkInvite(): Promise<BulkInvitePostResponse> {
   const bulkInvitePost = new BulkInvitePostRequest(
     templatePostResponse.id,
     './examples/_data/bulk_invite.csv',
-    documentGetResponse.parent_id
+    documentGetResponse.parent_id,
   );
   const response = await client.send<BulkInvitePostResponse>(bulkInvitePost);
 

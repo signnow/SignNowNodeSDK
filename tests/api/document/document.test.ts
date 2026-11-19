@@ -25,15 +25,15 @@ describe('documentPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentPost = new DocumentPost(
-        faker.file(),
-        faker.name(),
-        faker.boolean(),
-        faker.saveFields(),
-        faker.makeTemplate(),
-        faker.password(),
-        faker.folderId(),
-        faker.originTemplateId(),
-        faker.clientTimestampAsNumber()
+      faker.file(),
+      faker.name(),
+      faker.boolean(),
+      faker.saveFields(),
+      faker.makeTemplate(),
+      faker.password(),
+      faker.folderId(),
+      faker.originTemplateId(),
+      faker.clientTimestampAsNumber(),
     );
 
     const response = await client.send<DocumentPostResponse>(documentPost);
@@ -51,7 +51,7 @@ describe('documentGet', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentGet = new DocumentGet(
-        faker.documentId()
+      faker.documentId(),
     );
 
     const response = await client.send<DocumentGetResponse>(documentGet);
@@ -69,19 +69,19 @@ describe('documentPut', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentPut = new DocumentPut(
-        faker.documentId(),
-        faker.documentFields(),
-        faker.documentLines(),
-        faker.documentChecks(),
-        faker.documentRadiobuttons(),
-        faker.documentSignatures(),
-        faker.documentTexts(),
-        faker.documentAttachments(),
-        faker.documentHyperlinks(),
-        faker.documentIntegrationObjects(),
-        faker.documentDeactivateElements(),
-        faker.documentName(),
-        faker.clientTimestampAsString()
+      faker.documentId(),
+      faker.documentFields(),
+      faker.documentLines(),
+      faker.documentChecks(),
+      faker.documentRadiobuttons(),
+      faker.documentSignatures(),
+      faker.documentTexts(),
+      faker.documentAttachments(),
+      faker.documentHyperlinks(),
+      faker.documentIntegrationObjects(),
+      faker.documentDeactivateElements(),
+      faker.documentName(),
+      faker.clientTimestampAsString(),
     );
 
     const response = await client.send<DocumentPutResponse>(documentPut);

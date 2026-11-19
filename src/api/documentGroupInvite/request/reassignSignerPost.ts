@@ -8,8 +8,7 @@
  */
 
 import { BaseClass } from '../../../types/baseClass';
-import { HttpMethod } from '../../../core/constants';
-import { HttpAuthType } from '../../../core/constants';
+import { HttpMethod, HttpAuthType } from '../../../core/constants';
 import { InviteEmail } from './data/inviteEmail';
 import { UpdateInviteActionAttribute } from './data/updateInviteActionAttribute';
 

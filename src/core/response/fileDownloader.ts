@@ -21,12 +21,12 @@ export class FileDownloader {
 
   private readonly FILENAME_DISPOSITION_REGEX = {
     extended: /filename\*?=['"]?(?:UTF-\d['"]?)?([^;\r\n"']*)['"]?;?/i,
-    standard: /filename=['"]?([^;\r\n"']*)['"]?;?/i
+    standard: /filename=['"]?([^;\r\n"']*)['"]?;?/i,
   };
 
   private readonly contentTypeMap: Record<string, string> = {
     'application/pdf': '.pdf',
-    'application/zip': '.zip'
+    'application/zip': '.zip',
   };
 
   constructor(private readonly config: Config) {}

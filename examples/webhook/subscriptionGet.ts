@@ -10,4 +10,4 @@ export async function getWebhookSubscriptions(): Promise<SubscriptionGetResponse
   return response;
 }
 
-getWebhookSubscriptions().then(displayResultError).catch(displayResultError); 
+getWebhookSubscriptions().then(console.log).catch(displayResultError);

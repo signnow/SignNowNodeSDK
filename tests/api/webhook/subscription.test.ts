@@ -27,11 +27,11 @@ describe('subscriptionPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const subscriptionPost = new SubscriptionPost(
-        faker.event(),
-        faker.entityId(),
-        faker.action(),
-        faker.webhookSubscriptionAttributes(),
-        faker.secretKey()
+      faker.event(),
+      faker.entityId(),
+      faker.action(),
+      faker.webhookSubscriptionAttributes(),
+      faker.secretKey(),
     );
 
     const response = await client.send<SubscriptionPostResponse>(subscriptionPost);
@@ -64,11 +64,11 @@ describe('subscriptionPut', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const subscriptionPut = new SubscriptionPut(
-        faker.eventSubscriptionId(),
-        faker.event(),
-        faker.entityId(),
-        faker.action(),
-        faker.webhookSubscriptionAttributes()
+      faker.eventSubscriptionId(),
+      faker.event(),
+      faker.entityId(),
+      faker.action(),
+      faker.webhookSubscriptionAttributes(),
     );
 
     const response = await client.send<SubscriptionPutResponse>(subscriptionPut);
@@ -86,7 +86,7 @@ describe('subscriptionDelete', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const subscriptionDelete = new SubscriptionDelete(
-        faker.eventSubscriptionId()
+      faker.eventSubscriptionId(),
     );
 
     const response = await client.send<SubscriptionDeleteResponse>(subscriptionDelete);

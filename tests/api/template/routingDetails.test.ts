@@ -25,7 +25,7 @@ describe('routingDetailsPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const routingDetailsPost = new RoutingDetailsPost(
-        faker.documentId()
+      faker.documentId(),
     );
 
     const response = await client.send<RoutingDetailsPostResponse>(routingDetailsPost);
@@ -43,7 +43,7 @@ describe('routingDetailsPut', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const routingDetailsPut = new RoutingDetailsPut(
-        faker.documentId()
+      faker.documentId(),
     );
 
     const response = await client.send<RoutingDetailsPutResponse>(routingDetailsPut);
@@ -61,7 +61,7 @@ describe('routingDetailsGet', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const routingDetailsGet = new RoutingDetailsGet(
-        faker.documentId()
+      faker.documentId(),
     );
 
     const response = await client.send<RoutingDetailsGetResponse>(routingDetailsGet);

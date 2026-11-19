@@ -26,7 +26,7 @@ export async function createSigningLink(): Promise<SigningLinkPostResponse> {
     required: true,
     role: signerRole,
     name: 'text_field',
-    label: 'Decision reason'
+    label: 'Decision reason',
   };
   const documentPut = new DocumentPutRequest(documentId, [field]);
   await client.send<DocumentPutResponse>(documentPut);
@@ -34,7 +34,7 @@ export async function createSigningLink(): Promise<SigningLinkPostResponse> {
   // 3. Generate a signing link for the document
   const signingLinkPost = new SigningLinkPostRequest(
     documentId,
-    redirectUri
+    redirectUri,
   );
 
   const response = await client.send<SigningLinkPostResponse>(signingLinkPost);
@@ -42,4 +42,4 @@ export async function createSigningLink(): Promise<SigningLinkPostResponse> {
   return response;
 }
 
-createSigningLink().then(displayResultError).catch(displayResultError); 
+createSigningLink().then(console.log).catch(displayResultError);

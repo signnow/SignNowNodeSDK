@@ -21,8 +21,8 @@ describe('cancelFreeFormInvitePut', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const cancelFreeFormInvitePut = new CancelFreeFormInvitePut(
-        faker.inviteId(),
-        faker.reason()
+      faker.inviteId(),
+      faker.reason(),
     );
 
     const response = await client.send<CancelFreeFormInvitePutResponse>(cancelFreeFormInvitePut);
