@@ -49,7 +49,7 @@ export async function uploadDocumentAddFieldsAndPrefill(): Promise<void> {
   ];
 
   const documentPut = new DocumentPutRequest(documentId, fields);
-  await client.send<DocumentPutResponse>(documentPut);
+  const documentPutResponse = await client.send<DocumentPutResponse>(documentPut);
 
   console.log('Fields added to document');
 

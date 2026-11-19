@@ -66,7 +66,7 @@ export async function createEmbeddedDocumentGroupSending(): Promise<DocumentGrou
     redirectUri,
     linkExpiration,
     redirectTarget,
-    'manage',
+    'manage'
   );
 
   const response = await client.send<DocumentGroupEmbeddedSendingLinkPostResponse>(embeddedGroupSendingRequest);
