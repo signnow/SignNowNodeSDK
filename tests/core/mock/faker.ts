@@ -42,7 +42,7 @@ import { Invite as EmbeddedGroupInvite } from '../../../src/api/embeddedGroupInv
 import { Document as EmbeddedGroupInviteDocument } from '../../../src/api/embeddedGroupInvite/request/data/invite/document';
 import { Signer as EmbeddedGroupInviteSigner } from '../../../src/api/embeddedGroupInvite/request/data/invite/signer';
 import { AttributeRequestAttribute } from '../../../src/api/webhook';
-import { AttributeRequestAttribute as AttributeRequestAttributeV2 } from '../../../src/api/webhookV2';
+import { AttributeRequestAttributeV2 } from '../../../src/api/webhookV2';
 
 export class Faker {
   private faker: typeof faker;

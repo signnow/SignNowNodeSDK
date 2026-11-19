@@ -13,7 +13,7 @@ import { ConfigParameters } from '../../types/configParameters';
 
 const DEFAULT_DOWNLOADS_DIR = './storage/downloads';
 const DEFAULT_API_HOST = 'https://api.signnow.com';
-const CLIENT_NAME = 'SignNowApiClient/v3.2.0 (JS)';
+const CLIENT_NAME = 'SignNowApiClient/v3.3.0 (JS)';
 
 dotenv.config();
 
