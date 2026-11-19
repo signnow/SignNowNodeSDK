@@ -35,7 +35,7 @@ export async function createEmbeddedDocumentGroupSending(): Promise<DocumentGrou
     required: true,
     role: signerRole1,
     name: 'text_field_1',
-    label: 'First Document Field'
+    label: 'First Document Field',
   };
   const documentPut1 = new DocumentPutRequest(documentId1, [field1Doc1]);
   await client.send<DocumentPutResponse>(documentPut1);
@@ -50,7 +50,7 @@ export async function createEmbeddedDocumentGroupSending(): Promise<DocumentGrou
     required: true,
     role: signerRole2,
     name: 'text_field_1',
-    label: 'Second Document Field'
+    label: 'Second Document Field',
   };
   const documentPut2 = new DocumentPutRequest(documentId2, [field1Doc2]);
   await client.send<DocumentPutResponse>(documentPut2);
@@ -65,7 +65,8 @@ export async function createEmbeddedDocumentGroupSending(): Promise<DocumentGrou
     documentGroupId,
     redirectUri,
     linkExpiration,
-    redirectTarget
+    redirectTarget,
+    'manage',
   );
 
   const response = await client.send<DocumentGroupEmbeddedSendingLinkPostResponse>(embeddedGroupSendingRequest);
@@ -73,4 +74,4 @@ export async function createEmbeddedDocumentGroupSending(): Promise<DocumentGrou
   return response;
 }
 
-createEmbeddedDocumentGroupSending().then(displayResultError).catch(displayResultError); 
+createEmbeddedDocumentGroupSending().then(console.log).catch(displayResultError);

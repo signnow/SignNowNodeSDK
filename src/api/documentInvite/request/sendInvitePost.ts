@@ -8,8 +8,7 @@
  */
 
 import { BaseClass } from '../../../types/baseClass';
-import { HttpMethod } from '../../../core/constants';
-import { HttpAuthType } from '../../../core/constants';
+import { HttpMethod, HttpAuthType } from '../../../core/constants';
 import { To } from './data/to/to';
 import { EmailGroup } from './data/emailGroup/emailGroup';
 import { CcStep } from './data/ccStep';

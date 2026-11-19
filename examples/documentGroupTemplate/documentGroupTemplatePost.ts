@@ -1,12 +1,7 @@
-import { DocumentPost as DocumentPostRequest } from '../../src/api/document/request/documentPost';
-import { DocumentPost as DocumentPostResponse } from '../../src/api/document/response/documentPost';
-import { TemplatePost as TemplatePostRequest } from '../../src/api/template/request/templatePost';
-import { TemplatePost as TemplatePostResponse } from '../../src/api/template/response/templatePost';
-import { GroupTemplateGet as GroupTemplateGetRequest } from '../../src/api/template/request/groupTemplateGet';
-import { GroupTemplateGet as GroupTemplateGetResponse } from '../../src/api/template/response/groupTemplateGet';
-import { DocumentGroupTemplatePost as DocumentGroupTemplatePostRequest } from '../../src/api/documentGroupTemplate/request/documentGroupTemplatePost';
-import { DocumentGroupTemplatePost as DocumentGroupTemplatePostResponse } from '../../src/api/documentGroupTemplate/response/documentGroupTemplatePost';
-import { Sdk } from '../../src/core/sdk';
+import { DocumentPostRequest, DocumentPostResponse } from '@signnow/api-client/api/document';
+import { TemplatePostRequest, TemplatePostResponse, GroupTemplateGetRequest, GroupTemplateGetResponse } from '@signnow/api-client/api/template';
+import { DocumentGroupTemplatePostRequest, DocumentGroupTemplatePostResponse } from '@signnow/api-client/api/documentGroupTemplate';
+import { Sdk } from '@signnow/api-client/core';
 
 export async function postDocumentGroupTemplate(): Promise<DocumentGroupTemplatePostResponse> {
   const sdk = new Sdk({ apiKey: '{{API_KEY}}', basicToken: '{{BASIC_TOKEN}}' });
@@ -37,7 +32,7 @@ export async function postDocumentGroupTemplate(): Promise<DocumentGroupTemplate
     groupTemplateGetResponse.id,
     'demo-document-group-template',
     new Date().toISOString(),
-    null
+    null,
   );
   const response = await client.send<DocumentGroupTemplatePostResponse>(documentGroupTemplatePost);
 

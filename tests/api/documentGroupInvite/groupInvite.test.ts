@@ -23,15 +23,15 @@ describe('groupInvitePost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const groupInvitePost = new GroupInvitePost(
-        faker.documentGroupId(),
-        faker.documentGroupInviteGroupInviteInviteSteps(),
-        faker.documentGroupInviteGroupInviteCc(),
-        faker.documentGroupInviteGroupInviteEmailGroups(),
-        faker.documentGroupInviteGroupInviteCompletionEmails(),
-        faker.boolean(),
-        faker.clientTimestampAsNumber(),
-        faker.ccSubject(),
-        faker.ccMessage()
+      faker.documentGroupId(),
+      faker.documentGroupInviteGroupInviteInviteSteps(),
+      faker.documentGroupInviteGroupInviteCc(),
+      faker.documentGroupInviteGroupInviteEmailGroups(),
+      faker.documentGroupInviteGroupInviteCompletionEmails(),
+      faker.boolean(),
+      faker.clientTimestampAsNumber(),
+      faker.ccSubject(),
+      faker.ccMessage(),
     );
 
     const response = await client.send<GroupInvitePostResponse>(groupInvitePost);
@@ -49,8 +49,8 @@ describe('groupInviteGet', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const groupInviteGet = new GroupInviteGet(
-        faker.documentGroupId(),
-        faker.inviteId()
+      faker.documentGroupId(),
+      faker.inviteId(),
     );
 
     const response = await client.send<GroupInviteGetResponse>(groupInviteGet);

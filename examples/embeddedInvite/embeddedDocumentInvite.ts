@@ -12,12 +12,12 @@ export async function createEmbeddedInvite(): Promise<DocumentInvitePostResponse
     email: 'signer1@signnow.com',
     role: 'Engineer',
     first_name: 'John',
-    last_name: 'Doe'
+    last_name: 'Doe',
   }, {
     email: 'signer2@signnow.com',
     role: 'Accountant',
     first_name: 'Jane',
-    last_name: 'Smith'
+    last_name: 'Smith',
   }];
 
   // 1. Upload document
@@ -36,7 +36,7 @@ export async function createEmbeddedInvite(): Promise<DocumentInvitePostResponse
     required: true,
     role: signers[0].role,
     name: 'text_field_engineer',
-    label: 'Engineer decision'
+    label: 'Engineer decision',
   };
   const fieldForRole2 = {
     x: 205,
@@ -48,7 +48,7 @@ export async function createEmbeddedInvite(): Promise<DocumentInvitePostResponse
     required: true,
     role: signers[1].role,
     name: 'text_field_accountant',
-    label: 'Accountant decision'
+    label: 'Accountant decision',
   };
   const documentPut = new DocumentPutRequest(documentId, [fieldForRole1, fieldForRole2]);
   await client.send<DocumentPutResponse>(documentPut);
@@ -67,7 +67,7 @@ export async function createEmbeddedInvite(): Promise<DocumentInvitePostResponse
       order: 1,
       auth_method: 'none', // No authentication required
       first_name: signers[0].first_name,
-      last_name: signers[0].last_name
+      last_name: signers[0].last_name,
     },
     {
       email: signers[1].email,
@@ -78,14 +78,14 @@ export async function createEmbeddedInvite(): Promise<DocumentInvitePostResponse
       last_name: signers[1].last_name,
       authentication: {
         password: 'just.not.12345', // Password for authentication
-        type: 'password'
-      }
-    }
+        type: 'password',
+      },
+    },
   ];
 
   const embeddedInviteRequest = new DocumentInvitePostRequest(
     documentId,
-    invites
+    invites,
   );
 
   const response = await client.send<DocumentInvitePostResponse>(embeddedInviteRequest);
@@ -93,4 +93,4 @@ export async function createEmbeddedInvite(): Promise<DocumentInvitePostResponse
   return response;
 }
 
-createEmbeddedInvite().then(displayResultError).catch(displayResultError); 
+createEmbeddedInvite().then(console.log).catch(displayResultError);

@@ -21,8 +21,8 @@ describe('callbackGet', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const callbackGet = new CallbackGet(
-        faker.eventSubscriptionId(),
-        faker.callbackId()
+      faker.eventSubscriptionId(),
+      faker.callbackId(),
     );
 
     const response = await client.send<CallbackGetResponse>(callbackGet);

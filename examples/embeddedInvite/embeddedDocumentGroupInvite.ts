@@ -8,18 +8,18 @@ export async function createEmbeddedDocumentGroupInvite(): Promise<GroupInvitePo
   const client = sdk.getClient();
 
   // Source data
-	const documentGroupName = 'Test Document Group';
-	const signers = [{
+  const documentGroupName = 'Test Document Group';
+  const signers = [{
     email: 'signer1@signnow.com',
     role: 'Manager',
     first_name: 'John',
     last_name: 'Doe',
-		redirect_uri: 'https://www.example.com/after-signing'
+    redirect_uri: 'https://www.example.com/after-signing',
   }, {
     email: 'signer2@signnow.com',
     role: 'Department Head',
     first_name: 'María',
-    last_name: 'Fernández'
+    last_name: 'Fernández',
   }];
 
   // 1. Upload documents for a group invite
@@ -42,7 +42,7 @@ export async function createEmbeddedDocumentGroupInvite(): Promise<GroupInvitePo
     required: true,
     role: signers[0].role,
     name: 'text_field_1',
-    label: 'First Document Field 1'
+    label: 'First Document Field 1',
   };
   const documentPut1 = new DocumentPutRequest(documentId1, [field1Doc1]);
   await client.send<DocumentPutResponse>(documentPut1);
@@ -57,23 +57,23 @@ export async function createEmbeddedDocumentGroupInvite(): Promise<GroupInvitePo
     required: true,
     role: signers[1].role,
     name: 'text_field_1',
-    label: 'Second Document Field 1'
+    label: 'Second Document Field 1',
   };
   const documentPut2 = new DocumentPutRequest(documentId2, [field1Doc2]);
   await client.send<DocumentPutResponse>(documentPut2);
 
-	// 3. Create a document group of the uploaded documents
-	const documentGroupPost = new DocumentGroupPostRequest([documentId1, documentId2], documentGroupName);
-	const documentGroupResponse = await client.send<DocumentGroupPostResponse>(documentGroupPost);
-	const documentGroupId = documentGroupResponse.id;
+  // 3. Create a document group of the uploaded documents
+  const documentGroupPost = new DocumentGroupPostRequest([documentId1, documentId2], documentGroupName);
+  const documentGroupResponse = await client.send<DocumentGroupPostResponse>(documentGroupPost);
+  const documentGroupId = documentGroupResponse.id;
 
   // 3. Create embedded group invite
   const documentsSinger1: DocumentRequestAttribute[] = [
     {
       id: documentId1,
       role: signers[0].role,
-      action: 'sign'
-    }
+      action: 'sign',
+    },
   ];
 
   const embeddedSigners1: SignerRequestAttribute[] = [
@@ -83,18 +83,18 @@ export async function createEmbeddedDocumentGroupInvite(): Promise<GroupInvitePo
       documents: documentsSinger1,
       first_name: signers[0].first_name,
       last_name: signers[0].last_name,
-			language: 'en',
-			redirect_uri: signers[0].redirect_uri,
-			redirect_target: 'blank'
-    }
+      language: 'en',
+      redirect_uri: signers[0].redirect_uri,
+      redirect_target: 'blank',
+    },
   ];
 
-	const documentsSinger2: DocumentRequestAttribute[] = [
+  const documentsSinger2: DocumentRequestAttribute[] = [
     {
       id: documentId2,
       role: signers[1].role,
-      action: 'sign'
-    }
+      action: 'sign',
+    },
   ];
 
   const embeddedSigners2: SignerRequestAttribute[] = [
@@ -104,26 +104,26 @@ export async function createEmbeddedDocumentGroupInvite(): Promise<GroupInvitePo
       documents: documentsSinger2,
       first_name: signers[1].first_name,
       last_name: signers[1].last_name,
-			language: 'es'
-    }
+      language: 'es',
+    },
   ];
 
   // Define invites with order
   const invites: InviteRequestAttribute[] = [
     {
       order: 1,
-      signers: embeddedSigners1
+      signers: embeddedSigners1,
     },
-		{
+    {
       order: 2,
-      signers: embeddedSigners2
-    }
+      signers: embeddedSigners2,
+    },
   ];
 
   const embeddedGroupInviteRequest = new GroupInvitePostRequest(
-		documentGroupId,
+    documentGroupId,
     invites,
-		true // sign_as_merged
+    true, // sign_as_merged
   );
 
   const response = await client.send<GroupInvitePostResponse>(embeddedGroupInviteRequest);
@@ -131,4 +131,4 @@ export async function createEmbeddedDocumentGroupInvite(): Promise<GroupInvitePo
   return response;
 }
 
-createEmbeddedDocumentGroupInvite().then(displayResultError).catch(displayResultError); 
+createEmbeddedDocumentGroupInvite().then(console.log).catch(displayResultError);

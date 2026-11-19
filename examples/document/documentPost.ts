@@ -11,4 +11,4 @@ export async function postDocument(): Promise<DocumentPostResponse> {
   return response;
 }
 
-postDocument().then(displayResultError).catch(displayResultError); 
+postDocument().then(console.log).catch(displayResultError);

@@ -26,7 +26,7 @@ export async function createDocumentGroupEmbeddedEditorLink(): Promise<DocumentG
   // 3. Create document group
   const documentGroupPost = new DocumentGroupPostRequest(
     [documentId1, documentId2],
-    groupName
+    groupName,
   );
   const documentGroupResponse = await client.send<DocumentGroupPostResponse>(documentGroupPost);
   const groupId = documentGroupResponse.id;
@@ -36,7 +36,7 @@ export async function createDocumentGroupEmbeddedEditorLink(): Promise<DocumentG
     groupId,
     redirectUri,
     redirectTarget,
-    linkExpiration
+    linkExpiration,
   );
 
   const response = await client.send<DocumentGroupEmbeddedEditorLinkPostResponse>(editorRequest);
@@ -44,4 +44,4 @@ export async function createDocumentGroupEmbeddedEditorLink(): Promise<DocumentG
   return response;
 }
 
-createDocumentGroupEmbeddedEditorLink().then(displayResultError).catch(displayResultError); 
+createDocumentGroupEmbeddedEditorLink().then(console.log).catch(displayResultError);

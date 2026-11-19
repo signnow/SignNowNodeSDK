@@ -21,8 +21,8 @@ describe('documentPrefillPut', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentPrefillPut = new DocumentPrefillPut(
-        faker.documentId(),
-        faker.documentFieldDocumentPrefillFields()
+      faker.documentId(),
+      faker.documentFieldDocumentPrefillFields(),
     );
 
     const response = await client.send<DocumentPrefillPutResponse>(documentPrefillPut);

@@ -24,13 +24,13 @@ export class Expectation {
   }
 
   public get(name: string): string {
-      if (name.startsWith('get')) {
-        name = name.slice(3);
-      }
+    if (name.startsWith('get')) {
+      name = name.slice(3);
+    }
 
-      if (!name) {
-          throw new RuntimeTestException('Invalid expectation method usage.');
-      }
+    if (!name) {
+      throw new RuntimeTestException('Invalid expectation method usage.');
+    }
 
     const key = this.convertCamelCaseToSnakeCase(name);
     const parsedBody = JSON.parse(this.getBody());

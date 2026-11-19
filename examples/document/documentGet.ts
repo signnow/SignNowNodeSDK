@@ -11,4 +11,4 @@ export async function getDocument(documentId: string): Promise<DocumentGetRespon
   return response;
 }
 
-getDocument('29db9956636d481f9c532ef64951ae78209f7483').then(displayResultError).catch(displayResultError); 
+getDocument('29db9956636d481f9c532ef64951ae78209f7483').then(console.log).catch(displayResultError);

@@ -21,13 +21,13 @@ describe('reassignSignerPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const reassignSignerPost = new ReassignSignerPost(
-        faker.documentGroupId(),
-        faker.inviteId(),
-        faker.stepId(),
-        faker.userToUpdate(),
-        faker.replaceWithThisUser(),
-        faker.documentGroupInviteReassignSignerInviteEmail(),
-        faker.documentGroupInviteReassignSignerUpdateInviteActionAttributes()
+      faker.documentGroupId(),
+      faker.inviteId(),
+      faker.stepId(),
+      faker.userToUpdate(),
+      faker.replaceWithThisUser(),
+      faker.documentGroupInviteReassignSignerInviteEmail(),
+      faker.documentGroupInviteReassignSignerUpdateInviteActionAttributes(),
     );
 
     const response = await client.send<ReassignSignerPostResponse>(reassignSignerPost);

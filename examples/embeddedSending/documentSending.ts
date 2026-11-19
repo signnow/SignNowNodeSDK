@@ -29,7 +29,7 @@ export async function createEmbeddedDocumentSending(): Promise<DocumentEmbeddedS
     required: true,
     role: signerRole,
     name: 'text_field_1',
-    label: 'Enter your name'
+    label: 'Enter your name',
   };
   
   const field2 = {
@@ -42,7 +42,7 @@ export async function createEmbeddedDocumentSending(): Promise<DocumentEmbeddedS
     required: true,
     role: signerRole,
     name: 'signature_field_1',
-    label: 'Sign here'
+    label: 'Sign here',
   };
   
   const documentPut = new DocumentPutRequest(documentId, [field1, field2]);
@@ -54,7 +54,7 @@ export async function createEmbeddedDocumentSending(): Promise<DocumentEmbeddedS
     sendingType,
     redirectUri,
     linkExpiration,
-    redirectTarget
+    redirectTarget,
   );
 
   const response = await client.send<DocumentEmbeddedSendingLinkPostResponse>(embeddedSendingRequest);
@@ -62,4 +62,4 @@ export async function createEmbeddedDocumentSending(): Promise<DocumentEmbeddedS
   return response;
 }
 
-createEmbeddedDocumentSending().then(displayResultError).catch(displayResultError); 
+createEmbeddedDocumentSending().then(console.log).catch(displayResultError);

@@ -11,4 +11,4 @@ export async function getDocumentFields(documentId: string): Promise<FieldsGetRe
   return response;
 }
 
-getDocumentFields('6c9f255cfb7c42cbbe74b8fba05ca97c90467730').then(displayResultError).catch(displayResultError); 
+getDocumentFields('6c9f255cfb7c42cbbe74b8fba05ca97c90467730').then(console.log).catch(displayResultError);

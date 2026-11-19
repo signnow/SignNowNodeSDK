@@ -21,9 +21,9 @@ describe('documentPrefillSmartFieldPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentPrefillSmartFieldPost = new DocumentPrefillSmartFieldPost(
-        faker.documentId(),
-        faker.smartFieldsDocumentPrefillSmartFieldData(),
-        faker.clientTimestampAsString()
+      faker.documentId(),
+      faker.smartFieldsDocumentPrefillSmartFieldData(),
+      faker.clientTimestampAsString(),
     );
 
     const response = await client.send<DocumentPrefillSmartFieldPostResponse>(documentPrefillSmartFieldPost);

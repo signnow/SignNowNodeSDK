@@ -8,8 +8,7 @@
  */
 
 import { BaseClass } from '../../../types/baseClass';
-import { HttpMethod } from '../../../core/constants';
-import { HttpAuthType } from '../../../core/constants';
+import { HttpMethod, HttpAuthType } from '../../../core/constants';
 import { Attribute } from './data/attribute';
 
 export class EventSubscriptionPut implements BaseClass {

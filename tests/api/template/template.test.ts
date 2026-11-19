@@ -21,8 +21,8 @@ describe('templatePost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const templatePost = new TemplatePost(
-        faker.documentId(),
-        faker.documentName()
+      faker.documentId(),
+      faker.documentName(),
     );
 
     const response = await client.send<TemplatePostResponse>(templatePost);

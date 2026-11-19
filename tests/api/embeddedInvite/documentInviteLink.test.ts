@@ -21,10 +21,10 @@ describe('documentInviteLinkPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentInviteLinkPost = new DocumentInviteLinkPost(
-        faker.documentId(),
-        faker.fieldInviteId(),
-        faker.authMethod(),
-        faker.linkExpiration()
+      faker.documentId(),
+      faker.fieldInviteId(),
+      faker.authMethod(),
+      faker.linkExpiration(),
     );
 
     const response = await client.send<DocumentInviteLinkPostResponse>(documentInviteLinkPost);

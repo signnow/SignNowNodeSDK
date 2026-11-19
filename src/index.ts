@@ -14,4 +14,4 @@ export * as template from './api/template';
 export * as user from './api/user';
 export * as webhook from './api/webhook';
 export * as webhookV2 from './api/webhookV2';
-export { Sdk } from './core/sdk';
+export { Sdk, displayResultError } from './core';

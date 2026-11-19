@@ -21,10 +21,10 @@ describe('documentGroupTemplatePost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentGroupTemplatePost = new DocumentGroupTemplatePost(
-        faker.templateGroupId(),
-        faker.groupName(),
-        faker.clientTimestampAsString(),
-        faker.folderId()
+      faker.templateGroupId(),
+      faker.groupName(),
+      faker.clientTimestampAsString(),
+      faker.folderId(),
     );
 
     const response = await client.send<DocumentGroupTemplatePostResponse>(documentGroupTemplatePost);

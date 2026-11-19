@@ -18,11 +18,11 @@ export async function createWebhookSubscription(): Promise<SubscriptionPostRespo
     event,
     userId,
     action,
-    attributes
+    attributes,
   );
 
   const response = await client.send<SubscriptionPostResponse>(subscriptionRequest);
   return response;
 }
 
-createWebhookSubscription().then(displayResultError).catch(displayResultError); 
+createWebhookSubscription().then(console.log).catch(displayResultError);

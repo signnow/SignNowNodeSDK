@@ -28,7 +28,7 @@ export async function sendDocumentGroupInvite(): Promise<GroupInvitePostResponse
     required: true,
     role: signerRole,
     name: 'text_field',
-    label: 'Decision reason'
+    label: 'Decision reason',
   };
   const documentPut1 = new DocumentPutRequest(documentId1, [fieldDoc1]);
   await client.send<DocumentPutResponse>(documentPut1);
@@ -49,7 +49,7 @@ export async function sendDocumentGroupInvite(): Promise<GroupInvitePostResponse
     required: true,
     role: signerRole,
     name: 'text_field',
-    label: 'Decision reason'
+    label: 'Decision reason',
   };
   const documentPut2 = new DocumentPutRequest(documentId2, [fieldDoc2]);
   await client.send<DocumentPutResponse>(documentPut2);
@@ -65,22 +65,22 @@ export async function sendDocumentGroupInvite(): Promise<GroupInvitePostResponse
       email: signerEmail,
       role_name: signerRole,
       action: 'sign',
-      document_id: documentId1
+      document_id: documentId1,
     },
     {
       email: signerEmail,
       role_name: signerRole,
       action: 'sign',
-      document_id: documentId2
-    }
+      document_id: documentId2,
+    },
   ];
 
   // 6. Create invite steps
   const inviteSteps: InviteStepRequestAttribute[] = [
     {
       order: 1,
-      invite_actions: inviteActions
-    }
+      invite_actions: inviteActions,
+    },
   ];
 
   // 7. Optional CC recipients
@@ -90,7 +90,7 @@ export async function sendDocumentGroupInvite(): Promise<GroupInvitePostResponse
   const groupInvitePost = new GroupInvitePostRequest(
     documentGroupId,
     inviteSteps,
-    ccRecipients
+    ccRecipients,
   );
 
   const response = await client.send<GroupInvitePostResponse>(groupInvitePost);
@@ -98,4 +98,4 @@ export async function sendDocumentGroupInvite(): Promise<GroupInvitePostResponse
   return response;
 }
 
-sendDocumentGroupInvite().then(displayResultError).catch(displayResultError); 
+sendDocumentGroupInvite().then(console.log).catch(displayResultError);

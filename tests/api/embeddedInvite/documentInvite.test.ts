@@ -23,9 +23,9 @@ describe('documentInvitePost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentInvitePost = new DocumentInvitePost(
-        faker.documentId(),
-        faker.embeddedInviteDocumentInviteInvites(),
-        faker.nameFormula()
+      faker.documentId(),
+      faker.embeddedInviteDocumentInviteInvites(),
+      faker.nameFormula(),
     );
 
     const response = await client.send<DocumentInvitePostResponse>(documentInvitePost);
@@ -43,7 +43,7 @@ describe('documentInviteDelete', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentInviteDelete = new DocumentInviteDelete(
-        faker.documentId()
+      faker.documentId(),
     );
 
     const response = await client.send<DocumentInviteDeleteResponse>(documentInviteDelete);

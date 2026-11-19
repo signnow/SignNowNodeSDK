@@ -21,7 +21,7 @@ describe('documentGroupRecipientsGet', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentGroupRecipientsGet = new DocumentGroupRecipientsGet(
-        faker.documentGroupId()
+      faker.documentGroupId(),
     );
 
     const response = await client.send<DocumentGroupRecipientsGetResponse>(documentGroupRecipientsGet);

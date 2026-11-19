@@ -23,7 +23,7 @@ describe('groupTemplateGet', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const groupTemplateGet = new GroupTemplateGet(
-        faker.templateId()
+      faker.templateId(),
     );
 
     const response = await client.send<GroupTemplateGetResponse>(groupTemplateGet);
@@ -41,9 +41,9 @@ describe('groupTemplatePut', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const groupTemplatePut = new GroupTemplatePut(
-        faker.templateId(),
-        faker.routingDetails(),
-        faker.groupName()
+      faker.templateId(),
+      faker.routingDetails(),
+      faker.groupName(),
     );
 
     const response = await client.send<GroupTemplatePutResponse>(groupTemplatePut);

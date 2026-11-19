@@ -21,9 +21,9 @@ describe('documentMergePost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentMergePost = new DocumentMergePost(
-        faker.name(),
-        faker.documentDocumentMergeDocumentIds(),
-        faker.boolean()
+      faker.name(),
+      faker.documentDocumentMergeDocumentIds(),
+      faker.boolean(),
     );
 
     const response = await client.send<DocumentMergePostResponse>(documentMergePost);

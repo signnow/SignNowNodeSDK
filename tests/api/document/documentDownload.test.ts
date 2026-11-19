@@ -19,7 +19,7 @@ describe('documentDownloadGet', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const documentDownloadGet = new DocumentDownloadGet(
-        faker.documentId()
+      faker.documentId(),
     );
 
     const response = await client.send<DocumentDownloadGetResponse>(documentDownloadGet);

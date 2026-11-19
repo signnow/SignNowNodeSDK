@@ -29,7 +29,7 @@ export async function sendFieldInvite(): Promise<SendInvitePostResponse> {
     required: true,
     role: signerRole,
     name: 'text_field',
-    label: 'Decision reason'
+    label: 'Decision reason',
   };
   const documentPut = new DocumentPutRequest(documentId, [field]);
   await client.send<DocumentPutResponse>(documentPut);
@@ -46,7 +46,7 @@ export async function sendFieldInvite(): Promise<SendInvitePostResponse> {
     role_id: role.unique_id,
     order: parseInt(role.signing_order, 10),
     subject: emailSubject,
-    message: emailMessage
+    message: emailMessage,
   }));
 
   const sendInviteRequest = new SendInvitePostRequest(
@@ -54,7 +54,7 @@ export async function sendFieldInvite(): Promise<SendInvitePostResponse> {
     recipients,
     senderEmail,
     emailSubject,
-    emailMessage
+    emailMessage,
   );
 
   const response = await client.send<SendInvitePostResponse>(sendInviteRequest);
@@ -62,4 +62,4 @@ export async function sendFieldInvite(): Promise<SendInvitePostResponse> {
   return response;
 }
 
-sendFieldInvite().then(displayResultError).catch(displayResultError); 
+sendFieldInvite().then(console.log).catch(displayResultError);

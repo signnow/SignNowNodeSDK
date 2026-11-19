@@ -21,8 +21,8 @@ describe('emailVerifyPut', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const emailVerifyPut = new EmailVerifyPut(
-        faker.email(),
-        faker.verificationToken()
+      faker.email(),
+      faker.verificationToken(),
     );
 
     const response = await client.send<EmailVerifyPutResponse>(emailVerifyPut);

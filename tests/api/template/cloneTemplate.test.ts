@@ -21,10 +21,10 @@ describe('cloneTemplatePost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const cloneTemplatePost = new CloneTemplatePost(
-        faker.templateId(),
-        faker.documentName(),
-        faker.clientTimestampAsString(),
-        faker.folderId()
+      faker.templateId(),
+      faker.documentName(),
+      faker.clientTimestampAsString(),
+      faker.folderId(),
     );
 
     const response = await client.send<CloneTemplatePostResponse>(cloneTemplatePost);

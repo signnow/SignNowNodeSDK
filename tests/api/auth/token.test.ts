@@ -23,11 +23,11 @@ describe('tokenPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const tokenPost = new TokenPost(
-        faker.username(),
-        faker.password(),
-        faker.grantType(),
-        faker.scope(),
-        faker.code()
+      faker.username(),
+      faker.password(),
+      faker.grantType(),
+      faker.scope(),
+      faker.code(),
     );
 
     const response = await client.send<TokenPostResponse>(tokenPost);

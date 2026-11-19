@@ -21,7 +21,7 @@ describe('fieldsGet', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const fieldsGet = new FieldsGet(
-        faker.documentId()
+      faker.documentId(),
     );
 
     const response = await client.send<FieldsGetResponse>(fieldsGet);

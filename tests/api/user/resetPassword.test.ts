@@ -21,7 +21,7 @@ describe('resetPasswordPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const resetPasswordPost = new ResetPasswordPost(
-        faker.email()
+      faker.email(),
     );
 
     const response = await client.send<ResetPasswordPostResponse>(resetPasswordPost);

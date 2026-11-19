@@ -42,7 +42,7 @@ import { Invite as EmbeddedGroupInvite } from '../../../src/api/embeddedGroupInv
 import { Document as EmbeddedGroupInviteDocument } from '../../../src/api/embeddedGroupInvite/request/data/invite/document';
 import { Signer as EmbeddedGroupInviteSigner } from '../../../src/api/embeddedGroupInvite/request/data/invite/signer';
 import { AttributeRequestAttribute } from '../../../src/api/webhook';
-import { AttributeRequestAttributeV2 } from '../../../src/api/webhookV2';
+import { AttributeRequestAttribute as AttributeRequestAttributeV2 } from '../../../src/api/webhookV2';
 
 export class Faker {
   private faker: typeof faker;
@@ -536,18 +536,17 @@ export class Faker {
       role_name: this.role(),
       action: this.actionSign(),
       document_id: this.documentId(),
-      document_name: this.documentName()
-    }
-    ];
+      document_name: this.documentName(),
+    }];
 
     const inviteSteps: InviteStep[] = [{
       order: 1,
-      invite_actions: inviteActions
+      invite_actions: inviteActions,
     }];
 
     return {
       invite_steps: inviteSteps,
-      include_email_attachments: 1
+      include_email_attachments: 1,
     };
   }
 
@@ -713,7 +712,7 @@ export class Faker {
     const documents: EmbeddedGroupInviteDocument[] = [{
       id: this.documentId(),
       role: this.role(),
-      action: this.actionSign()
+      action: this.actionSign(),
     }];
 
     const signers: EmbeddedGroupInviteSigner[] = [{
@@ -721,12 +720,12 @@ export class Faker {
       auth_method: this.authMethodNone(),
       documents: documents,
       first_name: this.firstName(),
-      last_name: this.lastName()
+      last_name: this.lastName(),
     }];
 
     return [{
       order: 1,
-      signers: signers
+      signers: signers,
     }];
   }
 

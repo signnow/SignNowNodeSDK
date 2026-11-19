@@ -21,10 +21,10 @@ describe('downloadDocumentGroupPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const downloadDocumentGroupPost = new DownloadDocumentGroupPost(
-        faker.documentGroupId(),
-        faker.type(),
-        faker.withHistory(),
-        faker.documentGroupDownloadDocumentGroupDocumentOrder()
+      faker.documentGroupId(),
+      faker.type(),
+      faker.withHistory(),
+      faker.documentGroupDownloadDocumentGroupDocumentOrder(),
     );
 
     const response = await client.send<DownloadDocumentGroupPostResponse>(downloadDocumentGroupPost);

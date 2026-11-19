@@ -25,11 +25,11 @@ describe('userPost', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const userPost = new UserPost(
-        faker.email(),
-        faker.password(),
-        faker.firstName(),
-        faker.lastName(),
-        faker.number()
+      faker.email(),
+      faker.password(),
+      faker.firstName(),
+      faker.lastName(),
+      faker.number(),
     );
 
     const response = await client.send<UserPostResponse>(userPost);
@@ -47,11 +47,11 @@ describe('userPut', () => {
     const client = sdk.getClient();
     const faker = new Faker();
     const userPut = new UserPut(
-        faker.firstName(),
-        faker.lastName(),
-        faker.password(),
-        faker.oldPassword(),
-        faker.logoutAll()
+      faker.firstName(),
+      faker.lastName(),
+      faker.password(),
+      faker.oldPassword(),
+      faker.logoutAll(),
     );
 
     const response = await client.send<UserPutResponse>(userPut);

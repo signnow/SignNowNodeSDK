@@ -8,8 +8,7 @@
  */
 
 import { BaseClass } from '../../../types/baseClass';
-import { HttpMethod } from '../../../core/constants';
-import { HttpAuthType } from '../../../core/constants';
+import { HttpMethod, HttpAuthType } from '../../../core/constants';
 import { TemplateData } from './data/templateData';
 import { TemplateDataObject } from './data/templateDataObject';
 import { CcStep } from './data/ccStep';
